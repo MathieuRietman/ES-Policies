@@ -1,0 +1,95 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "topLevelManagementGroupPrefix": {
+            "type": "string",
+            "maxLength": 5
+        },
+        "managementSubscriptionId": {
+            "type": "string",
+            "maxLength": 36
+        },
+        "enableResourceDeployments": {
+            "type": "string",
+            "allowedValues": [
+                "Yes",
+                "No"
+            ]
+        },
+        "Scope": {
+            "type": "string"
+        },
+        "workspacesName": {
+            "type": "string"
+        },
+        "workspacesResourceGroup": {
+            "type": "string"
+        },
+        "automationAccountName": {
+            "type": "string"
+        }
+    },
+    "variables": {
+        "policyDefinitions": {
+            "deployLogAnalytics": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Log-Analytics')]",
+            "deployAzureActivityLog": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policyDefinitons/Deploy-Diagnostics-ActivityLog')]",
+            "ascMonitoring": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8"
+        },
+        "policyAssignmentNames": {
+            "logAnalytics": "Deploy-Log-Analytics",
+            "azureActivityLog": "Deploy-AzActivity-Log"
+        },
+        "rbacOwner": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+        "roleAssignmentName": "[guid(variables('policyAssignmentNames').logAnalytics)]",
+        "resourceDeploymentName": "[take(concat('mgmt', deployment().location, deployment().name), 64)]"
+    },
+    "resources": [
+        {
+            "condition": "[and(not(empty(parameters('managementSubscriptionId'))),equals(parameters('enableResourceDeployments'), 'Yes'))]",
+            "type": "Microsoft.Authorization/policyAssignments",
+            "apiVersion": "2018-05-01",
+            "name": "[variables('policyAssignmentNames').loganalytics]",
+            "location": "[deployment().location]",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "description": "Deploy-Log-Analytics",
+                "displayName": "Deploy-Log-Analytics",
+                "policyDefinitionId": "[variables('policyDefinitions').deployLogAnalytics]",
+                "scope": "[ parameters('scope')]",
+                "parameters": {
+                    "workspaceName": {
+                        "value": "[parameters('workspacesName')]"
+                    },
+                    "automationAccountName": {
+                        "value": "[parameters('automationAccountName')]"
+                    },
+                    "workspaceRegion": {
+                        "value": "[deployment().location]"
+                    },
+                    "automationRegion": {
+                        "value": "[deployment().location]"
+                    },
+                    "rgName": {
+                        "value": "[parameters('workspacesResourceGroup')]"
+                    }
+                }
+            }
+        },
+          {
+        "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2019-04-01-preview",
+            "name": "[variables('roleAssignmentName')]",
+            "dependsOn": [
+                "[variables('policyAssignmentNames').logAnalytics]"
+            ],
+            "properties": {
+                "principalType": "ServicePrincipal",
+                "roleDefinitionId": "[concat('/providers/Microsoft.Authorization/roleDefinitions/', variables('rbacOwner'))]",
+                "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentNames').logAnalytics), '2018-05-01', 'Full' ).identity.principalId)]"            }
+        }
+    ],
+    "outputs": {}
+}

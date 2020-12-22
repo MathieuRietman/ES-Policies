@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmSku": {
+      "value": "Standard_A1"
+    },
+    "ubuntuOSVersion": {
+      "value": "16.04-LTS"
+    },
+    "instanceCount": {
+      "value": 5
+    },
+    "adminUsername": {
+      "value": "mrigenss"
+    },
+    "adminPasswordOrKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9m8dvcvvE3MiIt58aHdevkJs0rD0K57o6/w45Vz8nHP1Vgbb0j9YXk6BLjC2R2xH8K3YWGM+Z8+e+5ojZVarb/sSRrm/ihv+D0EMvVYaXSTRm9PTfNmBgzYQhh3mM6CNI3XLFGc56nznwBA+7kgw0mf7OHQC9tlcYLpvbhkgGVishmKPPlflmF/6UjnwYJSgd14AHUxn+AqxAOnnY5lv9eTnCxgr/b0o79iIjTfpfOEdplJi6w46GT7+QGzEQLnDvLAgSYwXkekAWV31itPtPpmJ5maMDW3aq3hqjQK3D6kemwBsbANPoNTthhoFX+H6p88bQeEhELopIhw4V4eJ1 europe\\marietma@MININT-V5P7VC5"
+    }
+  }
+}

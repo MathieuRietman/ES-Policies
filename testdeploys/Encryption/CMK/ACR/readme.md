@@ -1,0 +1,1 @@
+ACR can use UserAssigned Identies

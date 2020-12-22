@@ -1,0 +1,182 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "topLevelManagementGroupPrefix": {
+            "type": "string",
+            "maxLength": 5
+        },
+        "Scope": {
+            "type": "string"
+        },
+        "emailSecurityContact": {
+            "type": "String",
+            "metadata": {
+                "displayName": "emailSecurityContact",
+                "description": "email address of the contact, in the form of john@doe.com"
+            }
+        },
+        "phoneSecurityContact": {
+            "type": "String",
+            "metadata": {
+                "displayName": "phoneSecurityContact",
+                "description": "phone number of the Security Contact"
+            }
+        },
+        "pricingTierVMs": {
+            "type": "String",
+            "metadata": {
+                "displayName": "pricingTierVMs",
+                "description": null
+            },
+            "allowedValues": [
+                "Standard",
+                "Free"
+            ],
+            "defaultValue": "Standard"
+        },
+        "pricingTierSqlServers": {
+            "type": "String",
+            "metadata": {
+                "displayName": "pricingTierSqlServers",
+                "description": null
+            },
+            "allowedValues": [
+                "Standard",
+                "Free"
+            ],
+            "defaultValue": "Standard"
+        },
+        "pricingTierAppServices": {
+            "type": "String",
+            "metadata": {
+                "displayName": "pricingTierAppServices",
+                "description": null
+            },
+            "allowedValues": [
+                "Standard",
+                "Free"
+            ],
+            "defaultValue": "Standard"
+        },
+        "pricingTierStorageAccounts": {
+            "type": "String",
+            "metadata": {
+                "displayName": "pricingTierStorageAccounts",
+                "description": null
+            },
+            "allowedValues": [
+                "Standard",
+                "Free"
+            ],
+            "defaultValue": "Standard"
+        },
+        "pricingTierContainerRegistry": {
+            "type": "String",
+            "metadata": {
+                "displayName": "pricingTierContainerRegistry",
+                "description": null
+            },
+            "allowedValues": [
+                "Standard",
+                "Free"
+            ],
+            "defaultValue": "Standard"
+        },
+        "pricingTierKeyVaults": {
+            "type": "String",
+            "metadata": {
+                "displayName": "pricingTierKeyVaults",
+                "description": null
+            },
+            "allowedValues": [
+                "Standard",
+                "Free"
+            ],
+            "defaultValue": "Standard"
+        },
+        "pricingTierKubernetesService": {
+            "type": "String",
+            "metadata": {
+                "displayName": "pricingTierKubernetesService",
+                "description": null
+            },
+            "allowedValues": [
+                "Standard",
+                "Free"
+            ],
+            "defaultValue": "Standard"
+        }
+
+    },
+    "variables": {
+
+        "policyAssignmentName": "Deploy-ASC-Standard",
+        "policyDefinitions": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policyDefinitions/', variables('policyAssignmentName'))]",
+        "rbacOwner": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+        "scopename": "[last(split(parameters('Scope'),'/'))]",
+        "roleAssignmentName": "[guid(concat(variables('policyAssignmentName'),variables('scopename')))]"
+
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/policyAssignments",
+            "apiVersion": "2018-05-01",
+            "name": "[variables('policyAssignmentName')]",
+            "location": "[deployment().location]",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "description": "Ensures that subscriptions have Security Centre Standard enabled.",
+                "displayName": "[variables('policyAssignmentName')]",
+                "policyDefinitionId": "[variables('policyDefinitions')]",
+                "scope": "[ parameters('scope')]",
+                "parameters": {
+                    "emailSecurityContact": {
+                        "value": "[parameters('emailSecurityContact')]"
+                    },
+                    "phoneSecurityContact": {
+                        "value": "[parameters('phoneSecurityContact')]"
+                    },
+                    "pricingTierVMs": {
+                        "value": "[parameters('pricingTierVMs')]"
+                    },
+
+                    "pricingTierSqlServers": {
+                        "value": "[parameters('pricingTierSqlServers')]"
+                    },
+                    "pricingTierAppServices": {
+                        "value": "[parameters('pricingTierAppServices')]"
+                    },
+                    "pricingTierStorageAccounts": {
+                        "value": "[parameters('pricingTierStorageAccounts')]"
+                    },
+                    "pricingTierContainerRegistry": {
+                        "value": "[parameters('pricingTierContainerRegistry')]"
+                    },
+                    "pricingTierKeyVaults": {
+                        "value": "[parameters('pricingTierKeyVaults')]"
+                    },
+                    "pricingTierKubernetesService": {
+                        "value": "[parameters('pricingTierKubernetesService')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2019-04-01-preview",
+            "name": "[variables('roleAssignmentName')]",
+            "dependsOn": [
+                "[variables('policyAssignmentName')]"
+            ],
+            "properties": {
+                "principalType": "ServicePrincipal",
+                "roleDefinitionId": "[concat('/providers/Microsoft.Authorization/roleDefinitions/', variables('rbacOwner'))]",
+                "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentName')), '2018-05-01', 'Full' ).identity.principalId)]"
+            }
+        }
+    ],
+    "outputs": {}
+}

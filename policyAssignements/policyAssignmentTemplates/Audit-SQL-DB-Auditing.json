@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+
+        "Scope": {
+            "type": "string"
+        }
+
+
+    },
+    "variables": {
+
+        "policyAssignmentName":  "Audit-SQL-DB-Auditing",
+        "policyDefinitions": "/providers/Microsoft.Authorization/policyDefinitions/a6fb4358-5bf4-4ad7-ba82-2cd2f41ce5e9"
+
+        
+
+    },
+    "resources": [
+        {
+ 
+            "type": "Microsoft.Authorization/policyAssignments",
+            "apiVersion": "2018-05-01",
+            "name": "[variables('policyAssignmentName')]",
+            "location": "[deployment().location]",
+        
+            "properties": {
+                "description":  "[variables('policyAssignmentName')]",
+                "displayName":  "[variables('policyAssignmentName')]",
+                "policyDefinitionId": "[variables('policyDefinitions')]",
+                "scope": "[ parameters('scope')]"
+            
+            }
+        }
+        
+    ],
+    "outputs": {}
+}

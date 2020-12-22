@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": {
+      "value": "mricluster1"
+    },
+    "dnsPrefix": {
+      "value": "mricluster1"
+    },
+    "linuxAdminUsername": {
+      "value": "mriclusteradmin "
+    },
+    "sshRSAPublicKey": {
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJ2jEbvywuOFrbqrVxy0coEoXgGZGWDdtCw8orgG1+SzvUkGIcMzKidTnd3A+eb0Vw23u3bi3rrGmLxGxuIONH8vDeVsLsdazSDttAmDuDbWPvRdfLVv+vUF3eirYFecjIOQxEBO4P1/DvftipvhFARbZCaNf0+NihrOtH+FKIfo9l6hy0okvYw/18fy9NWoT49vVGEaDBGzq48/gY5GwNV3n+i2fKzicCZgOAJKRQXf6t9oYPsq0jNwA/wETTIpHxp9ouNRY3gR0xNpEKcdHqMy27551KPMtgoTwFum08Fv+8xvUivgFL/ijIkg9MVoTHJOcvJoPKQ/6ae9pXk/mv marietma@microsoft.com"
+    }
+ 
+  }
+}

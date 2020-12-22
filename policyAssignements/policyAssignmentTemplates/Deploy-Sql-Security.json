@@ -1,0 +1,174 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/tenantDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "topLevelManagementGroupPrefix": {
+            "type": "string",
+            "maxLength": 5
+        },
+
+        "Scope": {
+            "type": "string"
+        },
+        "vulnerabilityAssessmentsEmail": {
+            "type": "string",
+            "metadata": {
+                "description": "The email address to send alerts",
+                "displayName": "The email address to send alerts"
+            }
+        },
+        "vulnerabilityAssessmentsStorageID": {
+            "type": "string",
+            "metadata": {
+                "description": "The storage account to store assessments",
+                "displayName": "The storage account to store assessments"
+            }
+        },
+        "StorageIDSubscriptionID": {
+            "type": "string",
+            "metadata": {
+                "description": "The storage account to store assessments",
+                "displayName": "The storage account to store assessments"
+            }
+        },
+        "Location": {
+            "type": "string",
+            "metadata": {
+                "description": "The Location of deployment of storage account",
+                "displayName": "The Location of deployment of storage account"
+            }
+        },
+        "StorageRgGroup": {
+            "type": "string",
+            "metadata": {
+                "description": "The ResourceGroup of deployment of storage account",
+                "displayName": "The ResourceGroup of deployment of storage account"
+            }
+        }
+    },
+    "variables": {
+
+        "policyAssignmentName": "Deploy-Sql-Security",
+
+        "policyDefinitions": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'), '/providers/Microsoft.Authorization/policySetDefinitions/', variables('policyAssignmentName'))]",
+        "rbacOwner": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635",
+        "scopename": "[last(split(parameters('Scope'),'/'))]",
+        "roleAssignmentName": "[guid(concat(variables('policyAssignmentName'),variables('scopename')))]",
+        "roleAssignmentNameForManagementSubscription": "[guid(concat(variables('policyAssignmentName'),variables('scopename'),parameters('StorageIDSubscriptionID')))]"
+    },
+    "resources": [
+        {
+
+            "type": "Microsoft.Authorization/policyAssignments",
+            "apiVersion": "2018-05-01",
+            "name": "[variables('policyAssignmentName')]",
+            "location": "[deployment().location]",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "description": "Configures SQL DataBases",
+                "displayName": "[variables('policyAssignmentName')]",
+                "policyDefinitionId": "[variables('policyDefinitions')]",
+                "scope": "[ parameters('scope')]",
+                "parameters": {
+                    "vulnerabilityAssessmentsEmail": {
+                        "value": "[parameters('vulnerabilityAssessmentsEmail')]"
+                    },
+                    "vulnerabilityAssessmentsStorageID": {
+                        "value": "[parameters('vulnerabilityAssessmentsStorageID')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "2019-04-01-preview",
+            "name": "[variables('roleAssignmentName')]",
+            "dependsOn": [
+                "[variables('policyAssignmentName')]"
+            ],
+            "properties": {
+                "principalType": "ServicePrincipal",
+                "roleDefinitionId": "[concat('/providers/Microsoft.Authorization/roleDefinitions/', variables('rbacOwner'))]",
+                "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentName')), '2018-05-01', 'Full' ).identity.principalId)]"
+            }
+        },
+        {
+            "apiVersion": "2020-06-01",
+            "name": "nestedDeployResourceGroup",
+            "type": "Microsoft.Resources/deployments",
+            "location": "[parameters('Location')]",
+            "subscriptionId": "[parameters('StorageIDSubscriptionID')]",
+            "dependsOn": [
+                "[concat('Microsoft.Authorization/policyAssignments/',  variables('policyAssignmentName') )]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Resources/resourceGroups",
+                            "apiVersion": "2020-06-01",
+                            "location": "[parameters('Location')]",
+                            "name": "[parameters('StorageRgGroup')]",
+                            "properties": {}
+                        },
+                        {
+                            "type": "Microsoft.Authorization/roleAssignments",
+                            "apiVersion": "2019-04-01-preview",
+
+                            "name": "[variables('roleAssignmentNameForManagementSubscription')]",
+                            "properties": {
+                                "scope": "[concat('/subscriptions/',parameters('StorageIDSubscriptionID'))]",
+                                "principalType": "ServicePrincipal",
+
+                                "roleDefinitionId": "[concat('/providers/Microsoft.Authorization/roleDefinitions/', variables('rbacOwner'))]",
+                                "principalId": "[toLower(reference(concat('/providers/Microsoft.Authorization/policyAssignments/', variables('policyAssignmentName')), '2018-05-01', 'Full' ).identity.principalId)]"
+                            }
+                        },
+                        {
+                            "apiVersion": "2020-06-01",
+                            "name": "nestedDeployRole",
+                            "type": "Microsoft.Resources/deployments",
+                            "resourceGroup": "[parameters('StorageRgGroup')]",
+                            "dependsOn": [
+
+                                "[parameters('StorageRgGroup')]"
+                            ],
+                            "properties": {
+                                "mode": "Incremental",
+                                "template": {
+                                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                                    "contentVersion": "1.0.0.0",
+                                    "parameters": {},
+                                    "variables": {},
+                                    "resources": [
+
+
+                                        {
+                                            "type": "Microsoft.Storage/storageAccounts",
+                                            "apiVersion": "2019-04-01",
+                                            "name": "[parameters('vulnerabilityAssessmentsStorageID')]",
+                                            "location": "[parameters('location')]",
+                                            "sku": {
+                                                "name": "Standard_LRS"
+                                            },
+                                            "kind": "StorageV2"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+
+    ],
+    "outputs": {}
+}

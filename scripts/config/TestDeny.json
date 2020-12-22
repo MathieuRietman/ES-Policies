@@ -1,0 +1,26 @@
+{
+    "general": {
+        "TenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "scope": "/subscriptions/4d035de6-4cb3-4d00-9796-cdbea308da99/resourceGroups/testpolicies2",
+        "managementSubscriptionId": "8f4aaa68-865d-40ad-b76d-748daa9bf470",
+        "topLevelManagementGroupPrefix": "marie",
+        "enableResourceDeployment": "yes",
+        "workspacesResourceGroup": "rg-marie-centralLog-p-we",
+        "workspacesName": "rg-marie-centralLog-p-we",
+        "automationAccountName": "aac-marie-centralAutomation-p-we",
+        "location": "WestEurope",
+        "emailSecurityContact": "marietma@microsoft.com",
+        "phoneSecurityContact": "+31612345678",
+        "vulnerabilityAssessmentsStorageID": "stgmrivulnerabilitys",
+        "logAnalytics": "/subscriptions/8f4aaa68-865d-40ad-b76d-748daa9bf470/resourcegroups/rg-marie-centrallog-p-we/providers/microsoft.operationalinsights/workspaces/la-marie-centrallogging-p-we",
+        "hubName": "vnet-marie-hub-we",
+        "HUB": "",
+        "rgName": "rg-marie-connectivity-we",
+        "metricsEnabled": "True",
+        "profileName": "setbypolicy",
+        "logsEnabled": "True",
+        "effect": "Deny"
+
+        
+    }
+}

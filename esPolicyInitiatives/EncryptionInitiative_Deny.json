@@ -1,0 +1,194 @@
+{
+  "properties": {
+    "Description": "Deny or Audit resources without Encryption",
+    "DisplayName": "Deny or Audit resources without Encryption",
+    "Parameters": {
+      "ADXdiskEncryptedEffect": {
+        "metadata": {
+          "description": "Disk encryption should be enabled on Azure Data Explorer",
+          "displayName": "Enabling disk encryption helps protect and safeguard your data to meet your organizational security and compliance commitments."
+        },
+        "type": "String",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "ADXdoubleEncryptionEffect": {
+        "metadata": {
+          "description": "Double encryption should be enabled on Azure Data Explorer",
+          "displayName": "Enabling double encryption helps protect and safeguard your data to meet your organizational security and compliance commitments. When double encryption has been enabled, data in the storage account is encrypted twice, once at the service level and once at the infrastructure level, using two different encryption algorithms and two different keys."
+        },
+        "type": "String",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "AutomationAuditUnencryptedVarsEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Automation account variables should be encrypted",
+          "description": "It is important to enable encryption of Automation account variable assets when storing sensitive data"
+        }
+      },
+      "CognitiveServicesEncryptionEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Cognitive Services accounts should enable data encryption",
+          "description": "This policy audits any Cognitive Services account not using data encryption. For each Cognitive Services account with storage, should enable data encryption with either customer managed or Microsoft managed key."
+        }
+      },
+      "DataBoxDoubleEncryptionEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Azure Data Box jobs should enable double encryption for data at rest on the device",
+          "description": "Enable a second layer of software-based encryption for data at rest on the device. The device is already protected via Advanced Encryption Standard 256-bit encryption for data at rest. This option adds a second layer of data encryption."
+        }
+      },
+      "MySQLInfrastructureEncryptionEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Infrastructure encryption should be enabled for Azure Database for MySQL servers",
+          "description": "Enable infrastructure encryption for Azure Database for MySQL servers to have higher level of assurance that the data is secure. When infrastructure encryption is enabled, the data at rest is encrypted twice using FIPS 140-2 compliant Microsoft managed keys."
+        }
+      },
+      "PostgreSQLInfrastructureEncryptionEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Infrastructure encryption should be enabled for Azure Database for PostgreSQL servers",
+          "description": "Enable infrastructure encryption for Azure Database for PostgreSQL servers to have higher level of assurance that the data is secure. When infrastructure encryption is enabled, the data at rest is encrypted twice using FIPS 140-2 compliant Microsoft managed keys"
+        }
+      },
+      "StorageAccountInfrastructureEncryptionEffect": {
+        "type": "string",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Storage accounts should have infrastructure encryption",
+          "description": "Enable infrastructure encryption for higher level of assurance that the data is secure. When infrastructure encryption is enabled, data in a storage account is encrypted twice."
+        }
+      }
+    },
+    "PolicyDefinitionGroups": null,
+    "PolicyDefinitions": [
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f4b53539-8df9-40e4-86c6-6b607703bd4e",
+        "policyDefinitionReferenceId": "ADXdiskEncrypted",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('ADXdiskEncryptedEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ec068d99-e9c7-401f-8cef-5bdde4e6ccf1",
+        "policyDefinitionReferenceId": "ADXdoubleEncryption",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('ADXdoubleEncryptionEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/3657f5a0-770e-44a3-b44e-9431ba1e9735",
+        "policyDefinitionReferenceId": "AutomationAuditUnencryptedVars",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('AutomationAuditUnencryptedVarsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2bdd0062-9d75-436e-89df-487dd8e4b3c7",
+        "policyDefinitionReferenceId": "CognitiveServicesEncryption",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('CognitiveServicesEncryptionEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c349d81b-9985-44ae-a8da-ff98d108ede8",
+        "policyDefinitionReferenceId": "DataBoxDoubleEncryption",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('DataBoxDoubleEncryptionEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/3a58212a-c829-4f13-9872-6371df2fd0b4",
+        "policyDefinitionReferenceId": "MySQLInfrastructureEncryption",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('MySQLInfrastructureEncryptionEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/24fba194-95d6-48c0-aea7-f65bf859c598",
+        "policyDefinitionReferenceId": "PostgreSQLInfrastructureEncryption",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('PostgreSQLInfrastructureEncryptionEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4733ea7b-a883-42fe-8cac-97454c2a9e4a",
+        "policyDefinitionReferenceId": "StorageAccountInfrastructureEncryption",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('StorageAccountInfrastructureEncryptionEffect')]"
+          }
+        }
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Encryption"
+    }
+  },
+  "id": "/providers/Microsoft.Authorization/policySetDefinitions/Enforce-Encryption",
+  "type": null,
+  "name": "Enforce-Encryption"
+}

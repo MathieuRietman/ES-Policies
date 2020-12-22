@@ -1,0 +1,1667 @@
+"PolicyName","ProposedFilename","DisplayName","ProposedDisplayname","Description","ProposedDescription","version","category","effect","roleDefinitionIds","ProposedRoleID","parameters","existenceCondition"
+"DeployDiagnosticsWebsite.json","DiagLogAnalyticsInitiative_Deploy.json","Deploy Diagnostic Settings to Azure Services",,"This policy set deploys the configurations of application Azure resources to forward diagnostic logs and metrics to an Azure Log Analytics workspace. See the list of policies of the services that are included ",,"1.0.0","Monitoring","","",,"{
+  ""logAnalytics"": {
+    ""metadata"": {
+      ""description"": ""Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID."",
+      ""displayName"": ""Log Analytics workspace"",
+      ""strongType"": ""omsWorkspace""
+    },
+    ""type"": ""String""
+  },
+  ""ACILogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""ACILogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for ACI"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for ACI""
+    }
+  },
+  ""ACRLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""ACRLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for ACR"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for ACR""
+    }
+  },
+  ""ACRLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for ACR"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for ACR""
+    }
+  },
+  ""ActivityLogLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""ActivityLogLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for ActivityLog"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for ActivityLog""
+    }
+  },
+  ""AKSLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""AKSLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for AKS"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for AKS""
+    }
+  },
+  ""AKSLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for AKS"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for AKS""
+    }
+  },
+  ""AnalysisServiceLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""AnalysisServiceLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for AnalysisService"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for AnalysisService""
+    }
+  },
+  ""AnalysisServiceLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for AnalysisService"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for AnalysisService""
+    }
+  },
+  ""APIMgmtLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""APIMgmtLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for APIMgmt"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for APIMgmt""
+    }
+  },
+  ""APIMgmtLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for APIMgmt"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for APIMgmt""
+    }
+  },
+  ""ApplicationGatewayLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""ApplicationGatewayLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for ApplicationGateway"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for ApplicationGateway""
+    }
+  },
+  ""ApplicationGatewayLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for ApplicationGateway"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for ApplicationGateway""
+    }
+  },
+  ""AutomationLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""AutomationLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for Automation"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for Automation""
+    }
+  },
+  ""AutomationLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for Automation"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for Automation""
+    }
+  },
+  ""BatchLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""BatchLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for Batch"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for Batch""
+    }
+  },
+  ""BatchLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for Batch"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for Batch""
+    }
+  },
+  ""CDNEndpointsLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""CDNEndpointsLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for CDNEndpoints"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for CDNEndpoints""
+    }
+  },
+  ""CognitiveServicesLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""CognitiveServicesLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for CognitiveServices"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for CognitiveServices""
+    }
+  },
+  ""CognitiveServicesLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for CognitiveServices"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for CognitiveServices""
+    }
+  },
+  ""CosmosLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""CosmosLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for Cosmos"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for Cosmos""
+    }
+  },
+  ""CosmosLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for Cosmos"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for Cosmos""
+    }
+  },
+  ""DataFactoryLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""DataFactoryLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for DataFactory"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for DataFactory""
+    }
+  },
+  ""DataFactoryLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for DataFactory"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for DataFactory""
+    }
+  },
+  ""DataLakeStoreLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""DataLakeStoreLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for DataLakeStore"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for DataLakeStore""
+    }
+  },
+  ""DataLakeStoreLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for DataLakeStore"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for DataLakeStore""
+    }
+  },
+  ""DataLakeAnalyticsLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""DataLakeAnalyticsLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for DataLakeAnalytics"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for DataLakeAnalytics""
+    }
+  },
+  ""DataLakeAnalyticsLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for DataLakeAnalytics"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for DataLakeAnalytics""
+    }
+  },
+  ""EventGridSubLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""EventGridSubLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for EventGridSub"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for EventGridSub""
+    }
+  },
+  ""EventGridTopicLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""EventGridTopicLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for EventGridTopic"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for EventGridTopic""
+    }
+  },
+  ""EventGridTopicLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for EventGridTopic"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for EventGridTopic""
+    }
+  },
+  ""EventHubLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""EventHubLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for EventHub"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for EventHub""
+    }
+  },
+  ""EventHubLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for EventHub"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for EventHub""
+    }
+  },
+  ""ExpressRouteLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""ExpressRouteLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for ExpressRoute"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for ExpressRoute""
+    }
+  },
+  ""ExpressRouteLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for ExpressRoute"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for ExpressRoute""
+    }
+  },
+  ""FirewallLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""FirewallLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for Firewall"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for Firewall""
+    }
+  },
+  ""FirewallLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for Firewall"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for Firewall""
+    }
+  },
+  ""HDInsightLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""HDInsightLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for HDInsight"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for HDInsight""
+    }
+  },
+  ""IotHubLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""IotHubLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for IotHub"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for IotHub""
+    }
+  },
+  ""IotHubLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for IotHub"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for IotHub""
+    }
+  },
+  ""KeyVaultLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""KeyVaultLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for KeyVault"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for KeyVault""
+    }
+  },
+  ""KeyVaultLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for KeyVault"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for KeyVault""
+    }
+  },
+  ""LoadBalancerLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""LoadBalancerLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for LoadBalancer"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for LoadBalancer""
+    }
+  },
+  ""LoadBalancerLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for LoadBalancer"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for LoadBalancer""
+    }
+  },
+  ""LogicAppsISELogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""LogicAppsISELogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for LogicAppsISE"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for LogicAppsISE""
+    }
+  },
+  ""LogicAppsWFLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""LogicAppsWFLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for LogicAppsWF"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for LogicAppsWF""
+    }
+  },
+  ""LogicAppsWFLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for LogicAppsWF"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for LogicAppsWF""
+    }
+  },
+  ""MlWorkspaceLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""MlWorkspaceLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for MlWorkspace"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for MlWorkspace""
+    }
+  },
+  ""MlWorkspaceLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for MlWorkspace"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for MlWorkspace""
+    }
+  },
+  ""MySQLLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""MySQLLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for MySQL"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for MySQL""
+    }
+  },
+  ""MySQLLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for MySQL"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for MySQL""
+    }
+  },
+  ""NetworkSecurityGroupsLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""NetworkSecurityGroupsLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for NetworkSecurityGroups"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for NetworkSecurityGroups""
+    }
+  },
+  ""NetworkNICLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""NetworkNICLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for NetworkNIC"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for NetworkNIC""
+    }
+  },
+  ""PostgreSQLLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""PostgreSQLLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for PostgreSQL"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for PostgreSQL""
+    }
+  },
+  ""PostgreSQLLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for PostgreSQL"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for PostgreSQL""
+    }
+  },
+  ""PowerBIEmbeddedLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""PowerBIEmbeddedLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for PowerBIEmbedded"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for PowerBIEmbedded""
+    }
+  },
+  ""PowerBIEmbeddedLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for PowerBIEmbedded"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for PowerBIEmbedded""
+    }
+  },
+  ""NetworkPublicIPNicLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""NetworkPublicIPNicLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for NetworkPublicIPNic"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for NetworkPublicIPNic""
+    }
+  },
+  ""NetworkPublicIPNicLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for NetworkPublicIPNic"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for NetworkPublicIPNic""
+    }
+  },
+  ""RecoveryVaultLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""RecoveryVaultLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for RecoveryVault"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for RecoveryVault""
+    }
+  },
+  ""RedisCacheLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""RedisCacheLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for RedisCache"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for RedisCache""
+    }
+  },
+  ""RelayLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""RelayLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for Relay"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for Relay""
+    }
+  },
+  ""RelayLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for Relay"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for Relay""
+    }
+  },
+  ""SearchServicesLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""SearchServicesLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for SearchServices"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for SearchServices""
+    }
+  },
+  ""SearchServicesLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for SearchServices"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for SearchServices""
+    }
+  },
+  ""ServiceBusLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""ServiceBusLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for ServiceBus"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for ServiceBus""
+    }
+  },
+  ""ServiceBusLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for ServiceBus"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for ServiceBus""
+    }
+  },
+  ""SignalRLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""SignalRLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for SignalR"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for SignalR""
+    }
+  },
+  ""SignalRLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for SignalR"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for SignalR""
+    }
+  },
+  ""SQLDBsLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""SQLDBsLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for SQLDBs"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for SQLDBs""
+    }
+  },
+  ""SQLDBsLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for SQLDBs"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for SQLDBs""
+    }
+  },
+  ""SQLElasticPoolsLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""SQLElasticPoolsLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for SQLElasticPools"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for SQLElasticPools""
+    }
+  },
+  ""SQLMLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""SQLMLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for SQLM"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for SQLM""
+    }
+  },
+  ""StreamAnalyticsLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""StreamAnalyticsLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for StreamAnalytics"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for StreamAnalytics""
+    }
+  },
+  ""StreamAnalyticsLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for StreamAnalytics"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for StreamAnalytics""
+    }
+  },
+  ""TimeSeriesInsightsLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""TimeSeriesInsightsLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for TimeSeriesInsights"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for TimeSeriesInsights""
+    }
+  },
+  ""TimeSeriesInsightsLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for TimeSeriesInsights"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for TimeSeriesInsights""
+    }
+  },
+  ""TrafficManagerLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""TrafficManagerLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for TrafficManager"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for TrafficManager""
+    }
+  },
+  ""TrafficManagerLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for TrafficManager"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for TrafficManager""
+    }
+  },
+  ""VirtualNetworkLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""VirtualNetworkLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for VirtualNetwork"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for VirtualNetwork""
+    }
+  },
+  ""VirtualNetworkLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for VirtualNetwork"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for VirtualNetwork""
+    }
+  },
+  ""VirtualMachinesLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""VirtualMachinesLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for VirtualMachines"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for VirtualMachines""
+    }
+  },
+  ""VMSSLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""VMSSLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for VMSS"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for VMSS""
+    }
+  },
+  ""VNetGWLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""VNetGWLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for VNetGW"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for VNetGW""
+    }
+  },
+  ""VNetGWLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for VNetGW"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for VNetGW""
+    }
+  },
+  ""AppServiceLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""AppServiceLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for AppService"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for AppService""
+    }
+  },
+  ""AppServiceWebappLogAnalyticsEffect"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""DeployIfNotExists"",
+    ""allowedValues"": [
+      ""DeployIfNotExists"",
+      ""Disabled""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Deploy Diagnostic Settings for App Service to Log Analytics workspace"",
+      ""description"": ""Deploys the diagnostic settings for App Service to stream to a Log Analytics workspace when any App Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled""
+    }
+  },
+  ""AppServiceWebappLogAnalyticsMetrics"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable metrics for AppServiceWebapp"",
+      ""description"": ""Whether to enable metrics stream to the Log Analytics workspace - True or False for AppServiceWebapp""
+    }
+  },
+  ""AppServiceWebappLogAnalyticsLogs"": {
+    ""type"": ""string"",
+    ""defaultValue"": ""True"",
+    ""allowedValues"": [
+      ""True"",
+      ""False""
+    ],
+    ""metadata"": {
+      ""displayName"": ""Enable logs for AppServiceWebapp"",
+      ""description"": ""Whether to enable logs stream to the Log Analytics workspace - True or False for AppServiceWebapp""
+    }
+  }
+}","null"
