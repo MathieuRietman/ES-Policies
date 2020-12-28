@@ -1,0 +1,107 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "accountName": {
+
+      "defaultValue": "[concat('cvision', uniqueString(resourceGroup().id))]",
+      "metadata": {
+        "description": "Display name of Computer Vision API account"
+      },
+      "type": "string"
+    },
+    "SKU": {
+      "type": "string",
+      "metadata": {
+        "description": "SKU for Computer Vision API"
+      },
+      "defaultValue": "F0",
+      "allowedValues": [
+        "F0",
+        "S1"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
+    "identityName": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "vaultUri": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "keyName": {
+      "defaultValue": "",
+      "type": "String"
+    },
+    "vaultName": {
+      "defaultValue": "",
+      "type": "String"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.CognitiveServices/accounts",
+      "apiVersion": "2017-04-18",
+      "name": "[parameters('accountName')]",
+      "location": "[parameters('Location')]",
+      "kind": "ComputerVision",
+      "sku": {
+        "name": "[parameters('SKU')]"
+      },
+      "properties": {
+        "encryption": {
+          "keyVaultProperties": {
+            "keyName": "[parameters('keyName')]",
+            "keyVaultUri": "[parameters('vaultUri')]"
+          },
+          "keySource": "Microsoft.KeyVault"
+        }
+      },
+      "identity": {
+        "type": "SystemAssigned",
+        "userAssignedIdentities": {
+          "[resourceID('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName'))]": {}
+        }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.KeyVault/vaults/accessPolicies",
+      "apiVersion": "2018-02-14",
+      "name": "[concat(parameters('vaultName'), '/add')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName'))]"
+      ],
+      "properties": {
+        "accessPolicies": [
+          {
+            "tenantId": "[subscription().tenantId]",
+            "objectId": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName')), '2018-11-30').principalId]",
+            "permissions": {
+              "keys": [
+                "get",
+                "unwrapKey",
+                "wrapKey"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
+      "apiVersion": "2018-11-30",
+      "name": "[parameters('identityName')]",
+      "location": "[resourceGroup().location]"
+    }
+  ]
+}

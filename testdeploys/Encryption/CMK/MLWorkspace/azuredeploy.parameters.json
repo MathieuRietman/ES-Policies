@@ -1,0 +1,40 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspaceName": {
+            "value": "GEN-UNIQUE"
+        },
+        "location": {
+            "value": "westeurope"
+        },
+        "cmk_keyvault": {
+            "value": "GET-PREREQ-cmk_keyvault"
+        },
+        "resource_cmk_uri": {
+            "value": "GET-PREREQ-resource_cmk_uri"
+        },
+        "storageAccountBehindVNet": {
+            "value": "true"
+        },
+        "keyVaultBehindVNet": {
+            "value": "true"
+        },
+        "containerRegistryBehindVNet": {
+            "value": "true"
+        },
+        "confidential_data": {
+            "value": "true"
+        },
+        "encryption_status": {
+            "value": "Enabled"
+        },
+        "privateEndpointType": {
+            "value": "ManualApproval"
+        },
+        "sku": {
+            "value": "enterprise"
+        }
+
+    }
+}

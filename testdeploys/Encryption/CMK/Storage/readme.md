@@ -9,8 +9,11 @@ Infrastructure encryption should be enabled via powershell or cli before be able
 Register-AzProviderFeature -ProviderNamespace Microsoft.Storage   -FeatureName AllowRequireInfraStructureEncryption
 
 
-
+Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowRequireInfraStructureEncryption
 
 Register-AzResourceProvider -ProviderNamespace 'Microsoft.Storage'
 
  https://docs.microsoft.com/en-us/azure/storage/common/infrastructure-encryption-enable?tabs=powershell
+
+New-AzResourceGroup -name mri-storage2 -location eastus
+ New-AzResourceGroupDeployment -ResourceGroupName mri-storage2 -TemplateFile .\azuredeploy.json -Verbose

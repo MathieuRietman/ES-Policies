@@ -6,6 +6,11 @@
       "type": "string",
       "defaultValue": "storage-enc-test"
     },
+        "keyVaultName": {
+      "type": "string",
+      "defaultValue": "kvstroragetest12"
+    },
+
     "keyVersion": {
       "type": "string",
       "defaultValue": ""
@@ -26,7 +31,7 @@
     {
       "condition": "[not(parameters('configureEncryptionKey'))]",
       "type": "Microsoft.KeyVault/vaults",
-      "name": "[variables('uniqueResourceNameBase')]",
+      "name": "[parameters('keyVaultName')]",
       "apiVersion": "2016-10-01",
       "location": "[parameters('location')]",
       "properties": {
@@ -78,7 +83,7 @@
       "apiVersion": "2019-07-01",
       "name": "updateStorageAccount",
       "dependsOn": [
-        "[resourceId('Microsoft.KeyVault/vaults', variables('uniqueResourceNameBase'))]"
+        "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
       ],
       "properties": {
         "mode": "Incremental",
@@ -88,7 +93,7 @@
           "resources": [
             {
               "type": "Microsoft.KeyVault/vaults/accessPolicies",
-              "name": "[concat(variables('uniqueResourceNameBase'), '/add')]",
+              "name": "[concat(parameters('keyVaultName'), '/add')]",
               "apiVersion": "2019-09-01",
               "properties": {
                 "accessPolicies": [
@@ -114,7 +119,7 @@
                 "name": "Standard_LRS",
                 "tier": "Standard"
               },
-              "kind": "Storage",
+              "kind": "StorageV2",
               "name": "[variables('uniqueResourceNameBase')]",
               "apiVersion": "2019-06-01",
               "location": "[parameters('location')]",
@@ -133,14 +138,14 @@
                   },
                   "keySource": "Microsoft.Keyvault",
                   "keyvaultproperties": {
-                    "keyvaulturi": "[reference(resourceId('Microsoft.KeyVault/vaults', variables('uniqueResourceNameBase')),'2016-10-01', 'full').properties.vaultUri]",
+                    "keyvaulturi": "[reference(resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName')),'2016-10-01', 'full').properties.vaultUri]",
                     "keyname": "[parameters('keyName')]",
                     "keyversion": "[parameters('keyversion')]"
                   }
                 }
               },
               "dependsOn": [
-                "[resourceId('Microsoft.KeyVault/vaults/accessPolicies', variables('uniqueResourceNameBase'), 'add')]"
+                "[resourceId('Microsoft.KeyVault/vaults/accessPolicies', parameters('keyVaultName'), 'add')]"
               ]
             }
           ]

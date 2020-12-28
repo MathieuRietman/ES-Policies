@@ -12751,53 +12751,6 @@
         },
         {
           "properties": {
-            "displayName": "Storage accounts should use customer-managed key (CMK) for encryption",
-            "policyType": "BuiltIn",
-            "mode": "Indexed",
-            "description": "Secure your storage account with greater flexibility using customer-managed keys (CMKs). When you specify a CMK, that key is used to protect and control access to the key that encrypts your data. Using CMKs provides additional capabilities to control rotation of the key encryption key or cryptographically erase data.",
-            "metadata": {
-              "version": "1.0.2",
-              "category": "Storage"
-            },
-            "parameters": {
-              "effect": {
-                "type": "String",
-                "metadata": {
-                  "displayName": "Effect",
-                  "description": "Enable or disable the execution of the policy"
-                },
-                "allowedValues": [
-                  "Audit",
-                  "Deny",
-                  "Disabled"
-                ],
-                "defaultValue": "Deny"
-              }
-            },
-            "PolicyRule": {
-              "if": {
-                "allOf": [
-                  {
-                    "field": "type",
-                    "equals": "Microsoft.Storage/storageAccounts"
-                  },
-                  {
-                    "not": {
-                      "field": "Microsoft.Storage/storageAccounts/encryption.keySource",
-                      "equals": "Microsoft.Keyvault"
-                    }
-                  }
-                ]
-              },
-              "then": {
-                "effect": "[[parameters('effect')]"
-              }
-            }
-          },
-          "name": "Deny-CustomerManagedKey-Storage"
-        },
-        {
-          "properties": {
             "Description": "This policy denies creation of storage accounts with IP Firewall exposed to all public endpoints",
             "DisplayName": "Public network access onStorage accounts should be disabled",
             "Mode": "Indexed",
@@ -18009,14 +17962,13 @@
               },
               "StorageCMKEffect": {
                 "type": "string",
-                "defaultValue": "Deny",
+                "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
-                  "Deny",
                   "Disabled"
                 ],
                 "metadata": {
-                  "displayName": "Storage accounts should use customer-managed key (CMK) for encryption",
+                  "displayName": "Storage accounts should use customer-managed key (CMK) for encryption, no deny as this would result in not able to create storage account because the first need of MSI for encryption",
                   "description": "Secure your storage account with greater flexibility using customer-managed keys (CMKs). When you specify a CMK, that key is used to protect and control access to the key that encrypts your data. Using CMKs provides additional capabilities to control rotation of the key encryption key or cryptographically erase data."
                 }
               }
@@ -18100,7 +18052,7 @@
                 }
               },
               {
-                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-CustomerManagedKey-Storage')]",
+                "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6fac406b-40ca-413b-bf8e-0bf964659c25",
                 "policyDefinitionReferenceId": "StorageCMKEffect",
                 "parameters": {
                   "effect": {
