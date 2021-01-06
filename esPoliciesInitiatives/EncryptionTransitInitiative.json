@@ -1,0 +1,328 @@
+{
+  "properties": {
+    "Description": "Deny or Audit resources without Encryption in transit",
+    "DisplayName": "Deny or Audit resources without Encryption in transit",
+    "Parameters": {
+      "APIAppServiceLatestTlsEffect": {
+        "metadata": {
+          "displayName": "Latest TLS version should be used in your API App",
+          "description": "Upgrade to the latest TLS version."
+        },
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ]
+      },
+      "FunctionLatestTlsEffect": {
+        "metadata": {
+          "displayName": "Latest TLS version should be used in your Function App",
+          "description": "Upgrade to the latest TLS version."
+        },
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ]
+      },
+      "WebAppServiceLatestTlsEffect": {
+        "metadata": {
+          "displayName": "Latest TLS version should be used in your Web App",
+          "description": "Upgrade to the latest TLS version."
+        },
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ]
+      },
+      "APIAppServiceHttpsEffect": {
+        "metadata": {
+          "displayName": "API App should only be accessible over HTTPS",
+          "description": "Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "FunctionServiceHttpsEffect": {
+        "metadata": {
+          "displayName": "Function App should only be accessible over HTTPS",
+          "description": "Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "WebAppServiceHttpsEffect": {
+        "metadata": {
+          "displayName": "Web Application should only be accessible over HTTPS",
+          "description": "Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "AKSIngressHttpsOnlyEffect": {
+        "metadata": {
+          "displayName": "Enforce HTTPS ingress in Kubernetes cluster",
+          "description": "This policy enforces HTTPS ingress in a Kubernetes cluster. This policy is generally available for Kubernetes Service (AKS), and preview for AKS Engine and Azure Arc enabled Kubernetes. For instructions on using this policy, visit https://aka.ms/kubepolicydoc."
+        },
+        "type": "String",
+        "defaultValue": "deny",
+        "allowedValues": [
+          "audit",
+          "deny",
+          "disabled"
+        ]
+      },
+      "MySQLEnableSSLEffect": {
+        "metadata": {
+          "displayName": "Enforce SSL connection should be enabled for MySQL database servers",
+          "description": "Azure Database for MySQL supports connecting your Azure Database for MySQL server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "PostgreSQLEnableSSLEffect": {
+        "metadata": {
+          "displayName": "Enforce SSL connection should be enabled for PostgreSQL database servers",
+          "description": "Azure Database for PostgreSQL supports connecting your Azure Database for PostgreSQL server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "RedisCacheAuditSSLPortEffect": {
+        "metadata": {
+          "displayName": "Only secure connections to your Azure Cache for Redis should be enabled",
+          "description": "Audit enabling of only connections via SSL to Azure Cache for Redis. Use of secure connections ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking."
+        },
+        "type": "String",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "SQLManagedInstanceTLSEffect": {
+        "metadata": {
+          "displayName": "SQL Managed Instance should have the minimal TLS version of 1.2",
+          "description": "Setting minimal TLS version to 1.2 improves security by ensuring your SQL Managed Instance can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "SQLServerTLSEffect": {
+        "metadata": {
+          "displayName": "Azure SQL Database should have the minimal TLS version of 1.2",
+          "description": "Setting minimal TLS version to 1.2 improves security by ensuring your Azure SQL Database can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "SQLServerTLSEffect": {
+        "metadata": {
+          "displayName": "Azure SQL Database should have the minimal TLS version of 1.2",
+          "description": "Setting minimal TLS version to 1.2 improves security by ensuring your Azure SQL Database can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ]
+      },
+      "StorageHttpsEnabledEffect": {
+        "metadata": {
+          "displayName": "Secure transfer to storage accounts should be enabled",
+          "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
+        },
+        "type": "String",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      },
+      "ServiceFabricCommunicationsEffect": {
+        "metadata": {
+          "displayName": "Service Fabric clusters should have the ClusterProtectionLevel property set to EncryptAndSign",
+          "description": "Service Fabric provides three levels of protection (None, Sign and EncryptAndSign) for node-to-node communication using a primary cluster certificate. Set the protection level to ensure that all node-to-node messages are encrypted and digitally signed"
+        },
+        "type": "String",
+        "defaultValue": "Deny",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ]
+      }
+    },
+    "PolicyDefinitionGroups": null,
+    "PolicyDefinitions": [
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8cb6aa8b-9e41-4f4e-aa25-089a7ac2581e",
+        "policyDefinitionReferenceId": "APIAppServiceLatestTlsEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('APIAppServiceLatestTlsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f9d614c5-c173-4d56-95a7-b4437057d193",
+        "policyDefinitionReferenceId": "FunctionLatestTlsEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('FunctionLatestTlsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f0e6e85b-9b9f-4a4b-b67b-f730d42f1b0b",
+        "policyDefinitionReferenceId": "WebAppServiceLatestTlsEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('WebAppServiceLatestTlsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b7ddfbdc-1260-477d-91fd-98bd9be789a6",
+        "policyDefinitionReferenceId": "APIAppServiceHttpsEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('APIAppServiceHttpsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6d555dd1-86f2-4f1c-8ed7-5abae7c6cbab",
+        "policyDefinitionReferenceId": "FunctionServiceHttpsEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('FunctionServiceHttpsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a4af4a39-4135-47fb-b175-47fbdf85311d",
+        "policyDefinitionReferenceId": "WebAppServiceHttpsEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('WebAppServiceHttpsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d",
+        "policyDefinitionReferenceId": "AKSIngressHttpsOnlyEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('AKSIngressHttpsOnlyEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/e802a67a-daf5-4436-9ea6-f6d821dd0c5d",
+        "policyDefinitionReferenceId": "MySQLEnableSSLEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('MySQLEnableSSLEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d158790f-bfb0-486c-8631-2dc6b4e8e6af",
+        "policyDefinitionReferenceId": "PostgreSQLEnableSSLEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('PostgreSQLEnableSSLEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/22bee202-a82f-4305-9a2a-6d7f44d4dedb",
+        "policyDefinitionReferenceId": "RedisCacheAuditSSLPortEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('RedisCacheAuditSSLPortEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a8793640-60f7-487c-b5c3-1d37215905c4",
+        "policyDefinitionReferenceId": "SQLManagedInstanceTLSEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SQLManagedInstanceTLSEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/32e6bbec-16b6-44c2-be37-c5b672d103cf",
+        "policyDefinitionReferenceId": "SQLServerTLSEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SQLServerTLSEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/404c3081-a854-4457-ae30-26a93ef643f9",
+        "policyDefinitionReferenceId": "StorageHttpsEnabledEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('StorageHttpsEnabledEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/617c02be-7f02-4efd-8836-3180d47b6c68",
+        "policyDefinitionReferenceId": "ServiceFabricCommunicationsEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('ServiceFabricCommunicationsEffect')]"
+          }
+        }
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Encryption"
+    }
+  },
+  "id": "/providers/Microsoft.Authorization/policySetDefinitions/Enforce-EncryptTransit",
+  "type": null,
+  "name": "Enforce-EncryptTransit"
+}

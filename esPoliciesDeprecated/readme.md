@@ -1,0 +1,1 @@
+Folder for deprecated custom policies definitions and initiatives
