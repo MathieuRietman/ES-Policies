@@ -1,5 +1,5 @@
 
-# Everything outside the src directory
+# exclude vscode
 /.vscode
 
 # Build generated files in src
@@ -245,12 +245,7 @@ _Pvt_Extensions
 .paket/paket.exe
 paket-files/
 
-# FAKE - F# Make
-.fake/
 
-# JetBrains Rider
-.idea/
-*.sln.iml
 
 # CodeRush
 .cr/
