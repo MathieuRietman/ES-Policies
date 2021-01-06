@@ -1,6 +1,6 @@
 <#
 	.SYNOPSIS
-        1. Deploy all policies from folder to SUbscription to test
+        1. makes policy assignement of every initiative in folder esPolicyInitiatives using the parameters specified in the config file  
 
 
 
@@ -10,12 +10,12 @@
 
 
 	.EXAMPLE
-	   .\DeployPolicies.ps1 
+	   .\createPolicySetAssignementsToMng.ps1 -topLevelManagementGroupPrefix MRIT -configJson Test
 	   
 	.LINK
 
 	.Notes
-		NAME:      DeployPolicies
+		NAME:      createPolicySetAssignementsToMng
 		AUTHOR(s): Mathieu Rietman <marietma@microsoft.com>
 		LASTEDIT:  12-10-2020
 		KEYWORDS:  policy management Management
@@ -24,14 +24,13 @@
 [cmdletbinding()] 
 Param (
 
-    [string]$policyfolder = "esPolicyInitiatives",
+    [string]$policyfolder = "esPoliciesInitiatives",
 
-    
-    [string]$topLevelManagementGroupPrefix = "MRIT",
+    [Parameter(Mandatory = $true)]
+    [string]$topLevelManagementGroupPrefix ,
 
     [string]$Location = "WestEurope",
 
-    [string]$SubscriptionId = "4d035de6-4cb3-4d00-9796-cdbea308da99",
     
     [Parameter(Mandatory = $true)]
     [argumentcompleter( { (get-childitem "$PSScriptRoot/config/*.json").basename })]
@@ -59,16 +58,7 @@ If (Test-Path -Path $configFile ) {
 
 
 
-    $context = Get-AzContext 
 
-    if ($context.Subscription.id -ne $SubscriptionId) {
-        Try { 
-            Set-AzContext -SubscriptionId $SubscriptionId  -ErrorAction Stop
-        } 
-        catch {
-            throw $_
-        }
-    }
 
     $Scope = "/providers/Microsoft.Management/managementGroups/$($topLevelManagementGroupPrefix)"
 

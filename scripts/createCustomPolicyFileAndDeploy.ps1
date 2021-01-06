@@ -1,3 +1,26 @@
+<#
+	.SYNOPSIS
+        1. create the policy.json and deploy it to the specified management group  
+        2. require the sample policies.json in the same flder that is used as the template for the resource deploy logic.
+
+
+
+	.DESCRIPTION
+
+         
+
+
+	.EXAMPLE
+	   .\createCustomPolicyFileAndDeploy.ps1 -topLevelManagementGroupPrefix MRIT
+	   
+	.LINK
+
+	.Notes
+		NAME:      createCustomPolicyFileAndDeploy
+		AUTHOR(s): Mathieu Rietman <marietma@microsoft.com>
+		LASTEDIT:  12-10-2020
+		KEYWORDS:  policy management Management
+#>
 
 [cmdletbinding()] 
 Param (
@@ -6,11 +29,12 @@ Param (
 
     [string]$policyFolderSource = "esPoliciesDefinitionsCustom",
 
-    [string]$policyInitiativeFolderSource = "esPolicyInitiatives",
+    [string]$policyInitiativeFolderSource = "esPoliciesInitiatives",
 
-    [string]$policyFileExport = "expPolicies.json",
+    [string]$policyFileExport = "/../armTemplates/auxiliary/policies.json",
 
-    [string]$topLevelManagementGroupPrefix = "MRIT",
+    [Parameter(Mandatory = $true)]
+    [string]$topLevelManagementGroupPrefix ,
 
     [string]$Location = "WestEurope"
 
