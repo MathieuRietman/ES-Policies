@@ -11,7 +11,7 @@
 
 
 	.EXAMPLE
-	   .\createCustomPolicyFileAndDeploy.ps1 -topLevelManagementGroupPrefix MRIT
+	   .\createCustomPolicyFileAndDeploy.ps1  
 	   
 	.LINK
 

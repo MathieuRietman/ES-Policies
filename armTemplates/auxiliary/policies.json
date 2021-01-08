@@ -17862,7 +17862,7 @@
                   "description": "Use customer-managed keys to manage the encryption at rest of the contents of your registries. By default, the data is encrypted at rest with service-managed keys, but customer-managed keys (CMK) are commonly required to meet regulatory compliance standards. CMKs enable the data to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management. Learn more about CMK encryption at https://aka.ms/acr/CMK."
                 },
                 "type": "String",
-                "defaultValue": "Deny",
+                "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -17875,7 +17875,7 @@
                   "description": "Encrypting OS and data disks using customer-managed keys provides more control and greater flexibility in key management. This is a common requirement in many regulatory and industry compliance standards."
                 },
                 "type": "String",
-                "defaultValue": "Deny",
+                "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -17884,7 +17884,7 @@
               },
               "WorkspaceCMKEffect": {
                 "type": "string",
-                "defaultValue": "Deny",
+                "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -17910,7 +17910,7 @@
               },
               "CosmosCMKEffect": {
                 "type": "string",
-                "defaultValue": "deny",
+                "defaultValue": "audit",
                 "allowedValues": [
                   "audit",
                   "deny",
@@ -17923,7 +17923,7 @@
               },
               "DataBoxCMKEffect": {
                 "type": "string",
-                "defaultValue": "Deny",
+                "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -17936,7 +17936,7 @@
               },
               "StreamAnalyticsCMKEffect": {
                 "type": "string",
-                "defaultValue": "deny",
+                "defaultValue": "audit",
                 "allowedValues": [
                   "audit",
                   "deny",
@@ -17949,7 +17949,7 @@
               },
               "SynapseWorkspaceCMKEffect": {
                 "type": "string",
-                "defaultValue": "Deny",
+                "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
                   "Deny",
