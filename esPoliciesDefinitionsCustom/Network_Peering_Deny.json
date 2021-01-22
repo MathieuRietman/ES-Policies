@@ -32,7 +32,7 @@
       "category": "Network"
     }
   },
-  "id": "/providers/Microsoft.Authorization/policyDefinitions/Deny-ERPeering",
+  "id": "/providers/Microsoft.Authorization/policyDefinitions/Deny-VNet-Peering",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "Deny-ERPeering"
+  "name": "Deny-VNet-Peering"
 }
