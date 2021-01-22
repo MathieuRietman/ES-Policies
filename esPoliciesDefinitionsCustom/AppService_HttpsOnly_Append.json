@@ -3,7 +3,7 @@
         "displayName": "Appends the AppService WebApp, APIApp, Function App to enable https only",
         "policyType": "BuiltIn",
         "mode": "Indexed",
-        "description": "Appends the site object to ensure that  HTTPS only is enabled for  server/service authentication and protects data in transit from network layer eavesdropping attacks.",
+        "description": "Appends the AppService sites object to ensure that  HTTPS only is enabled for  server/service authentication and protects data in transit from network layer eavesdropping attacks.",
         "metadata": {
             "version": "1.0.0",
             "category": "App Service"

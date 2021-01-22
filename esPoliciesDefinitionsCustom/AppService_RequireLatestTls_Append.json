@@ -1,9 +1,9 @@
 {
     "properties": {
-      "displayName": "Latest TLS version should be used in your AppService",
+      "displayName": "Appends the AppService sites config WebApp, APIApp, Function App with TLS version 1.2 ",
       "policyType": "BuiltIn",
       "mode": "Indexed",
-      "description": "Append 1.2 as the minTlsVersion",
+      "description": "Append the AppService sites object to ensure that min Tls version is set to 1.2",
       "metadata": {
         "version": "1.0.0",
         "category": "App Service"
