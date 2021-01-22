@@ -1,6 +1,6 @@
 {
     "properties": {
-      "displayName": "Latest TLS version should be used in your API App",
+      "displayName": "Latest TLS version should be used in your AppService",
       "policyType": "BuiltIn",
       "mode": "Indexed",
       "description": "Append to the latest TLS version",
@@ -29,10 +29,6 @@
               "field": "type",
               "equals": "Microsoft.Web/sites/config"
             },
-            {
-              "field": "kind",
-              "like": "*api"
-           },
             {
                 "field": "Microsoft.Web/sites/config/minTlsVersion",
                 "notEquals": "1.2"
