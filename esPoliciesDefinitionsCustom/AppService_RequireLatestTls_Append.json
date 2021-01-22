@@ -30,6 +30,10 @@
               "equals": "Microsoft.Web/sites/config"
             },
             {
+              "field": "kind",
+              "like": "*api"
+           },
+            {
                 "field": "Microsoft.Web/sites/config/minTlsVersion",
                 "notEquals": "1.2"
               }
@@ -47,7 +51,7 @@
       }
     }
     },
-    "id": "/providers/Microsoft.Authorization/policyDefinitions/Append-WebAppFunction-latestTLS",
+    "id": "/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-latestTLS",
     "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "Append-WebAppFunction-latestTLS"
+    "name": "Append-AppService-latestTLS"
   }
