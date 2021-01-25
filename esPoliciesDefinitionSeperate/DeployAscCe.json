@@ -10,7 +10,7 @@
         "Properties": {
           "Description": null,
           "DisplayName": "Deploy-ASC-ContinuousExportToWorkspace",
-          "Mode": "All",
+          "Mode": "Indexed",
           "Parameters": {
             "resourceGroupLocation": {
               "type": "String",
