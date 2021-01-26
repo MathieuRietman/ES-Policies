@@ -507,7 +507,7 @@
       },
       {
         "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-disableNonSslPort')]",
-        "policyDefinitionReferenceId": "RedisTLSDeployEffect",
+        "policyDefinitionReferenceId": "RedisdisableNonSslPort",
         "parameters": {
           "effect": {
             "value": "[parameters('RedisTLSDeployEffect')]"
@@ -516,7 +516,7 @@
       },
       {
         "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Redis-http')]",
-        "policyDefinitionReferenceId": "RedisTLSEffect",
+        "policyDefinitionReferenceId": "RedisDenyhttps",
         "parameters": {
           "effect": {
             "value": "[parameters('RedisTLSEffect')]"

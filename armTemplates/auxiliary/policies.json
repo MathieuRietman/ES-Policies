@@ -1748,9 +1748,9 @@
         },
         {
           "properties": {
-            "displayName": "AppService append sites with TLS version to enforce tls setting.",
+            "displayName": "AppService append sites with minimum TLS version to enforce.",
             "mode": "Indexed",
-            "description": "Append the AppService sites object to ensure that min Tls version is set to required TLS version. Please note Append does not enforce compliance use then deny.",
+            "description": "Append the AppService sites object to ensure that min Tls version is set to required minimum TLS version. Please note Append does not enforce compliance use then deny.",
             "metadata": {
               "version": "1.0.0",
               "category": "App Service"
@@ -11597,7 +11597,7 @@
           "properties": {
             "displayName": "Azure Cache for Redis only secure connections should be enabled",
             "mode": "Indexed",
-            "description": "Audit enabling of only connections via SSL to Azure Cache for Redis. Use of secure connections ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking",
+            "description": "Audit enabling of only connections via SSL to Azure Cache for Redis. Validate both minimum TLS version and enableNonSslPort is disabled. Use of secure connections ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking",
             "metadata": {
               "version": "1.0.0",
               "category": "Cache"
@@ -11812,9 +11812,9 @@
         },
         {
           "properties": {
-            "displayName": "Azure Cache for Redis Append a specific min TLS version requirement and enforce TLS.",
+            "displayName": "Azure Cache for Redis Append a the enforcement that enableNonSslPort is disabled.",
             "Mode": "Indexed",
-            "description": "Append a specific min TLS version requirement and enforce SSL on Azure Cache for Redis. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
+            "description": "Azure Cache for Redis Append a the enforcement that enableNonSslPort is disabled. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
             "metadata": {
               "version": "1.0.0",
               "category": "Cache"
@@ -11928,157 +11928,6 @@
             }
           },
           "name": "Append-Redis-sslEnforcement"
-        },
-        {
-          "properties": {
-            "displayName": "Azure Cache for Redis deploy a specific min TLS version requirement and enforce TLS.",
-            "Mode": "Indexed",
-            "description": "Deploy a specific min TLS version requirement and enforce SSL on Azure Cache for Redis. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
-            "metadata": {
-              "version": "1.0.0",
-              "category": "Cache"
-            },
-            "parameters": {
-              "effect": {
-                "type": "string",
-                "defaultValue": "DeployIfNotExists",
-                "allowedValues": [
-                  "DeployIfNotExists",
-                  "Disabled"
-                ],
-                "metadata": {
-                  "displayName": "Effect Azure Cache for Redis",
-                  "description": "Enable or disable the execution of the policy minimum TLS version Azure Cache for Redis"
-                }
-              },
-              "minimumTlsVersion": {
-                "type": "string",
-                "defaultValue": "1.2",
-                "allowedValues": [
-                  "1.2",
-                  "1.1",
-                  "1.0"
-                ],
-                "metadata": {
-                  "displayName": "Select version for Redis server",
-                  "description": "Select version minimum TLS version Azure Cache for Redis to enforce"
-                }
-              }
-            },
-            "PolicyRule": {
-              "if": {
-                "allOf": [
-                  {
-                    "field": "type",
-                    "equals": "Microsoft.Cache/redis"
-                  },
-                  {
-                    "anyOf": [
-                      {
-                        "field": "Microsoft.Cache/Redis/minimumTlsVersion",
-                        "notequals": "[[parameters('minimumTlsVersion')]"
-                      },
-                      {
-                        "field": "Microsoft.Cache/Redis/enableNonSslPort",
-                        "equals": "true"
-                      }
-                    ]
-                  }
-                ]
-              },
-              "then": {
-                "effect": "[[parameters('effect')]",
-                "details": {
-                  "type": "Microsoft.Cache/Redis/servers",
-                  "existenceCondition": {
-                    "allOf": [
-                      {
-                        "field": "Microsoft.Cache/Redis/minimumTlsVersion",
-                        "equals": "[[parameters('minimumTlsVersion')]"
-                      },
-                      {
-                        "field": "Microsoft.Cache/Redis/enableNonSslPort",
-                        "equals": "false"
-                      }
-                    ]
-                  },
-                  "name": "current",
-                  "roleDefinitionIds": [
-                    "/providers/microsoft.authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
-                  ],
-                  "deployment": {
-                    "properties": {
-                      "mode": "incremental",
-                      "template": {
-                        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-                        "contentVersion": "1.0.0.0",
-                        "parameters": {
-                          "resourceName": {
-                            "type": "string"
-                          },
-                          "minimumTlsVersion": {
-                            "type": "string"
-                          },
-                          "location": {
-                            "type": "string"
-                          },
-                          "sku": {
-                            "type": "string"
-                          },
-                          "family": {
-                            "type": "string"
-                          },
-                          "capacity": {
-                            "type": "int"
-                          }
-                        },
-                        "variables": {},
-                        "resources": [
-                          {
-                            "type": "Microsoft.Cache/Redis",
-                            "apiVersion": "2019-07-01",
-                            "name": "[[concat(parameters('resourceName'))]",
-                            "location": "[[parameters('location')]",
-                            "properties": {
-                              "sku": {
-                                "name": "[[parameters('sku')]",
-                                "family": "[[parameters('family')]",
-                                "capacity": "[[parameters('capacity')]"
-                              },
-                              "enableNonSslPort": false,
-                              "minimumTlsVersion": "[[parameters('minimumTlsVersion')]"
-                            }
-                          }
-                        ],
-                        "outputs": {}
-                      },
-                      "parameters": {
-                        "resourceName": {
-                          "value": "[[field('name')]"
-                        },
-                        "sku": {
-                          "value": "[[field('Microsoft.Cache/Redis/sku.name')]"
-                        },
-                        "family": {
-                          "value": "[[field('Microsoft.Cache/Redis/sku.family')]"
-                        },
-                        "capacity": {
-                          "value": "[[field('Microsoft.Cache/Redis/sku.capacity')]"
-                        },
-                        "minimumTlsVersion": {
-                          "value": "[[parameters('minimumTlsVersion')]"
-                        },
-                        "location": {
-                          "value": "[[field('location')]"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "name": "Deploy-Redis-sslEnforcement"
         },
         {
           "properties": {
@@ -14163,7 +14012,7 @@
         },
         {
           "properties": {
-            "displayName": "STorage Account set to minumum TLS and Secure transfer should be enabled",
+            "displayName": "Storage Account set to minumum TLS and Secure transfer should be enabled",
             "policyType": "BuiltIn",
             "mode": "Indexed",
             "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking",
@@ -19497,7 +19346,7 @@
               },
               "AksCmkEffect": {
                 "metadata": {
-                  "displayName": "Both operating systems and data disks in Azure Kubernetes Service clusters should be encrypted by customer-managed keys",
+                  "displayName": "Azure Kubernetes Service clusters both operating systems and data disks should be encrypted by customer-managed keys",
                   "description": "Encrypting OS and data disks using customer-managed keys provides more control and greater flexibility in key management. This is a common requirement in many regulatory and industry compliance standards."
                 },
                 "type": "String",
@@ -19606,7 +19455,7 @@
                   "Disabled"
                 ],
                 "metadata": {
-                  "displayName": "Bring your own key data protection should be enabled for MySQL servers",
+                  "displayName": "Azure MySQL servers bring your own key data protection should be enabled",
                   "description": "Use customer-managed keys to manage the encryption at rest of your MySQL servers. By default, the data is encrypted at rest with service-managed keys, but customer-managed keys (CMK) are commonly required to meet regulatory compliance standards. CMKs enable the data to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management."
                 }
               },
@@ -19618,7 +19467,7 @@
                   "Disabled"
                 ],
                 "metadata": {
-                  "displayName": "Bring your own key data protection should be enabled for PostgreSQL servers",
+                  "displayName": "Azure PostgreSQL servers bring your own key data protection should be enabled",
                   "description": "Use customer-managed keys to manage the encryption at rest of your PostgreSQL servers. By default, the data is encrypted at rest with service-managed keys, but customer-managed keys (CMK) are commonly required to meet regulatory compliance standards. CMKs enable the data to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management."
                 }
               },
@@ -20414,7 +20263,7 @@
               },
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-disableNonSslPort')]",
-                "policyDefinitionReferenceId": "RedisTLSDeployEffect",
+                "policyDefinitionReferenceId": "RedisdisableNonSslPort",
                 "parameters": {
                   "effect": {
                     "value": "[[parameters('RedisTLSDeployEffect')]"
@@ -20423,7 +20272,7 @@
               },
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Redis-http')]",
-                "policyDefinitionReferenceId": "RedisTLSEffect",
+                "policyDefinitionReferenceId": "RedisDenyhttps",
                 "parameters": {
                   "effect": {
                     "value": "[[parameters('RedisTLSEffect')]"
