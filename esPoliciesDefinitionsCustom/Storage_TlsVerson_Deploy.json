@@ -1,11 +1,11 @@
 {
   "properties": {
-    "displayName": "Deploy a specific min TLS version requirement and enforce SSL on Azure Cache for Redis",
+    "displayName": "Azure Storage deploy a specific min TLS version requirement and enforce SSL/HTTPS ",
     "Mode": "Indexed",
-    "description": "Deploy a specific min TLS version requirement and enforce SSL on Azure Cache for Redis. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
+    "description": "Deploy a specific min TLS version requirement and enforce SSL on Azure STorage. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
     "metadata": {
       "version": "1.0.0",
-      "category": "Cache"
+      "category": "Storage"
     },
     "parameters": {
       "effect": {
@@ -16,21 +16,21 @@
           "Disabled"
         ],
         "metadata": {
-          "displayName": "Effect Azure Cache for Redis",
-          "description": "Enable or disable the execution of the policy minimum TLS version Azure Cache for Redis"
+          "displayName": "Effect Azure STorage",
+          "description": "Enable or disable the execution of the policy minimum TLS version Azure STorage"
         }
       },
       "minimumTlsVersion": {
         "type": "string",
-        "defaultValue": "1.2",
+        "defaultValue": "TLS1_2",
         "allowedValues": [
-          "1.2",
-          "1.1",
-          "1.0"
+          "TLS1_2",
+          "TLS1_1",
+          "TLS1_0"
         ],
         "metadata": {
-          "displayName": "Select version for Redis server",
-          "description": "Select version minimum TLS version Azure Cache for Redis to enforce"
+          "displayName": "Select version for PostgreSQL server",
+          "description": "Select version minimum TLS version Azure STorage to enforce"
         }
       }
     },
@@ -39,17 +39,17 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Cache/redis"
+            "equals": "Microsoft.Storage/storageAccounts"
           },
           {
             "anyOf": [
               {
-                "field": "Microsoft.Cache/Redis/minimumTlsVersion",
-                "notequals": "[parameters('minimumTlsVersion')]"
+                "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+                "notEquals": "true"
               },
               {
-                "field": "Microsoft.Cache/Redis/enableNonSslPort",
-                "equals": "true"
+                "field": "Microsoft.Storage/storageAccounts/minimumTlsVersion",
+                "notEquals": "[parameters('minimumTlsVersion')]"
               }
             ]
           }
@@ -58,12 +58,20 @@
       "then": {
         "effect": "[parameters('effect')]",
         "details": {
-          "type": "Microsoft.Cache/Redis/servers",
+          "type": "Microsoft.DBforPostgreSQL/servers",
           "existenceCondition": {
             "allOf": [
               {
-                "field": "Microsoft.Cache/Redis/minimumTlsVersion",
+                "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+                "equals": "true"
+              },
+              {
+                "field": "Microsoft.Storage/storageAccounts/minimumTlsVersion",
                 "equals": "[parameters('minimumTlsVersion')]"
+              },
+              {
+                "field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+                "equals": "false"
               }
             ]
           },
@@ -91,12 +99,12 @@
                 "variables": {},
                 "resources": [
                   {
-                    "type": "Microsoft.Cache/Redis",
-                    "apiVersion": "2019-07-01",
+                    "type": "Microsoft.Storage/storageAccounts",
+                    "apiVersion": "2019-06-01",
                     "name": "[concat(parameters('resourceName'))]",
                     "location": "[parameters('location')]",
                     "properties": {
-                      "enableNonSslPort": false,
+                      "supportsHttpsTrafficOnly":true,
                       "minimumTlsVersion": "[parameters('minimumTlsVersion')]"
                     }
                   }
@@ -120,7 +128,7 @@
       }
     }
   },
-  "id": "/providers/Microsoft.Authorization/policyDefinitions/Deploy-Redis-sslEnforcement",
+  "id": "/providers/Microsoft.Authorization/policyDefinitions/Deploy-Storage-sslEnforcement",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "Deploy-Redis-sslEnforcement"
+  "name": "Deploy-Storage-sslEnforcement"
 }

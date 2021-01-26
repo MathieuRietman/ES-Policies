@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for PostgreSQL server",
+    "displayName": "Azure Database for PostgreSQL server deploy a specific min TLS version requirement and enforce SSL ",
     "Mode": "Indexed",
     "description": "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for PostgreSQL server. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
     "metadata": {
@@ -25,7 +25,7 @@
         "defaultValue": "TLS1_2",
         "allowedValues": [
           "TLS1_2",
-          "TLS1_0", 
+          "TLS1_0",
           "TLS1_1",
           "TLSEnforcementDisabled"
         ],
@@ -43,8 +43,16 @@
             "equals": "Microsoft.DBforPostgreSQL/servers"
           },
           {
-            "field": "Microsoft.DBforPostgreSQL/servers/minimalTlsVersion",
-            "notequals": "[parameters('minimalTlsVersion')]"
+            "anyOf": [
+              {
+                "field": "Microsoft.DBforPostgreSQL/servers/sslEnforcement",
+                "notEquals": "Enabled"
+              },
+              {
+                "field": "Microsoft.DBforPostgreSQL/servers/minimalTlsVersion",
+                "notEquals": "[parameters('minimalTlsVersion')]"
+              }
+            ]
           }
         ]
       },
@@ -54,6 +62,10 @@
           "type": "Microsoft.DBforPostgreSQL/servers",
           "existenceCondition": {
             "allOf": [
+              {
+                "field": "Microsoft.DBforPostgreSQL/servers/sslEnforcement",
+                "equals": "Enabled"
+              },
               {
                 "field": "Microsoft.DBforPostgreSQL/servers/minimalTlsVersion",
                 "equals": "[parameters('minimalTlsVersion')]"
@@ -91,7 +103,6 @@
                     "properties": {
                       "sslEnforcement": "[if(equals(parameters('minimalTlsVersion'), 'TLSEnforcementDisabled'),'Disabled', 'Enabled')]",
                       "minimalTlsVersion": "[parameters('minimalTlsVersion')]"
-
                     }
                   }
                 ],

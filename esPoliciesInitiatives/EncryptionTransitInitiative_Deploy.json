@@ -12,7 +12,8 @@
         ],
         "metadata": {
           "displayName": "App Service. Appends the AppService sites config WebApp, APIApp, Function App with TLS version selected below",
-          "description": "Append the AppService sites object to ensure that min Tls version is set to required TLS version. Please note Append does not enforce compliance use then deny."        }
+          "description": "Append the AppService sites object to ensure that min Tls version is set to required TLS version. Please note Append does not enforce compliance use then deny."
+        }
       },
       "AppServiceTlsVersionEffect": {
         "type": "string",
@@ -26,7 +27,6 @@
           "description": "App Service. Appends the AppService sites object to ensure that  HTTPS only is enabled for  server/service authentication and protects data in transit from network layer eavesdropping attacks. Please note Append does not enforce compliance use then deny."
         }
       },
-
       "AppServiceminTlsVersion": {
         "type": "string",
         "defaultValue": "1.2",
@@ -101,7 +101,7 @@
           "AuditIfNotExists",
           "Disabled"
         ]
-      },     
+      },
       "WebAppServiceHttpsEffect": {
         "metadata": {
           "displayName": "App Service Web App. Web Application should only be accessible over HTTPS. Choose Deny or Audit in combination with Append policy.",
@@ -137,7 +137,7 @@
         ],
         "metadata": {
           "displayName": "MySQL database servers. Deploy if not exist set minimum TLS version Azure Database for MySQL server",
-          "description":  "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for MySQL server. Enforce the Server to client applications using minimum version of Tls to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
+          "description": "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for MySQL server. Enforce the Server to client applications using minimum version of Tls to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
         }
       },
       "MySQLEnableSSLEffect": {
@@ -176,7 +176,7 @@
         ],
         "metadata": {
           "displayName": "PostgreSQL database servers. Deploy if not exist set minimum TLS version Azure Database for PostgreSQL server",
-          "description":  "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for PostgreSQL server. Enforce the Server to client applications using minimum version of Tls to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
+          "description": "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for PostgreSQL server. Enforce the Server to client applications using minimum version of Tls to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
         }
       },
       "PostgreSQLEnableSSLEffect": {
@@ -208,9 +208,9 @@
       },
       "RedisTLSDeployEffect": {
         "type": "string",
-        "defaultValue": "DeployIfNotExists",
+        "defaultValue": "Append",
         "allowedValues": [
-          "DeployIfNotExists",
+          "Append",
           "Disabled"
         ],
         "metadata": {
@@ -223,7 +223,7 @@
         "defaultValue": "1.2",
         "allowedValues": [
           "1.2",
-          "1.0", 
+          "1.0",
           "1.1"
         ],
         "metadata": {
@@ -261,7 +261,7 @@
         "defaultValue": "1.2",
         "allowedValues": [
           "1.2",
-          "1.0", 
+          "1.0",
           "1.1"
         ],
         "metadata": {
@@ -299,7 +299,7 @@
         "defaultValue": "1.2",
         "allowedValues": [
           "1.2",
-          "1.0", 
+          "1.0",
           "1.1"
         ],
         "metadata": {
@@ -320,26 +320,38 @@
           "Deny"
         ]
       },
-      "StorageHttpsEnabledEffect": {
+      "StorageDeployHttpsEnabledEffect": {
         "metadata": {
-          "displayName": "Azure STorage Account. Secure transfer to storage accounts should be enabled",
+          "displayName": "Azure Storage Account. Deploy Secure transfer to storage accounts should be enabled",
           "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
         },
         "type": "String",
-        "defaultValue": "Deny",
+        "defaultValue": "DeployIfNotExists",
         "allowedValues": [
-          "Audit",
-          "Deny",
+          "DeployIfNotExists",
           "Disabled"
         ]
       },
-      "ServiceFabricCommunicationsEffect": {
+      "StorageminimumTlsVersion": {
+        "type": "string",
+        "defaultValue": "TLS1_2",
+        "allowedValues": [
+          "TLS1_2",
+          "TLS1_1",
+          "TLS1_0"
+        ],
         "metadata": {
-          "displayName": "Service Fabric clusters should have the ClusterProtectionLevel property set to EncryptAndSign",
-          "description": "Service Fabric provides three levels of protection (None, Sign and EncryptAndSign) for node-to-node communication using a primary cluster certificate. Set the protection level to ensure that all node-to-node messages are encrypted and digitally signed"
+          "displayName": "Storage Account select minimum TLS version",
+          "description": "Select version  minimum TLS version on Azure Storage Account to enforce"
+        }
+      },
+      "StorageHttpsEnabledEffect": {
+        "metadata": {
+          "displayName": "Azure Storage Account. Secure transfer to storage accounts should be enabled",
+          "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
         },
         "type": "String",
-        "defaultValue": "Deny",
+        "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
           "Deny",
@@ -482,7 +494,7 @@
         }
       },
       {
-        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Redis-sslEnforcement')]",
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-sslEnforcement')]",
         "policyDefinitionReferenceId": "RedisTLSDeployEffect",
         "parameters": {
           "effect": {
@@ -490,6 +502,15 @@
           },
           "minimumTlsVersion": {
             "value": "[parameters('RedisMinTlsVersion')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-Redis-disableNonSslPort')]",
+        "policyDefinitionReferenceId": "RedisTLSDeployEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('RedisTLSDeployEffect')]"
           }
         }
       },
@@ -554,20 +575,26 @@
         }
       },
       {
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/404c3081-a854-4457-ae30-26a93ef643f9",
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Storage-minTLS')]",
         "policyDefinitionReferenceId": "StorageHttpsEnabledEffect",
         "parameters": {
           "effect": {
             "value": "[parameters('StorageHttpsEnabledEffect')]"
+          },
+          "minimumTlsVersion": {
+            "value": "[parameters('StorageMinimumTlsVersion')]"
           }
         }
       },
       {
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/617c02be-7f02-4efd-8836-3180d47b6c68",
-        "policyDefinitionReferenceId": "ServiceFabricCommunicationsEffect",
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Storage-sslEnforcement')]",
+        "policyDefinitionReferenceId": "StorageDeployHttpsEnabledEffect",
         "parameters": {
           "effect": {
-            "value": "[parameters('ServiceFabricCommunicationsEffect')]"
+            "value": "[parameters('StorageDeployHttpsEnabledEffect')]"
+          },
+          "minimumTlsVersion": {
+            "value": "[parameters('StorageMinimumTlsVersion')]"
           }
         }
       }

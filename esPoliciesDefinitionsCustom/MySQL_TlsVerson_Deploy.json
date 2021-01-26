@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for MySQL server",
+    "displayName": "Azure Database for MySQL server deploy a specific min TLS version and enforce SSL.",
     "Mode": "Indexed",
     "description": "Deploy a specific min TLS version requirement and enforce SSL on Azure Database for MySQL server. Enforce the Server to client applications using minimum version of Tls to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
     "metadata": {
@@ -43,8 +43,16 @@
             "equals": "Microsoft.DBforMySQL/servers"
           },
           {
-            "field": "Microsoft.DBforMySQL/servers/minimalTlsVersion",
-            "notequals": "[parameters('minimalTlsVersion')]"
+            "anyOf": [
+              {
+                "field": "Microsoft.DBforMySQL/servers/sslEnforcement",
+                "notEquals": "Enabled"
+              },
+              {
+                "field": "Microsoft.DBforMySQL/servers/minimalTlsVersion",
+                "notequals": "[parameters('minimalTlsVersion')]"
+              }
+            ]
           }
 
         ]
@@ -56,12 +64,15 @@
           "existenceCondition": {
             "allOf": [
               {
+                "field": "Microsoft.DBforMySQL/servers/sslEnforcement",
+                "equals": "Enabled"
+              },
+              {
                 "field": "Microsoft.DBforMySQL/servers/minimalTlsVersion",
                 "equals": "[parameters('minimalTlsVersion')]"
               }
             ]
           },
-          "name": "current",
           "roleDefinitionIds": [
             "/providers/microsoft.authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
           ],
