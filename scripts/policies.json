@@ -5058,7 +5058,7 @@
                             ]
                           }
                         },
-                        "Equals": 6
+                        "equals": 6
                       },
                       {
                         "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
@@ -7799,7 +7799,7 @@
                   "name": "[[parameters('hubName')]",
                   "deploymentScope": "Subscription",
                   "existenceScope": "ResourceGroup",
-                  "ResourceGroupName": "[[parameters('rgName')]",
+                  "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
                     "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
@@ -9271,7 +9271,7 @@
                   "name": "[[parameters('vHubName')]",
                   "deploymentScope": "Subscription",
                   "existenceScope": "ResourceGroup",
-                  "ResourceGroupName": "[[parameters('rgName')]",
+                  "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
                     "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
@@ -9494,7 +9494,7 @@
                                       },
                                       "sku": {
                                         "name": "AZFW_Hub",
-                                        "Tier": "Standard"
+                                        "tier": "Standard"
                                       },
                                       "firewallPolicy": {
                                         "id": "[[if(not(empty(parameters('azfw').firewallPolicy.id)),parameters('azfw').firewallPolicy.id, json('null'))]"
@@ -10218,7 +10218,7 @@
                               "typeHandlerVersion": "1.3",
                               "autoUpgradeMinorVersion": true,
                               "settings": {
-                                "name": "[[parameters('domainFQDN')]",
+                                "Name": "[[parameters('domainFQDN')]",
                                 "User": "[[parameters('domainUserName')]",
                                 "Restart": "true",
                                 "Options": "[[variables('domainJoinOptions')]",
@@ -10249,8 +10249,8 @@
             "description": null,
             "displayName": "Deny-Public-Endpoints-for-PaaS-Services",
             "parameters": {},
-            "PolicyDefinitionGroups": null,
-            "PolicyDefinitions": [
+            "policyDefinitionGroups": null,
+            "policyDefinitions": [
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-PublicEndpoint-CosmosDB')]",
                 "parameters": {}
@@ -10301,7 +10301,7 @@
                 }
               }
             },
-            "PolicyDefinitions": [
+            "policyDefinitions": [
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-NIC')]",
                 "parameters": {
@@ -10726,8 +10726,8 @@
                 }
               }
             },
-            "PolicyDefinitionGroups": null,
-            "PolicyDefinitions": [
+            "policyDefinitionGroups": null,
+            "policyDefinitions": [
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-Tde')]",
                 "parameters": {}

@@ -108,8 +108,8 @@
         }
       }
     },
-    "PolicyDefinitionGroups": null,
-    "PolicyDefinitions": [
+    "policyDefinitionGroups": null,
+    "policyDefinitions": [
       {
         "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-PublicEndpoint-CosmosDB')]",
         "policyDefinitionReferenceId": "CosmosDenyPaasPublicIP",

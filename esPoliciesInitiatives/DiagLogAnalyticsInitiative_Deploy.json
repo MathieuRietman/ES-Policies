@@ -716,8 +716,8 @@
         }
       }
     },
-    "PolicyDefinitionGroups": null,
-    "PolicyDefinitions": [
+    "policyDefinitionGroups": null,
+    "policyDefinitions": [
       {
         "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-ACI')]",
         "policyDefinitionReferenceId": "ACIDeployDiagnosticLogDeployLogAnalytics",

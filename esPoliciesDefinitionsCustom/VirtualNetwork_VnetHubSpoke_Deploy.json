@@ -24,7 +24,7 @@
           "name": "[parameters('vNetName')]",
           "deploymentScope": "Subscription",
           "existenceScope": "ResourceGroup",
-          "ResourceGroupName": "[parameters('vNetRgName')]",
+          "resourceGroupName": "[parameters('vNetRgName')]",
           "roleDefinitionIds": [
             "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],

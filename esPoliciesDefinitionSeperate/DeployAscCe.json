@@ -5,8 +5,8 @@
     "input": {
       "value": {
         "name": "Deploy-ASC-CE",
-        "ResourceType": "Microsoft.Authorization/policyDefinitions",
-        "SubscriptionId": null,
+        "resourceType": "Microsoft.Authorization/policyDefinitions",
+        "subscriptionId": null,
         "properties": {
           "description": null,
           "displayName": "Deploy-ASC-ContinuousExportToWorkspace",
@@ -97,7 +97,7 @@
                 "type": "Microsoft.Security/automations",
                 "name": "ExportToWorkspace",
                 "existenceScope": "resourcegroup",
-                "ResourceGroupName": "[concat(subscription().displayName, '-asc')]",
+                "resourceGroupName": "[concat(subscription().displayName, '-asc')]",
                 "deploymentScope": "subscription",
                 "roleDefinitionIds": [
                   "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
