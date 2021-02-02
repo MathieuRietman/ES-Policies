@@ -37,8 +37,8 @@
       "azfw": {
         "type": "Object",
         "metadata": {
-          "displayName": "ergw",
-          "description": "Object describing ExpressRoute gateway"
+          "displayName": "azfw",
+          "description": "Object describing Azure Firewall"
         },
         "defaultValue": {}
       },
