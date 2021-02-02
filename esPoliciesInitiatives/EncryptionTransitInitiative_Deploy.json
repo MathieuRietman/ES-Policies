@@ -208,7 +208,7 @@
       },
       "RedisTLSDeployEffect": {
         "type": "string",
-        "defaultValue": "Append",
+        "defaultValue":  "Append",
         "allowedValues": [
           "Append",
           "Disabled"

@@ -179,6 +179,18 @@
           "displayName": "Azure Batch account should use customer-managed keys to encrypt data",
           "description": "Use customer-managed keys (CMKs) to manage the encryption at rest of your Batch account's data. By default, customer data is encrypted with service-managed keys, but CMKs are commonly required to meet regulatory compliance standards. CMKs enable the data to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management. Learn more about CMK encryption at https://aka.ms/Batch-CMK."
         }
+      },
+      "EncryptedVMDisksEffect": {
+        "type": "string",
+        "defaultValue":  "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Disk encryption should be applied on virtual machines",
+          "description": "Virtual machines without an enabled disk encryption will be monitored by Azure Security Center as recommendations."
+        }
       }
     },
     "PolicyDefinitionGroups": null,
@@ -306,6 +318,15 @@
         "parameters": {
           "effect": {
             "value": "[parameters('AzureBatchCMKEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0961003e-5a0a-4549-abde-af6a37f2724d",
+        "policyDefinitionReferenceId": "EncryptedVMDisksEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('EncryptedVMDisksEffect')]"
           }
         }
       }
