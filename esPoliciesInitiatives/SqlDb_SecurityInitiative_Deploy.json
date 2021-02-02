@@ -1,8 +1,8 @@
 {
   "properties": {
-    "Description": "Deploy auditing, Alert, TDE and SQL vulnerability to SQL Databases when it not exist in the deployment",
-    "DisplayName": "Deploy SQL Database built-in SQL security configuration",
-    "Parameters": {
+    "description": "Deploy auditing, Alert, TDE and SQL vulnerability to SQL Databases when it not exist in the deployment",
+    "displayName": "Deploy SQL Database built-in SQL security configuration",
+    "parameters": {
       "vulnerabilityAssessmentsEmail": {
         "metadata": {
           "description": "The email address to send alerts",

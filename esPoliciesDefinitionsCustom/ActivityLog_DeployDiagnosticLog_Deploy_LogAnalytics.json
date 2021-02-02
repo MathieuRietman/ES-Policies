@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploys the diagnostic settings for Activity Log to stream to a Log Analytics workspace when any Activity Log which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with category enabled.",
-    "DisplayName": "Deploy Diagnostic Settings for Activity Log to Log Analytics workspace",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploys the diagnostic settings for Activity Log to stream to a Log Analytics workspace when any Activity Log which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with category enabled.",
+    "displayName": "Deploy Diagnostic Settings for Activity Log to Log Analytics workspace",
+    "mode": "Indexed",
+    "parameters": {
       "logAnalytics": {
         "type": "String",
         "metadata": {
@@ -37,7 +37,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -67,7 +67,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

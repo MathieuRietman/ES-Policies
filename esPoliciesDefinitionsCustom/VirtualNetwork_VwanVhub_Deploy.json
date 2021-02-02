@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured in the desired region. ",
-    "DisplayName": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured.",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured in the desired region. ",
+    "displayName": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured.",
+    "mode": "Indexed",
+    "parameters": {
       "vwanname": {
         "type": "String",
         "metadata": {
@@ -70,7 +70,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -93,7 +93,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "rgName": {
                   "value": "[parameters('rgName')]"

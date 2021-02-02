@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploy auditing settings to SQL Database when it not exist in the deployment",
-    "DisplayName": "Deploy SQL database auditing settings",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploy auditing settings to SQL Database when it not exist in the deployment",
+    "displayName": "Deploy SQL database auditing settings",
+    "mode": "Indexed",
+    "parameters": {
       "effect": {
         "type": "string",
         "defaultValue": "DeployIfNotExists",
@@ -17,7 +17,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.Sql/servers/databases"
@@ -41,7 +41,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

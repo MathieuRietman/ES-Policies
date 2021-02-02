@@ -1,8 +1,8 @@
 {
   "properties": {
-    "Description": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
-    "DisplayName": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
-    "Parameters": {
+    "description": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
+    "displayName": "Deny or Audit resources without Encryption with a customer-managed key (CMK)",
+    "parameters": {
       "ACRCmkEffect": {
         "metadata": {
           "displayName": "Container registries should be encrypted with a customer-managed key (CMK)",

@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploys  the Azure Defender settings in Azure Security Center for  the specific services.",
-    "DisplayName": "Deploy Azure Defender settings in Azure Security Center.",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploys  the Azure Defender settings in Azure Security Center for  the specific services.",
+    "displayName": "Deploy Azure Defender settings in Azure Security Center.",
+    "mode": "Indexed",
+    "parameters": {
       "pricingTierVMs": {
         "type": "String",
         "metadata": {
@@ -129,7 +129,7 @@
       "version": "1.0.0",
       "category": "Security Center"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -162,7 +162,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "pricingTierVMs": {
                   "value": "[parameters('pricingTierVMs')]"

@@ -12,13 +12,13 @@
     "policies": {
       "policyDefinitions": [
         {
-          "Name": "Append-KV-SoftDelete",
-          "Properties": {
-            "Description": "When a Key Vault is created with out soft delete enabled then this will add it.",
-            "DisplayName": "Append-KV-SoftDelete",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Append-KV-SoftDelete",
+          "properties": {
+            "description": "When a Key Vault is created with out soft delete enabled then this will add it.",
+            "displayName": "Append-KV-SoftDelete",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "anyOf": [
                   {
@@ -48,13 +48,13 @@
           }
         },
         {
-          "Name": "Deny-AppGW-Without-WAF",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deny-AppGW-Without-WAF",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deny-AppGW-Without-WAF",
+          "properties": {
+            "description": null,
+            "displayName": "Deny-AppGW-Without-WAF",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -74,13 +74,13 @@
           }
         },
         {
-          "Name": "Deny-ERPeering",
-          "Properties": {
-            "Description": "Denies creation of ER Peerings under the assigned scope.",
-            "DisplayName": "Deny-ERPeering",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deny-ERPeering",
+          "properties": {
+            "description": "Denies creation of ER Peerings under the assigned scope.",
+            "displayName": "Deny-ERPeering",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
@@ -92,13 +92,13 @@
           }
         },
         {
-          "Name": "Deny-Private-DNS-Zones",
-          "Properties": {
-            "Description": "Denies creation of Private DNS Zones under the assigned scope",
-            "DisplayName": "Deny-Private-DNS-Zones",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deny-Private-DNS-Zones",
+          "properties": {
+            "description": "Denies creation of Private DNS Zones under the assigned scope",
+            "displayName": "Deny-Private-DNS-Zones",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/privateDnsZones"
@@ -110,13 +110,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-Aks",
-          "Properties": {
-            "Description": "This policy restricts creation of non-private AKS clusters",
-            "DisplayName": "Deny-PublicEndpoint-Aks",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-Aks",
+          "properties": {
+            "description": "This policy restricts creation of non-private AKS clusters",
+            "displayName": "Deny-PublicEndpoint-Aks",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -136,13 +136,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-CosmosDB",
-          "Properties": {
-            "Description": "This policy restrict creation of cosmos db accounts with exposed public endpoints",
-            "DisplayName": "Deny-PublicEndpoint-CosmosDB",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-CosmosDB",
+          "properties": {
+            "description": "This policy restrict creation of cosmos db accounts with exposed public endpoints",
+            "displayName": "Deny-PublicEndpoint-CosmosDB",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -162,13 +162,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-KeyVault",
-          "Properties": {
-            "Description": "This policy restrict creation of Key Vaults with IP Firewall exposed to all public endpoints",
-            "DisplayName": "Deny-PublicEndpoint-KeyVault",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-KeyVault",
+          "properties": {
+            "description": "This policy restrict creation of Key Vaults with IP Firewall exposed to all public endpoints",
+            "displayName": "Deny-PublicEndpoint-KeyVault",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -188,13 +188,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-MariaDB",
-          "Properties": {
-            "Description": "This policy restrict creation of Maria DB accounts with exposed public endpoints",
-            "DisplayName": "Deny-PublicEndpoint-MariaDB",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-MariaDB",
+          "properties": {
+            "description": "This policy restrict creation of Maria DB accounts with exposed public endpoints",
+            "displayName": "Deny-PublicEndpoint-MariaDB",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -214,13 +214,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-MySQL",
-          "Properties": {
-            "Description": "This policy restrict creation of MySql DB accounts with exposed public endpoints",
-            "DisplayName": "Deny-PublicEndpoint-MySQL",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-MySQL",
+          "properties": {
+            "description": "This policy restrict creation of MySql DB accounts with exposed public endpoints",
+            "displayName": "Deny-PublicEndpoint-MySQL",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -240,13 +240,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-PostgreSql",
-          "Properties": {
-            "Description": "This policy restrict creation of Postgre SQL DB accounts with exposed public endpoints",
-            "DisplayName": "Deny-PublicEndpoint-PostgreSql",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-PostgreSql",
+          "properties": {
+            "description": "This policy restrict creation of Postgre SQL DB accounts with exposed public endpoints",
+            "displayName": "Deny-PublicEndpoint-PostgreSql",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -266,13 +266,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-Sql",
-          "Properties": {
-            "Description": "This policy restrict creation of Sql servers with exposed public endpoints",
-            "DisplayName": "Deny-PublicEndpoint-Sql",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-Sql",
+          "properties": {
+            "description": "This policy restrict creation of Sql servers with exposed public endpoints",
+            "displayName": "Deny-PublicEndpoint-Sql",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -292,13 +292,13 @@
           }
         },
         {
-          "Name": "Deny-PublicEndpoint-Storage",
-          "Properties": {
-            "Description": "This policy restrict creation of storage accounts with IP Firewall exposed to all public endpoints",
-            "DisplayName": "Deny-PublicEndpoint-Storage",
-            "Mode": "All",
-            "Parameters": null,
-            "PolicyRule": {
+          "name": "Deny-PublicEndpoint-Storage",
+          "properties": {
+            "description": "This policy restrict creation of storage accounts with IP Firewall exposed to all public endpoints",
+            "displayName": "Deny-PublicEndpoint-Storage",
+            "mode": "All",
+            "parameters": null,
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -318,13 +318,13 @@
           }
         },
         {
-          "Name": "Deny-PublicIP",
-          "Properties": {
-            "Description": "Denies creation of Public IPs under the assigned scope.",
-            "DisplayName": "Deny-PublicIP",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deny-PublicIP",
+          "properties": {
+            "description": "Denies creation of Public IPs under the assigned scope.",
+            "displayName": "Deny-PublicIP",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/publicIPAddresses"
@@ -336,13 +336,13 @@
           }
         },
         {
-          "Name": "Deny-Subnet-Without-Nsg",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deny-Subnets-Without-NSG",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deny-Subnet-Without-Nsg",
+          "properties": {
+            "description": null,
+            "displayName": "Deny-Subnets-Without-NSG",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -362,12 +362,12 @@
           }
         },
         {
-          "Name": "Deploy-ASC-Standard",
-          "Properties": {
-            "Description": "Ensures that subscriptions have Security Center Standard enabled.",
-            "DisplayName": "Deploy-ASC-Standard",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-ASC-Standard",
+          "properties": {
+            "description": "Ensures that subscriptions have Security Center Standard enabled.",
+            "displayName": "Deploy-ASC-Standard",
+            "mode": "All",
+            "parameters": {
               "pricingTierVMs": {
                 "type": "String",
                 "metadata": {
@@ -453,7 +453,7 @@
                 "defaultValue": "Standard"
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -486,7 +486,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "pricingTierVMs": {
                           "value": "[[parameters('pricingTierVMs')]"
@@ -644,13 +644,13 @@
           }
         },
         {
-          "Name": "Deploy-AzureBackup-on-VM",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deploy-AzureBackup-on-VMs",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deploy-AzureBackup-on-VM",
+          "properties": {
+            "description": null,
+            "displayName": "Deploy-AzureBackup-on-VMs",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -995,7 +995,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1079,12 +1079,12 @@
           }
         },
         {
-          "Name": "Deploy-DDoSProtection",
-          "Properties": {
-            "Description": "This policy deploys an Azure DDoS Protection Standard plan",
-            "DisplayName": "Deploy-DDoSProtection",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-DDoSProtection",
+          "properties": {
+            "description": "This policy deploys an Azure DDoS Protection Standard plan",
+            "displayName": "Deploy-DDoSProtection",
+            "mode": "All",
+            "parameters": {
               "ddosName": {
                 "type": "String",
                 "metadata": {
@@ -1108,7 +1108,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -1131,7 +1131,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -1203,12 +1203,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-AA",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Automation Accounts - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-AA",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-AA",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Automation Accounts - Log Analytics",
+            "displayName": "Deploy-Diagnostics-AA",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -1218,7 +1218,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Automation/automationAccounts"
@@ -1249,7 +1249,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1323,12 +1323,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-ACI",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Container Instances - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-ACI",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-ACI",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Container Instances - Log Analytics",
+            "displayName": "Deploy-Diagnostics-ACI",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -1338,7 +1338,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ContainerInstance/containerGroups"
@@ -1365,7 +1365,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1426,12 +1426,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-ACR",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Container Registries - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-ACR",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-ACR",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Container Registries - Log Analytics",
+            "displayName": "Deploy-Diagnostics-ACR",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -1441,7 +1441,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ContainerRegistry/registries"
@@ -1468,7 +1468,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1529,12 +1529,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-ActivityLog",
-          "Properties": {
-            "Description": "Ensures that Activity Log Diagnostics settings are set to push logs into Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-ActivityLog",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-ActivityLog",
+          "properties": {
+            "description": "Ensures that Activity Log Diagnostics settings are set to push logs into Log Analytics",
+            "displayName": "Deploy-Diagnostics-ActivityLog",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -1544,7 +1544,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -1574,7 +1574,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1647,12 +1647,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-AKS",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Kubernetes Service - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-AKS",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-AKS",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Kubernetes Service - Log Analytics",
+            "displayName": "Deploy-Diagnostics-AKS",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -1662,7 +1662,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ContainerService/managedClusters"
@@ -1693,7 +1693,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1775,12 +1775,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-AnalysisService",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Analysis Services - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-AnalysisService",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-AnalysisService",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Analysis Services - Log Analytics",
+            "displayName": "Deploy-Diagnostics-AnalysisService",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -1790,7 +1790,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.AnalysisServices/servers"
@@ -1821,7 +1821,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1891,12 +1891,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-APIMgmt",
-          "Properties": {
-            "Description": "Apply diagnostic settings for API Management services - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-APIMgmt",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-APIMgmt",
+          "properties": {
+            "description": "Apply diagnostic settings for API Management services - Log Analytics",
+            "displayName": "Deploy-Diagnostics-APIMgmt",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -1906,7 +1906,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ApiManagement/service"
@@ -1937,7 +1937,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2021,12 +2021,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-ApplicationGateway",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Application Gateways - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-ApplicationGateway",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-ApplicationGateway",
+          "properties": {
+            "description": "Apply diagnostic settings for Application Gateways - Log Analytics",
+            "displayName": "Deploy-Diagnostics-ApplicationGateway",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2036,7 +2036,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/applicationGateways"
@@ -2067,7 +2067,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2141,12 +2141,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-Batch",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Batch accounts - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-Batch",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-Batch",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Batch accounts - Log Analytics",
+            "displayName": "Deploy-Diagnostics-Batch",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2156,7 +2156,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Batch/batchAccounts"
@@ -2187,7 +2187,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2253,12 +2253,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-CDNEndpoints",
-          "Properties": {
-            "Description": "Apply diagnostic settings for CDN Endpoints - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-CDNEndpoints",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-CDNEndpoints",
+          "properties": {
+            "description": "Apply diagnostic settings for CDN Endpoints - Log Analytics",
+            "displayName": "Deploy-Diagnostics-CDNEndpoints",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2268,7 +2268,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Cdn/profiles/endpoints"
@@ -2295,7 +2295,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2351,12 +2351,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-CognitiveServices",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Cognitive Services - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-CognitiveServices",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-CognitiveServices",
+          "properties": {
+            "description": "Apply diagnostic settings for Cognitive Services - Log Analytics",
+            "displayName": "Deploy-Diagnostics-CognitiveServices",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2366,7 +2366,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.CognitiveServices/accounts"
@@ -2397,7 +2397,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2467,12 +2467,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-CosmosDB",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Cosmos DB - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-CosmosDB",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-CosmosDB",
+          "properties": {
+            "description": "Apply diagnostic settings for Cosmos DB - Log Analytics",
+            "displayName": "Deploy-Diagnostics-CosmosDB",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2482,7 +2482,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DocumentDB/databaseAccounts"
@@ -2513,7 +2513,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2587,12 +2587,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-DataFactory",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Data Factory - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-DataFactory",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-DataFactory",
+          "properties": {
+            "description": "Apply diagnostic settings for Data Factory - Log Analytics",
+            "displayName": "Deploy-Diagnostics-DataFactory",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2602,7 +2602,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DataFactory/factories"
@@ -2633,7 +2633,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2707,12 +2707,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-DataLakeStore",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Data Lake Storage - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-DataLakeStore",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-DataLakeStore",
+          "properties": {
+            "description": "Apply diagnostic settings for Data Lake Storage - Log Analytics",
+            "displayName": "Deploy-Diagnostics-DataLakeStore",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2722,7 +2722,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DataLakeStore/accounts"
@@ -2753,7 +2753,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2823,12 +2823,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-DLAnalytics",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Data Lake Analytics - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-DLAnalytics",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-DLAnalytics",
+          "properties": {
+            "description": "Apply diagnostic settings for Data Lake Analytics - Log Analytics",
+            "displayName": "Deploy-Diagnostics-DLAnalytics",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2838,7 +2838,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DataLakeAnalytics/accounts"
@@ -2869,7 +2869,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2939,12 +2939,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-EventGridSub",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Event Grid Subscriptions - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-EventGridSub",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-EventGridSub",
+          "properties": {
+            "description": "Apply diagnostic settings for Event Grid Subscriptions - Log Analytics",
+            "displayName": "Deploy-Diagnostics-EventGridSub",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -2954,7 +2954,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.EventGrid/eventSubscriptions"
@@ -2981,7 +2981,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3042,12 +3042,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-EventGridTopic",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Event Grid Topics - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-EventGridTopic",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-EventGridTopic",
+          "properties": {
+            "description": "Apply diagnostic settings for Event Grid Topics - Log Analytics",
+            "displayName": "Deploy-Diagnostics-EventGridTopic",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3057,7 +3057,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.EventGrid/topics"
@@ -3084,7 +3084,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3145,12 +3145,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-EventHub",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Event Hub Namespaces - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-EventHub",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-EventHub",
+          "properties": {
+            "description": "Apply diagnostic settings for Event Hub Namespaces - Log Analytics",
+            "displayName": "Deploy-Diagnostics-EventHub",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3160,7 +3160,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.EventHub/namespaces"
@@ -3191,7 +3191,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3265,12 +3265,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-ExpressRoute",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Express Routes Circuits - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-ExpressRoute",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-ExpressRoute",
+          "properties": {
+            "description": "Apply diagnostic settings for Express Routes Circuits - Log Analytics",
+            "displayName": "Deploy-Diagnostics-ExpressRoute",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3280,7 +3280,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/expressRouteCircuits"
@@ -3311,7 +3311,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3377,12 +3377,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-Firewall",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Firewalls - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-Firewall",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-Firewall",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Firewalls - Log Analytics",
+            "displayName": "Deploy-Diagnostics-Firewall",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3392,7 +3392,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/azureFirewalls"
@@ -3423,7 +3423,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3493,12 +3493,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-HDInsight",
-          "Properties": {
-            "Description": "Apply diagnostic settings for HDInsight - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-HDInsight",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-HDInsight",
+          "properties": {
+            "description": "Apply diagnostic settings for HDInsight - Log Analytics",
+            "displayName": "Deploy-Diagnostics-HDInsight",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3508,7 +3508,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.HDInsight/clusters"
@@ -3535,7 +3535,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3596,12 +3596,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-iotHub",
-          "Properties": {
-            "Description": "Apply diagnostic settings for IoT Hubs - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-iotHub",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-iotHub",
+          "properties": {
+            "description": "Apply diagnostic settings for IoT Hubs - Log Analytics",
+            "displayName": "Deploy-Diagnostics-iotHub",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3611,7 +3611,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Devices/IotHubs"
@@ -3642,7 +3642,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3756,12 +3756,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-KeyVault",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Key Vaults - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-KeyVault",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-KeyVault",
+          "properties": {
+            "description": "Apply diagnostic settings for Key Vaults - Log Analytics",
+            "displayName": "Deploy-Diagnostics-KeyVault",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3771,7 +3771,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.KeyVault/vaults"
@@ -3802,7 +3802,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3868,12 +3868,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-LoadBalancer",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Load Balancers - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-LoadBalancer",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-LoadBalancer",
+          "properties": {
+            "description": "Apply diagnostic settings for Load Balancers - Log Analytics",
+            "displayName": "Deploy-Diagnostics-LoadBalancer",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3883,7 +3883,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/loadBalancers"
@@ -3914,7 +3914,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3984,12 +3984,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-LogicAppsISE",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Logic Apps Integration Accounts - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-LogicAppsISE",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-LogicAppsISE",
+          "properties": {
+            "description": "Apply diagnostic settings for Logic Apps Integration Accounts - Log Analytics",
+            "displayName": "Deploy-Diagnostics-LogicAppsISE",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -3999,7 +3999,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Logic/integrationAccounts"
@@ -4026,7 +4026,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4082,12 +4082,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-LogicAppsWF",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Logic Apps workflows - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-LogicAppsWF",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-LogicAppsWF",
+          "properties": {
+            "description": "Apply diagnostic settings for Logic Apps workflows - Log Analytics",
+            "displayName": "Deploy-Diagnostics-LogicAppsWF",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4097,7 +4097,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Logic/workflows"
@@ -4128,7 +4128,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4194,12 +4194,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-MlWorkspace",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Ml Workspace - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-MlWorkspace",
-            "Mode": "Indexed",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-MlWorkspace",
+          "properties": {
+            "description": "Apply diagnostic settings for Ml Workspace - Log Analytics",
+            "displayName": "Deploy-Diagnostics-MlWorkspace",
+            "mode": "Indexed",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4209,7 +4209,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.MachineLearningServices/workspaces"
@@ -4240,7 +4240,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4348,12 +4348,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-MySQL",
-          "Properties": {
-            "Description": "Apply diagnostic settings for MySQL Databases - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-MySQL",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-MySQL",
+          "properties": {
+            "description": "Apply diagnostic settings for MySQL Databases - Log Analytics",
+            "displayName": "Deploy-Diagnostics-MySQL",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4363,7 +4363,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DBforMySQL/servers"
@@ -4394,7 +4394,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4460,12 +4460,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-NetworkSecurityGroups",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Network Security Groups - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-NetworkSecurityGroups",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-NetworkSecurityGroups",
+          "properties": {
+            "description": "Apply diagnostic settings for Network Security Groups - Log Analytics",
+            "displayName": "Deploy-Diagnostics-NetworkSecurityGroups",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4475,7 +4475,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/networkSecurityGroups"
@@ -4502,7 +4502,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4562,12 +4562,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-NIC",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Network Interfaces - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-NIC",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-NIC",
+          "properties": {
+            "description": "Apply diagnostic settings for Network Interfaces - Log Analytics",
+            "displayName": "Deploy-Diagnostics-NIC",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4577,7 +4577,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/networkInterfaces"
@@ -4604,7 +4604,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4664,12 +4664,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-PostgreSQL",
-          "Properties": {
-            "Description": "Apply diagnostic settings for PostgreSQL Databases - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-PostgreSQL",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-PostgreSQL",
+          "properties": {
+            "description": "Apply diagnostic settings for PostgreSQL Databases - Log Analytics",
+            "displayName": "Deploy-Diagnostics-PostgreSQL",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4679,7 +4679,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DBforPostgreSQL/servers"
@@ -4710,7 +4710,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4776,12 +4776,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-PowerBIEmbedded",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Power BI Embedded - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-PowerBIEmbedded",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-PowerBIEmbedded",
+          "properties": {
+            "description": "Apply diagnostic settings for Power BI Embedded - Log Analytics",
+            "displayName": "Deploy-Diagnostics-PowerBIEmbedded",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4791,7 +4791,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.PowerBIDedicated/capacities"
@@ -4822,7 +4822,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4888,12 +4888,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-PublicIP",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Public IPs - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-PublicIP",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-PublicIP",
+          "properties": {
+            "description": "Apply diagnostic settings for Public IPs - Log Analytics",
+            "displayName": "Deploy-Diagnostics-PublicIP",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -4903,7 +4903,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/publicIPAddresses"
@@ -4934,7 +4934,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5008,12 +5008,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-RecoveryVault",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Recovery Vaults - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-RecoveryVault",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-RecoveryVault",
+          "properties": {
+            "description": "Apply diagnostic settings for Recovery Vaults - Log Analytics",
+            "displayName": "Deploy-Diagnostics-RecoveryVault",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5023,7 +5023,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.RecoveryServices/vaults"
@@ -5034,12 +5034,12 @@
                   "type": "Microsoft.Insights/diagnosticSettings",
                   "name": "setByPolicy",
                   "existenceCondition": {
-                    "allof": [
+                    "allOf": [
                       {
                         "count": {
                           "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
                           "where": {
-                            "allof": [
+                            "allOf": [
                               {
                                 "field": "Microsoft.Insights/diagnosticSettings/logs[*].Category",
                                 "in": [
@@ -5075,7 +5075,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5151,12 +5151,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-RedisCache",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Redis Cache - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-RedisCache",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-RedisCache",
+          "properties": {
+            "description": "Apply diagnostic settings for Redis Cache - Log Analytics",
+            "displayName": "Deploy-Diagnostics-RedisCache",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5166,7 +5166,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Cache/redis"
@@ -5193,7 +5193,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5254,12 +5254,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-Relay",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Relay - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-Relay",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-Relay",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Relay - Log Analytics",
+            "displayName": "Deploy-Diagnostics-Relay",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5269,7 +5269,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Relay/namespaces"
@@ -5296,7 +5296,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5357,12 +5357,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-SearchServices",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Search Services - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-SearchServices",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-SearchServices",
+          "properties": {
+            "description": "Apply diagnostic settings for Search Services - Log Analytics",
+            "displayName": "Deploy-Diagnostics-SearchServices",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5372,7 +5372,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Search/searchServices"
@@ -5403,7 +5403,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5469,12 +5469,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-ServiceBus",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Service Bus namespaces - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-ServiceBus",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-ServiceBus",
+          "properties": {
+            "description": "Apply diagnostic settings for Service Bus namespaces - Log Analytics",
+            "displayName": "Deploy-Diagnostics-ServiceBus",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5484,7 +5484,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ServiceBus/namespaces"
@@ -5515,7 +5515,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5581,12 +5581,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-SignalR",
-          "Properties": {
-            "Description": "Apply diagnostic settings for SignalR - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-SignalR",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-SignalR",
+          "properties": {
+            "description": "Apply diagnostic settings for SignalR - Log Analytics",
+            "displayName": "Deploy-Diagnostics-SignalR",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5596,7 +5596,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.SignalRService/SignalR"
@@ -5623,7 +5623,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5684,12 +5684,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-SQLDBs",
-          "Properties": {
-            "Description": "Apply diagnostic settings for SQL Databases - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-SQLDBs",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-SQLDBs",
+          "properties": {
+            "description": "Apply diagnostic settings for SQL Databases - Log Analytics",
+            "displayName": "Deploy-Diagnostics-SQLDBs",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5699,7 +5699,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -5730,7 +5730,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5832,12 +5832,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-SQLElasticPools",
-          "Properties": {
-            "Description": "Apply diagnostic settings for SQL Elastic Pools - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-SQLElasticPools",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-SQLElasticPools",
+          "properties": {
+            "description": "Apply diagnostic settings for SQL Elastic Pools - Log Analytics",
+            "displayName": "Deploy-Diagnostics-SQLElasticPools",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5847,7 +5847,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/elasticPools"
@@ -5874,7 +5874,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5935,12 +5935,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-SQLMI",
-          "Properties": {
-            "Description": "Apply diagnostic settings for SQL Managed Instances - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-SQLMI",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-SQLMI",
+          "properties": {
+            "description": "Apply diagnostic settings for SQL Managed Instances - Log Analytics",
+            "displayName": "Deploy-Diagnostics-SQLMI",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -5950,7 +5950,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/managedInstances"
@@ -5977,7 +5977,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6036,12 +6036,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-StreamAnalytics",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Stream Analytics - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-StreamAnalytics",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-StreamAnalytics",
+          "properties": {
+            "description": "Apply diagnostic settings for Stream Analytics - Log Analytics",
+            "displayName": "Deploy-Diagnostics-StreamAnalytics",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6051,7 +6051,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.StreamAnalytics/streamingjobs"
@@ -6082,7 +6082,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6152,12 +6152,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-TimeSeriesInsights",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Time Series Insights - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-TimeSeriesInsights",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-TimeSeriesInsights",
+          "properties": {
+            "description": "Apply diagnostic settings for Time Series Insights - Log Analytics",
+            "displayName": "Deploy-Diagnostics-TimeSeriesInsights",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6167,7 +6167,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.TimeSeriesInsights/environments"
@@ -6194,7 +6194,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6255,12 +6255,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-TrafficManager",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Traffic Manager - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-TrafficManager",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-TrafficManager",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Traffic Manager - Log Analytics",
+            "displayName": "Deploy-Diagnostics-TrafficManager",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6270,7 +6270,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/trafficManagerProfiles"
@@ -6301,7 +6301,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6367,12 +6367,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-VirtualNetwork",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Virtual Networks - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-VirtualNetwork",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-VirtualNetwork",
+          "properties": {
+            "description": "Apply diagnostic settings for Virtual Networks - Log Analytics",
+            "displayName": "Deploy-Diagnostics-VirtualNetwork",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6382,7 +6382,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/virtualNetworks"
@@ -6413,7 +6413,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6478,12 +6478,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-VM",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Virtual Machines - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-VM",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-VM",
+          "properties": {
+            "description": "Apply diagnostic settings for Virtual Machines - Log Analytics",
+            "displayName": "Deploy-Diagnostics-VM",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6493,7 +6493,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Compute/virtualMachines"
@@ -6520,7 +6520,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6580,12 +6580,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-VMSS",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Virtual Machine Scale Sets - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-VMSS",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-VMSS",
+          "properties": {
+            "description": "Apply diagnostic settings for Virtual Machine Scale Sets - Log Analytics",
+            "displayName": "Deploy-Diagnostics-VMSS",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6595,7 +6595,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Compute/virtualMachineScaleSets"
@@ -6622,7 +6622,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6682,12 +6682,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-VNetGW",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Virtual Network Gateways - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-VNetGW",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-VNetGW",
+          "properties": {
+            "description": "Apply diagnostic settings for Virtual Network Gateways - Log Analytics",
+            "displayName": "Deploy-Diagnostics-VNetGW",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6697,7 +6697,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/virtualNetworkGateways"
@@ -6728,7 +6728,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6814,12 +6814,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-WebServerFarm",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure App Service Plans - Log Analytics",
-            "DisplayName": "Deploy-Diagnostics-WebServerFarm",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-WebServerFarm",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure App Service Plans - Log Analytics",
+            "displayName": "Deploy-Diagnostics-WebServerFarm",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6829,7 +6829,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Web/serverfarms"
@@ -6856,7 +6856,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6917,12 +6917,12 @@
           }
         },
         {
-          "Name": "Deploy-Diagnostics-Website",
-          "Properties": {
-            "Description": "Apply diagnostic settings for Azure Web Sites",
-            "DisplayName": "Deploy-Diagnostics-Website",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Diagnostics-Website",
+          "properties": {
+            "description": "Apply diagnostic settings for Azure Web Sites",
+            "displayName": "Deploy-Diagnostics-Website",
+            "mode": "All",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -6932,7 +6932,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Web/sites"
@@ -6959,7 +6959,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7020,12 +7020,12 @@
           }
         },
         {
-          "Name": "Deploy-DNSZoneGroup-For-Blob-PrivateEndpoint",
-          "Properties": {
-            "Description": "Deploys a DNS Zone Group for Storage-Blob Private Endpoint",
-            "DisplayName": "Deploy-DNSZoneGroup-For-Blob-PrivateEndpoint",
-            "Mode": "Indexed",
-            "Parameters": {
+          "name": "Deploy-DNSZoneGroup-For-Blob-PrivateEndpoint",
+          "properties": {
+            "description": "Deploys a DNS Zone Group for Storage-Blob Private Endpoint",
+            "displayName": "Deploy-DNSZoneGroup-For-Blob-PrivateEndpoint",
+            "mode": "Indexed",
+            "parameters": {
               "privateDnsZoneId": {
                 "type": "String",
                 "metadata": {
@@ -7034,7 +7034,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7062,7 +7062,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7115,12 +7115,12 @@
           }
         },
         {
-          "Name": "Deploy-DNSZoneGroup-For-File-PrivateEndpoint",
-          "Properties": {
-            "Description": "This policy deploys a DNS Zone Group for Storage-File Private Endpoint",
-            "DisplayName": "Deploy-DNSZoneGroup-For-File-PrivateEndpoint",
-            "Mode": "Indexed",
-            "Parameters": {
+          "name": "Deploy-DNSZoneGroup-For-File-PrivateEndpoint",
+          "properties": {
+            "description": "This policy deploys a DNS Zone Group for Storage-File Private Endpoint",
+            "displayName": "Deploy-DNSZoneGroup-For-File-PrivateEndpoint",
+            "mode": "Indexed",
+            "parameters": {
               "privateDnsZoneId": {
                 "type": "String",
                 "metadata": {
@@ -7129,7 +7129,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7157,7 +7157,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7210,12 +7210,12 @@
           }
         },
         {
-          "Name": "Deploy-DNSZoneGroup-For-KeyVault-PrivateEndpoint",
-          "Properties": {
-            "Description": "This policy deploys a DNS Zone Group for Key Vault Private Endpoint",
-            "DisplayName": "Deploy-DNSZoneGroup-For-KeyVault-PrivateEndpoint",
-            "Mode": "Indexed",
-            "Parameters": {
+          "name": "Deploy-DNSZoneGroup-For-KeyVault-PrivateEndpoint",
+          "properties": {
+            "description": "This policy deploys a DNS Zone Group for Key Vault Private Endpoint",
+            "displayName": "Deploy-DNSZoneGroup-For-KeyVault-PrivateEndpoint",
+            "mode": "Indexed",
+            "parameters": {
               "privateDnsZoneId": {
                 "type": "String",
                 "metadata": {
@@ -7224,7 +7224,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7252,7 +7252,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7305,12 +7305,12 @@
           }
         },
         {
-          "Name": "Deploy-DNSZoneGroup-For-Queue-PrivateEndpoint",
-          "Properties": {
-            "Description": "This policy deploys a DNS Zone Group for Storage-Queue Private Endpoint",
-            "DisplayName": "Deploy-DNSZoneGroup-For-Queue-PrivateEndpoint",
-            "Mode": "Indexed",
-            "Parameters": {
+          "name": "Deploy-DNSZoneGroup-For-Queue-PrivateEndpoint",
+          "properties": {
+            "description": "This policy deploys a DNS Zone Group for Storage-Queue Private Endpoint",
+            "displayName": "Deploy-DNSZoneGroup-For-Queue-PrivateEndpoint",
+            "mode": "Indexed",
+            "parameters": {
               "privateDnsZoneId": {
                 "type": "String",
                 "metadata": {
@@ -7319,7 +7319,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7347,7 +7347,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7400,12 +7400,12 @@
           }
         },
         {
-          "Name": "Deploy-DNSZoneGroup-For-Sql-PrivateEndpoint",
-          "Properties": {
-            "Description": "This policy deploys a DNS Zone Group for SQL Private Endpoint",
-            "DisplayName": "Deploy-DNSZoneGroup-For-Sql-PrivateEndpoint",
-            "Mode": "Indexed",
-            "Parameters": {
+          "name": "Deploy-DNSZoneGroup-For-Sql-PrivateEndpoint",
+          "properties": {
+            "description": "This policy deploys a DNS Zone Group for SQL Private Endpoint",
+            "displayName": "Deploy-DNSZoneGroup-For-Sql-PrivateEndpoint",
+            "mode": "Indexed",
+            "parameters": {
               "privateDnsZoneId": {
                 "type": "String",
                 "metadata": {
@@ -7414,7 +7414,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7442,7 +7442,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7495,12 +7495,12 @@
           }
         },
         {
-          "Name": "Deploy-DNSZoneGroup-For-Table-PrivateEndpoint",
-          "Properties": {
-            "Description": "This policy deploys a DNS Zone Group for Storage-Blob Private Endpoint",
-            "DisplayName": "Deploy-DNSZoneGroup-For-Table-PrivateEndpoint",
-            "Mode": "Indexed",
-            "Parameters": {
+          "name": "Deploy-DNSZoneGroup-For-Table-PrivateEndpoint",
+          "properties": {
+            "description": "This policy deploys a DNS Zone Group for Storage-Blob Private Endpoint",
+            "displayName": "Deploy-DNSZoneGroup-For-Table-PrivateEndpoint",
+            "mode": "Indexed",
+            "parameters": {
               "privateDnsZoneId": {
                 "type": "String",
                 "metadata": {
@@ -7509,7 +7509,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7537,7 +7537,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7590,12 +7590,12 @@
           }
         },
         {
-          "Name": "Deploy-FirewallPolicy",
-          "Properties": {
-            "Description": "Deploys Azure Firewall Policy/Manager",
-            "DisplayName": "Deploy-FirewallPolicy",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-FirewallPolicy",
+          "properties": {
+            "description": "Deploys Azure Firewall Policy/Manager",
+            "displayName": "Deploy-FirewallPolicy",
+            "mode": "All",
+            "parameters": {
               "fwpolicy": {
                 "type": "Object",
                 "metadata": {
@@ -7620,7 +7620,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7642,7 +7642,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -7731,12 +7731,12 @@
           }
         },
         {
-          "Name": "Deploy-HUB",
-          "Properties": {
-            "Description": "Deploys Azure VNet to be used as hub virtual network in desired regions",
-            "DisplayName": "Deploy-HUB",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-HUB",
+          "properties": {
+            "description": "Deploys Azure VNet to be used as hub virtual network in desired regions",
+            "displayName": "Deploy-HUB",
+            "mode": "All",
+            "parameters": {
               "hubName": {
                 "type": "String",
                 "metadata": {
@@ -7783,7 +7783,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7806,7 +7806,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -8134,12 +8134,12 @@
           }
         },
         {
-          "Name": "Deploy-LA-Config",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deploy-LA-Config",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-LA-Config",
+          "properties": {
+            "description": null,
+            "displayName": "Deploy-LA-Config",
+            "mode": "All",
+            "parameters": {
               "workspaceName": {
                 "type": "String",
                 "metadata": {
@@ -8155,7 +8155,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -8187,7 +8187,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "workspaceName": {
                           "value": "[[parameters('workspaceName')]"
@@ -8525,12 +8525,12 @@
           }
         },
         {
-          "Name": "Deploy-Log-Analytics",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deploy-LogAnalytics",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Log-Analytics",
+          "properties": {
+            "description": null,
+            "displayName": "Deploy-LogAnalytics",
+            "mode": "All",
+            "parameters": {
               "workspaceName": {
                 "type": "String",
                 "metadata": {
@@ -8567,7 +8567,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -8596,7 +8596,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -8660,7 +8660,7 @@
                                 "variables": {},
                                 "resources": [
                                   {
-                                    "apiversion": "2015-10-31",
+                                    "apiVersion": "2015-10-31",
                                     "location": "[[parameters('AutomationRegion')]",
                                     "name": "[[parameters('AutomationAccountName')]",
                                     "type": "Microsoft.Automation/automationAccounts",
@@ -8713,12 +8713,12 @@
           }
         },
         {
-          "Name": "Deploy-Nsg-FlowLogs",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deploy-Nsg-FlowLogs",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Nsg-FlowLogs",
+          "properties": {
+            "description": null,
+            "displayName": "Deploy-Nsg-FlowLogs",
+            "mode": "All",
+            "parameters": {
               "retention": {
                 "type": "Integer",
                 "metadata": {
@@ -8732,7 +8732,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/networkSecurityGroups"
@@ -8752,7 +8752,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "networkSecurityGroupName": {
                           "value": "[[field('name')]"
@@ -8823,13 +8823,13 @@
           }
         },
         {
-          "Name": "Deploy-Sql-AuditingSettings",
-          "Properties": {
-            "Description": "Configures SQL Server",
-            "DisplayName": "Deploy-Sql-AuditingSettings",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deploy-Sql-AuditingSettings",
+          "properties": {
+            "description": "Configures SQL Server",
+            "displayName": "Deploy-Sql-AuditingSettings",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -8853,7 +8853,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -8921,13 +8921,13 @@
           }
         },
         {
-          "Name": "Deploy-Sql-SecurityAlertPolicies",
-          "Properties": {
-            "Description": "Configures SQL DataBases",
-            "DisplayName": "Deploy-Sql-SecurityAlertPolicies",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deploy-Sql-SecurityAlertPolicies",
+          "properties": {
+            "description": "Configures SQL DataBases",
+            "displayName": "Deploy-Sql-SecurityAlertPolicies",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -8946,7 +8946,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9006,13 +9006,13 @@
           }
         },
         {
-          "Name": "Deploy-Sql-Tde",
-          "Properties": {
-            "Description": "Configures SQL DataBases",
-            "DisplayName": "Deploy-Sql-Tde",
-            "Mode": "All",
-            "Parameters": {},
-            "PolicyRule": {
+          "name": "Deploy-Sql-Tde",
+          "properties": {
+            "description": "Configures SQL DataBases",
+            "displayName": "Deploy-Sql-Tde",
+            "mode": "All",
+            "parameters": {},
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -9031,7 +9031,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9081,12 +9081,12 @@
           }
         },
         {
-          "Name": "Deploy-Sql-vulnerabilityAssessments",
-          "Properties": {
-            "Description": "Configures SQL DataBases",
-            "DisplayName": "Deploy-Sql-vulnerabilityAssessments",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Sql-vulnerabilityAssessments",
+          "properties": {
+            "description": "Configures SQL DataBases",
+            "displayName": "Deploy-Sql-vulnerabilityAssessments",
+            "mode": "All",
+            "parameters": {
               "vulnerabilityAssessmentsEmail": {
                 "type": "String",
                 "metadata": {
@@ -9102,7 +9102,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -9125,7 +9125,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9195,12 +9195,12 @@
           }
         },
         {
-          "Name": "Deploy-vHUB",
-          "Properties": {
-            "Description": "Deploys Azure Virtual WAN vHUB in desired regions",
-            "DisplayName": "Deploy-vHUB",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-vHUB",
+          "properties": {
+            "description": "Deploys Azure Virtual WAN vHUB in desired regions",
+            "displayName": "Deploy-vHUB",
+            "mode": "All",
+            "parameters": {
               "vwanname": {
                 "type": "String",
                 "metadata": {
@@ -9255,7 +9255,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9278,7 +9278,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -9493,7 +9493,7 @@
                                         "id": "[[variables('vwanhub')]"
                                       },
                                       "sku": {
-                                        "Name": "AZFW_Hub",
+                                        "name": "AZFW_Hub",
                                         "Tier": "Standard"
                                       },
                                       "firewallPolicy": {
@@ -9515,12 +9515,12 @@
           }
         },
         {
-          "Name": "Deploy-vNet",
-          "Properties": {
-            "Description": "Deploy-vNet",
-            "DisplayName": "Deploy-vNet",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-vNet",
+          "properties": {
+            "description": "Deploy-vNet",
+            "displayName": "Deploy-vNet",
+            "mode": "All",
+            "parameters": {
               "ipam": {
                 "type": "Array",
                 "metadata": {
@@ -9530,7 +9530,7 @@
                 "defaultValue": []
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9563,7 +9563,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "ipam": {
                           "value": "[[parameters('ipam')]",
@@ -9731,19 +9731,19 @@
                                             "type": "string"
                                           },
                                           "vWanVhubName": {
-                                            "Type": "string",
+                                            "type": "string",
                                             "defaultValue": ""
                                           },
                                           "allowHubToRemoteVnetTransit": {
-                                            "Type": "bool",
+                                            "type": "bool",
                                             "defaultValue": true
                                           },
                                           "allowRemoteVnetToUseHubVnetGateways": {
-                                            "Type": "bool",
+                                            "type": "bool",
                                             "defaultValue": false
                                           },
                                           "enableInternetSecurity": {
-                                            "Type": "bool",
+                                            "type": "bool",
                                             "defaultValue": true
                                           }
                                         },
@@ -9804,11 +9804,11 @@
                                         "contentVersion": "1.0.0.0",
                                         "parameters": {
                                           "remoteVirtualNetwork": {
-                                            "Type": "string",
+                                            "type": "string",
                                             "defaultValue": false
                                           },
                                           "hubName": {
-                                            "Type": "string",
+                                            "type": "string",
                                             "defaultValue": false
                                           }
                                         },
@@ -9869,12 +9869,12 @@
           }
         },
         {
-          "Name": "Deploy-vWAN",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deploy-vWAN",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-vWAN",
+          "properties": {
+            "description": null,
+            "displayName": "Deploy-vWAN",
+            "mode": "All",
+            "parameters": {
               "vwanname": {
                 "type": "String",
                 "metadata": {
@@ -9898,7 +9898,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9921,7 +9921,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -10000,12 +10000,12 @@
           }
         },
         {
-          "Name": "Deploy-Windows-DomainJoin",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deploy-Windows-DomainJoin",
-            "Mode": "All",
-            "Parameters": {
+          "name": "Deploy-Windows-DomainJoin",
+          "properties": {
+            "description": null,
+            "displayName": "Deploy-Windows-DomainJoin",
+            "mode": "All",
+            "parameters": {
               "domainUsername": {
                 "type": "String",
                 "metadata": {
@@ -10042,7 +10042,7 @@
                 }
               }
             },
-            "PolicyRule": {
+            "policyRule": {
               "if": {
                 "allOf": [
                   {
@@ -10142,7 +10142,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "vmName": {
                           "value": "[[field('name')]"
@@ -10218,7 +10218,7 @@
                               "typeHandlerVersion": "1.3",
                               "autoUpgradeMinorVersion": true,
                               "settings": {
-                                "Name": "[[parameters('domainFQDN')]",
+                                "name": "[[parameters('domainFQDN')]",
                                 "User": "[[parameters('domainUserName')]",
                                 "Restart": "true",
                                 "Options": "[[variables('domainJoinOptions')]",
@@ -10244,11 +10244,11 @@
     "initiatives": {
       "policySetDefinitions": [
         {
-          "Name": "Deny-PublicEndpoints",
-          "Properties": {
-            "Description": null,
-            "DisplayName": "Deny-Public-Endpoints-for-PaaS-Services",
-            "Parameters": {},
+          "name": "Deny-PublicEndpoints",
+          "properties": {
+            "description": null,
+            "displayName": "Deny-Public-Endpoints-for-PaaS-Services",
+            "parameters": {},
             "PolicyDefinitionGroups": null,
             "PolicyDefinitions": [
               {
@@ -10287,11 +10287,11 @@
           }
         },
         {
-          "Name": "Deploy-Diag-LogAnalytics",
-          "Properties": {
-            "Description": "This initiative configures application Azure resources to forward diagnostic logs and metrics to an Azure Log Analytics workspace.",
-            "DisplayName": "Deploy-Diag-LogAnalytics",
-            "Parameters": {
+          "name": "Deploy-Diag-LogAnalytics",
+          "properties": {
+            "description": "This initiative configures application Azure resources to forward diagnostic logs and metrics to an Azure Log Analytics workspace.",
+            "displayName": "Deploy-Diag-LogAnalytics",
+            "parameters": {
               "logAnalytics": {
                 "type": "String",
                 "metadata": {
@@ -10706,11 +10706,11 @@
           }
         },
         {
-          "Name": "Deploy-Sql-Security",
-          "Properties": {
-            "Description": "Recommended built-in security policies for the North Star architecture",
-            "DisplayName": "Deploy-Sql-Security",
-            "Parameters": {
+          "name": "Deploy-Sql-Security",
+          "properties": {
+            "description": "Recommended built-in security policies for the North Star architecture",
+            "displayName": "Deploy-Sql-Security",
+            "parameters": {
               "vulnerabilityAssessmentsEmail": {
                 "type": "String",
                 "metadata": {

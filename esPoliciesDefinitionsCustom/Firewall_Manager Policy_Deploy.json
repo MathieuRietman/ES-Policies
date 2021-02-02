@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploys Azure Firewall Manager policy in subscription where the policy is assigned.",
-    "DisplayName": "Deploy Azure Firewall Manager policy in the subscription",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploys Azure Firewall Manager policy in subscription where the policy is assigned.",
+    "displayName": "Deploy Azure Firewall Manager policy in the subscription",
+    "mode": "Indexed",
+    "parameters": {
       "fwpolicy": {
         "type": "Object",
         "metadata": {
@@ -40,7 +40,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -62,7 +62,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "rgName": {
                   "value": "[parameters('rgName')]"

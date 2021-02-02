@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploy Windows Domain Join Extension with keyvault configuration when the extension does not exist on a given windows Virtual Machine",
-    "DisplayName": "Deploy Windows Domain Join Extension with keyvault configuration",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploy Windows Domain Join Extension with keyvault configuration when the extension does not exist on a given windows Virtual Machine",
+    "displayName": "Deploy Windows Domain Join Extension with keyvault configuration",
+    "mode": "Indexed",
+    "parameters": {
       "domainUsername": {
         "type": "String",
         "metadata": {
@@ -52,7 +52,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -152,7 +152,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "vmName": {
                   "value": "[field('name')]"
@@ -228,7 +228,7 @@
                       "typeHandlerVersion": "1.3",
                       "autoUpgradeMinorVersion": true,
                       "settings": {
-                        "Name": "[parameters('domainFQDN')]",
+                        "name": "[parameters('domainFQDN')]",
                         "User": "[parameters('domainUserName')]",
                         "Restart": "true",
                         "Options": "[variables('domainJoinOptions')]",

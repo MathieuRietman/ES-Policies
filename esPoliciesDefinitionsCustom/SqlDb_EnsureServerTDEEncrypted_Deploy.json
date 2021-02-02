@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploy the Transparent Data Encryption when it is not enabled in the deployment",
-    "DisplayName": "Deploy SQL Database Transparent Data Encryption ",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploy the Transparent Data Encryption when it is not enabled in the deployment",
+    "displayName": "Deploy SQL Database Transparent Data Encryption ",
+    "mode": "Indexed",
+    "parameters": {
       "effect": {
         "type": "string",
         "defaultValue": "DeployIfNotExists",
@@ -17,7 +17,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.Sql/servers/databases"
@@ -36,7 +36,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

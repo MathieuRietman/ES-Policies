@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploy a default budget on all subscriptions under the assigned scope",
-    "DisplayName": "Deploy a default budget on all subscriptions under the assigned scope",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploy a default budget on all subscriptions under the assigned scope",
+    "displayName": "Deploy a default budget on all subscriptions under the assigned scope",
+    "mode": "Indexed",
+    "parameters": {
       "amount": {
         "type": "string",
         "defaultValue": "1000",
@@ -81,7 +81,7 @@
       "version": "1.0.0",
       "category": "Budget"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -118,7 +118,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "amount": {
                   "value": "[parameters('amount')]"
