@@ -1,62 +1,14 @@
 {
   "properties": {
-    "Description": "Deploys virtual network and peer to the hub",
-    "DisplayName": "Deploys virtual network and peer to the hub",
-    "Mode": "Indexed",
-    "Parameters": {
-      "vNetName": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetName",
-          "description": "Name of the landing zone vNet"
-        }
-      },
-      "vNetRgName": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetRgName",
-          "description": "Name of the landing zone vNet RG"
-        }
-      },
-      "vNetLocation": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetLocation",
-          "description": "Location for the vNet"
-        }
-      },
-      "vNetCidrRange": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetCidrRange",
-          "description": "CIDR Range for the vNet"
-        }
-      },
-      "hubResourceId": {
-        "type": "String",
-        "metadata": {
-          "displayName": "hubResourceId",
-          "description": "Resource ID for the HUB vNet"
-        }
-      },
-      "effect": {
-        "type": "string",
-        "defaultValue": "DeployIfNotExists",
-        "allowedValues": [
-          "DeployIfNotExists",
-          "Disabled"
-        ],
-        "metadata": {
-          "displayName": "Effect",
-          "description": "Enable or disable the execution of the policy"
-        }
-      }
-    },
+    "displayName": "Deploy Landing Zone VNet with peering to VNet Hub",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "This policy deploys a Landing Zone Virtual network and peers it to the virtual network hub",
     "metadata": {
-      "version": "1.0.0",
+      "version": "1.1.0",
       "category": "Network"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -66,7 +18,7 @@
         ]
       },
       "then": {
-        "effect": "[parameters('effect')]",
+        "effect": "deployIfNotExists",
         "details": {
           "type": "Microsoft.Network/virtualNetworks",
           "name": "[parameters('vNetName')]",
@@ -85,6 +37,10 @@
               {
                 "field": "location",
                 "equals": "[parameters('vNetLocation')]"
+              },
+              {
+                "field": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings[*].remoteVirtualNetwork.id",
+                "contains": "[parameters('hubResourceId')]"
               }
             ]
           },
@@ -107,6 +63,12 @@
                 },
                 "hubResourceId": {
                   "value": "[parameters('hubResourceId')]"
+                },
+                "hubPeerAllowGatewayTransit": {
+                  "value": "[parameters('hubPeerAllowGatewayTransit')]"
+                },
+                "lzVnetUseRemoteGateway": {
+                  "value": "[parameters('lzVnetUseRemoteGateway')]"
                 }
               },
               "template": {
@@ -125,9 +87,11 @@
                   "vNetCidrRange": {
                     "type": "string"
                   },
-                  "vNetPeerUseRemoteGateway": {
-                    "type": "bool",
-                    "defaultValue": false
+                  "lzVnetUseRemoteGateway": {
+                    "type": "bool"
+                  },
+                  "hubPeerAllowGatewayTransit": {
+                    "type": "bool"
                   },
                   "hubResourceId": {
                     "type": "string"
@@ -211,7 +175,7 @@
                               "allowVirtualNetworkAccess": true,
                               "allowForwardedTraffic": true,
                               "allowGatewayTransit": false,
-                              "useRemoteGateways": "[parameters('vNetPeerUseRemoteGateway')]"
+                              "useRemoteGateways": "[parameters('lzVnetUseRemoteGateway')]"
                             }
                           },
                           {
@@ -239,6 +203,10 @@
                                   "hubName": {
                                     "Type": "string",
                                     "defaultValue": false
+                                  },
+                                  "hubPeerAllowGatewayTransit": {
+                                    "Type": "bool",
+                                    "defaultValue": false
                                   }
                                 },
                                 "variables": {},
@@ -250,7 +218,7 @@
                                     "properties": {
                                       "allowVirtualNetworkAccess": true,
                                       "allowForwardedTraffic": true,
-                                      "allowGatewayTransit": true,
+                                      "allowGatewayTransit": "[[parameters('hubPeerAllowGatewayTransit')]",
                                       "useRemoteGateways": false,
                                       "remoteVirtualNetwork": {
                                         "id": "[[parameters('remoteVirtualNetwork')]"
@@ -266,6 +234,9 @@
                                 },
                                 "hubName": {
                                   "value": "[split(parameters('hubResourceId'),'/')[8]]"
+                                },
+                                "hubPeerAllowGatewayTransit": {
+                                  "value": "[parameters('hubPeerAllowGatewayTransit')]"
                                 }
                               }
                             }
@@ -282,6 +253,59 @@
             }
           }
         }
+      }
+    },
+    "parameters": {
+      "vNetName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetName",
+          "description": "Name of the landing zone vNet"
+        }
+      },
+      "vNetRgName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetRgName",
+          "description": "Name of the landing zone vNet RG"
+        }
+      },
+      "vNetLocation": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetLocation",
+          "description": "Location for the vNet"
+        }
+      },
+      "vNetCidrRange": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetCidrRange",
+          "description": "CIDR Range for the vNet"
+        }
+      },
+      "hubResourceId": {
+        "type": "String",
+        "metadata": {
+          "displayName": "hubResourceId",
+          "description": "Resource ID for the HUB vNet"
+        }
+      },
+      "hubPeerAllowGatewayTransit": {
+        "type": "Boolean",
+        "metadata": {
+          "displayName": "hubPeerAllowGatewayTransit",
+          "description": "Allow gateway transit on hub side peering"
+        },
+        "defaultValue": true
+      },
+      "lzVnetUseRemoteGateway": {
+        "type": "Boolean",
+        "metadata": {
+          "displayName": "lzVnetUseRemoteGateway",
+          "description": "Enable remote gateway usage to use gateway in the hub from LZ network"
+        },
+        "defaultValue": false
       }
     }
   },
