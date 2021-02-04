@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploy the Virtual WAN in the specific region.",
-    "DisplayName": "Deploy the Virtual WAN in the specific region",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploy the Virtual WAN in the specific region.",
+    "displayName": "Deploy the Virtual WAN in the specific region",
+    "mode": "Indexed",
+    "parameters": {
       "vwanname": {
         "type": "String",
         "metadata": {
@@ -39,7 +39,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -62,7 +62,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "rgName": {
                   "value": "[parameters('rgName')]"

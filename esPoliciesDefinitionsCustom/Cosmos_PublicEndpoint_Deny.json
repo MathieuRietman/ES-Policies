@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "This policy denies that  Cosmos database accounts  are created with out public network access is disabled.",
-    "DisplayName": "Public network access should be disabled for CosmosDB",
-    "Mode": "Indexed",
-    "PolicyRule": {
+    "description": "This policy denies that  Cosmos database accounts  are created with out public network access is disabled.",
+    "displayName": "Public network access should be disabled for CosmosDB",
+    "mode": "Indexed",
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -20,7 +20,7 @@
         "effect": "[parameters('effect')]"
       }
     },
-    "Parameters": {
+    "parameters": {
       "effect": {
         "type": "String",
         "allowedValues": [

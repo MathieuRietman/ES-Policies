@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploys NSG flow logs and traffic analytics to a storageaccountid with a specfied retention period.",
-    "DisplayName": "Deploys NSG flow logs and traffic analytics",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploys NSG flow logs and traffic analytics to a storageaccountid with a specfied retention period.",
+    "displayName": "Deploys NSG flow logs and traffic analytics",
+    "mode": "Indexed",
+    "parameters": {
       "retention": {
         "type": "Integer",
         "metadata": {
@@ -54,7 +54,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.Network/networkSecurityGroups"
@@ -82,7 +82,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "networkSecurityGroupName": {
                   "value": "[field('name')]"

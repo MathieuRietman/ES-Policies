@@ -1,7 +1,7 @@
 {
   "properties": {
     "displayName": "SQL managed instances deploy a specific min TLS version requirement.",
-    "Mode": "Indexed",
+    "mode": "Indexed",
     "description": "Deploy a specific min TLS version requirement and enforce SSL on SQL managed instances. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server.",
     "metadata": {
       "version": "1.0.0",
@@ -65,7 +65,7 @@
           ],
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

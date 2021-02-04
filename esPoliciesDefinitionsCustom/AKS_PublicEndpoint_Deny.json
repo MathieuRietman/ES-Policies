@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "This policy denies  the creation of  Azure Kubernetes Service non-private clusters",
-    "DisplayName": "Public network access on AKS API should be disabled",
-    "Mode": "Indexed",
-    "PolicyRule": {
+    "description": "This policy denies  the creation of  Azure Kubernetes Service non-private clusters",
+    "displayName": "Public network access on AKS API should be disabled",
+    "mode": "Indexed",
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -20,7 +20,7 @@
         "effect": "[parameters('effect')]"
       }
     },
-    "Parameters": {
+    "parameters": {
       "effect": {
         "type": "String",
         "allowedValues": [

@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploys Virtual Network to be used as hub virtual network in desired region in the subscription where this policy is assigned.",
-    "DisplayName": "Deploy Virtual Network to be used as hub virtual network in desired region",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploys Virtual Network to be used as hub virtual network in desired region in the subscription where this policy is assigned.",
+    "displayName": "Deploy Virtual Network to be used as hub virtual network in desired region",
+    "mode": "Indexed",
+    "parameters": {
       "hubName": {
         "type": "String",
         "metadata": {
@@ -62,7 +62,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -78,14 +78,14 @@
           "name": "[parameters('hubName')]",
           "deploymentScope": "Subscription",
           "existenceScope": "ResourceGroup",
-          "ResourceGroupName": "[parameters('rgName')]",
+          "resourceGroupName": "[parameters('rgName')]",
           "roleDefinitionIds": [
             "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
           ],
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "rgName": {
                   "value": "[parameters('rgName')]"

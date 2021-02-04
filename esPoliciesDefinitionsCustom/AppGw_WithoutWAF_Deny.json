@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "This policy enables you to restrict that Application Gateways is always deployed with WAF enabled",
-    "DisplayName": "Application Gateway should be deployed with WAF enabled",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "This policy enables you to restrict that Application Gateways is always deployed with WAF enabled",
+    "displayName": "Application Gateway should be deployed with WAF enabled",
+    "mode": "Indexed",
+    "parameters": {
       "effect": {
         "type": "String",
         "allowedValues": [
@@ -18,7 +18,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {

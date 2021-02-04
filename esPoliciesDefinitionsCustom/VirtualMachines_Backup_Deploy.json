@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploys if not exist a backup vault in the resourcegroup of  the virtual machine and enabled the backup for the virtual machine with defaultPolicy enabled.",
-    "DisplayName": "Deploy Azure Backup on virtual machines",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploys if not exist a backup vault in the resourcegroup of  the virtual machine and enabled the backup for the virtual machine with defaultPolicy enabled.",
+    "displayName": "Deploy Azure Backup on virtual machines",
+    "mode": "Indexed",
+    "parameters": {
       "effect": {
         "type": "string",
         "defaultValue": "DeployIfNotExists",
@@ -17,7 +17,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -362,7 +362,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

@@ -4,14 +4,14 @@
   "parameters": {
     "input": {
       "value": {
-        "Name": "Deploy-ASC-CE",
-        "ResourceType": "Microsoft.Authorization/policyDefinitions",
-        "SubscriptionId": null,
-        "Properties": {
-          "Description": null,
-          "DisplayName": "Deploy-ASC-ContinuousExportToWorkspace",
-          "Mode": "Indexed",
-          "Parameters": {
+        "name": "Deploy-ASC-CE",
+        "resourceType": "Microsoft.Authorization/policyDefinitions",
+        "subscriptionId": null,
+        "properties": {
+          "description": null,
+          "displayName": "Deploy-ASC-ContinuousExportToWorkspace",
+          "mode": "Indexed",
+          "parameters": {
             "resourceGroupLocation": {
               "type": "String",
               "metadata": {
@@ -86,7 +86,7 @@
               }
             }
           },
-          "PolicyRule": {
+          "policyRule": {
             "if": {
               "field": "type",
               "equals": "Microsoft.Resources/subscriptions"
@@ -97,7 +97,7 @@
                 "type": "Microsoft.Security/automations",
                 "name": "ExportToWorkspace",
                 "existenceScope": "resourcegroup",
-                "ResourceGroupName": "[concat(subscription().displayName, '-asc')]",
+                "resourceGroupName": "[concat(subscription().displayName, '-asc')]",
                 "deploymentScope": "subscription",
                 "roleDefinitionIds": [
                   "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
@@ -105,7 +105,7 @@
                 "deployment": {
                   "location": "northeurope",
                   "properties": {
-                    "mode": "incremental",
+                    "mode": "Incremental",
                     "template": {
                       "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                       "contentVersion": "1.0.0.0",
