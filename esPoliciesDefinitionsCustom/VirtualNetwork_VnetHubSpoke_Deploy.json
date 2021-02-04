@@ -8,6 +8,71 @@
       "version": "1.1.0",
       "category": "Network"
     },
+    "parameters": {
+      "vNetName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetName",
+          "description": "Name of the landing zone vNet"
+        }
+      },
+      "vNetRgName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetRgName",
+          "description": "Name of the landing zone vNet RG"
+        }
+      },
+      "vNetLocation": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetLocation",
+          "description": "Location for the vNet"
+        }
+      },
+      "vNetCidrRange": {
+        "type": "String",
+        "metadata": {
+          "displayName": "vNetCidrRange",
+          "description": "CIDR Range for the vNet"
+        }
+      },
+      "hubResourceId": {
+        "type": "String",
+        "metadata": {
+          "displayName": "hubResourceId",
+          "description": "Resource ID for the HUB vNet"
+        }
+      },
+      "hubPeerAllowGatewayTransit": {
+        "type": "Boolean",
+        "metadata": {
+          "displayName": "hubPeerAllowGatewayTransit",
+          "description": "Allow gateway transit on hub side peering"
+        },
+        "defaultValue": true
+      },
+      "lzVnetUseRemoteGateway": {
+        "type": "Boolean",
+        "metadata": {
+          "displayName": "lzVnetUseRemoteGateway",
+          "description": "Enable remote gateway usage to use gateway in the hub from LZ network"
+        },
+        "defaultValue": false
+      },
+      "effect": {
+        "type": "string",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        }
+      }
+    },
     "policyRule": {
       "if": {
         "allOf": [
@@ -18,7 +83,7 @@
         ]
       },
       "then": {
-        "effect": "deployIfNotExists",
+        "effect": "[parameters('effect')]",
         "details": {
           "type": "Microsoft.Network/virtualNetworks",
           "name": "[parameters('vNetName')]",
@@ -254,60 +319,8 @@
           }
         }
       }
-    },
-    "parameters": {
-      "vNetName": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetName",
-          "description": "Name of the landing zone vNet"
-        }
-      },
-      "vNetRgName": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetRgName",
-          "description": "Name of the landing zone vNet RG"
-        }
-      },
-      "vNetLocation": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetLocation",
-          "description": "Location for the vNet"
-        }
-      },
-      "vNetCidrRange": {
-        "type": "String",
-        "metadata": {
-          "displayName": "vNetCidrRange",
-          "description": "CIDR Range for the vNet"
-        }
-      },
-      "hubResourceId": {
-        "type": "String",
-        "metadata": {
-          "displayName": "hubResourceId",
-          "description": "Resource ID for the HUB vNet"
-        }
-      },
-      "hubPeerAllowGatewayTransit": {
-        "type": "Boolean",
-        "metadata": {
-          "displayName": "hubPeerAllowGatewayTransit",
-          "description": "Allow gateway transit on hub side peering"
-        },
-        "defaultValue": true
-      },
-      "lzVnetUseRemoteGateway": {
-        "type": "Boolean",
-        "metadata": {
-          "displayName": "lzVnetUseRemoteGateway",
-          "description": "Enable remote gateway usage to use gateway in the hub from LZ network"
-        },
-        "defaultValue": false
-      }
     }
+
   },
   "id": "/providers/Microsoft.Authorization/policyDefinitions/Deploy-VNET-HubSpoke",
   "type": "Microsoft.Authorization/policyDefinitions",

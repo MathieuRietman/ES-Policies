@@ -15633,8 +15633,8 @@
               "azfw": {
                 "type": "Object",
                 "metadata": {
-                  "displayName": "ergw",
-                  "description": "Object describing ExpressRoute gateway"
+                  "displayName": "azfw",
+                  "description": "Object describing Azure Firewall"
                 },
                 "defaultValue": {}
               },
@@ -16444,6 +16444,18 @@
                   "description": "Enable remote gateway usage to use gateway in the hub from LZ network"
                 },
                 "defaultValue": false
+              },
+              "effect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                }
               }
             },
             "PolicyRule": {
@@ -16456,7 +16468,7 @@
                 ]
               },
               "then": {
-                "effect": "deployIfNotExists",
+                "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Network/virtualNetworks",
                   "name": "[[parameters('vNetName')]",
