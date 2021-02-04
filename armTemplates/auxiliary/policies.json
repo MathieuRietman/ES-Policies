@@ -62,7 +62,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ContainerInstance/containerGroups"
@@ -226,7 +226,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ContainerRegistry/registries"
@@ -389,7 +389,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -562,7 +562,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ContainerService/managedClusters"
@@ -726,7 +726,7 @@
               "version": "1.0.0",
               "category": "Kubernetes"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -809,7 +809,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.AnalysisServices/servers"
@@ -992,7 +992,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.HealthcareApis/services"
@@ -1171,7 +1171,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ApiManagement/service"
@@ -1338,7 +1338,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -1421,7 +1421,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/applicationGateways"
@@ -1596,7 +1596,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Web/serverfarms"
@@ -1720,7 +1720,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -1782,7 +1782,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -1832,7 +1832,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -1880,7 +1880,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -1967,7 +1967,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -2147,7 +2147,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -2302,7 +2302,7 @@
               "version": "1.0.0",
               "category": "Security Center"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -2557,7 +2557,7 @@
               "version": "1.0.0",
               "category": "Automation"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -2643,7 +2643,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Automation/automationAccounts"
@@ -2830,7 +2830,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Batch/batchAccounts"
@@ -3029,7 +3029,7 @@
               "version": "1.0.0",
               "category": "Budget"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -3214,7 +3214,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Cdn/profiles/endpoints"
@@ -3373,7 +3373,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.CognitiveServices/accounts"
@@ -3560,7 +3560,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DocumentDB/databaseAccounts"
@@ -3728,7 +3728,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -3799,7 +3799,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Databricks/workspaces"
@@ -3993,7 +3993,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Kusto/Clusters"
@@ -4196,7 +4196,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DataFactory/factories"
@@ -4407,7 +4407,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DataLakeAnalytics/accounts"
@@ -4590,7 +4590,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DataLakeStore/accounts"
@@ -4740,7 +4740,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -4851,7 +4851,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -4962,7 +4962,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -5073,7 +5073,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -5184,7 +5184,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -5295,7 +5295,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -5427,7 +5427,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.EventGrid/eventSubscriptions"
@@ -5591,7 +5591,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.EventGrid/topics"
@@ -5774,7 +5774,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.EventHub/namespaces"
@@ -5977,7 +5977,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.EventGrid/systemTopics"
@@ -6156,7 +6156,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/expressRouteCircuits"
@@ -6335,7 +6335,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/azureFirewalls"
@@ -6505,7 +6505,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -6679,7 +6679,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/frontDoors"
@@ -6862,7 +6862,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7037,7 +7037,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.HDInsight/clusters"
@@ -7201,7 +7201,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Devices/IotHubs"
@@ -7432,7 +7432,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.KeyVault/vaults"
@@ -7572,7 +7572,7 @@
               "version": "1.0.0",
               "category": "Key Vault"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -7602,7 +7602,7 @@
               "version": "1.0.0",
               "category": "Key Vault"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "anyOf": [
                   {
@@ -7695,7 +7695,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/loadBalancers"
@@ -7852,7 +7852,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -8289,7 +8289,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -8494,7 +8494,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Logic/integrationAccounts"
@@ -8653,7 +8653,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Logic/workflows"
@@ -8832,7 +8832,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DBforMariaDB/servers"
@@ -8976,7 +8976,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9059,7 +9059,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Media/mediaServices"
@@ -9238,7 +9238,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.MachineLearningServices/workspaces"
@@ -9459,7 +9459,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DBforMySQL/servers"
@@ -9617,7 +9617,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9673,7 +9673,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9730,7 +9730,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9866,7 +9866,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -9985,7 +9985,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
@@ -10021,7 +10021,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/privateDnsZones"
@@ -10057,7 +10057,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/publicIPAddresses"
@@ -10120,7 +10120,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/networkInterfaces"
@@ -10283,7 +10283,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/publicIPAddresses"
@@ -10467,7 +10467,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/networkSecurityGroups"
@@ -10616,7 +10616,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -10687,7 +10687,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/networkSecurityGroups"
@@ -10850,7 +10850,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.DBforPostgreSQL/servers"
@@ -11012,7 +11012,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -11068,7 +11068,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -11125,7 +11125,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -11280,7 +11280,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.PowerBIDedicated/capacities"
@@ -11447,7 +11447,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.RecoveryServices/vaults"
@@ -11630,7 +11630,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -11709,7 +11709,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Cache/redis"
@@ -11834,7 +11834,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -11900,7 +11900,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -11993,7 +11993,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Relay/namespaces"
@@ -12172,7 +12172,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Search/searchServices"
@@ -12351,7 +12351,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.ServiceBus/namespaces"
@@ -12530,7 +12530,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.SignalRService/SignalR"
@@ -12665,7 +12665,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -12780,7 +12780,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -12872,7 +12872,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -12988,7 +12988,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -13145,7 +13145,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/databases"
@@ -13352,7 +13352,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/servers/elasticPools"
@@ -13504,7 +13504,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Sql/managedInstances"
@@ -13644,7 +13644,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -13708,7 +13708,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -13824,7 +13824,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -13876,7 +13876,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -13932,7 +13932,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -14048,7 +14048,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -14116,7 +14116,7 @@
               "version": "1.0.0",
               "category": "Storage"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -14172,7 +14172,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -14331,7 +14331,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.StreamAnalytics/streamingjobs"
@@ -14514,7 +14514,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.TimeSeriesInsights/environments"
@@ -14697,7 +14697,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/trafficManagerProfiles"
@@ -14836,7 +14836,7 @@
               "version": "1.0.0",
               "category": "Backup"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -15316,7 +15316,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Compute/virtualMachines"
@@ -15479,7 +15479,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/virtualNetworks"
@@ -15662,7 +15662,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -16044,7 +16044,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -16458,7 +16458,7 @@
                 }
               }
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -16753,7 +16753,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -16931,7 +16931,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -17204,7 +17204,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Compute/virtualMachineScaleSets"
@@ -17367,7 +17367,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "field": "type",
                 "equals": "Microsoft.Network/virtualNetworkGateways"
@@ -17561,7 +17561,7 @@
               "version": "1.0.0",
               "category": "Guest Configuration"
             },
-            "policyRule": {
+            "PolicyRule": {
               "if": {
                 "allOf": [
                   {
@@ -18486,7 +18486,7 @@
               "version": "1.0.0",
               "category": "Monitoring"
             },
-            "policyDefinitions": [
+            "PolicyDefinitions": [
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-ACI')]",
                 "policyDefinitionReferenceId": "ACIDeployDiagnosticLogDeployLogAnalytics",
@@ -19562,7 +19562,7 @@
               "version": "1.0.0",
               "category": "Encryption"
             },
-            "policyDefinitions": [
+            "PolicyDefinitions": [
               {
                 "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/5b9159ae-1701-4a6f-9a7a-aa9c8ddd0580",
                 "policyDefinitionReferenceId": "ACRCmkDeny",
@@ -20069,7 +20069,7 @@
               "version": "1.0.0",
               "category": "Encryption"
             },
-            "policyDefinitions": [
+            "PolicyDefinitions": [
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Append-AppService-httpsonly')]",
                 "policyDefinitionReferenceId": "AppServiceHttpEffect",
@@ -20427,7 +20427,7 @@
               "version": "1.0.0",
               "category": "Network"
             },
-            "policyDefinitions": [
+            "PolicyDefinitions": [
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-PublicEndpoint-CosmosDB')]",
                 "policyDefinitionReferenceId": "CosmosDenyPaasPublicIP",
@@ -20578,7 +20578,7 @@
               "version": "1.0.0",
               "category": "SQL"
             },
-            "policyDefinitions": [
+            "PolicyDefinitions": [
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-Tde')]",
                 "policyDefinitionReferenceId": "SqlDbTdeDeploySqlSecurity",
