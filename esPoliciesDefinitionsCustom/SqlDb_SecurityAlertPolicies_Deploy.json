@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploy the security Alert Policies configuration with email admin accounts when it not exist in current configuration",
-    "DisplayName": "Deploy SQL Database security Alert Policies configuration with email admin accounts",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploy the security Alert Policies configuration with email admin accounts when it not exist in current configuration",
+    "displayName": "Deploy SQL Database security Alert Policies configuration with email admin accounts",
+    "mode": "Indexed",
+    "parameters": {
       "effect": {
         "type": "string",
         "defaultValue": "DeployIfNotExists",
@@ -17,7 +17,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.Sql/servers/databases"
@@ -36,7 +36,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

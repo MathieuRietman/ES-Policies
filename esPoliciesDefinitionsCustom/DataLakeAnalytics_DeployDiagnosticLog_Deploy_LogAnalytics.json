@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "Deploys the diagnostic settings for Data Lake Analytics to stream to a Log Analytics workspace when any Data Lake Analytics which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
-    "DisplayName": "Deploy Diagnostic Settings for Data Lake Analytics to Log Analytics workspace",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "Deploys the diagnostic settings for Data Lake Analytics to stream to a Log Analytics workspace when any Data Lake Analytics which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
+    "displayName": "Deploy Diagnostic Settings for Data Lake Analytics to Log Analytics workspace",
+    "mode": "Indexed",
+    "parameters": {
       "logAnalytics": {
         "type": "String",
         "metadata": {
@@ -57,7 +57,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.DataLakeAnalytics/accounts"
@@ -89,7 +89,7 @@
           ],
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

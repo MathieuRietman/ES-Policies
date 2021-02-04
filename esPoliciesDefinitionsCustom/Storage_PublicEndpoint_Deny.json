@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "This policy denies creation of storage accounts with IP Firewall exposed to all public endpoints",
-    "DisplayName": "Public network access onStorage accounts should be disabled",
-    "Mode": "Indexed",
-    "PolicyRule": {
+    "description": "This policy denies creation of storage accounts with IP Firewall exposed to all public endpoints",
+    "displayName": "Public network access onStorage accounts should be disabled",
+    "mode": "Indexed",
+    "policyRule": {
       "if": {
         "allOf": [
           {
@@ -20,7 +20,7 @@
         "effect": "[parameters('effect')]"
       }
     },
-    "Parameters": {
+    "parameters": {
       "effect": {
         "type": "String",
         "allowedValues": [

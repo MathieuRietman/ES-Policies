@@ -1,7 +1,7 @@
 {
     "properties": {
         "displayName": "AppService append enable https only setting to enforce https setting.",
-        "mode": "all",
+        "mode": "All",
         "description": "Appends the AppService sites object to ensure that  HTTPS only is enabled for  server/service authentication and protects data in transit from network layer eavesdropping attacks. Please note Append does not enforce compliance use then deny.",
         "metadata": {
             "version": "1.0.0",

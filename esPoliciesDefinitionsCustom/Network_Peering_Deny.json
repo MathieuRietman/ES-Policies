@@ -1,9 +1,9 @@
 {
   "properties": {
-    "Description": "This policy denies the creation of vNet Peerings under the assigned scope.",
-    "DisplayName": "Deny vNet peering ",
-    "Mode": "Indexed",
-    "Parameters": {
+    "description": "This policy denies the creation of vNet Peerings under the assigned scope.",
+    "displayName": "Deny vNet peering ",
+    "mode": "Indexed",
+    "parameters": {
       "effect": {
         "type": "String",
         "allowedValues": [
@@ -18,7 +18,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
