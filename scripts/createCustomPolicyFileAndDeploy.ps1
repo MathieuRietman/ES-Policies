@@ -84,9 +84,9 @@ If (Test-Path -Path $policySourceFileFullPath ) {
             $NewObjectPol.Properties.PolicyRule = @()
 
           
-            $NewObjectPol.Properties.PSObject.Properties.Remove('PolicyRule')
+            $NewObjectPol.Properties.PSObject.Properties.Remove('policyRule')
 
-            $NewObjectPol.Properties | Add-Member -MemberType NoteProperty -Name PolicyRule  -Value  (Convertfrom-Json  $addEscape ) 
+            $NewObjectPol.Properties | Add-Member -MemberType NoteProperty -Name policyRule  -Value  (Convertfrom-Json  $addEscape ) 
 
             $newDefinitions += $NewObjectPol
         }
