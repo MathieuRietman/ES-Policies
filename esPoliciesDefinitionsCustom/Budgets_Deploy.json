@@ -2,7 +2,7 @@
   "properties": {
     "description": "Deploy a default budget on all subscriptions under the assigned scope",
     "displayName": "Deploy a default budget on all subscriptions under the assigned scope",
-    "mode": "Indexed",
+    "mode": "All",
     "parameters": {
       "amount": {
         "type": "string",
