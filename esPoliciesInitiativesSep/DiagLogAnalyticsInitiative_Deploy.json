@@ -714,10 +714,115 @@
           "displayName": "Deploy Diagnostic Settings for App Service to Log Analytics workspace",
           "description": "Deploys the diagnostic settings for Web App to stream to a Log Analytics workspace when any Web App which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
         }
+      },
+      "WVDAppGroupsLogAnalyticsEffect": {
+        "type": "string",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy Diagnostic Settings for WVD Application Groups to Log Analytics workspace",
+          "description": "Deploys the diagnostic settings for WVD Application groups to stream to a Log Analytics workspace when any application groups which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+        }
+      },
+      "WVDWorkspaceLogAnalyticsEffect": {
+        "type": "string",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy Diagnostic Settings for WVD Workspace to Log Analytics workspace",
+          "description": "Deploys the diagnostic settings for WVD Workspace to stream to a Log Analytics workspace when any Workspace which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+        }
+      },
+      "WVDHostPoolsLogAnalyticsEffect": {
+        "type": "string",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy Diagnostic Settings for WVD Host pools to Log Analytics workspace",
+          "description": "Deploys the diagnostic settings for WVD Host pools to stream to a Log Analytics workspace when any host pool which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+        }
+      },
+      "StorageAccountsLogAnalyticsEffect": {
+        "type": "string",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy Diagnostic Settings for Storage Accounts to Log Analytics workspace",
+          "description": "Deploys the diagnostic settings for Storage Accounts to stream to a Log Analytics workspace when any storage account which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+        }
       }
     },
     "policyDefinitionGroups": null,
     "policyDefinitions": [
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6f8f98a4-f108-47cb-8e98-91a0d85cd474",
+        "policyDefinitionReferenceId": "StorageAccountDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "logAnalytics": {
+            "value": "[[parameters('logAnalytics')]"
+          },
+          "effect": {
+            "value": "[[parameters('StorageAccountsLogAnalyticsEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WVDAppGroup')]",
+        "policyDefinitionReferenceId": "WVDAppGroupDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "logAnalytics": {
+            "value": "[[parameters('logAnalytics')]"
+          },
+          "effect": {
+            "value": "[[parameters('WVDAppGroupsLogAnalyticsEffect')]"
+          },
+          "profileName": {
+            "value": "[[parameters('profileName')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WVDWorkspace')]",
+        "policyDefinitionReferenceId": "WVDWorkspaceDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "logAnalytics": {
+            "value": "[[parameters('logAnalytics')]"
+          },
+          "effect": {
+            "value": "[[parameters('WVDWorkspaceLogAnalyticsEffect')]"
+          },
+          "profileName": {
+            "value": "[[parameters('profileName')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WVDHostPools')]",
+        "policyDefinitionReferenceId": "WVDHostPoolsDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "logAnalytics": {
+            "value": "[[parameters('logAnalytics')]"
+          },
+          "effect": {
+            "value": "[[parameters('WVDHostPoolsLogAnalyticsEffect')]"
+          },
+          "profileName": {
+            "value": "[[parameters('profileName')]"
+          }
+        }
+      },
       {
         "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-ACI')]",
         "policyDefinitionReferenceId": "ACIDeployDiagnosticLogDeployLogAnalytics",

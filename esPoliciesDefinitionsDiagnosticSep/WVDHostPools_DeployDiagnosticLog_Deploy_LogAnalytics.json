@@ -1,7 +1,7 @@
 {
   "properties": {
-    "description": "Deploys the diagnostic settings for Web App to stream to a Log Analytics workspace when any Web App which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
-    "displayName": "Deploy Diagnostic Settings for App Service to Log Analytics workspace",
+    "description": "Deploys the diagnostic settings for WVD Host Pools to stream to a Log Analytics workspace when any Host Pools which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
+    "displayName": "Deploy Diagnostic Settings for WVD Host Pools to Log Analytics workspace",
     "mode": "Indexed",
     "parameters": {
       "logAnalytics": {
@@ -32,18 +32,6 @@
           "description": "The diagnostic settings profile name"
         }
       },
-      "metricsEnabled": {
-        "type": "string",
-        "defaultValue": "True",
-        "allowedValues": [
-          "True",
-          "False"
-        ],
-        "metadata": {
-          "displayName": "Enable metrics",
-          "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
-        }
-      },
       "logsEnabled": {
         "type": "string",
         "defaultValue": "True",
@@ -61,21 +49,13 @@
       "version": "1.0.0",
       "category": "Monitoring"
     },
-    "policyRule": {
+    "PolicyRule": {
       "if": {
-        "allOf": [
-          {
-            "field": "type",
-            "equals": "Microsoft.Web/sites"
-          },
-          {
-            "value": "[[field('kind')]",
-            "notContains": "functionapp"
-          }
-        ]
+        "field": "type",
+        "equals": "Microsoft.DesktopVirtualization/hostpools"
       },
       "then": {
-        "effect": "[[parameters('effect')]",
+        "effect": "[parameters('effect')]",
         "details": {
           "type": "Microsoft.Insights/diagnosticSettings",
           "name": "setByPolicy",
@@ -86,12 +66,8 @@
                 "equals": "true"
               },
               {
-                "field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
-                "equals": "true"
-              },
-              {
                 "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
-                "equals": "[[parameters('logAnalytics')]"
+                "equals": "[parameters('logAnalytics')]"
               }
             ]
           },
@@ -118,9 +94,6 @@
                   "profileName": {
                     "type": "string"
                   },
-                  "metricsEnabled": {
-                    "type": "string"
-                  },
                   "logsEnabled": {
                     "type": "string"
                   }
@@ -128,60 +101,37 @@
                 "variables": {},
                 "resources": [
                   {
-                    "type": "Microsoft.Web/sites/providers/diagnosticSettings",
+                    "type": "Microsoft.DesktopVirtualization/hostpools/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
-                    "location": "[[parameters('location')]",
+                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
-                      "workspaceId": "[[parameters('logAnalytics')]",
-                      "metrics": [
-                        {
-                          "category": "AllMetrics",
-                          "enabled": "[[parameters('metricsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          },
-                          "timeGrain": null
-                        }
-                      ],
+                      "workspaceId": "[parameters('logAnalytics')]",
                       "logs": [
                         {
-                          "category": "AppServiceAntivirusScanAuditLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "Checkpoint",
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
-                          "category": "AppServiceHTTPLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "Error",
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
-                          "category": "AppServiceConsoleLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "Management",
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
-                          "category": "AppServiceHTTPLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "Connection",
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
-                          "category": "AppServiceAppLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "HostRegistration",
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
-                          "category": "AppServiceFileAuditLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
-                        },
-                        {
-                          "category": "AppServiceAuditLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
-                        },
-                        {
-                          "category": "AppServiceIPSecAuditLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
-                        },
-                        {
-                          "category": "AppServicePlatformLogs",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "AgentHealthStatus",
+                          "enabled": "[parameters('logsEnabled')]"
                         }
                       ]
                     }
@@ -191,22 +141,19 @@
               },
               "parameters": {
                 "logAnalytics": {
-                  "value": "[[parameters('logAnalytics')]"
+                  "value": "[parameters('logAnalytics')]"
                 },
                 "location": {
-                  "value": "[[field('location')]"
+                  "value": "[field('location')]"
                 },
                 "resourceName": {
-                  "value": "[[field('name')]"
+                  "value": "[field('name')]"
                 },
                 "profileName": {
-                  "value": "[[parameters('profileName')]"
-                },
-                "metricsEnabled": {
-                  "value": "[[parameters('metricsEnabled')]"
+                  "value": "[parameters('profileName')]"
                 },
                 "logsEnabled": {
-                  "value": "[[parameters('logsEnabled')]"
+                  "value": "[parameters('logsEnabled')]"
                 }
               }
             }
@@ -215,7 +162,7 @@
       }
     }
   },
-  "id": "/providers/policySetDefinitions/Deploy-Diagnostics-Website",
+  "id": "/providers/policySetDefinitions/Deploy-Diagnostics-WVDHostPools",
   "type": "Microsoft.Authorization/policySetDefinitions",
-  "name": "Deploy-Diagnostics-Website"
+  "name": "Deploy-Diagnostics-WVDHostPools"
 }

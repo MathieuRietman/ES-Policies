@@ -26,6 +26,7 @@
 Param (
 
     [string]$policySourcefile = "policies.json",
+    
 
     [string]$policyFolderSource = "esPoliciesDefinitionsCustom",
 
@@ -41,8 +42,9 @@ Param (
 
 )
 
+
 $Root = $PSScriptRoot + "/"
-$FilePolicy = "$($Root)./$policyFileExport"
+
 
 $newLine = 
 $policySourceFileFullPath = "$($Root)./$policySourcefile"
@@ -151,14 +153,130 @@ If (Test-Path -Path $policySourceFileFullPath ) {
 
     }
     
+    $Root = $PSScriptRoot + "/"
+    $FileTempPolicy = "$($Root)./Temp.json"
+
     $NewObject.variables.policies.policyDefinitions = $NewDefinitions
     $NewObject.variables.initiatives.policySetDefinitions = $newPolicyDefinitions
-    $NewObject |  ConvertTo-Json  -Depth 100 | out-file  $FilePolicy
-    write-host "generated new file  $($FilePolicy)"
+    $NewObject |  ConvertTo-Json  -Depth 100 | out-file   $FileTempPolicy
+    write-host "Temp generated new file  $( $FileTempPolicy)"
   
-    Write-Host "Start deploy policy definitions to toplevel Management Group"
-    New-AzManagementGroupDeployment -TemplateFile "$Root./$policyFileExport" -topLevelManagementGroupPrefix $topLevelManagementGroupPrefix -ManagementGroupId "$($topLevelManagementGroupPrefix)" -Verbose -Location $Location 
+  
 
+    #SOrt file based on input and add newest at the bottum
+
+
+
+
+    $Root = $PSScriptRoot + "/"
+    $FilePolicy = "$($Root)./$policySourcefile"
+    $FileOutputPolicy = "$($Root)./$policyFileExport"
+    $FilePolicySource = $FileTempPolicy
+
+    $BodyString = Get-Content $FilePolicy | ConvertFrom-Json 
+
+    $NewObject = @()
+    $NewObject = [PSObject]$BodyString
+
+    $NewObject.variables.policies.policyDefinitions = @()
+    $NewObject.variables.initiatives.policySetDefinitions = @()
+
+
+
+    $BodyStringSource = Get-Content $FilePolicySource  | ConvertFrom-Json 
+    $newPolicyDefinitions = @()
+    $newPolicySetDefinitions = @()
+
+
+
+    $BodyString = Get-Content $FilePolicy  | ConvertFrom-Json 
+
+    foreach ( $PolicyDef in  $BodyString.variables.initiatives.policySetDefinitions) {
+        $name = $policyDef.Name
+        foreach ( $PolicyDefSource in  $BodyStringSource.variables.initiatives.policySetDefinitions) {
+
+            if ($name -eq $PolicyDefSource.name) {
+	
+                $PolicyObject = [PSCustomObject] @{
+                    properties = $policyDef.Properties
+                    name       = $policyDef.Name
+                }
+                $newPolicySetDefinitions += $PolicyObject
+            }
+	
+
+		
+        }
+    }
+    #Add new ones
+    foreach ( $PolicyDef in  $BodyStringSource.variables.initiatives.policySetDefinitions) {
+        $name = $policyDef.Name
+        $find = $false
+        foreach ( $PolicyDefSource in  $BodyString.variables.initiatives.policySetDefinitions) {
+
+            if ($name -eq $PolicyDefSource.name) {
+                $find = $true
+			
+            }
+		
+        }
+        if (!$find) {
+            $PolicyObject = [PSCustomObject] @{
+                properties = $policyDef.Properties
+                name       = $policyDef.Name
+            }
+            $newPolicySetDefinitions += $PolicyObject
+        }
+    }
+
+    foreach ( $PolicyDef in  $BodyString.variables.policies.policyDefinitions) {
+
+        $name = $policyDef.Name
+        foreach ( $PolicyDefSource in  $BodyStringSource.variables.policies.policyDefinitions) {
+
+            if ($name -eq $PolicyDefSource.name) {
+	
+                $PolicyObject = [PSCustomObject] @{
+                    properties = $policyDef.Properties
+                    name       = $policyDef.Name
+                }
+                $newPolicyDefinitions += $PolicyObject
+            }
+	
+
+		
+        }
+
+    }
+    #Add new ones
+    foreach ( $PolicyDef in   $BodyStringSource.variables.policies.policyDefinitions) {
+        $name = $policyDef.Name
+        $find = $false
+        foreach ( $PolicyDefSource in  $BodyString.variables.policies.policyDefinitions) {
+
+            if ($name -eq $PolicyDefSource.name) {
+                $find = $true
+			
+            }
+		
+        }
+        if (!$find) {
+            $PolicyObject = [PSCustomObject] @{
+                properties = $policyDef.Properties
+                name       = $policyDef.Name
+            }
+            $newPolicyDefinitions += $PolicyObject
+        }
+    }
+
+    $NewObject.variables.policies.policyDefinitions = $newPolicyDefinitions
+    $NewObject.variables.initiatives.policySetDefinitions = $newPolicySetDefinitions
+    $NewObject |  ConvertTo-Json  -Depth 100 | out-file  $FileOutputPolicy
+    write-host "generated new file  $($FileOutputPolicy)"
+
+
+    Write-Host "Start deploy policy definitions to toplevel Management Group"
+    New-AzManagementGroupDeployment -TemplateFile $FileOutputPolicy -topLevelManagementGroupPrefix $topLevelManagementGroupPrefix -ManagementGroupId "$($topLevelManagementGroupPrefix)" -Verbose -Location $Location 
 
 
   

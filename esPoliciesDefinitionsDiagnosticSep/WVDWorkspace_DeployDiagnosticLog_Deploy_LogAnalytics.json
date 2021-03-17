@@ -1,7 +1,7 @@
 {
   "properties": {
-    "description": "Deploys the diagnostic settings for Network Security Groups to stream to a Log Analytics workspace when any Network Security Groups which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
-    "displayName": "Deploy Diagnostic Settings for Network Security Groups to Log Analytics workspace",
+    "description": "Deploys the diagnostic settings for WVD Workspace to stream to a Log Analytics workspace when any Workspace which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
+    "displayName": "Deploy Diagnostic Settings for WVD Workspace to Log Analytics workspace",
     "mode": "Indexed",
     "parameters": {
       "logAnalytics": {
@@ -49,13 +49,13 @@
       "version": "1.0.0",
       "category": "Monitoring"
     },
-    "policyRule": {
+    "PolicyRule": {
       "if": {
         "field": "type",
-        "equals": "Microsoft.Network/networkSecurityGroups"
+        "equals": "Microsoft.DesktopVirtualization/workspaces"
       },
       "then": {
-        "effect": "[[parameters('effect')]",
+        "effect": "[parameters('effect')]",
         "details": {
           "type": "Microsoft.Insights/diagnosticSettings",
           "name": "setByPolicy",
@@ -67,7 +67,7 @@
               },
               {
                 "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
-                "equals": "[[parameters('logAnalytics')]"
+                "equals": "[parameters('logAnalytics')]"
               }
             ]
           },
@@ -101,22 +101,29 @@
                 "variables": {},
                 "resources": [
                   {
-                    "type": "Microsoft.Network/networkSecurityGroups/providers/diagnosticSettings",
+                    "type": "Microsoft.DesktopVirtualization/workspaces/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
-                    "location": "[[parameters('location')]",
+                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
-                      "workspaceId": "[[parameters('logAnalytics')]",
-                      "metrics": [],
+                      "workspaceId": "[parameters('logAnalytics')]",
                       "logs": [
                         {
-                          "category": "NetworkSecurityGroupEvent",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "Checkpoint",
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
-                          "category": "NetworkSecurityGroupRuleCounter",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "Error",
+                          "enabled": "[parameters('logsEnabled')]"
+                        },
+                        {
+                          "category": "Management",
+                          "enabled": "[parameters('logsEnabled')]"
+                        },
+                        {
+                          "category": "Feed",
+                          "enabled": "[parameters('logsEnabled')]"
                         }
                       ]
                     }
@@ -126,19 +133,19 @@
               },
               "parameters": {
                 "logAnalytics": {
-                  "value": "[[parameters('logAnalytics')]"
+                  "value": "[parameters('logAnalytics')]"
                 },
                 "location": {
-                  "value": "[[field('location')]"
+                  "value": "[field('location')]"
                 },
                 "resourceName": {
-                  "value": "[[field('name')]"
+                  "value": "[field('name')]"
                 },
                 "profileName": {
-                  "value": "[[parameters('profileName')]"
+                  "value": "[parameters('profileName')]"
                 },
                 "logsEnabled": {
-                  "value": "[[parameters('logsEnabled')]"
+                  "value": "[parameters('logsEnabled')]"
                 }
               }
             }
@@ -147,7 +154,7 @@
       }
     }
   },
-  "id": "/providers/policySetDefinitions/Deploy-Diagnostics-NetworkSecurityGroups",
+  "id": "/providers/policySetDefinitions/Deploy-Diagnostics-WVDWorkspace",
   "type": "Microsoft.Authorization/policySetDefinitions",
-  "name": "Deploy-Diagnostics-NetworkSecurityGroups"
+  "name": "Deploy-Diagnostics-WVDWorkspace"
 }

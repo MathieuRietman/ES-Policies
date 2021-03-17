@@ -1,7 +1,7 @@
 {
   "properties": {
-    "description": "Deploys the diagnostic settings for Time Series Insights to stream to a Log Analytics workspace when any Time Series Insights which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
-    "displayName": "Deploy Diagnostic Settings for Time Series Insights to Log Analytics workspace",
+    "description": "Deploys the diagnostic settings for WVD Application group to stream to a Log Analytics workspace when any application group which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
+    "displayName": "Deploy Diagnostic Settings for WVD Application group to Log Analytics workspace",
     "mode": "Indexed",
     "parameters": {
       "logAnalytics": {
@@ -32,18 +32,6 @@
           "description": "The diagnostic settings profile name"
         }
       },
-      "metricsEnabled": {
-        "type": "string",
-        "defaultValue": "True",
-        "allowedValues": [
-          "True",
-          "False"
-        ],
-        "metadata": {
-          "displayName": "Enable metrics",
-          "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
-        }
-      },
       "logsEnabled": {
         "type": "string",
         "defaultValue": "True",
@@ -61,13 +49,13 @@
       "version": "1.0.0",
       "category": "Monitoring"
     },
-    "policyRule": {
+    "PolicyRule": {
       "if": {
         "field": "type",
-        "equals": "Microsoft.TimeSeriesInsights/environments"
+        "equals": "Microsoft.DesktopVirtualization/applicationGroups"
       },
       "then": {
-        "effect": "[[parameters('effect')]",
+        "effect": "[parameters('effect')]",
         "details": {
           "type": "Microsoft.Insights/diagnosticSettings",
           "name": "setByPolicy",
@@ -78,12 +66,8 @@
                 "equals": "true"
               },
               {
-                "field": "Microsoft.Insights/diagnosticSettings/metrics.enabled",
-                "equals": "true"
-              },
-              {
                 "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
-                "equals": "[[parameters('logAnalytics')]"
+                "equals": "[parameters('logAnalytics')]"
               }
             ]
           },
@@ -110,9 +94,6 @@
                   "profileName": {
                     "type": "string"
                   },
-                  "metricsEnabled": {
-                    "type": "string"
-                  },
                   "logsEnabled": {
                     "type": "string"
                   }
@@ -120,32 +101,25 @@
                 "variables": {},
                 "resources": [
                   {
-                    "type": "Microsoft.TimeSeriesInsights/environments/providers/diagnosticSettings",
+                    "type": "Microsoft.DesktopVirtualization/applicationGroups/providers/diagnosticSettings",
                     "apiVersion": "2017-05-01-preview",
-                    "name": "[[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
-                    "location": "[[parameters('location')]",
+                    "name": "[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                    "location": "[parameters('location')]",
                     "dependsOn": [],
                     "properties": {
-                      "workspaceId": "[[parameters('logAnalytics')]",
-                      "metrics": [
-                        {
-                          "category": "AllMetrics",
-                          "enabled": "[[parameters('metricsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          },
-                          "timeGrain": null
-                        }
-                      ],
+                      "workspaceId": "[parameters('logAnalytics')]",
                       "logs": [
                         {
-                          "category": "Ingress",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "category": "Checkpoint",
+                          "enabled": "[parameters('logsEnabled')]"
+                        },
+                        {
+                          "category": "Error",
+                          "enabled": "[parameters('logsEnabled')]"
                         },
                         {
                           "category": "Management",
-                          "enabled": "[[parameters('logsEnabled')]"
+                          "enabled": "[parameters('logsEnabled')]"
                         }
                       ]
                     }
@@ -155,22 +129,19 @@
               },
               "parameters": {
                 "logAnalytics": {
-                  "value": "[[parameters('logAnalytics')]"
+                  "value": "[parameters('logAnalytics')]"
                 },
                 "location": {
-                  "value": "[[field('location')]"
+                  "value": "[field('location')]"
                 },
                 "resourceName": {
-                  "value": "[[field('name')]"
+                  "value": "[field('name')]"
                 },
                 "profileName": {
-                  "value": "[[parameters('profileName')]"
-                },
-                "metricsEnabled": {
-                  "value": "[[parameters('metricsEnabled')]"
+                  "value": "[parameters('profileName')]"
                 },
                 "logsEnabled": {
-                  "value": "[[parameters('logsEnabled')]"
+                  "value": "[parameters('logsEnabled')]"
                 }
               }
             }
@@ -179,7 +150,7 @@
       }
     }
   },
-  "id": "/providers/policySetDefinitions/Deploy-Diagnostics-TimeSeriesInsights",
+  "id": "/providers/policySetDefinitions/Deploy-Diagnostics-WVDAppGroup",
   "type": "Microsoft.Authorization/policySetDefinitions",
-  "name": "Deploy-Diagnostics-TimeSeriesInsights"
+  "name": "Deploy-Diagnostics-WVDAppGroup"
 }
