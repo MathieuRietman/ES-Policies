@@ -2,7 +2,7 @@
   "properties": {
     "description": "Deploys Azure Firewall Manager policy in subscription where the policy is assigned.",
     "displayName": "Deploy Azure Firewall Manager policy in the subscription",
-    "mode": "Indexed",
+    "mode": "All",
     "parameters": {
       "fwpolicy": {
         "type": "Object",
@@ -13,7 +13,7 @@
         "defaultValue": {}
       },
       "fwPolicyRegion": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "fwPolicyRegion",
           "description": "Select Azure region for Azure Firewall Policy",
@@ -21,7 +21,7 @@
         }
       },
       "rgName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "rgName",
           "description": "Provide name for resource group."
@@ -57,12 +57,12 @@
           "existenceScope": "ResourceGroup",
           "resourceGroupName": "[parameters('rgName')]",
           "roleDefinitionIds": [
-            "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "rgName": {
                   "value": "[parameters('rgName')]"
@@ -105,7 +105,7 @@
                       "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                     ],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
                         "contentVersion": "1.0.0.0",

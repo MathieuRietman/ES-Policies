@@ -12,7 +12,7 @@
         "defaultValue": 5
       },
       "storageAccountResourceId": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "Storage Account Resource Id",
           "strongType": "Microsoft.Storage/storageAccounts"
@@ -33,7 +33,7 @@
         "defaultValue": false
       },
       "logAnalytics": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "strongType": "omsWorkspace",
           "displayName": "Resource ID of Log Analytics workspace",
@@ -82,7 +82,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "networkSecurityGroupName": {
                   "value": "[field('name')]"

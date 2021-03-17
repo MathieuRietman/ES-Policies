@@ -5,35 +5,35 @@
     "mode": "Indexed",
     "parameters": {
       "domainUsername": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "domainUsername",
           "description": null
         }
       },
       "domainPassword": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "domainPassword",
           "description": null
         }
       },
       "domainFQDN": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "domainFQDN",
           "description": null
         }
       },
       "domainOUPath": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "domainOUPath",
           "description": null
         }
       },
       "keyVaultResourceId": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "keyVaultResourceId",
           "description": null
@@ -152,7 +152,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "vmName": {
                   "value": "[field('name')]"

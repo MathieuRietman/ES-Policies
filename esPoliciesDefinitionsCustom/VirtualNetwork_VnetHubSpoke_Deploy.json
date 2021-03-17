@@ -1,77 +1,48 @@
 {
   "properties": {
-    "displayName": "Deploy Landing Zone VNet with peering to VNet Hub",
-    "policyType": "Custom",
+    "description": "This policy deploys virtual network and peer to the hub",
+    "displayName": "Deploys virtual network peering to hub",
     "mode": "All",
-    "description": "This policy deploys a Landing Zone Virtual network and peers it to the virtual network hub",
-    "metadata": {
-      "version": "1.1.0",
-      "category": "Network"
-    },
     "parameters": {
       "vNetName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "vNetName",
           "description": "Name of the landing zone vNet"
         }
       },
       "vNetRgName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "vNetRgName",
           "description": "Name of the landing zone vNet RG"
         }
       },
       "vNetLocation": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "vNetLocation",
           "description": "Location for the vNet"
         }
       },
       "vNetCidrRange": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "vNetCidrRange",
           "description": "CIDR Range for the vNet"
         }
       },
       "hubResourceId": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "hubResourceId",
           "description": "Resource ID for the HUB vNet"
         }
-      },
-      "hubPeerAllowGatewayTransit": {
-        "type": "Boolean",
-        "metadata": {
-          "displayName": "hubPeerAllowGatewayTransit",
-          "description": "Allow gateway transit on hub side peering"
-        },
-        "defaultValue": true
-      },
-      "lzVnetUseRemoteGateway": {
-        "type": "Boolean",
-        "metadata": {
-          "displayName": "lzVnetUseRemoteGateway",
-          "description": "Enable remote gateway usage to use gateway in the hub from LZ network"
-        },
-        "defaultValue": false
-      },
-      "effect": {
-        "type": "string",
-        "defaultValue": "DeployIfNotExists",
-        "allowedValues": [
-          "DeployIfNotExists",
-          "Disabled"
-        ],
-        "metadata": {
-          "displayName": "Effect",
-          "description": "Enable or disable the execution of the policy"
-        }
       }
+    },
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Network"
     },
     "policyRule": {
       "if": {
@@ -83,13 +54,13 @@
         ]
       },
       "then": {
-        "effect": "[parameters('effect')]",
+        "effect": "deployIfNotExists",
         "details": {
           "type": "Microsoft.Network/virtualNetworks",
           "name": "[parameters('vNetName')]",
           "deploymentScope": "Subscription",
           "existenceScope": "ResourceGroup",
-          "resourceGroupName": "[parameters('vNetRgName')]",
+          "ResourceGroupName": "[parameters('vNetRgName')]",
           "roleDefinitionIds": [
             "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],
@@ -102,17 +73,13 @@
               {
                 "field": "location",
                 "equals": "[parameters('vNetLocation')]"
-              },
-              {
-                "field": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings[*].remoteVirtualNetwork.id",
-                "contains": "[parameters('hubResourceId')]"
               }
             ]
           },
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "vNetRgName": {
                   "value": "[parameters('vNetRgName')]"
@@ -128,12 +95,6 @@
                 },
                 "hubResourceId": {
                   "value": "[parameters('hubResourceId')]"
-                },
-                "hubPeerAllowGatewayTransit": {
-                  "value": "[parameters('hubPeerAllowGatewayTransit')]"
-                },
-                "lzVnetUseRemoteGateway": {
-                  "value": "[parameters('lzVnetUseRemoteGateway')]"
                 }
               },
               "template": {
@@ -152,11 +113,9 @@
                   "vNetCidrRange": {
                     "type": "string"
                   },
-                  "lzVnetUseRemoteGateway": {
-                    "type": "bool"
-                  },
-                  "hubPeerAllowGatewayTransit": {
-                    "type": "bool"
+                  "vNetPeerUseRemoteGateway": {
+                    "type": "bool",
+                    "defaultValue": false
                   },
                   "hubResourceId": {
                     "type": "string"
@@ -171,7 +130,7 @@
                     "location": "[parameters('vNetLocation')]",
                     "dependsOn": [],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -205,7 +164,7 @@
                       "[concat('es-lz-vnet-',substring(uniqueString(subscription().id),0,6),'-rg')]"
                     ],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -239,8 +198,8 @@
                               },
                               "allowVirtualNetworkAccess": true,
                               "allowForwardedTraffic": true,
-                              "allowGatewayTransit": false,
-                              "useRemoteGateways": "[parameters('lzVnetUseRemoteGateway')]"
+                              "allowGatewayTransit": true,
+                              "useRemoteGateways": "[parameters('vNetPeerUseRemoteGateway')]"
                             }
                           },
                           {
@@ -253,7 +212,7 @@
                               "[parameters('vNetName')]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "expressionEvaluationOptions": {
                                 "scope": "inner"
                               },
@@ -262,15 +221,11 @@
                                 "contentVersion": "1.0.0.0",
                                 "parameters": {
                                   "remoteVirtualNetwork": {
-                                    "type": "string",
+                                    "Type": "string",
                                     "defaultValue": false
                                   },
                                   "hubName": {
-                                    "type": "string",
-                                    "defaultValue": false
-                                  },
-                                  "hubPeerAllowGatewayTransit": {
-                                    "type": "bool",
+                                    "Type": "string",
                                     "defaultValue": false
                                   }
                                 },
@@ -283,7 +238,7 @@
                                     "properties": {
                                       "allowVirtualNetworkAccess": true,
                                       "allowForwardedTraffic": true,
-                                      "allowGatewayTransit": "[[parameters('hubPeerAllowGatewayTransit')]",
+                                      "allowGatewayTransit": true,
                                       "useRemoteGateways": false,
                                       "remoteVirtualNetwork": {
                                         "id": "[[parameters('remoteVirtualNetwork')]"
@@ -299,9 +254,6 @@
                                 },
                                 "hubName": {
                                   "value": "[split(parameters('hubResourceId'),'/')[8]]"
-                                },
-                                "hubPeerAllowGatewayTransit": {
-                                  "value": "[parameters('hubPeerAllowGatewayTransit')]"
                                 }
                               }
                             }
@@ -320,9 +272,8 @@
         }
       }
     }
-
   },
-  "id": "/providers/Microsoft.Authorization/policyDefinitions/Deploy-VNET-HubSpoke",
-  "type": "Microsoft.Authorization/policyDefinitions",
+  "id": "/providers/policySetDefinitions/Deploy-VNET-HubSpoke",
+  "type": "Microsoft.Authorization/policySetDefinitions",
   "name": "Deploy-VNET-HubSpoke"
 }

@@ -1,11 +1,11 @@
 {
   "properties": {
-    "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for Storage-Blob Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
-    "displayName": "Deploy DNS  Zone Group for Storage-Blob Private Endpoint",
+    "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for Storage-Table Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
+    "displayName": "Deploy DNS  Zone Group for Storage-Table Private Endpoint",
     "mode": "Indexed",
     "parameters": {
       "privateDnsZoneId": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "privateDnsZoneId",
           "strongType": "Microsoft.Network/privateDnsZones"
@@ -48,11 +48,11 @@
         "details": {
           "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
           "roleDefinitionIds": [
-            "/providers/Microsoft.Authorization/roleDefinitions/b12aa53e-6015-4669-85d0-8515ebb3ae7f"
+            "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
           ],
           "deployment": {
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "template": {
                 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",

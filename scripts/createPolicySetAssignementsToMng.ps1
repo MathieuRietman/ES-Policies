@@ -139,10 +139,10 @@ If (Test-Path -Path $configFile ) {
                     If (!(Get-AzRoleAssignment -Scope $scope -RoleDefinitionId $roleDefinitionID -ObjectId $status.Identity.principalId)) {
                         New-AzRoleAssignment -Scope $scope -RoleDefinitionId $roleDefinitionID -ObjectId $status.Identity.principalId 
                     }
-                    If (!(Get-AzRoleAssignment -Scope "/subscriptions/$($BodyString.managementSubscriptionId)"  -RoleDefinitionId $roleDefinitionID -ObjectId $status.Identity.principalId)) {
-                        New-AzRoleAssignment -Scope "/subscriptions/$($BodyString.managementSubscriptionId)" -RoleDefinitionId $roleDefinitionID -ObjectId $status.Identity.principalId
+                    # If (!(Get-AzRoleAssignment -Scope "/subscriptions/$($BodyString.managementSubscriptionId)"  -RoleDefinitionId $roleDefinitionID -ObjectId $status.Identity.principalId)) {
+                    #     New-AzRoleAssignment -Scope "/subscriptions/$($BodyString.managementSubscriptionId)" -RoleDefinitionId $roleDefinitionID -ObjectId $status.Identity.principalId
        
-                    }
+                    # }
                 }
 
                 

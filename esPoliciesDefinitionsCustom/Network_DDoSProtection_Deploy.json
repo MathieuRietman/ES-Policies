@@ -2,17 +2,17 @@
   "properties": {
     "description": "Deploys an Azure DDoS Protection Standard plan",
     "displayName": "Deploy an Azure DDoS Protection Standard plan",
-    "mode": "Indexed",
+    "mode": "All",
     "parameters": {
       "ddosName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "ddosName",
           "description": "Name of the Virtual WAN"
         }
       },
       "ddosRegion": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "ddosRegion",
           "description": "Select Azure region for Virtual WAN",
@@ -20,7 +20,7 @@
         }
       },
       "rgName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "rgName",
           "description": "Provide name for resource group."
@@ -62,7 +62,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "rgName": {
                   "value": "[parameters('rgName')]"
@@ -105,7 +105,7 @@
                       "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                     ],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
                         "contentVersion": "1.0.0.0",
