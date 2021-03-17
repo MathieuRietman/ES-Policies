@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "category": "Key Vault"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "anyOf": [
           {

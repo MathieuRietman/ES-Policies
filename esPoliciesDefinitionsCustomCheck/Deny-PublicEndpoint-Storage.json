@@ -22,7 +22,7 @@
       "version": "1.0.0",
       "category": "Storage"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {

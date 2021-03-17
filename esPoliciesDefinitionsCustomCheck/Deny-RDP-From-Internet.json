@@ -22,7 +22,7 @@
         "defaultValue": "Deny"
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {

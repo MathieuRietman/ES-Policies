@@ -81,7 +81,7 @@
       "version": "1.0.0",
       "category": "Budget"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {

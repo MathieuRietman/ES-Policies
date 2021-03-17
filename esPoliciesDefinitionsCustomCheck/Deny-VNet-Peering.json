@@ -22,7 +22,7 @@
       "version": "1.0.0",
       "category": "Network"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"

@@ -44,7 +44,7 @@
       "version": "1.0.0",
       "category": "Network"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {

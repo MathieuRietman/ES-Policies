@@ -49,7 +49,7 @@
       "version": "1.0.0",
       "category": "Monitoring"
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "field": "type",
         "equals": "Microsoft.Databricks/workspaces"

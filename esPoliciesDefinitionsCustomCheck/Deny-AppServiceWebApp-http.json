@@ -22,7 +22,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {

@@ -35,7 +35,7 @@
         }
       }
     },
-    "PolicyRule": {
+    "policyRule": {
       "if": {
         "allOf": [
           {
