@@ -1,0 +1,14 @@
+{
+    "general": {
+      
+        "managementSubscriptionId": "8f4aaa68-865d-40ad-b76d-748daa9bf470",
+        "location": "WestEurope",
+        "vulnerabilityAssessmentsEmail": "me@domain.com",
+        "phoneSecurityContact": "+31612345678",
+        "vulnerabilityAssessmentsStorageID": "stgmrivulnerabilitys",
+        "logAnalytics": "/subscriptions/8f4aaa68-865d-40ad-b76d-748daa9bf470/resourcegroups/rg-marie-centrallog-p-we/providers/microsoft.operationalinsights/workspaces/la-marie-centrallogging-p-we"
+  
+
+        
+    }
+}
