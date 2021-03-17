@@ -19,7 +19,7 @@
                         "description": "Deploys the diagnostic settings for Container Instances to stream to a Log Analytics workspace when any ACR which is missing this diagnostic settings is created or updated. The policy wil set the diagnostic with all metrics enabled.",
                         "displayName": "Deploy Diagnostic Settings for Container Instances to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -171,7 +171,7 @@
                         "description": "Depoloys a default budget on subscriptions.",
                         "displayName": "Deploy a default budget on subscriptions",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "amount": {
                                 "type": "string",
                                 "defaultValue": "1000",
@@ -375,7 +375,7 @@
                         "description": "Deploys the diagnostic settings for Container Registry to stream to a Log Analytics workspace when any ACR which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics  enabled.",
                         "displayName": "Deploy Diagnostic Settings for Container Registry to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -558,7 +558,7 @@
                         "description": "Deploys the diagnostic settings for Activity Log to stream to a Log Analytics workspace when any Activity Log which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with category enabled.",
                         "displayName": "Deploy Diagnostic Settings for Activity Log to Log Analytics workspace",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -711,7 +711,7 @@
                         "description": "Deploys the diagnostic settings for Kubernetes Service to stream to a Log Analytics workspace when any Kubernetes Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled.",
                         "displayName": "Deploy Diagnostic Settings for Kubernetes Service to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -914,7 +914,7 @@
                         "description": "This policy deploys virtual network and peer to the hub",
                         "displayName": "Deploys virtual network peering to hub",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "vNetName": {
                                 "type": "string",
                                 "metadata": {
@@ -1191,7 +1191,7 @@
                         "description": "This policy denies  the creation of  Azure Kubernetes Service non-private clusters",
                         "displayName": "Public network access on AKS API should be disabled",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -1235,7 +1235,7 @@
                         "description": "Deploys the diagnostic settings for Analysis Services to stream to a Log Analytics workspace when any Analysis Services which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Analysis Services to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -1418,7 +1418,7 @@
                         "description": "Deploys the diagnostic settings for API Management to stream to a Log Analytics workspace when any API Management which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for API Management to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -1624,7 +1624,7 @@
                         "description": "This policy enables you to restrict that Application Gateways is always deployed with WAF enabled",
                         "displayName": "Application Gateway should be deployed with WAF enabled",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -1668,7 +1668,7 @@
                         "description": "Deploys the diagnostic settings for Application Gateway to stream to a Log Analytics workspace when any Application Gateway which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Application Gateway to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -1855,7 +1855,7 @@
                         "description": "Deploys the diagnostic settings for App Service Plan to stream to a Log Analytics workspace when any App Service Plan which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for App Service Plan to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -2007,7 +2007,7 @@
                         "description": "Deploys the diagnostic settings for Web App to stream to a Log Analytics workspace when any Web App which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for App Service to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -2226,7 +2226,7 @@
                         "description": "Deploys  the Azure Defender settings in Azure Security Center for  the specific services.",
                         "displayName": "Deploy Azure Defender settings in Azure Security Center.",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "pricingTierVMs": {
                                 "type": "string",
                                 "metadata": {
@@ -2588,7 +2588,7 @@
                         "description": "This policy denies the creation of child resources on the Automation Account",
                         "displayName": "No child resources in Automation Account",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -2635,7 +2635,7 @@
                         "description": "Deploys the diagnostic settings for Automation to stream to a Log Analytics workspace when any Automation which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Automation to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -2936,7 +2936,7 @@
                         "description": "Deploys the diagnostic settings for Batch to stream to a Log Analytics workspace when any Batch which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Batch to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -3115,7 +3115,7 @@
                         "description": "Deploys the diagnostic settings for CDN Endpoint to stream to a Log Analytics workspace when any CDN Endpoint which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for CDN Endpoint to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -3262,7 +3262,7 @@
                         "description": "Deploys the diagnostic settings for Cognitive Services to stream to a Log Analytics workspace when any Cognitive Services which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Cognitive Services to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -3449,7 +3449,7 @@
                         "description": "Deploys the diagnostic settings for Cosmos DB to stream to a Log Analytics workspace when any Cosmos DB which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Cosmos DB to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -3656,7 +3656,7 @@
                         "description": "This policy denies that  Cosmos database accounts  are created with out public network access is disabled.",
                         "displayName": "Public network access should be disabled for CosmosDB",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -3700,7 +3700,7 @@
                         "description": "Deploys the diagnostic settings for Databricks to stream to a Log Analytics workspace when any Databricks which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Databricks to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -3882,7 +3882,7 @@
                         "description": "Deploys the diagnostic settings for Data Factory to stream to a Log Analytics workspace when any Data Factory which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Data Factory to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -4093,7 +4093,7 @@
                         "description": "Deploys the diagnostic settings for Data Lake Analytics to stream to a Log Analytics workspace when any Data Lake Analytics which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Data Lake Analytics to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -4276,7 +4276,7 @@
                         "description": "Deploys the diagnostic settings for Azure Data Lake Store to stream to a Log Analytics workspace when anyAzure Data Lake Store which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Azure Data Lake Store to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -4459,7 +4459,7 @@
                         "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for Storage-Blob Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
                         "displayName": "Deploy DNS Zone Group for Storage-Blob Private Endpoint",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "privateDnsZoneId": {
                                 "type": "string",
                                 "metadata": {
@@ -4570,7 +4570,7 @@
                         "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for Storage-File Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
                         "displayName": "Deploy DNS  Zone Group for Storage-File Private Endpoint",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "privateDnsZoneId": {
                                 "type": "string",
                                 "metadata": {
@@ -4681,7 +4681,7 @@
                         "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for Key Vault Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
                         "displayName": "Deploy DNS  Zone Group for Key Vault Private Endpoint",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "privateDnsZoneId": {
                                 "type": "string",
                                 "metadata": {
@@ -4792,7 +4792,7 @@
                         "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for Storage-Queue Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
                         "displayName": "Deploy DNS  Zone Group for Storage-Queue Private Endpoint",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "privateDnsZoneId": {
                                 "type": "string",
                                 "metadata": {
@@ -4903,7 +4903,7 @@
                         "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for SQL Private Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
                         "displayName": "Deploy DNS  Zone Group for SQL Private Endpoint",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "privateDnsZoneId": {
                                 "type": "string",
                                 "metadata": {
@@ -5014,7 +5014,7 @@
                         "description": "Deploys the configurations of a Private DNS Zone Group by a parameter for Storage-Table Private Endpoint. Used enforce the configuration to a single Private DNS Zone. ",
                         "displayName": "Deploy DNS  Zone Group for Storage-Table Private Endpoint",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "privateDnsZoneId": {
                                 "type": "string",
                                 "metadata": {
@@ -5125,7 +5125,7 @@
                         "description": "Deploys the diagnostic settings for Event Grid subscriptions to stream to a Log Analytics workspace when any Event Grid subscriptions which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Event Grid subscriptions to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -5277,7 +5277,7 @@
                         "description": "Deploys the diagnostic settings for Event Grid Topic to stream to a Log Analytics workspace when any Event Grid Topic which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Event Grid Topic to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -5460,7 +5460,7 @@
                         "description": "Deploys the diagnostic settings for Event Hubs to stream to a Log Analytics workspace when any Event Hubs which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Event Hubs to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -5663,7 +5663,7 @@
                         "description": "Deploys the diagnostic settings for Event Grid System Topic to stream to a Log Analytics workspace when any Event Grid System Topic which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Event Grid System Topic to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -5842,7 +5842,7 @@
                         "description": "Deploys the diagnostic settings for ExpressRoute to stream to a Log Analytics workspace when any ExpressRoute which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for ExpressRoute to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -6021,7 +6021,7 @@
                         "description": "Deploys the diagnostic settings for Firewall to stream to a Log Analytics workspace when any Firewall which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Firewall to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -6208,7 +6208,7 @@
                         "description": "Deploys Azure Firewall Manager policy in subscription where the policy is assigned.",
                         "displayName": "Deploy Azure Firewall Manager policy in the subscription",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "fwpolicy": {
                                 "type": "Object",
                                 "metadata": {
@@ -6365,7 +6365,7 @@
                         "description": "Deploys the diagnostic settings for Front Door to stream to a Log Analytics workspace when any Front Door which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Front Door to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -6548,7 +6548,7 @@
                         "description": "Deploys the diagnostic settings for Azure Function App to stream to a Log Analytics workspace when any function app which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Azure Function App to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -6735,7 +6735,7 @@
                         "description": "Deploys the diagnostic settings for HDInsight to stream to a Log Analytics workspace when any HDInsight which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for HDInsight to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -6887,7 +6887,7 @@
                         "description": "Deploys the diagnostic settings for IoT Hub to stream to a Log Analytics workspace when any IoT Hub which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for IoT Hub to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -7118,7 +7118,7 @@
                         "description": "Deploys the diagnostic settings for Key Vault to stream to a Log Analytics workspace when any Key Vault which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Key Vault to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -7297,7 +7297,7 @@
                         "description": "This policy denies creation of Key Vaults with IP Firewall exposed to all public endpoints",
                         "displayName": "Public network access should be disabled for KeyVault",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -7341,7 +7341,7 @@
                         "description": "This policy enables you to ensure when a Key Vault is created with out soft delete enabled it will be added.",
                         "displayName": "KeyVault SoftDelete should be enabled",
                         "mode": "Indexed",
-                        "Parameters": {},
+                        "parameters": {},
                         "metadata": {
                             "version": "1.0.0",
                             "category": "Key Vault"
@@ -7381,7 +7381,7 @@
                         "description": "Deploys the diagnostic settings for Load Balancer to stream to a Log Analytics workspace when any Load Balancer which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Load Balancer to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -7564,7 +7564,7 @@
                         "description": "Deploy the configurations to the Log Analytics in the subscription. This includes a list of solutions like update, automation etc and  enables the vminsight counters. ",
                         "displayName": "Deploy the configurations to the Log Analytics in the subscription",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "workspaceName": {
                                 "type": "string",
                                 "metadata": {
@@ -7972,7 +7972,7 @@
                         "description": "Deploys Log Analytics and Automation account to the subscription where the policy is assigned.",
                         "displayName": "Deploy the Log Analytics in the subscription",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "workspaceName": {
                                 "type": "string",
                                 "metadata": {
@@ -8192,7 +8192,7 @@
                         "description": "Deploys the diagnostic settings for Logic Apps integration service environment to stream to a Log Analytics workspace when any Logic Apps integration service environment which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Logic Apps integration service environment to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -8339,7 +8339,7 @@
                         "description": "Deploys the diagnostic settings for Logic Apps Workflow runtimeto stream to a Log Analytics workspace when any Logic Apps Workflow runtime which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Logic Apps Workflow runtime to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -8518,7 +8518,7 @@
                         "description": "Deploys the diagnostic settings for MariaDB to stream to a Log Analytics workspace when any MariaDB  which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for MariaDB to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -8701,7 +8701,7 @@
                         "description": "This policy denies the creation of Maria DB accounts with exposed public endpoints",
                         "displayName": "Public network access should be disabled for MariaDB",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -8745,7 +8745,7 @@
                         "description": "Deploys the diagnostic settings for Machine Learning workspace to stream to a Log Analytics workspace when any Machine Learning workspace which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Machine Learning workspace to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -8966,7 +8966,7 @@
                         "description": "Deploys the diagnostic settings for Database for MySQL to stream to a Log Analytics workspace when any Database for MySQL which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Database for MySQL to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -9149,7 +9149,7 @@
                         "description": "This policy denies creation of MySql DB accounts with exposed public endpoints",
                         "displayName": "Public network access should be disabled for MySQL",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -9193,7 +9193,7 @@
                         "description": "Deploys an Azure DDoS Protection Standard plan",
                         "displayName": "Deploy an Azure DDoS Protection Standard plan",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "ddosName": {
                                 "type": "string",
                                 "metadata": {
@@ -9333,7 +9333,7 @@
                         "description": "This policy denies the creation of vNet Peerings under the assigned scope.",
                         "displayName": "Deny vNet peering ",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -9369,7 +9369,7 @@
                         "description": "This policy denies the creation of a private DNS in the current scope, used in combination with policies that create centralized private DNS in connectivity subscription",
                         "displayName": "Deny the creation of private DNS",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -9405,7 +9405,7 @@
                         "description": "This policy denies creation of Public IPs under the assigned scope.",
                         "displayName": "Deny the creation of public IP",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -9441,7 +9441,7 @@
                         "description": "Deploys the diagnostic settings for Network Interfaces to stream to a Log Analytics workspace when any Network Interfaces which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Network Interfaces to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -9592,7 +9592,7 @@
                         "description": "Deploys the diagnostic settings for Public IP addresses to stream to a Log Analytics workspace when any Public IP addresses which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Public IP addresses to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -9779,7 +9779,7 @@
                         "description": "Deploys NSG flow logs and traffic analytics to Log Analytics with a specfied retention period.",
                         "displayName": "Deploys NSG flow logs and traffic analytics to Log Analytics",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "retention": {
                                 "type": "Integer",
                                 "metadata": {
@@ -10002,7 +10002,7 @@
                         "description": "This policy denies the creation of a subsnet with out an Network Security Group. NSG help to protect traffic across subnet-level.",
                         "displayName": "Subnets should have a Network Security Group ",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -10095,7 +10095,7 @@
                             "version": "1.0.0.0",
                             "category": "Network"
                         },
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "metadata": {
@@ -10135,7 +10135,7 @@
                         "description": "Deploys the diagnostic settings for Network Security Groups to stream to a Log Analytics workspace when any Network Security Groups which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Network Security Groups to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -10286,7 +10286,7 @@
                         "description": "Deploys the diagnostic settings for Database for PostgreSQL to stream to a Log Analytics workspace when any Database for PostgreSQL which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Database for PostgreSQL to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -10473,7 +10473,7 @@
                         "description": "This policy denies creation of Postgre SQL DB accounts with exposed public endpoints",
                         "displayName": "Public network access should be disabled for PostgreSql",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -10517,7 +10517,7 @@
                         "description": "Deploys the diagnostic settings for Power BI Embedded to stream to a Log Analytics workspace when any Power BI Embedded which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Power BI Embedded to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -10696,7 +10696,7 @@
                         "description": "Deploys the diagnostic settings for Recovery Services vaults to stream to a Log Analytics workspace when any Recovery Services vaults which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Recovery Services vaults to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -10893,7 +10893,7 @@
                         "description": "Deploys the diagnostic settings for Redis Cache to stream to a Log Analytics workspace when any Redis Cache which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Redis Cache to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -11045,7 +11045,7 @@
                         "description": "Deploys the diagnostic settings for Relay to stream to a Log Analytics workspace when any Relay which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Relay to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -11224,7 +11224,7 @@
                         "description": "Deploys the diagnostic settings for Search Services to stream to a Log Analytics workspace when any Search Services which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Search Services to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -11403,7 +11403,7 @@
                         "description": "Deploys the diagnostic settings for ServiceBus to stream to a Log Analytics workspace when any ServiceBus which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Service Bus namespaces  to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -11582,7 +11582,7 @@
                         "description": "Deploys the diagnostic settings for SignalR to stream to a Log Analytics workspace when any SignalR which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for SignalR to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -11757,7 +11757,7 @@
                         "description": "Deploy auditing settings to SQL Database when it not exist in the deployment",
                         "displayName": "Deploy SQL database auditing settings",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "defaultValue": "DeployIfNotExists",
@@ -11872,7 +11872,7 @@
                         "description": "Deploy the Transparent Data Encryption when it is not enabled in the deployment",
                         "displayName": "Deploy SQL Database Transparent Data Encryption ",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "defaultValue": "DeployIfNotExists",
@@ -11964,7 +11964,7 @@
                         "description": "Deploy the security Alert Policies configuration with email admin accounts when it not exist in current configuration",
                         "displayName": "Deploy SQL Database security Alert Policies configuration with email admin accounts",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "defaultValue": "DeployIfNotExists",
@@ -12066,7 +12066,7 @@
                         "description": "Deploy SQL Database vulnerability Assessments when it not exist in the deployment. To the specific  storage account in the parameters",
                         "displayName": "Deploy SQL Database vulnerability Assessments",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "vulnerabilityAssessmentsEmail": {
                                 "type": "string",
                                 "metadata": {
@@ -12197,7 +12197,7 @@
                         "description": "Deploys the diagnostic settings for SQL Databases to stream to a Log Analytics workspace when any SQL Databases  which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for SQL Databases  to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -12416,7 +12416,7 @@
                         "description": "Deploys the diagnostic settings for SQL Elastic Pools to stream to a Log Analytics workspace when any SQL Elastic Pools which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for SQL Elastic Pools to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -12568,7 +12568,7 @@
                         "description": "Deploys the diagnostic settings for SQL Managed Instances to stream to a Log Analytics workspace when any SQL Managed Instances which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for SQL Managed Instances to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -12722,7 +12722,7 @@
                         "description": "This policy denies creation of Sql servers with exposed public endpoints",
                         "displayName": "Public network access on Azure SQL Database should be disabled",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -12766,7 +12766,7 @@
                         "description": "This policy denies creation of storage accounts with IP Firewall exposed to all public endpoints",
                         "displayName": "Public network access onStorage accounts should be disabled",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "effect": {
                                 "type": "string",
                                 "allowedValues": [
@@ -12810,7 +12810,7 @@
                         "description": "Deploys the diagnostic settings for Stream Analytics to stream to a Log Analytics workspace when any Stream Analytics which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Stream Analytics to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -12993,7 +12993,7 @@
                         "description": "Deploys the diagnostic settings for Time Series Insights to stream to a Log Analytics workspace when any Time Series Insights which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Time Series Insights to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -13176,7 +13176,7 @@
                         "description": "Deploys the diagnostic settings for Traffic Manager to stream to a Log Analytics workspace when any Traffic Manager which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Traffic Manager to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -13355,7 +13355,7 @@
                         "description": "Deploys the diagnostic settings for Virtual Machines to stream to a Log Analytics workspace when any Virtual Machines which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Virtual Machines to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -13506,7 +13506,7 @@
                         "description": "Deploys the diagnostic settings for Virtual Network to stream to a Log Analytics workspace when any Virtual Network which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Virtual Network to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -13684,7 +13684,7 @@
                         "description": "Deploys Virtual Network to be used as hub virtual network in desired region in the subscription where this policy is assigned.",
                         "displayName": "Deploy Virtual Network to be used as hub virtual network in desired region",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "hubName": {
                                 "type": "string",
                                 "metadata": {
@@ -14103,7 +14103,7 @@
                         "description": "Deploy spoke network with configuration to hub network based on ipam configuration object",
                         "displayName": "Deploy spoke network with configuration to hub network based on ipam configuration object",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "ipam": {
                                 "type": "Array",
                                 "metadata": {
@@ -14473,7 +14473,7 @@
                         "description": "Deploy the Virtual WAN in the specific region.",
                         "displayName": "Deploy the Virtual WAN in the specific region",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "vwanname": {
                                 "type": "string",
                                 "metadata": {
@@ -14620,7 +14620,7 @@
                         "description": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured in the desired region. ",
                         "displayName": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured.",
                         "mode": "All",
-                        "Parameters": {
+                        "parameters": {
                             "vwanname": {
                                 "type": "string",
                                 "metadata": {
@@ -14918,7 +14918,7 @@
                         "description": "Deploys the diagnostic settings for Virtual Machine Scale Sets  to stream to a Log Analytics workspace when any Virtual Machine Scale Sets  which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
                         "displayName": "Deploy Diagnostic Settings for Virtual Machine Scale Sets to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -15069,7 +15069,7 @@
                         "description": "Deploys the diagnostic settings for VPN Gateway to stream to a Log Analytics workspace when any VPN Gateway which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled.",
                         "displayName": "Deploy Diagnostic Settings for VPN Gateway to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -15268,7 +15268,7 @@
                         "description": "Deploys the diagnostic settings for WVD Host Pools to stream to a Log Analytics workspace when any Host Pools which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
                         "displayName": "Deploy Diagnostic Settings for WVD Host Pools to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -15434,7 +15434,7 @@
                         "description": "Deploys the diagnostic settings for WVD Workspace to stream to a Log Analytics workspace when any Workspace which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
                         "displayName": "Deploy Diagnostic Settings for WVD Workspace to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -15592,7 +15592,7 @@
                         "description": "Deploys the diagnostic settings for WVD Application group to stream to a Log Analytics workspace when any application group which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
                         "displayName": "Deploy Diagnostic Settings for WVD Application group to Log Analytics workspace",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "type": "string",
                                 "metadata": {
@@ -15746,7 +15746,7 @@
                         "description": "Deploy Windows Domain Join Extension with keyvault configuration when the extension does not exist on a given windows Virtual Machine",
                         "displayName": "Deploy Windows Domain Join Extension with keyvault configuration",
                         "mode": "Indexed",
-                        "Parameters": {
+                        "parameters": {
                             "domainUsername": {
                                 "type": "string",
                                 "metadata": {
@@ -16005,7 +16005,7 @@
                     "properties": {
                         "description": "This policy set deploys the configurations of application Azure resources to forward diagnostic logs and metrics to an Azure Log Analytics workspace. See the list of policies of the services that are included ",
                         "displayName": "Deploy Diagnostic Settings to Azure Services",
-                        "Parameters": {
+                        "parameters": {
                             "logAnalytics": {
                                 "metadata": {
                                     "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -16731,7 +16731,7 @@
                                 }
                             }
                         },
-                        "PolicyDefinitionGroups": null,
+                        "policyDefinitionGroups": null,
                         "metadata": {
                             "version": "1.0.0",
                             "category": "Monitoring"
@@ -17628,7 +17628,7 @@
                     "properties": {
                         "description": "This policy denies creation of Azure PAAS services with exposed public endpoints.  This policy set includes the policy for the following services KeyVault, Storage accounts, AKS, Cosmos, SQL Servers, MariaDB, MySQL and Postgress. ",
                         "displayName": "Public network access should be disabled for PAAS services",
-                        "Parameters": {
+                        "parameters": {
                             "CosmosPublicIpDenyEffect": {
                                 "type": "string",
                                 "defaultValue": "Deny",
@@ -17734,7 +17734,7 @@
                                 }
                             }
                         },
-                        "PolicyDefinitionGroups": null,
+                        "policyDefinitionGroups": null,
                         "metadata": {
                             "version": "1.0.0",
                             "category": "Network"
@@ -17821,7 +17821,7 @@
                     "properties": {
                         "description": "Deploy auditing, Alert, TDE and SQL vulnerability to SQL Databases when it not exist in the deployment",
                         "displayName": "Deploy SQL Database built-in SQL security configuration",
-                        "Parameters": {
+                        "parameters": {
                             "vulnerabilityAssessmentsEmail": {
                                 "metadata": {
                                     "description": "The email address to send alerts",
@@ -17885,7 +17885,7 @@
                                 }
                             }
                         },
-                        "PolicyDefinitionGroups": null,
+                        "policyDefinitionGroups": null,
                         "metadata": {
                             "version": "1.0.0",
                             "category": "SQL"

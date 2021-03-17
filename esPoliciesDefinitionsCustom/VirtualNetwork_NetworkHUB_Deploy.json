@@ -2,7 +2,7 @@
   "properties": {
     "description": "Deploys Virtual Network to be used as hub virtual network in desired region in the subscription where this policy is assigned.",
     "displayName": "Deploy Virtual Network to be used as hub virtual network in desired region",
-    "mode": "Indexed",
+    "mode": "All",
     "parameters": {
       "hubName": {
         "type": "string",
@@ -80,7 +80,7 @@
           "existenceScope": "ResourceGroup",
           "resourceGroupName": "[parameters('rgName')]",
           "roleDefinitionIds": [
-            "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],
           "deployment": {
             "location": "northeurope",

@@ -2,7 +2,7 @@
   "properties": {
     "description": "Deploy spoke network with configuration to hub network based on ipam configuration object",
     "displayName": "Deploy spoke network with configuration to hub network based on ipam configuration object",
-    "mode": "Indexed",
+    "mode": "All",
     "parameters": {
       "ipam": {
         "type": "Array",
@@ -41,7 +41,7 @@
           "deploymentScope": "Subscription",
           "existenceScope": "Subscription",
           "roleDefinitionIds": [
-            "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],
           "existenceCondition": {
             "allOf": [

@@ -63,18 +63,6 @@
         "metadata": {
           "description": "The list of action groups, in an array, to send the budget notification to when the threshold is exceeded. It accepts array of strings."
         }
-      },
-      "effect": {
-        "type": "string",
-        "defaultValue": "DeployIfNotExists",
-        "allowedValues": [
-          "DeployIfNotExists",
-          "Disabled"
-        ],
-        "metadata": {
-          "displayName": "Effect",
-          "description": "Enable or disable the execution of the policy"
-        }
       }
     },
     "metadata": {
@@ -91,7 +79,7 @@
         ]
       },
       "then": {
-        "effect": "[[parameters('effect')]",
+        "effect": "DeployIfNotExists",
         "details": {
           "type": "Microsoft.Consumption/budgets",
           "deploymentScope": "Subscription",
@@ -113,7 +101,7 @@
             ]
           },
           "roleDefinitionIds": [
-            "/providers/Microsoft.Authorization/roleDefinitions/434105ed-43f6-45c7-a02f-909b2ba83430"
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],
           "deployment": {
             "location": "northeurope",

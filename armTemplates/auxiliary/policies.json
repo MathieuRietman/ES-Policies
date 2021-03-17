@@ -353,7 +353,7 @@
           "properties": {
             "description": "Deploys the diagnostic settings for Activity Log to stream to a Log Analytics workspace when any Activity Log which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with category enabled.",
             "displayName": "Deploy Diagnostic Settings for Activity Log to Log Analytics workspace",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "logAnalytics": {
                 "type": "string",
@@ -2178,7 +2178,7 @@
           "properties": {
             "description": "Deploys  the Azure Defender settings in Azure Security Center for  the specific services.",
             "displayName": "Deploy Azure Defender settings in Azure Security Center.",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "pricingTierVMs": {
                 "type": "string",
@@ -3014,18 +3014,6 @@
                 "metadata": {
                   "description": "The list of action groups, in an array, to send the budget notification to when the threshold is exceeded. It accepts array of strings."
                 }
-              },
-              "effect": {
-                "type": "string",
-                "defaultValue": "DeployIfNotExists",
-                "allowedValues": [
-                  "DeployIfNotExists",
-                  "Disabled"
-                ],
-                "metadata": {
-                  "displayName": "Effect",
-                  "description": "Enable or disable the execution of the policy"
-                }
               }
             },
             "metadata": {
@@ -3042,7 +3030,7 @@
                 ]
               },
               "then": {
-                "effect": "[[parameters('effect')]",
+                "effect": "DeployIfNotExists",
                 "details": {
                   "type": "Microsoft.Consumption/budgets",
                   "deploymentScope": "Subscription",
@@ -3064,7 +3052,7 @@
                     ]
                   },
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions/434105ed-43f6-45c7-a02f-909b2ba83430"
+                    "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
                   "deployment": {
                     "location": "northeurope",
@@ -4767,7 +4755,7 @@
                 "details": {
                   "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions//4d97b98b-1d4f-4787-a291-c67834d212e7f"
+                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7f"
                   ],
                   "deployment": {
                     "properties": {
@@ -4878,7 +4866,7 @@
                 "details": {
                   "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions//4d97b98b-1d4f-4787-a291-c67834d212e7"
+                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
                   ],
                   "deployment": {
                     "properties": {
@@ -5100,7 +5088,7 @@
                 "details": {
                   "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7f"
+                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
                   ],
                   "deployment": {
                     "properties": {
@@ -6466,7 +6454,7 @@
           "properties": {
             "description": "Deploys Azure Firewall Manager policy in subscription where the policy is assigned.",
             "displayName": "Deploy Azure Firewall Manager policy in the subscription",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "fwpolicy": {
                 "type": "Object",
@@ -6525,7 +6513,7 @@
                   "existenceScope": "ResourceGroup",
                   "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+                    "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
                   "deployment": {
                     "location": "northeurope",
@@ -8230,7 +8218,7 @@
           "properties": {
             "description": "Deploys Log Analytics and Automation account to the subscription where the policy is assigned.",
             "displayName": "Deploy the Log Analytics in the subscription",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "workspaceName": {
                 "type": "string",
@@ -9828,7 +9816,7 @@
           "properties": {
             "description": "Deploys an Azure DDoS Protection Standard plan",
             "displayName": "Deploy an Azure DDoS Protection Standard plan",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "ddosName": {
                 "type": "string",
@@ -15575,7 +15563,7 @@
           "properties": {
             "description": "Deploys Virtual Network to be used as hub virtual network in desired region in the subscription where this policy is assigned.",
             "displayName": "Deploy Virtual Network to be used as hub virtual network in desired region",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "hubName": {
                 "type": "string",
@@ -15657,7 +15645,7 @@
                   "existenceScope": "ResourceGroup",
                   "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+                    "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
                   "deployment": {
                     "location": "northeurope",
@@ -16362,14 +16350,9 @@
         },
         {
           "properties": {
-            "displayName": "Deploy Landing Zone VNet with peering to VNet Hub",
-            "policyType": "Custom",
+            "description": "This policy deploys virtual network and peer to the hub",
+            "displayName": "Deploys virtual network peering to hub",
             "mode": "All",
-            "description": "This policy deploys a Landing Zone Virtual network and peers it to the virtual network hub",
-            "metadata": {
-              "version": "1.1.0",
-              "category": "Network"
-            },
             "parameters": {
               "vNetName": {
                 "type": "string",
@@ -16405,35 +16388,11 @@
                   "displayName": "hubResourceId",
                   "description": "Resource ID for the HUB vNet"
                 }
-              },
-              "hubPeerAllowGatewayTransit": {
-                "type": "Boolean",
-                "metadata": {
-                  "displayName": "hubPeerAllowGatewayTransit",
-                  "description": "Allow gateway transit on hub side peering"
-                },
-                "defaultValue": true
-              },
-              "lzVnetUseRemoteGateway": {
-                "type": "Boolean",
-                "metadata": {
-                  "displayName": "lzVnetUseRemoteGateway",
-                  "description": "Enable remote gateway usage to use gateway in the hub from LZ network"
-                },
-                "defaultValue": false
-              },
-              "effect": {
-                "type": "string",
-                "defaultValue": "DeployIfNotExists",
-                "allowedValues": [
-                  "DeployIfNotExists",
-                  "Disabled"
-                ],
-                "metadata": {
-                  "displayName": "Effect",
-                  "description": "Enable or disable the execution of the policy"
-                }
               }
+            },
+            "metadata": {
+              "version": "1.0.0",
+              "category": "Network"
             },
             "policyRule": {
               "if": {
@@ -16445,13 +16404,13 @@
                 ]
               },
               "then": {
-                "effect": "[[parameters('effect')]",
+                "effect": "deployIfNotExists",
                 "details": {
                   "type": "Microsoft.Network/virtualNetworks",
                   "name": "[[parameters('vNetName')]",
                   "deploymentScope": "Subscription",
                   "existenceScope": "ResourceGroup",
-                  "resourceGroupName": "[[parameters('vNetRgName')]",
+                  "ResourceGroupName": "[[parameters('vNetRgName')]",
                   "roleDefinitionIds": [
                     "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
@@ -16464,10 +16423,6 @@
                       {
                         "field": "location",
                         "equals": "[[parameters('vNetLocation')]"
-                      },
-                      {
-                        "field": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings[*].remoteVirtualNetwork.id",
-                        "contains": "[[parameters('hubResourceId')]"
                       }
                     ]
                   },
@@ -16490,12 +16445,6 @@
                         },
                         "hubResourceId": {
                           "value": "[[parameters('hubResourceId')]"
-                        },
-                        "hubPeerAllowGatewayTransit": {
-                          "value": "[[parameters('hubPeerAllowGatewayTransit')]"
-                        },
-                        "lzVnetUseRemoteGateway": {
-                          "value": "[[parameters('lzVnetUseRemoteGateway')]"
                         }
                       },
                       "template": {
@@ -16514,11 +16463,9 @@
                           "vNetCidrRange": {
                             "type": "string"
                           },
-                          "lzVnetUseRemoteGateway": {
-                            "type": "bool"
-                          },
-                          "hubPeerAllowGatewayTransit": {
-                            "type": "bool"
+                          "vNetPeerUseRemoteGateway": {
+                            "type": "bool",
+                            "defaultValue": false
                           },
                           "hubResourceId": {
                             "type": "string"
@@ -16601,8 +16548,8 @@
                                       },
                                       "allowVirtualNetworkAccess": true,
                                       "allowForwardedTraffic": true,
-                                      "allowGatewayTransit": false,
-                                      "useRemoteGateways": "[[parameters('lzVnetUseRemoteGateway')]"
+                                      "allowGatewayTransit": true,
+                                      "useRemoteGateways": "[[parameters('vNetPeerUseRemoteGateway')]"
                                     }
                                   },
                                   {
@@ -16624,15 +16571,11 @@
                                         "contentVersion": "1.0.0.0",
                                         "parameters": {
                                           "remoteVirtualNetwork": {
-                                            "type": "string",
+                                            "Type": "string",
                                             "defaultValue": false
                                           },
                                           "hubName": {
-                                            "type": "string",
-                                            "defaultValue": false
-                                          },
-                                          "hubPeerAllowGatewayTransit": {
-                                            "type": "bool",
+                                            "Type": "string",
                                             "defaultValue": false
                                           }
                                         },
@@ -16645,7 +16588,7 @@
                                             "properties": {
                                               "allowVirtualNetworkAccess": true,
                                               "allowForwardedTraffic": true,
-                                              "allowGatewayTransit": "[[[parameters('hubPeerAllowGatewayTransit')]",
+                                              "allowGatewayTransit": true,
                                               "useRemoteGateways": false,
                                               "remoteVirtualNetwork": {
                                                 "id": "[[[parameters('remoteVirtualNetwork')]"
@@ -16661,9 +16604,6 @@
                                         },
                                         "hubName": {
                                           "value": "[[split(parameters('hubResourceId'),'/')[8]]"
-                                        },
-                                        "hubPeerAllowGatewayTransit": {
-                                          "value": "[[parameters('hubPeerAllowGatewayTransit')]"
                                         }
                                       }
                                     }
@@ -16689,7 +16629,7 @@
           "properties": {
             "description": "Deploy the Virtual WAN in the specific region.",
             "displayName": "Deploy the Virtual WAN in the specific region",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "vwanname": {
                 "type": "string",
@@ -16748,7 +16688,7 @@
                   "name": "[[parameters('vwanname')]",
                   "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+                    "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
                   "deployment": {
                     "location": "northeurope",
@@ -16836,7 +16776,7 @@
           "properties": {
             "description": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured in the desired region. ",
             "displayName": "Deploy Virtual Hub network with Virtual Wan and Gateway and Firewall configured.",
-            "mode": "Indexed",
+            "mode": "All",
             "parameters": {
               "vwanname": {
                 "type": "string",
@@ -16926,7 +16866,7 @@
                   "existenceScope": "ResourceGroup",
                   "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
-                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+                    "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
                   "deployment": {
                     "location": "northeurope",

@@ -2,7 +2,7 @@
   "properties": {
     "description": "Deploys  the Azure Defender settings in Azure Security Center for  the specific services.",
     "displayName": "Deploy Azure Defender settings in Azure Security Center.",
-    "mode": "Indexed",
+    "mode": "All",
     "parameters": {
       "pricingTierVMs": {
         "type": "string",

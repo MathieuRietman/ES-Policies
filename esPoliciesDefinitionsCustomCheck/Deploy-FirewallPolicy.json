@@ -2,7 +2,7 @@
   "properties": {
     "description": "Deploys Azure Firewall Manager policy in subscription where the policy is assigned.",
     "displayName": "Deploy Azure Firewall Manager policy in the subscription",
-    "mode": "Indexed",
+    "mode": "All",
     "parameters": {
       "fwpolicy": {
         "type": "Object",
@@ -61,7 +61,7 @@
           "existenceScope": "ResourceGroup",
           "resourceGroupName": "[[parameters('rgName')]",
           "roleDefinitionIds": [
-            "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7"
+            "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
           ],
           "deployment": {
             "location": "northeurope",
