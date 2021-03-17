@@ -82,7 +82,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "networkSecurityGroupName": {
                   "value": "[field('name')]"

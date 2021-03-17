@@ -162,7 +162,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "pricingTierVMs": {
                   "value": "[parameters('pricingTierVMs')]"

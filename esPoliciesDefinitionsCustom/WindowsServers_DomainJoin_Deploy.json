@@ -152,7 +152,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "vmName": {
                   "value": "[field('name')]"

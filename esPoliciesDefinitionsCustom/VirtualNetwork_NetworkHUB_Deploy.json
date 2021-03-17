@@ -85,7 +85,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "rgName": {
                   "value": "[parameters('rgName')]"
@@ -169,7 +169,7 @@
                       "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                     ],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https: //schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -223,7 +223,7 @@
                     ],
                     "name": "[concat(parameters('hubName'),'-vpngw')]",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -286,7 +286,7 @@
                     ],
                     "name": "[concat(parameters('hubName'),'-ergw')]",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -348,7 +348,7 @@
                       "[concat(parameters('hubName'),'-', parameters('HUB').location)]"
                     ],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",

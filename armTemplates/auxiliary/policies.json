@@ -4,7 +4,10 @@
   "parameters": {
     "topLevelManagementGroupPrefix": {
       "type": "string",
-      "maxLength": 5
+      "maxLength": 10,
+      "metadata": {
+        "description": "Provide a prefix (max 10 characters, unique at tenant-scope) for the Management Group hierarchy and other resources created as part of Enterprise-scale."
+      }
     }
   },
   "variables": {
@@ -90,7 +93,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -258,7 +261,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -419,7 +422,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -594,7 +597,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -841,7 +844,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1024,7 +1027,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1203,7 +1206,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1453,7 +1456,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -1624,7 +1627,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2007,7 +2010,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2335,7 +2338,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "pricingTierVMs": {
                           "value": "[[parameters('pricingTierVMs')]"
@@ -2675,7 +2678,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -2862,7 +2865,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3066,7 +3069,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "amount": {
                           "value": "[[parameters('amount')]"
@@ -3242,7 +3245,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3405,7 +3408,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3592,7 +3595,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -3827,7 +3830,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4025,7 +4028,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4228,7 +4231,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4439,7 +4442,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4622,7 +4625,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4768,7 +4771,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4879,7 +4882,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -4990,7 +4993,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5101,7 +5104,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5212,7 +5215,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5323,7 +5326,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5455,7 +5458,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5623,7 +5626,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -5806,7 +5809,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6009,7 +6012,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6188,7 +6191,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6367,7 +6370,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6527,7 +6530,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -6570,7 +6573,7 @@
                               "[[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
                                 "contentVersion": "1.0.0.0",
@@ -6711,7 +6714,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -6902,7 +6905,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7065,7 +7068,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7233,7 +7236,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7464,7 +7467,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7727,7 +7730,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -7885,7 +7888,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "workspaceName": {
                           "value": "[[parameters('workspaceName')]"
@@ -8319,7 +8322,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -8381,7 +8384,7 @@
                               "[[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
                                 "contentVersion": "1.0.0.0",
@@ -8522,7 +8525,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -8685,7 +8688,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -8864,7 +8867,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9091,7 +9094,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9270,7 +9273,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9491,7 +9494,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9772,7 +9775,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -9889,7 +9892,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -9932,7 +9935,7 @@
                               "[[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
                                 "contentVersion": "1.0.0.0",
@@ -10071,6 +10074,50 @@
         },
         {
           "properties": {
+            "description": "This policy denies the creation of vNet Peerings outside of the same subscriptions under the assigned scope.",
+            "displayName": "Deny vNet peering cross subscription.",
+            "mode": "Indexed",
+            "metadata": {
+              "version": "1.0.0.0",
+              "category": "Network"
+            },
+            "parameters": {
+              "effect": {
+                "type": "String",
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                  "Audit",
+                  "Deny",
+                  "Disabled"
+                ],
+                "defaultValue": "Deny"
+              }
+            },
+            "PolicyRule": {
+              "if": {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
+                  },
+                  {
+                    "field": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/remoteVirtualNetwork.id",
+                    "notcontains": "[[subscription().id]"
+                  }
+                ]
+              },
+              "then": {
+                "effect": "[[parameters('effect')]"
+              }
+            }
+          },
+          "name": "Deny-VNET-Peer-Cross-Sub"
+        },
+        {
+          "properties": {
             "description": "Deploys the diagnostic settings for Network Interfaces to stream to a Log Analytics workspace when any Network Interfaces which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled",
             "displayName": "Deploy Diagnostic Settings for Network Interfaces to Log Analytics workspace",
             "mode": "Indexed",
@@ -10148,7 +10195,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -10315,7 +10362,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -10495,7 +10542,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "networkSecurityGroupName": {
                           "value": "[[field('name')]"
@@ -10591,6 +10638,343 @@
             }
           },
           "name": "Deploy-Nsg-FlowLogs"
+        },
+        {
+          "properties": {
+            "description": "Deploys NSG flow logs and traffic analytics to Log Analytics with a specfied retention period.",
+            "displayName": "Deploys NSG flow logs and traffic analytics to Log Analytics",
+            "mode": "Indexed",
+            "parameters": {
+              "retention": {
+                "type": "Integer",
+                "metadata": {
+                  "displayName": "Retention"
+                },
+                "defaultValue": 5
+              },
+              "interval": {
+                "type": "Integer",
+                "metadata": {
+                  "displayName": "Traffic Analytics processing interval mins (10/60)"
+                },
+                "defaultValue": 60
+              },
+              "workspace": {
+                "type": "String",
+                "metadata": {
+                  "strongType": "omsWorkspace",
+                  "displayName": "Resource ID of Log Analytics workspace",
+                  "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID."
+                },
+                "defaultValue": ""
+              },
+              "effect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                }
+              }
+            },
+            "metadata": {
+              "version": "1.1.0",
+              "category": "Monitoring"
+            },
+            "PolicyRule": {
+              "if": {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Network/networkSecurityGroups"
+                  }
+                ]
+              },
+              "then": {
+                "effect": "[[parameters('effect')]",
+                "details": {
+                  "type": "Microsoft.Network/networkWatchers/flowlogs",
+                  "name": "[[if(empty(coalesce(field('Microsoft.Network/networkSecurityGroups/flowLogs[*].id'))), 'null/null', concat(split(first(field('Microsoft.Network/networkSecurityGroups/flowLogs[*].id')), '/')[8], '/', split(first(field('Microsoft.Network/networkSecurityGroups/flowLogs[*].id')), '/')[10]))]",
+                  "existenceCondition": {
+                    "allOf": [
+                      {
+                        "field": "Microsoft.Network/networkWatchers/flowLogs/enabled",
+                        "equals": "true"
+                      }
+                    ]
+                  },
+                  "existenceScope": "resourceGroup",
+                  "roleDefinitionIds": [
+                    "/providers/Microsoft.Authorization/roleDefinitions/4d97b98b-1d4f-4787-a291-c67834d212e7",
+                    "/providers/Microsoft.Authorization/roleDefinitions/81a9662b-bebf-436f-a333-f67b29880f12",
+                    "/providers/Microsoft.Authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293",
+                    "/providers/Microsoft.Authorization/roleDefinitions/17d1049b-9a84-46fb-8f53-869881c3d3ab",
+                    "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+                  ],
+                  "resourceGroupName": "[[if(empty(coalesce(field('Microsoft.Network/networkSecurityGroups/flowLogs'))), 'NetworkWatcherRG', split(first(field('Microsoft.Network/networkSecurityGroups/flowLogs[*].id')), '/')[4])]",
+                  "deploymentScope": "subscription",
+                  "deployment": {
+                    "location": "northeurope",
+                    "properties": {
+                      "mode": "incremental",
+                      "parameters": {
+                        "location": {
+                          "value": "[[field('location')]"
+                        },
+                        "networkSecurityGroup": {
+                          "value": "[[field('id')]"
+                        },
+                        "workspace": {
+                          "value": "[[parameters('workspace')]"
+                        },
+                        "retention": {
+                          "value": "[[parameters('retention')]"
+                        },
+                        "interval": {
+                          "value": "[[parameters('interval')]"
+                        }
+                      },
+                      "template": {
+                        "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+                        "contentVersion": "1.0.0.0",
+                        "parameters": {
+                          "location": {
+                            "type": "string"
+                          },
+                          "networkSecurityGroup": {
+                            "type": "string"
+                          },
+                          "workspace": {
+                            "type": "string"
+                          },
+                          "retention": {
+                            "type": "int"
+                          },
+                          "interval": {
+                            "type": "int"
+                          },
+                          "time": {
+                            "type": "string",
+                            "defaultValue": "[[utcNow()]"
+                          }
+                        },
+                        "variables": {
+                          "resourceGroupName": "[[split(parameters('networkSecurityGroup'), '/')[4]]",
+                          "securityGroupName": "[[split(parameters('networkSecurityGroup'), '/')[8]]",
+                          "storageAccountName": "[[concat('es', uniqueString(variables('securityGroupName'), parameters('time')))]"
+                        },
+                        "resources": [
+                          {
+                            "type": "Microsoft.Resources/deployments",
+                            "apiVersion": "2019-10-01",
+                            "name": "[[concat(variables('resourceGroupName'), '.', variables('securityGroupName'))]",
+                            "resourceGroup": "[[variables('resourceGroupName')]",
+                            "properties": {
+                              "mode": "incremental",
+                              "template": {
+                                "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                                "contentVersion": "1.0.0.0",
+                                "resources": [
+                                  {
+                                    "type": "Microsoft.Storage/storageAccounts",
+                                    "apiVersion": "2019-06-01",
+                                    "name": "[[variables('storageAccountName')]",
+                                    "location": "[[parameters('location')]",
+                                    "properties": {},
+                                    "kind": "StorageV2",
+                                    "sku": {
+                                      "name": "Standard_LRS",
+                                      "tier": "Standard"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "type": "Microsoft.Resources/deployments",
+                            "apiVersion": "2019-10-01",
+                            "name": "[[concat('NetworkWatcherRG', '.', variables('securityGroupName'))]",
+                            "resourceGroup": "NetworkWatcherRG",
+                            "properties": {
+                              "mode": "incremental",
+                              "template": {
+                                "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+                                "contentVersion": "1.0.0.0",
+                                "resources": [
+                                  {
+                                    "type": "Microsoft.Network/networkWatchers",
+                                    "apiVersion": "2020-05-01",
+                                    "name": "[[concat('NetworkWatcher_', toLower(parameters('location')))]",
+                                    "location": "[[parameters('location')]",
+                                    "properties": {},
+                                    "resources": [
+                                      {
+                                        "type": "flowLogs",
+                                        "apiVersion": "2019-11-01",
+                                        "name": "[[concat(variables('securityGroupName'), '-Network-flowlog')]",
+                                        "location": "[[parameters('location')]",
+                                        "properties": {
+                                          "enabled": true,
+                                          "format": {
+                                            "type": "JSON",
+                                            "version": 2
+                                          },
+                                          "retentionPolicy": {
+                                            "days": "[[parameters('retention')]",
+                                            "enabled": true
+                                          },
+                                          "flowAnalyticsConfiguration": {
+                                            "networkWatcherFlowAnalyticsConfiguration": {
+                                              "enabled": true,
+                                              "trafficAnalyticsInterval": "[[parameters('interval')]",
+                                              "workspaceResourceId": "[[parameters('workspace')]"
+                                            }
+                                          },
+                                          "storageId": "[[concat(subscription().id, '/resourceGroups/', variables('resourceGroupName'), '/providers/Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+                                          "targetResourceId": "[[parameters('networkSecurityGroup')]"
+                                        },
+                                        "dependsOn": [
+                                          "[[concat('NetworkWatcher_', toLower(parameters('location')))]"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "dependsOn": [
+                              "[[concat(variables('resourceGroupName'), '.', variables('securityGroupName'))]"
+                            ]
+                          }
+                        ],
+                        "outputs": {}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": "Deploy-Nsg-FlowLogs-to-LA"
+        },
+        {
+          "properties": {
+            "displayName": "RDP access from the Internet should be blocked",
+            "description": "This policy denies any network security rule that allows RDP access from Internet",
+            "mode": "All",
+            "metadata": {
+              "version": "1.0.0",
+              "category": "Network"
+            },
+            "parameters": {
+              "effect": {
+                "type": "String",
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                  "Audit",
+                  "Deny",
+                  "Disabled"
+                ],
+                "defaultValue": "Deny"
+              }
+            },
+            "PolicyRule": {
+              "if": {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Network/networkSecurityGroups/securityRules"
+                  },
+                  {
+                    "allOf": [
+                      {
+                        "field": "Microsoft.Network/networkSecurityGroups/securityRules/access",
+                        "equals": "Allow"
+                      },
+                      {
+                        "field": "Microsoft.Network/networkSecurityGroups/securityRules/direction",
+                        "equals": "Inbound"
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange",
+                            "equals": "*"
+                          },
+                          {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange",
+                            "equals": "3389"
+                          },
+                          {
+                            "value": "[[if(and(not(empty(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange'))), contains(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange'),'-')), and(lessOrEquals(int(first(split(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange'), '-'))),3389),greaterOrEquals(int(last(split(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRange'), '-'))),3389)), 'false')]",
+                            "equals": "true"
+                          },
+                          {
+                            "count": {
+                              "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]",
+                              "where": {
+                                "value": "[[if(and(not(empty(first(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]')))), contains(first(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]')),'-')), and(lessOrEquals(int(first(split(first(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]')), '-'))),3389),greaterOrEquals(int(last(split(first(field('Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]')), '-'))),3389)) , 'false')]",
+                                "equals": "true"
+                              }
+                            },
+                            "greater": 0
+                          },
+                          {
+                            "not": {
+                              "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]",
+                              "notEquals": "*"
+                            }
+                          },
+                          {
+                            "not": {
+                              "field": "Microsoft.Network/networkSecurityGroups/securityRules/destinationPortRanges[*]",
+                              "notEquals": "3389"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "anyOf": [
+                          {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefix",
+                            "equals": "*"
+                          },
+                          {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefix",
+                            "equals": "Internet"
+                          },
+                          {
+                            "not": {
+                              "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefixes[*]",
+                              "notEquals": "*"
+                            }
+                          },
+                          {
+                            "not": {
+                              "field": "Microsoft.Network/networkSecurityGroups/securityRules/sourceAddressPrefixes[*]",
+                              "notEquals": "Internet"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "then": {
+                "effect": "[[parameters('effect')]"
+              }
+            }
+          },
+          "name": "Deny-RDP-From-Internet"
         },
         {
           "properties": {
@@ -10715,7 +11099,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -10786,6 +11170,51 @@
             }
           },
           "name": "Deploy-Diagnostics-NetworkSecurityGroups"
+        },
+        {
+          "properties": {
+            "displayName": "Subnets should have a User Defined Route",
+            "policyType": "Custom",
+            "mode": "Indexed",
+            "description": "This policy denies the creation of a subsnet with out a User Defined Route.",
+            "metadata": {
+              "version": "1.0.0",
+              "category": "Network"
+            },
+            "parameters": {
+              "effect": {
+                "type": "String",
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                  "Audit",
+                  "Deny",
+                  "Disabled"
+                ],
+                "defaultValue": "Deny"
+              }
+            },
+            "PolicyRule": {
+              "if": {
+                "allOf": [
+                  {
+                    "field": "type",
+                    "equals": "Microsoft.Network/virtualNetworks/subnets"
+                  },
+                  {
+                    "field": "Microsoft.Network/virtualNetworks/subnets/routeTable.id",
+                    "exists": "false"
+                  }
+                ]
+              },
+              "then": {
+                "effect": "[[parameters('effect')]"
+              }
+            }
+          },
+          "name": "Deny-Subnet-Without-Udr"
         },
         {
           "properties": {
@@ -10882,7 +11311,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -11168,7 +11597,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -11312,7 +11741,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -11501,7 +11930,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -11737,7 +12166,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -12025,7 +12454,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -12204,7 +12633,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -12383,7 +12812,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -12558,7 +12987,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -12689,7 +13118,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -12799,7 +13228,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -12891,7 +13320,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -13011,7 +13440,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -13177,7 +13606,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -13380,7 +13809,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -13532,7 +13961,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -13739,7 +14168,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -13963,7 +14392,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -14219,7 +14648,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -14363,7 +14792,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -14546,7 +14975,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -14729,7 +15158,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -15181,7 +15610,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -15344,7 +15773,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -15511,7 +15940,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -15685,7 +16114,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -15769,7 +16198,7 @@
                               "[[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https: //schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -15823,7 +16252,7 @@
                             ],
                             "name": "[[concat(parameters('hubName'),'-vpngw')]",
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -15886,7 +16315,7 @@
                             ],
                             "name": "[[concat(parameters('hubName'),'-ergw')]",
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -15948,7 +16377,7 @@
                               "[[concat(parameters('hubName'),'-', parameters('HUB').location)]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -16077,7 +16506,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "ipam": {
                           "value": "[[parameters('ipam')]",
@@ -16138,7 +16567,7 @@
                             "location": "[[parameters('ipam')[copyIndex()].location]",
                             "dependsOn": [],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -16177,7 +16606,7 @@
                               "[[concat('es-ipam-',subscription().displayName,'-RG-',copyIndex())]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -16233,7 +16662,7 @@
                                       "[[concat(subscription().displayName, '-vnet')]"
                                     ],
                                     "properties": {
-                                      "mode": "Incremental",
+                                      "mode": "incremental",
                                       "expressionEvaluationOptions": {
                                         "scope": "inner"
                                       },
@@ -16309,7 +16738,7 @@
                                       "[[concat(subscription().displayName, '-vnet')]"
                                     ],
                                     "properties": {
-                                      "mode": "Incremental",
+                                      "mode": "incremental",
                                       "expressionEvaluationOptions": {
                                         "scope": "inner"
                                       },
@@ -16497,7 +16926,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "vNetRgName": {
                           "value": "[[parameters('vNetRgName')]"
@@ -16556,7 +16985,7 @@
                             "location": "[[parameters('vNetLocation')]",
                             "dependsOn": [],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -16590,7 +17019,7 @@
                               "[[concat('es-lz-vnet-',substring(uniqueString(subscription().id),0,6),'-rg')]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -16638,7 +17067,7 @@
                                       "[[parameters('vNetName')]"
                                     ],
                                     "properties": {
-                                      "mode": "Incremental",
+                                      "mode": "incremental",
                                       "expressionEvaluationOptions": {
                                         "scope": "inner"
                                       },
@@ -16776,7 +17205,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -16822,7 +17251,7 @@
                               "[[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
                                 "contentVersion": "1.0.0.0",
@@ -16954,7 +17383,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "rgName": {
                           "value": "[[parameters('rgName')]"
@@ -17052,7 +17481,7 @@
                               "[[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -17086,7 +17515,7 @@
                             ],
                             "name": "[[concat(parameters('vHUBName'),'-vpngw')]",
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -17120,7 +17549,7 @@
                             ],
                             "name": "[[concat(parameters('vHUBName'),'-ergw')]",
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "template": {
                                 "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
                                 "contentVersion": "1.0.0.0",
@@ -17232,7 +17661,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -17399,7 +17828,7 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -17661,7 +18090,7 @@
                   },
                   "deployment": {
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "parameters": {
                         "vmName": {
                           "value": "[[field('name')]"
@@ -17758,6 +18187,484 @@
             }
           },
           "name": "Deploy-Windows-DomainJoin"
+        },
+        {
+          "properties": {
+            "description": "Deploys the diagnostic settings for WVD Application group to stream to a Log Analytics workspace when any application group which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
+            "displayName": "Deploy Diagnostic Settings for WVD Application group to Log Analytics workspace",
+            "mode": "Indexed",
+            "parameters": {
+              "logAnalytics": {
+                "type": "String",
+                "metadata": {
+                  "displayName": "Log Analytics workspace",
+                  "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+                  "strongType": "omsWorkspace"
+                }
+              },
+              "effect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                }
+              },
+              "profileName": {
+                "type": "string",
+                "defaultValue": "setbypolicy",
+                "metadata": {
+                  "displayName": "Profile name",
+                  "description": "The diagnostic settings profile name"
+                }
+              },
+              "logsEnabled": {
+                "type": "string",
+                "defaultValue": "True",
+                "allowedValues": [
+                  "True",
+                  "False"
+                ],
+                "metadata": {
+                  "displayName": "Enable logs",
+                  "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+                }
+              }
+            },
+            "metadata": {
+              "version": "1.0.0",
+              "category": "Monitoring"
+            },
+            "PolicyRule": {
+              "if": {
+                "field": "type",
+                "equals": "Microsoft.DesktopVirtualization/applicationGroups"
+              },
+              "then": {
+                "effect": "[[parameters('effect')]",
+                "details": {
+                  "type": "Microsoft.Insights/diagnosticSettings",
+                  "name": "setByPolicy",
+                  "existenceCondition": {
+                    "allOf": [
+                      {
+                        "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+                        "equals": "true"
+                      },
+                      {
+                        "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
+                        "equals": "[[parameters('logAnalytics')]"
+                      }
+                    ]
+                  },
+                  "roleDefinitionIds": [
+                    "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+                    "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+                  ],
+                  "deployment": {
+                    "properties": {
+                      "mode": "incremental",
+                      "template": {
+                        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                        "contentVersion": "1.0.0.0",
+                        "parameters": {
+                          "resourceName": {
+                            "type": "string"
+                          },
+                          "logAnalytics": {
+                            "type": "string"
+                          },
+                          "location": {
+                            "type": "string"
+                          },
+                          "profileName": {
+                            "type": "string"
+                          },
+                          "logsEnabled": {
+                            "type": "string"
+                          }
+                        },
+                        "variables": {},
+                        "resources": [
+                          {
+                            "type": "Microsoft.DesktopVirtualization/applicationGroups/providers/diagnosticSettings",
+                            "apiVersion": "2017-05-01-preview",
+                            "name": "[[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                            "location": "[[parameters('location')]",
+                            "dependsOn": [],
+                            "properties": {
+                              "workspaceId": "[[parameters('logAnalytics')]",
+                              "logs": [
+                                {
+                                  "category": "Checkpoint",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Error",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Management",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "outputs": {}
+                      },
+                      "parameters": {
+                        "logAnalytics": {
+                          "value": "[[parameters('logAnalytics')]"
+                        },
+                        "location": {
+                          "value": "[[field('location')]"
+                        },
+                        "resourceName": {
+                          "value": "[[field('name')]"
+                        },
+                        "profileName": {
+                          "value": "[[parameters('profileName')]"
+                        },
+                        "logsEnabled": {
+                          "value": "[[parameters('logsEnabled')]"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": "Deploy-Diagnostics-WVDAppGroup"
+        },
+        {
+          "properties": {
+            "description": "Deploys the diagnostic settings for WVD Host Pools to stream to a Log Analytics workspace when any Host Pools which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
+            "displayName": "Deploy Diagnostic Settings for WVD Host Pools to Log Analytics workspace",
+            "mode": "Indexed",
+            "parameters": {
+              "logAnalytics": {
+                "type": "String",
+                "metadata": {
+                  "displayName": "Log Analytics workspace",
+                  "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+                  "strongType": "omsWorkspace"
+                }
+              },
+              "effect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                }
+              },
+              "profileName": {
+                "type": "string",
+                "defaultValue": "setbypolicy",
+                "metadata": {
+                  "displayName": "Profile name",
+                  "description": "The diagnostic settings profile name"
+                }
+              },
+              "logsEnabled": {
+                "type": "string",
+                "defaultValue": "True",
+                "allowedValues": [
+                  "True",
+                  "False"
+                ],
+                "metadata": {
+                  "displayName": "Enable logs",
+                  "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+                }
+              }
+            },
+            "metadata": {
+              "version": "1.0.0",
+              "category": "Monitoring"
+            },
+            "PolicyRule": {
+              "if": {
+                "field": "type",
+                "equals": "Microsoft.DesktopVirtualization/hostpools"
+              },
+              "then": {
+                "effect": "[[parameters('effect')]",
+                "details": {
+                  "type": "Microsoft.Insights/diagnosticSettings",
+                  "name": "setByPolicy",
+                  "existenceCondition": {
+                    "allOf": [
+                      {
+                        "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+                        "equals": "true"
+                      },
+                      {
+                        "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
+                        "equals": "[[parameters('logAnalytics')]"
+                      }
+                    ]
+                  },
+                  "roleDefinitionIds": [
+                    "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+                    "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+                  ],
+                  "deployment": {
+                    "properties": {
+                      "mode": "incremental",
+                      "template": {
+                        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                        "contentVersion": "1.0.0.0",
+                        "parameters": {
+                          "resourceName": {
+                            "type": "string"
+                          },
+                          "logAnalytics": {
+                            "type": "string"
+                          },
+                          "location": {
+                            "type": "string"
+                          },
+                          "profileName": {
+                            "type": "string"
+                          },
+                          "logsEnabled": {
+                            "type": "string"
+                          }
+                        },
+                        "variables": {},
+                        "resources": [
+                          {
+                            "type": "Microsoft.DesktopVirtualization/hostpools/providers/diagnosticSettings",
+                            "apiVersion": "2017-05-01-preview",
+                            "name": "[[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                            "location": "[[parameters('location')]",
+                            "dependsOn": [],
+                            "properties": {
+                              "workspaceId": "[[parameters('logAnalytics')]",
+                              "logs": [
+                                {
+                                  "category": "Checkpoint",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Error",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Management",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Connection",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "HostRegistration",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "AgentHealthStatus",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "outputs": {}
+                      },
+                      "parameters": {
+                        "logAnalytics": {
+                          "value": "[[parameters('logAnalytics')]"
+                        },
+                        "location": {
+                          "value": "[[field('location')]"
+                        },
+                        "resourceName": {
+                          "value": "[[field('name')]"
+                        },
+                        "profileName": {
+                          "value": "[[parameters('profileName')]"
+                        },
+                        "logsEnabled": {
+                          "value": "[[parameters('logsEnabled')]"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": "Deploy-Diagnostics-WVDHostPools"
+        },
+        {
+          "properties": {
+            "description": "Deploys the diagnostic settings for WVD Workspace to stream to a Log Analytics workspace when any Workspace which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all and categorys enabled.",
+            "displayName": "Deploy Diagnostic Settings for WVD Workspace to Log Analytics workspace",
+            "mode": "Indexed",
+            "parameters": {
+              "logAnalytics": {
+                "type": "String",
+                "metadata": {
+                  "displayName": "Log Analytics workspace",
+                  "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+                  "strongType": "omsWorkspace"
+                }
+              },
+              "effect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Effect",
+                  "description": "Enable or disable the execution of the policy"
+                }
+              },
+              "profileName": {
+                "type": "string",
+                "defaultValue": "setbypolicy",
+                "metadata": {
+                  "displayName": "Profile name",
+                  "description": "The diagnostic settings profile name"
+                }
+              },
+              "logsEnabled": {
+                "type": "string",
+                "defaultValue": "True",
+                "allowedValues": [
+                  "True",
+                  "False"
+                ],
+                "metadata": {
+                  "displayName": "Enable logs",
+                  "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+                }
+              }
+            },
+            "metadata": {
+              "version": "1.0.0",
+              "category": "Monitoring"
+            },
+            "PolicyRule": {
+              "if": {
+                "field": "type",
+                "equals": "Microsoft.DesktopVirtualization/workspaces"
+              },
+              "then": {
+                "effect": "[[parameters('effect')]",
+                "details": {
+                  "type": "Microsoft.Insights/diagnosticSettings",
+                  "name": "setByPolicy",
+                  "existenceCondition": {
+                    "allOf": [
+                      {
+                        "field": "Microsoft.Insights/diagnosticSettings/logs.enabled",
+                        "equals": "true"
+                      },
+                      {
+                        "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
+                        "equals": "[[parameters('logAnalytics')]"
+                      }
+                    ]
+                  },
+                  "roleDefinitionIds": [
+                    "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+                    "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293"
+                  ],
+                  "deployment": {
+                    "properties": {
+                      "mode": "incremental",
+                      "template": {
+                        "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                        "contentVersion": "1.0.0.0",
+                        "parameters": {
+                          "resourceName": {
+                            "type": "string"
+                          },
+                          "logAnalytics": {
+                            "type": "string"
+                          },
+                          "location": {
+                            "type": "string"
+                          },
+                          "profileName": {
+                            "type": "string"
+                          },
+                          "logsEnabled": {
+                            "type": "string"
+                          }
+                        },
+                        "variables": {},
+                        "resources": [
+                          {
+                            "type": "Microsoft.DesktopVirtualization/workspaces/providers/diagnosticSettings",
+                            "apiVersion": "2017-05-01-preview",
+                            "name": "[[concat(parameters('resourceName'), '/', 'Microsoft.Insights/', parameters('profileName'))]",
+                            "location": "[[parameters('location')]",
+                            "dependsOn": [],
+                            "properties": {
+                              "workspaceId": "[[parameters('logAnalytics')]",
+                              "logs": [
+                                {
+                                  "category": "Checkpoint",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Error",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Management",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                },
+                                {
+                                  "category": "Feed",
+                                  "enabled": "[[parameters('logsEnabled')]"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "outputs": {}
+                      },
+                      "parameters": {
+                        "logAnalytics": {
+                          "value": "[[parameters('logAnalytics')]"
+                        },
+                        "location": {
+                          "value": "[[field('location')]"
+                        },
+                        "resourceName": {
+                          "value": "[[field('name')]"
+                        },
+                        "profileName": {
+                          "value": "[[parameters('profileName')]"
+                        },
+                        "logsEnabled": {
+                          "value": "[[parameters('logsEnabled')]"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "name": "Deploy-Diagnostics-WVDWorkspace"
         }
       ]
     },
@@ -18479,6 +19386,54 @@
                   "displayName": "Deploy Diagnostic Settings for App Service to Log Analytics workspace",
                   "description": "Deploys the diagnostic settings for Web App to stream to a Log Analytics workspace when any Web App which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
                 }
+              },
+              "WVDAppGroupsLogAnalyticsEffect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Deploy Diagnostic Settings for WVD Application Groups to Log Analytics workspace",
+                  "description": "Deploys the diagnostic settings for WVD Application groups to stream to a Log Analytics workspace when any application groups which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+                }
+              },
+              "WVDWorkspaceLogAnalyticsEffect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Deploy Diagnostic Settings for WVD Workspace to Log Analytics workspace",
+                  "description": "Deploys the diagnostic settings for WVD Workspace to stream to a Log Analytics workspace when any Workspace which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+                }
+              },
+              "WVDHostPoolsLogAnalyticsEffect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Deploy Diagnostic Settings for WVD Host pools to Log Analytics workspace",
+                  "description": "Deploys the diagnostic settings for WVD Host pools to stream to a Log Analytics workspace when any host pool which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+                }
+              },
+              "StorageAccountsLogAnalyticsEffect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Deploy Diagnostic Settings for Storage Accounts to Log Analytics workspace",
+                  "description": "Deploys the diagnostic settings for Storage Accounts to stream to a Log Analytics workspace when any storage account which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+                }
               }
             },
             "policyDefinitionGroups": null,
@@ -18487,6 +19442,63 @@
               "category": "Monitoring"
             },
             "PolicyDefinitions": [
+              {
+                "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6f8f98a4-f108-47cb-8e98-91a0d85cd474",
+                "policyDefinitionReferenceId": "StorageAccountDeployDiagnosticLogDeployLogAnalytics",
+                "parameters": {
+                  "logAnalytics": {
+                    "value": "[[parameters('logAnalytics')]"
+                  },
+                  "effect": {
+                    "value": "[[parameters('StorageAccountsLogAnalyticsEffect')]"
+                  }
+                }
+              },
+              {
+                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WVDAppGroup')]",
+                "policyDefinitionReferenceId": "WVDAppGroupDeployDiagnosticLogDeployLogAnalytics",
+                "parameters": {
+                  "logAnalytics": {
+                    "value": "[[parameters('logAnalytics')]"
+                  },
+                  "effect": {
+                    "value": "[[parameters('WVDAppGroupsLogAnalyticsEffect')]"
+                  },
+                  "profileName": {
+                    "value": "[[parameters('profileName')]"
+                  }
+                }
+              },
+              {
+                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WVDWorkspace')]",
+                "policyDefinitionReferenceId": "WVDWorkspaceDeployDiagnosticLogDeployLogAnalytics",
+                "parameters": {
+                  "logAnalytics": {
+                    "value": "[[parameters('logAnalytics')]"
+                  },
+                  "effect": {
+                    "value": "[[parameters('WVDWorkspaceLogAnalyticsEffect')]"
+                  },
+                  "profileName": {
+                    "value": "[[parameters('profileName')]"
+                  }
+                }
+              },
+              {
+                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-WVDHostPools')]",
+                "policyDefinitionReferenceId": "WVDHostPoolsDeployDiagnosticLogDeployLogAnalytics",
+                "parameters": {
+                  "logAnalytics": {
+                    "value": "[[parameters('logAnalytics')]"
+                  },
+                  "effect": {
+                    "value": "[[parameters('WVDHostPoolsLogAnalyticsEffect')]"
+                  },
+                  "profileName": {
+                    "value": "[[parameters('profileName')]"
+                  }
+                }
+              },
               {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-ACI')]",
                 "policyDefinitionReferenceId": "ACIDeployDiagnosticLogDeployLogAnalytics",

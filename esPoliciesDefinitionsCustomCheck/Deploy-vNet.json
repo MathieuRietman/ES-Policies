@@ -62,7 +62,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "ipam": {
                   "value": "[[parameters('ipam')]",
@@ -123,7 +123,7 @@
                     "location": "[[parameters('ipam')[copyIndex()].location]",
                     "dependsOn": [],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -162,7 +162,7 @@
                       "[[concat('es-ipam-',subscription().displayName,'-RG-',copyIndex())]"
                     ],
                     "properties": {
-                      "mode": "Incremental",
+                      "mode": "incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -218,7 +218,7 @@
                               "[[concat(subscription().displayName, '-vnet')]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "expressionEvaluationOptions": {
                                 "scope": "inner"
                               },
@@ -294,7 +294,7 @@
                               "[[concat(subscription().displayName, '-vnet')]"
                             ],
                             "properties": {
-                              "mode": "Incremental",
+                              "mode": "incremental",
                               "expressionEvaluationOptions": {
                                 "scope": "inner"
                               },

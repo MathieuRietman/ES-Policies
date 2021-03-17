@@ -118,7 +118,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "Incremental",
+              "mode": "incremental",
               "parameters": {
                 "amount": {
                   "value": "[parameters('amount')]"
