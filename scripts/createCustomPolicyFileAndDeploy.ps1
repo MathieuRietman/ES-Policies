@@ -198,8 +198,8 @@ If (Test-Path -Path $policySourceFileFullPath ) {
             if ($name -eq $PolicyDefSource.name) {
 	
                 $PolicyObject = [PSCustomObject] @{
-                    properties = $policyDef.Properties
-                    name       = $policyDef.Name
+                    properties =  $PolicyDefSource.Properties
+                    name       =  $PolicyDefSource.Name
                 }
                 $newPolicySetDefinitions += $PolicyObject
             }
@@ -237,8 +237,8 @@ If (Test-Path -Path $policySourceFileFullPath ) {
             if ($name -eq $PolicyDefSource.name) {
 	
                 $PolicyObject = [PSCustomObject] @{
-                    properties = $policyDef.Properties
-                    name       = $policyDef.Name
+                    properties =  $PolicyDefSource.Properties
+                    name       =  $PolicyDefSource.Name
                 }
                 $newPolicyDefinitions += $PolicyObject
             }
@@ -278,8 +278,8 @@ If (Test-Path -Path $policySourceFileFullPath ) {
     Write-Host "Start deploy policy definitions to toplevel Management Group"
     New-AzManagementGroupDeployment -TemplateFile $FileOutputPolicy -topLevelManagementGroupPrefix $topLevelManagementGroupPrefix -ManagementGroupId "$($topLevelManagementGroupPrefix)" -Verbose -Location $Location 
 
-
-  
+    Remove-Item $FileTempPolicy
+    
 
 }
 else {

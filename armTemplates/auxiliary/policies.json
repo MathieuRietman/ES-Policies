@@ -168,8 +168,8 @@
         },
         {
           "properties": {
-            "description": "Depoloys a default budget on subscriptions.",
-            "displayName": "Deploy a default budget on subscriptions",
+            "description": "Deploy a default budget on all subscriptions under the assigned scope",
+            "displayName": "Deploy a default budget on all subscriptions under the assigned scope",
             "mode": "All",
             "parameters": {
               "amount": {
@@ -6615,7 +6615,7 @@
                   },
                   {
                     "value": "[[field('kind')]",
-                    "notEquals": "app"
+                    "contains": "functionapp"
                   }
                 ]
               },
@@ -8133,7 +8133,7 @@
                                 "variables": {},
                                 "resources": [
                                   {
-                                    "apiversion": "2015-10-31",
+                                    "apiVersion": "2015-10-31",
                                     "location": "[[parameters('AutomationRegion')]",
                                     "name": "[[parameters('AutomationAccountName')]",
                                     "type": "Microsoft.Automation/automationAccounts",
@@ -10753,12 +10753,12 @@
                   "type": "Microsoft.Insights/diagnosticSettings",
                   "name": "setByPolicy",
                   "existenceCondition": {
-                    "allof": [
+                    "allOf": [
                       {
                         "count": {
                           "field": "Microsoft.Insights/diagnosticSettings/logs[*]",
                           "where": {
-                            "allof": [
+                            "allOf": [
                               {
                                 "field": "Microsoft.Insights/diagnosticSettings/logs[*].Category",
                                 "in": [
@@ -10778,7 +10778,7 @@
                             ]
                           }
                         },
-                        "Equals": 7
+                        "equals": 7
                       },
                       {
                         "field": "Microsoft.Insights/diagnosticSettings/workspaceId",
@@ -12077,8 +12077,8 @@
               "vulnerabilityAssessmentsStorageID": {
                 "type": "string",
                 "metadata": {
-                  "description": "The storage account to store assessments",
-                  "displayName": "The storage account to store assessments"
+                  "description": "The storage account ID to store assessments",
+                  "displayName": "The storage account ID to store assessments"
                 }
               },
               "effect": {
@@ -13718,8 +13718,8 @@
               "azfw": {
                 "type": "Object",
                 "metadata": {
-                  "displayName": "ergw",
-                  "description": "Object describing ExpressRoute gateway"
+                  "displayName": "azfw",
+                  "description": "Object describing Azure Firewall"
                 },
                 "defaultValue": {}
               },
@@ -13763,7 +13763,7 @@
                   "name": "[[parameters('hubName')]",
                   "deploymentScope": "Subscription",
                   "existenceScope": "ResourceGroup",
-                  "ResourceGroupName": "[[parameters('rgName')]",
+                  "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
                     "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
@@ -14330,19 +14330,19 @@
                                             "type": "string"
                                           },
                                           "vWanVhubName": {
-                                            "Type": "string",
+                                            "type": "string",
                                             "defaultValue": ""
                                           },
                                           "allowHubToRemoteVnetTransit": {
-                                            "Type": "bool",
+                                            "type": "bool",
                                             "defaultValue": true
                                           },
                                           "allowRemoteVnetToUseHubVnetGateways": {
-                                            "Type": "bool",
+                                            "type": "bool",
                                             "defaultValue": false
                                           },
                                           "enableInternetSecurity": {
-                                            "Type": "bool",
+                                            "type": "bool",
                                             "defaultValue": true
                                           }
                                         },
@@ -14403,11 +14403,11 @@
                                         "contentVersion": "1.0.0.0",
                                         "parameters": {
                                           "remoteVirtualNetwork": {
-                                            "Type": "string",
+                                            "type": "string",
                                             "defaultValue": false
                                           },
                                           "hubName": {
-                                            "Type": "string",
+                                            "type": "string",
                                             "defaultValue": false
                                           }
                                         },
@@ -14707,7 +14707,7 @@
                   "name": "[[parameters('vHubName')]",
                   "deploymentScope": "Subscription",
                   "existenceScope": "ResourceGroup",
-                  "ResourceGroupName": "[[parameters('rgName')]",
+                  "resourceGroupName": "[[parameters('rgName')]",
                   "roleDefinitionIds": [
                     "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
                   ],
@@ -18226,6 +18226,18 @@
                   "description": "Deploys the diagnostic settings for Analysis Services to stream to a Log Analytics workspace when any Analysis Services which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
                 }
               },
+              "APIforFHIRLogAnalyticsEffect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Deploy Diagnostic Settings for Azure API for FHIR to Log Analytics workspace",
+                  "description": "Deploys the diagnostic settings for Azure API for FHIR to stream to a Log Analytics workspace when any Azure API for FHIR which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+                }
+              },
               "APIMgmtLogAnalyticsEffect": {
                 "type": "string",
                 "defaultValue": "DeployIfNotExists",
@@ -18320,6 +18332,18 @@
                 "metadata": {
                   "displayName": "Deploy Diagnostic Settings for Databricks to Log Analytics workspace",
                   "description": "Deploys the diagnostic settings for Databricks to stream to a Log Analytics workspace when any Databricks which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+                }
+              },
+              "DataExplorerClusterLogAnalyticsEffect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Deploy Diagnostic Settings for Azure Data Explorer Cluster to Log Analytics workspace",
+                  "description": "Deploys the diagnostic settings for Azure Data Explorer Cluster to stream to a Log Analytics workspace when any Azure Data Explorer Cluster which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
                 }
               },
               "DataFactoryLogAnalyticsEffect": {
@@ -18536,6 +18560,18 @@
                 "metadata": {
                   "displayName": "Deploy Diagnostic Settings for MariaDB to Log Analytics workspace",
                   "description": "Deploys the diagnostic settings for MariaDB to stream to a Log Analytics workspace when any MariaDB  which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+                }
+              },
+              "MediaServiceLogAnalyticsEffect": {
+                "type": "string",
+                "defaultValue": "DeployIfNotExists",
+                "allowedValues": [
+                  "DeployIfNotExists",
+                  "Disabled"
+                ],
+                "metadata": {
+                  "displayName": "Deploy Diagnostic Settings for Azure Media Service to Log Analytics workspace",
+                  "description": "Deploys the diagnostic settings for Azure Media Service to stream to a Log Analytics workspace when any Azure Media Service which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
                 }
               },
               "MlWorkspaceLogAnalyticsEffect": {
@@ -19011,6 +19047,21 @@
                 }
               },
               {
+                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-ApiForFHIR')]",
+                "policyDefinitionReferenceId": "APIforFHIRDeployDiagnosticLogDeployLogAnalytics",
+                "parameters": {
+                  "logAnalytics": {
+                    "value": "[[parameters('logAnalytics')]"
+                  },
+                  "effect": {
+                    "value": "[[parameters('APIforFHIRLogAnalyticsEffect')]"
+                  },
+                  "profileName": {
+                    "value": "[[parameters('profileName')]"
+                  }
+                }
+              },
+              {
                 "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-APIMgmt')]",
                 "policyDefinitionReferenceId": "APIMgmtDeployDiagnosticLogDeployLogAnalytics",
                 "parameters": {
@@ -19124,6 +19175,21 @@
                   },
                   "effect": {
                     "value": "[[parameters('DatabricksLogAnalyticsEffect')]"
+                  },
+                  "profileName": {
+                    "value": "[[parameters('profileName')]"
+                  }
+                }
+              },
+              {
+                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-DataExplorerCLuster')]",
+                "policyDefinitionReferenceId": "DataExplorerClusterDeployDiagnosticLogDeployLogAnalytics",
+                "parameters": {
+                  "logAnalytics": {
+                    "value": "[[parameters('logAnalytics')]"
+                  },
+                  "effect": {
+                    "value": "[[parameters('DataExplorerClusterLogAnalyticsEffect')]"
                   },
                   "profileName": {
                     "value": "[[parameters('profileName')]"
@@ -19394,6 +19460,21 @@
                   },
                   "effect": {
                     "value": "[[parameters('MariaDBLogAnalyticsEffect')]"
+                  },
+                  "profileName": {
+                    "value": "[[parameters('profileName')]"
+                  }
+                }
+              },
+              {
+                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-MediaService')]",
+                "policyDefinitionReferenceId": "MediaServiceDeployDiagnosticLogDeployLogAnalytics",
+                "parameters": {
+                  "logAnalytics": {
+                    "value": "[[parameters('logAnalytics')]"
+                  },
+                  "effect": {
+                    "value": "[[parameters('MediaServiceLogAnalyticsEffect')]"
                   },
                   "profileName": {
                     "value": "[[parameters('profileName')]"
