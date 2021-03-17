@@ -19,7 +19,7 @@
         "defaultValue": 60
       },
       "workspace": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "strongType": "omsWorkspace",
           "displayName": "Resource ID of Log Analytics workspace",

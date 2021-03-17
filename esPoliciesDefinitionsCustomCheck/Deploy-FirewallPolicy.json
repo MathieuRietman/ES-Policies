@@ -13,7 +13,7 @@
         "defaultValue": {}
       },
       "fwPolicyRegion": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "fwPolicyRegion",
           "description": "Select Azure region for Azure Firewall Policy",
@@ -21,7 +21,7 @@
         }
       },
       "rgName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "rgName",
           "description": "Provide name for resource group."

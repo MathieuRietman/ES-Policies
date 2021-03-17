@@ -5,14 +5,14 @@
     "mode": "Indexed",
     "parameters": {
       "vwanname": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "vwanname",
           "description": "Name of the Virtual WAN"
         }
       },
       "vHubName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "vHubName",
           "description": "Name of the vHUB"
@@ -51,7 +51,7 @@
         "defaultValue": {}
       },
       "rgName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "rgName",
           "description": "Provide name for resource group."
@@ -159,14 +159,14 @@
                     }
                   },
                   "rgName": {
-                    "type": "String",
+                    "type": "string",
                     "metadata": {
                       "displayName": "rgName",
                       "description": "Provide name for resource group."
                     }
                   },
                   "vHUBName": {
-                    "type": "String",
+                    "type": "string",
                     "metadata": {
                       "displayName": "vHUBName",
                       "description": "Name of the vHUB"

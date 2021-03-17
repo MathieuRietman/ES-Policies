@@ -5,7 +5,7 @@
     "mode": "Indexed",
     "parameters": {
       "hubName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "hubName",
           "description": "Name of the Hub"
@@ -43,7 +43,7 @@
         "defaultValue": {}
       },
       "rgName": {
-        "type": "String",
+        "type": "string",
         "metadata": {
           "displayName": "rgName",
           "description": "Provide name for resource group."
@@ -148,7 +148,7 @@
                     }
                   },
                   "rgName": {
-                    "type": "String",
+                    "type": "string",
                     "metadata": {
                       "displayName": "rgName",
                       "description": "Provide name for resource group."

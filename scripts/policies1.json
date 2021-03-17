@@ -21,7 +21,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -173,7 +173,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -356,7 +356,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Primary Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -509,7 +509,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -712,7 +712,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -756,7 +756,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -939,7 +939,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1118,7 +1118,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1324,7 +1324,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -1368,7 +1368,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1555,7 +1555,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1914,7 +1914,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2181,7 +2181,7 @@
             "mode": "Indexed",
             "parameters": {
               "pricingTierVMs": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierVMs",
                   "description": null
@@ -2193,7 +2193,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierSqlServers": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierSqlServers",
                   "description": null
@@ -2205,7 +2205,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierAppServices": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierAppServices",
                   "description": null
@@ -2217,7 +2217,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierStorageAccounts": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierStorageAccounts",
                   "description": null
@@ -2229,7 +2229,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierContainerRegistry": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierContainerRegistry",
                   "description": null
@@ -2241,7 +2241,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierKeyVaults": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierKeyVaults",
                   "description": null
@@ -2253,7 +2253,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierKubernetesService": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierKubernetesService",
                   "description": null
@@ -2265,7 +2265,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierDns": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierDns",
                   "description": null
@@ -2277,7 +2277,7 @@
                 "defaultValue": "Standard"
               },
               "pricingTierArm": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "pricingTierArm",
                   "description": null
@@ -2543,7 +2543,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -2590,7 +2590,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2777,7 +2777,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3173,7 +3173,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3320,7 +3320,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3507,7 +3507,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3714,7 +3714,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -3758,7 +3758,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3940,7 +3940,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4143,7 +4143,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4354,7 +4354,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4537,7 +4537,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4720,7 +4720,7 @@
             "mode": "Indexed",
             "parameters": {
               "privateDnsZoneId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "privateDnsZoneId",
                   "strongType": "Microsoft.Network/privateDnsZones"
@@ -4831,7 +4831,7 @@
             "mode": "Indexed",
             "parameters": {
               "privateDnsZoneId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "privateDnsZoneId",
                   "strongType": "Microsoft.Network/privateDnsZones"
@@ -4942,7 +4942,7 @@
             "mode": "Indexed",
             "parameters": {
               "privateDnsZoneId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "privateDnsZoneId",
                   "strongType": "Microsoft.Network/privateDnsZones"
@@ -5053,7 +5053,7 @@
             "mode": "Indexed",
             "parameters": {
               "privateDnsZoneId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "privateDnsZoneId",
                   "strongType": "Microsoft.Network/privateDnsZones"
@@ -5164,7 +5164,7 @@
             "mode": "Indexed",
             "parameters": {
               "privateDnsZoneId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "privateDnsZoneId",
                   "strongType": "Microsoft.Network/privateDnsZones"
@@ -5275,7 +5275,7 @@
             "mode": "Indexed",
             "parameters": {
               "privateDnsZoneId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "privateDnsZoneId",
                   "strongType": "Microsoft.Network/privateDnsZones"
@@ -5386,7 +5386,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5538,7 +5538,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5721,7 +5721,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5924,7 +5924,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6103,7 +6103,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6282,7 +6282,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6477,7 +6477,7 @@
                 "defaultValue": {}
               },
               "fwPolicyRegion": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "fwPolicyRegion",
                   "description": "Select Azure region for Azure Firewall Policy",
@@ -6485,7 +6485,7 @@
                 }
               },
               "rgName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "rgName",
                   "description": "Provide name for resource group."
@@ -6626,7 +6626,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6809,7 +6809,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6996,7 +6996,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7148,7 +7148,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7379,7 +7379,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7558,7 +7558,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -7642,7 +7642,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7825,14 +7825,14 @@
             "mode": "Indexed",
             "parameters": {
               "workspaceName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "workspaceName",
                   "description": "Provide name of existing Log Analytics workspace"
                 }
               },
               "workspaceRegion": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "workspaceRegion",
                   "description": "Select region of existing Log Analytics workspace"
@@ -8233,28 +8233,28 @@
             "mode": "Indexed",
             "parameters": {
               "workspaceName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "workspaceName",
                   "description": "Provide name for log analytics workspace"
                 }
               },
               "automationAccountName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "automationAccountName",
                   "description": "Provide name for automation account"
                 }
               },
               "workspaceRegion": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "workspaceRegion",
                   "description": "Select Azure region for Log Analytics"
                 }
               },
               "automationRegion": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "automationRegion",
                   "description": "Select Azure region for Automation account"
@@ -8269,7 +8269,7 @@
                 }
               },
               "rgName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "rgName",
                   "description": "Provide name for resource group."
@@ -8453,7 +8453,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8600,7 +8600,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8779,7 +8779,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8962,7 +8962,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -9006,7 +9006,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9185,7 +9185,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9406,7 +9406,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9659,7 +9659,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -9831,14 +9831,14 @@
             "mode": "Indexed",
             "parameters": {
               "ddosName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "ddosName",
                   "description": "Name of the Virtual WAN"
                 }
               },
               "ddosRegion": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "ddosRegion",
                   "description": "Select Azure region for Virtual WAN",
@@ -9846,7 +9846,7 @@
                 }
               },
               "rgName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "rgName",
                   "description": "Provide name for resource group."
@@ -9971,7 +9971,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -10007,7 +10007,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -10043,7 +10043,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -10083,7 +10083,7 @@
             },
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Effect",
                   "description": "Enable or disable the execution of the policy"
@@ -10123,7 +10123,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -10274,7 +10274,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -10468,7 +10468,7 @@
                 "defaultValue": 5
               },
               "storageAccountResourceId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Storage Account Resource Id",
                   "strongType": "Microsoft.Storage/storageAccounts"
@@ -10489,7 +10489,7 @@
                 "defaultValue": false
               },
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "strongType": "omsWorkspace",
                   "displayName": "Resource ID of Log Analytics workspace",
@@ -10660,7 +10660,7 @@
                 "defaultValue": 60
               },
               "workspace": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "strongType": "omsWorkspace",
                   "displayName": "Resource ID of Log Analytics workspace",
@@ -10873,7 +10873,7 @@
             },
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Effect",
                   "description": "Enable or disable the execution of the policy"
@@ -10983,7 +10983,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -11027,7 +11027,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -11183,7 +11183,7 @@
             },
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Effect",
                   "description": "Enable or disable the execution of the policy"
@@ -11223,7 +11223,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -11480,7 +11480,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -11653,7 +11653,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -11832,7 +11832,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -12094,7 +12094,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -12366,7 +12366,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -12545,7 +12545,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -12724,7 +12724,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -12903,7 +12903,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -13387,14 +13387,14 @@
             "mode": "Indexed",
             "parameters": {
               "vulnerabilityAssessmentsEmail": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "description": "The email address to send alerts",
                   "displayName": "The email address to send alerts"
                 }
               },
               "vulnerabilityAssessmentsStorageID": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "description": "The storage account ID to store assessments",
                   "displayName": "The storage account ID to store assessments"
@@ -13518,7 +13518,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -13737,7 +13737,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -13889,7 +13889,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -14047,7 +14047,7 @@
             },
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Effect",
                   "description": "Enable or disable the execution of the policy"
@@ -14227,7 +14227,7 @@
             },
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Effect",
                   "description": "Enable or disable the execution of the policy"
@@ -14288,7 +14288,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -14528,7 +14528,7 @@
             "mode": "Indexed",
             "parameters": {
               "effect": {
-                "type": "String",
+                "type": "string",
                 "allowedValues": [
                   "Audit",
                   "Deny",
@@ -14704,7 +14704,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -14887,7 +14887,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -15070,7 +15070,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -15701,7 +15701,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -15852,7 +15852,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -16030,7 +16030,7 @@
             "mode": "Indexed",
             "parameters": {
               "hubName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "hubName",
                   "description": "Name of the Hub"
@@ -16068,7 +16068,7 @@
                 "defaultValue": {}
               },
               "rgName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "rgName",
                   "description": "Provide name for resource group."
@@ -16173,7 +16173,7 @@
                             }
                           },
                           "rgName": {
-                            "type": "String",
+                            "type": "string",
                             "metadata": {
                               "displayName": "rgName",
                               "description": "Provide name for resource group."
@@ -16824,35 +16824,35 @@
             },
             "parameters": {
               "vNetName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vNetName",
                   "description": "Name of the landing zone vNet"
                 }
               },
               "vNetRgName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vNetRgName",
                   "description": "Name of the landing zone vNet RG"
                 }
               },
               "vNetLocation": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vNetLocation",
                   "description": "Location for the vNet"
                 }
               },
               "vNetCidrRange": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vNetCidrRange",
                   "description": "CIDR Range for the vNet"
                 }
               },
               "hubResourceId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "hubResourceId",
                   "description": "Resource ID for the HUB vNet"
@@ -17144,14 +17144,14 @@
             "mode": "Indexed",
             "parameters": {
               "vwanname": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vwanname",
                   "description": "Name of the Virtual WAN"
                 }
               },
               "vwanRegion": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vwanRegion",
                   "description": "Select Azure region for Virtual WAN",
@@ -17159,7 +17159,7 @@
                 }
               },
               "rgName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "rgName",
                   "description": "Provide name for resource group."
@@ -17291,14 +17291,14 @@
             "mode": "Indexed",
             "parameters": {
               "vwanname": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vwanname",
                   "description": "Name of the Virtual WAN"
                 }
               },
               "vHubName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "vHubName",
                   "description": "Name of the vHUB"
@@ -17337,7 +17337,7 @@
                 "defaultValue": {}
               },
               "rgName": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "rgName",
                   "description": "Provide name for resource group."
@@ -17445,14 +17445,14 @@
                             }
                           },
                           "rgName": {
-                            "type": "String",
+                            "type": "string",
                             "metadata": {
                               "displayName": "rgName",
                               "description": "Provide name for resource group."
                             }
                           },
                           "vHUBName": {
-                            "type": "String",
+                            "type": "string",
                             "metadata": {
                               "displayName": "vHUBName",
                               "description": "Name of the vHUB"
@@ -17589,7 +17589,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -17740,7 +17740,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -17939,35 +17939,35 @@
             "mode": "Indexed",
             "parameters": {
               "domainUsername": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "domainUsername",
                   "description": null
                 }
               },
               "domainPassword": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "domainPassword",
                   "description": null
                 }
               },
               "domainFQDN": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "domainFQDN",
                   "description": null
                 }
               },
               "domainOUPath": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "domainOUPath",
                   "description": null
                 }
               },
               "keyVaultResourceId": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "keyVaultResourceId",
                   "description": null
@@ -18195,7 +18195,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -18349,7 +18349,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -18515,7 +18515,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "String",
+                "type": "string",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -18681,10 +18681,10 @@
                   "displayName": "Log Analytics workspace",
                   "strongType": "omsWorkspace"
                 },
-                "type": "String"
+                "type": "string"
               },
               "profileName": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -18692,7 +18692,7 @@
                 }
               },
               "ACILogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18704,7 +18704,7 @@
                 }
               },
               "ACRLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18716,7 +18716,7 @@
                 }
               },
               "AKSLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18728,7 +18728,7 @@
                 }
               },
               "AnalysisServiceLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18740,7 +18740,7 @@
                 }
               },
               "APIforFHIRLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18752,7 +18752,7 @@
                 }
               },
               "APIMgmtLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18764,7 +18764,7 @@
                 }
               },
               "ApplicationGatewayLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18776,7 +18776,7 @@
                 }
               },
               "AutomationLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18788,7 +18788,7 @@
                 }
               },
               "BatchLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18800,7 +18800,7 @@
                 }
               },
               "CDNEndpointsLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18812,7 +18812,7 @@
                 }
               },
               "CognitiveServicesLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18824,7 +18824,7 @@
                 }
               },
               "CosmosLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18836,7 +18836,7 @@
                 }
               },
               "DatabricksLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18848,7 +18848,7 @@
                 }
               },
               "DataExplorerClusterLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18860,7 +18860,7 @@
                 }
               },
               "DataFactoryLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18872,7 +18872,7 @@
                 }
               },
               "DataLakeStoreLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18884,7 +18884,7 @@
                 }
               },
               "DataLakeAnalyticsLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18896,7 +18896,7 @@
                 }
               },
               "EventGridSubLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18908,7 +18908,7 @@
                 }
               },
               "EventGridTopicLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18920,7 +18920,7 @@
                 }
               },
               "EventHubLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18932,7 +18932,7 @@
                 }
               },
               "EventSystemTopicLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18944,7 +18944,7 @@
                 }
               },
               "ExpressRouteLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18956,7 +18956,7 @@
                 }
               },
               "FirewallLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18968,7 +18968,7 @@
                 }
               },
               "FrontDoorLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18980,7 +18980,7 @@
                 }
               },
               "FunctionAppLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -18992,7 +18992,7 @@
                 }
               },
               "HDInsightLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19004,7 +19004,7 @@
                 }
               },
               "IotHubLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19016,7 +19016,7 @@
                 }
               },
               "KeyVaultLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19028,7 +19028,7 @@
                 }
               },
               "LoadBalancerLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19040,7 +19040,7 @@
                 }
               },
               "LogicAppsISELogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19052,7 +19052,7 @@
                 }
               },
               "LogicAppsWFLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19064,7 +19064,7 @@
                 }
               },
               "MariaDBLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19076,7 +19076,7 @@
                 }
               },
               "MediaServiceLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19088,7 +19088,7 @@
                 }
               },
               "MlWorkspaceLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19100,7 +19100,7 @@
                 }
               },
               "MySQLLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19112,7 +19112,7 @@
                 }
               },
               "NetworkSecurityGroupsLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19124,7 +19124,7 @@
                 }
               },
               "NetworkNICLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19136,7 +19136,7 @@
                 }
               },
               "PostgreSQLLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19148,7 +19148,7 @@
                 }
               },
               "PowerBIEmbeddedLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19160,7 +19160,7 @@
                 }
               },
               "NetworkPublicIPNicLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19172,7 +19172,7 @@
                 }
               },
               "RecoveryVaultLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19184,7 +19184,7 @@
                 }
               },
               "RedisCacheLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19196,7 +19196,7 @@
                 }
               },
               "RelayLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19208,7 +19208,7 @@
                 }
               },
               "SearchServicesLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19220,7 +19220,7 @@
                 }
               },
               "ServiceBusLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19232,7 +19232,7 @@
                 }
               },
               "SignalRLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19244,7 +19244,7 @@
                 }
               },
               "SQLDBsLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19256,7 +19256,7 @@
                 }
               },
               "SQLElasticPoolsLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19268,7 +19268,7 @@
                 }
               },
               "SQLMLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19280,7 +19280,7 @@
                 }
               },
               "StreamAnalyticsLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19292,7 +19292,7 @@
                 }
               },
               "TimeSeriesInsightsLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19304,7 +19304,7 @@
                 }
               },
               "TrafficManagerLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19316,7 +19316,7 @@
                 }
               },
               "VirtualNetworkLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19328,7 +19328,7 @@
                 }
               },
               "VirtualMachinesLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19340,7 +19340,7 @@
                 }
               },
               "VMSSLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19352,7 +19352,7 @@
                 }
               },
               "VNetGWLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19364,7 +19364,7 @@
                 }
               },
               "AppServiceLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -19376,7 +19376,7 @@
                 }
               },
               "AppServiceWebappLogAnalyticsEffect": {
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -20384,7 +20384,7 @@
                   "displayName": "Container registries should be encrypted with a customer-managed key (CMK)",
                   "description": "Use customer-managed keys to manage the encryption at rest of the contents of your registries. By default, the data is encrypted at rest with service-managed keys, but customer-managed keys (CMK) are commonly required to meet regulatory compliance standards. CMKs enable the data to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management. Learn more about CMK encryption at https://aka.ms/acr/CMK."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20397,7 +20397,7 @@
                   "displayName": "Azure Kubernetes Service clusters both operating systems and data disks should be encrypted by customer-managed keys",
                   "description": "Encrypting OS and data disks using customer-managed keys provides more control and greater flexibility in key management. This is a common requirement in many regulatory and industry compliance standards."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20762,7 +20762,7 @@
                   "displayName": "App Service API App. Latest TLS version should be used in your API App",
                   "description": "App Service API App. Only Audit, deny not possible as it is a related resource.  Upgrade to the latest TLS version."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "AuditIfNotExists",
                 "allowedValues": [
                   "AuditIfNotExists",
@@ -20774,7 +20774,7 @@
                   "displayName": "App Service API App. API App should only be accessible over HTTPS. Choose Deny or Audit in combination with Append policy.",
                   "description": "Choose Deny or Audit in combination with Append policy. Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20787,7 +20787,7 @@
                   "displayName": "App Service Function App. Latest TLS version should be used in your Function App",
                   "description": "Only Audit, deny not possible as it is a related resource. Upgrade to the latest TLS version."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "AuditIfNotExists",
                 "allowedValues": [
                   "AuditIfNotExists",
@@ -20799,7 +20799,7 @@
                   "displayName": "App Service Function App. Function App should only be accessible over HTTPS. Choose Deny or Audit in combination with Append policy.",
                   "description": "App Service Function App. Choose Deny or Audit in combination with Append policy. Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20812,7 +20812,7 @@
                   "displayName": "App Service Web App. Latest TLS version should be used in your Web App",
                   "description": "Only Audit, deny not possible as it is a related resource. Upgrade to the latest TLS version."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "AuditIfNotExists",
                 "allowedValues": [
                   "AuditIfNotExists",
@@ -20824,7 +20824,7 @@
                   "displayName": "App Service Web App. Web Application should only be accessible over HTTPS. Choose Deny or Audit in combination with Append policy.",
                   "description": "Choose Deny or Audit in combination with Append policy. Use of HTTPS ensures server/service authentication and protects data in transit from network layer eavesdropping attacks."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20837,7 +20837,7 @@
                   "displayName": "AKS Service. Enforce HTTPS ingress in Kubernetes cluster",
                   "description": "This policy enforces HTTPS ingress in a Kubernetes cluster. This policy is generally available for Kubernetes Service (AKS), and preview for AKS Engine and Azure Arc enabled Kubernetes. For instructions on using this policy, visit https://aka.ms/kubepolicydoc."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "deny",
                 "allowedValues": [
                   "audit",
@@ -20862,7 +20862,7 @@
                   "displayName": "MySQL database servers. Enforce SSL connection should be enabled for MySQL database servers",
                   "description": "Azure Database for MySQL supports connecting your Azure Database for MySQL server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20901,7 +20901,7 @@
                   "displayName": "PostgreSQL database servers. Enforce SSL connection should be enabled for PostgreSQL database servers",
                   "description": "Azure Database for PostgreSQL supports connecting your Azure Database for PostgreSQL server to client applications using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20953,7 +20953,7 @@
                   "displayName": "Azure Cache for Redis. Only secure connections to your Azure Cache for Redis should be enabled",
                   "description": "Azure Cache for Redis. Audit enabling of only connections via SSL to Azure Cache for Redis. Use of secure connections ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -20991,7 +20991,7 @@
                   "displayName": "SQL Managed Instance should have the minimal TLS version of 1.2",
                   "description": "Setting minimal TLS version to 1.2 improves security by ensuring your SQL Managed Instance can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -21029,7 +21029,7 @@
                   "displayName": "Azure SQL Database should have the minimal TLS version of 1.2",
                   "description": "Setting minimal TLS version to 1.2 improves security by ensuring your Azure SQL Database can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -21042,7 +21042,7 @@
                   "displayName": "Azure Storage Account. Deploy Secure transfer to storage accounts should be enabled",
                   "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -21067,7 +21067,7 @@
                   "displayName": "Azure Storage Account. Secure transfer to storage accounts should be enabled",
                   "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
                 },
-                "type": "String",
+                "type": "string",
                 "defaultValue": "Audit",
                 "allowedValues": [
                   "Audit",
@@ -21527,14 +21527,14 @@
                   "description": "The email address to send alerts",
                   "displayName": "The email address to send alerts"
                 },
-                "type": "String"
+                "type": "string"
               },
               "vulnerabilityAssessmentsStorageID": {
                 "metadata": {
                   "description": "The storage account ID to store assessments",
                   "displayName": "The storage account ID to store assessments"
                 },
-                "type": "String"
+                "type": "string"
               },
               "SqlDbTdeDeploySqlSecurityEffect": {
                 "type": "string",
