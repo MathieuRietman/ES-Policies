@@ -233,7 +233,7 @@
                                 "resources": [
                                   {
                                     "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
-                                    "name": "[[concat(parameters('hubName'),'/',last(split(parameters('remoteVirtualNetwork'),'/')))]",
+                                    "name": "[concat(parameters('hubName'),'/',last(split(parameters('remoteVirtualNetwork'),'/')))]",
                                     "apiVersion": "2020-05-01",
                                     "properties": {
                                       "allowVirtualNetworkAccess": true,
@@ -241,7 +241,7 @@
                                       "allowGatewayTransit": true,
                                       "useRemoteGateways": false,
                                       "remoteVirtualNetwork": {
-                                        "id": "[[parameters('remoteVirtualNetwork')]"
+                                        "id": "[parameters('remoteVirtualNetwork')]"
                                       }
                                     }
                                   }

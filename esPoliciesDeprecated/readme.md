@@ -5,6 +5,8 @@ Mostly Replace by Buildin
 
 
 21-4-2021:
+ASC_StandardOrFree_Deploy.json -> Replaced by seprate deployement per Defender and grouped in initiative  ASC_Config_Deploy.json
+NetworkPublicIPNic_DeployDiagnosticLog_Deploy_LogAnalytics.json-> 752154a7-1e0f-45c6-a880-ac75a7e4f648
 
 Cosmos_PublicEndpoint_Deny.json	Cosmos	-> 	797b37f7-06b8-444c-b1ad-fc62867f335a	
 AKS_PublicEndpoint_Deny.json	-> 040732e8-d947-40b8-95d6-854c95024bf8	

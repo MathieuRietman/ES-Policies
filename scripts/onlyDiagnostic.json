@@ -3118,7 +3118,7 @@
               }
             }
           },
-          "name": "Deploy-Diagnostics-DataExplorerCLuster"
+          "name": "Deploy-Diagnostics-DataExplorerCluster"
         },
         {
           "properties": {
@@ -11576,7 +11576,7 @@
                 }
               },
               {
-                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-DataExplorerCLuster')]",
+                "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-DataExplorerCluster')]",
                 "policyDefinitionReferenceId": "DataExplorerClusterDeployDiagnosticLogDeployLogAnalytics",
                 "parameters": {
                   "logAnalytics": {

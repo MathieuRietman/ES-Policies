@@ -474,7 +474,7 @@
         }
       },
       {
-        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-PostgreSql-sslEnforcement')]",
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-PostgreSQL-sslEnforcement')]",
         "policyDefinitionReferenceId": "PostgreSQLEnableSSLDeployEffect",
         "parameters": {
           "effect": {

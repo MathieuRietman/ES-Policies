@@ -1,10 +1,19 @@
 
+# April 2021
+
+
+|Type|Description|Effect|Template file|Deploy|
+|------------|-------------------|----------------|-----------------|-----------------|
+|custom|Deploy the Azure Defender settings for AKS. | DeployIfNotExists, Disabled.|[ASC_DefenderAKS_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderAKS_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderAKS_Deploy.json)|
+|custom|Deploy the Azure Defender settings in Azure Security Center for Azure App Services. | DeployIfNotExists, Disabled.|[ASC_DefenderAppServices_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderAppServices_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderAppServices_Deploy.json)|
+|custom|"Deploy the Azure Defender settings for Azure Resource Manager. | DeployIfNotExists, Disabled.|[ASC_DefenderARM_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderAppServices_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderARM_Deploy.json)|
+
 
 
 # Feb 2021
 
 
-# Custom Policies for Encryption in transit.
+## Custom Policies for Encryption in transit.
 
 Custom policies that are used in the EncryptionTransitInitiative_Deploy.JSO initiative. Have policies either deny or appand and deploy if not exist.
 

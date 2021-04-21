@@ -7,36 +7,31 @@
       "domainUsername": {
         "type": "string",
         "metadata": {
-          "displayName": "domainUsername",
-          "description": null
+          "displayName": "domainUsername"
         }
       },
       "domainPassword": {
         "type": "string",
         "metadata": {
-          "displayName": "domainPassword",
-          "description": null
+          "displayName": "domainPassword"
         }
       },
       "domainFQDN": {
         "type": "string",
         "metadata": {
-          "displayName": "domainFQDN",
-          "description": null
+          "displayName": "domainFQDN"
         }
       },
       "domainOUPath": {
         "type": "string",
         "metadata": {
-          "displayName": "domainOUPath",
-          "description": null
+          "displayName": "domainOUPath"
         }
       },
       "keyVaultResourceId": {
         "type": "string",
         "metadata": {
-          "displayName": "keyVaultResourceId",
-          "description": null
+          "displayName": "keyVaultResourceId"
         }
       },
       "effect": {

@@ -1023,7 +1023,7 @@
         }
       },
       {
-        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-DataExplorerCLuster')]",
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-DataExplorerCluster')]",
         "policyDefinitionReferenceId": "DataExplorerClusterDeployDiagnosticLogDeployLogAnalytics",
         "parameters": {
           "logAnalytics": {
@@ -1413,7 +1413,7 @@
         }
       },
       {
-        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-PublicIP')]",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/752154a7-1e0f-45c6-a880-ac75a7e4f648",
         "policyDefinitionReferenceId": "NetworkPublicIPNicDeployDiagnosticLogDeployLogAnalytics",
         "parameters": {
           "logAnalytics": {
@@ -1424,6 +1424,27 @@
           },
           "profileName": {
             "value": "[[parameters('profileName')]"
+          },
+          "metricsEnabled": {
+            "value": "True"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/752154a7-1e0f-45c6-a880-ac75a7e4f648",
+        "policyDefinitionReferenceId": "NetworkPublicIPNicDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "logAnalytics": {
+            "value": "[[parameters('logAnalytics')]"
+          },
+          "effect": {
+            "value": "[[parameters('NetworkPublicIPNicLogAnalyticsEffect')]"
+          },
+          "profileName": {
+            "value": "[[parameters('profileName')]"
+          },
+          "metricsEnabled": {
+            "value": "True"
           }
         }
       },

@@ -7,8 +7,7 @@
       "ipam": {
         "type": "Array",
         "metadata": {
-          "displayName": "ipam",
-          "description": null
+          "displayName": "ipam"
         },
         "defaultValue": []
       },
@@ -247,14 +246,14 @@
                                   {
                                     "type": "Microsoft.Network/virtualHubs/hubVirtualNetworkConnections",
                                     "apiVersion": "2020-05-01",
-                                    "name": "[[concat(parameters('vWanVhubName'),'/',last(split(parameters('remoteVirtualNetwork'),'/')))]",
+                                    "name": "[concat(parameters('vWanVhubName'),'/',last(split(parameters('remoteVirtualNetwork'),'/')))]",
                                     "properties": {
                                       "remoteVirtualNetwork": {
-                                        "id": "[[parameters('remoteVirtualNetwork')]"
+                                        "id": "[parameters('remoteVirtualNetwork')]"
                                       },
-                                      "allowHubToRemoteVnetTransit": "[[parameters('allowHubToRemoteVnetTransit')]",
-                                      "allowRemoteVnetToUseHubVnetGateways": "[[parameters('allowRemoteVnetToUseHubVnetGateways')]",
-                                      "enableInternetSecurity": "[[parameters('enableInternetSecurity')]"
+                                      "allowHubToRemoteVnetTransit": "[parameters('allowHubToRemoteVnetTransit')]",
+                                      "allowRemoteVnetToUseHubVnetGateways": "[parameters('allowRemoteVnetToUseHubVnetGateways')]",
+                                      "enableInternetSecurity": "[parameters('enableInternetSecurity')]"
                                     }
                                   }
                                 ],
@@ -311,7 +310,7 @@
                                 "resources": [
                                   {
                                     "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
-                                    "name": "[[concat(parameters('hubName'),'/',last(split(parameters('remoteVirtualNetwork'),'/')))]",
+                                    "name": "[concat(parameters('hubName'),'/',last(split(parameters('remoteVirtualNetwork'),'/')))]",
                                     "apiVersion": "2020-05-01",
                                     "properties": {
                                       "allowVirtualNetworkAccess": true,
@@ -319,7 +318,7 @@
                                       "allowGatewayTransit": true,
                                       "useRemoteGateways": false,
                                       "remoteVirtualNetwork": {
-                                        "id": "[[parameters('remoteVirtualNetwork')]"
+                                        "id": "[parameters('remoteVirtualNetwork')]"
                                       }
                                     }
                                   }
