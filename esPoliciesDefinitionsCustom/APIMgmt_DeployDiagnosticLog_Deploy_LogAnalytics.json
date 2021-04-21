@@ -125,34 +125,7 @@
                       "workspaceId": "[parameters('logAnalytics')]",
                       "metrics": [
                         {
-                          "category": "Gateway Requests",
-                          "enabled": "[parameters('metricsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          },
-                          "timeGrain": null
-                        },
-                        {
-                          "category": "Capacity",
-                          "enabled": "[parameters('metricsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          },
-                          "timeGrain": null
-                        },
-                        {
-                          "category": "EventHub Events",
-                          "enabled": "[parameters('metricsEnabled')]",
-                          "retentionPolicy": {
-                            "days": 0,
-                            "enabled": false
-                          },
-                          "timeGrain": null
-                        },
-                        {
-                          "category": "Network Status",
+                          "category": "AllMetrics",
                           "enabled": "[parameters('metricsEnabled')]",
                           "retentionPolicy": {
                             "days": 0,

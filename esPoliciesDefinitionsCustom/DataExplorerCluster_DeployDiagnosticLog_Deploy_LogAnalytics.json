@@ -199,7 +199,7 @@
       "category": "Monitoring"
     }
   },
-  "id": "/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-DataExplorerCLuster",
+  "id": "/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-DataExplorerCluster",
   "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "Deploy-Diagnostics-DataExplorerCLuster"
+  "name": "Deploy-Diagnostics-DataExplorerCluster"
 }

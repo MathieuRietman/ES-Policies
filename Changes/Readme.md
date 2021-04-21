@@ -1,10 +1,66 @@
 
+# April 2021
+
+## Changed to build in policies
+
+
+- NetworkPublicIPNic_DeployDiagnosticLog_Deploy_LogAnalytics.json-> 752154a7-1e0f-45c6-a880-ac75a7e4f648
+
+Impact on PublicEndpointsInitiative_Deny.json added also 3 additional services
+
+
+- Cosmos_PublicEndpoint_Deny.json	Cosmos	-> 	797b37f7-06b8-444c-b1ad-fc62867f335a	
+- AKS_PublicEndpoint_Deny.json	-> 040732e8-d947-40b8-95d6-854c95024bf8	
+- KeyVault_PublicEndpoint_Deny.json	-> 	5f0bc445-3935-4915-9981-011aa2b46147 
+- SqlServer_PublicEndpoint_Deny.json -> 	1b8ca024-1d5c-4dec-8995-b1a932b41780
+- Storage_PublicEndpoint_Deny.json	-> 	2a1a9cdf-e04d-429a-8416-3bfb72a1b26f	
+
+Impact on PublicEndpointsInitiative_Deny.json added also 3 additional services
+
+<br>
+<br>
+
+## Changed Security Center config
+
+- ASC_StandardOrFree_Deploy.json -> Replaced by separate deployment per Defender and grouped in initiative  ASC_Config_Deploy.json
+
+<br>
+
+|Description|Template file|
+|------------|-------------------|
+|Deploy Azure Security Center configuration |[ASC_Config_Deploy.json](../esPoliciesInitiatives/ASC_Config_Deploy.json) |
+
+<br>
+
+Please note deploying with below button deploys not with the right names use the deploy button in [readme](../README.md) to deloy the latest policies to the top management group.
+
+<br>
+
+|Type|Description|Effect|Template file|Deploy|
+|------------|-------------------|----------------|-----------------|-----------------|
+|custom|Deploy the Azure Defender settings for AKS. | DeployIfNotExists, Disabled.|[ASC_DefenderAKS_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderAKS_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderAKS_Deploy.json)|
+|custom|Deploy the Azure Defender settings in Azure Security Center for Azure App Services. | DeployIfNotExists, Disabled.|[ASC_DefenderAppServices_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderAppServices_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderAppServices_Deploy.json)|
+|custom|Deploy the Azure Defender settings for Azure Resource Manager. | DeployIfNotExists, Disabled.|[ASC_DefenderARM_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderAppServices_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderARM_Deploy.json)|
+|custom|Deploy the Azure Defender settings in Azure Security Center for Azure Sql Databases | DeployIfNotExists, Disabled.|[ASC_DefenderAzureSQL_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderAzureSQL_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderAzureSQL_Deploy.json)|
+|custom|Deploy the Azure Defender settings for Azure Container Registry | DeployIfNotExists, Disabled.|[ASC_DefenderContainerRegistry_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderContainerRegistry_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderContainerRegistry_Deploy.json)|
+|custom|Deploy the Azure Defender settings for DNS| DeployIfNotExists, Disabled.|[ASC_DefenderDNS_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderDNS_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderDNS_Deploy.json)|
+|custom|Deploy the Azure Defender settings for Azure Key Vault| DeployIfNotExists, Disabled.|[ASC_DefenderKeyVault_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderKeyVault_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderKeyVault_Deploy.json)|
+|custom|Deploy the Azure Defender settings in Sql Server on Virtual Machines| DeployIfNotExists, Disabled.|[ASC_DefenderSqlVms.json](../esPoliciesDefinitionsCustom/ASC_DefenderSqlVms.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderSqlVms.json)|
+|custom|Deploy the Azure Defender settings in Azure Security Center for Storage Accounts| DeployIfNotExists, Disabled.|[ASC_DefenderStorageAccounts_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderStorageAccounts_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderStorageAccounts_Deploy.json)|
+|custom|Deploy the Azure Defender settings in Azure Security Center for Virtual Machines| DeployIfNotExists, Disabled.|[ASC_DefenderVirtualMachines_Deploy.json](../esPoliciesDefinitionsCustom/ASC_DefenderVirtualMachines_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_DefenderVirtualMachines_Deploy.json)|
+|custom|Deploy Azure Security Center Security Contacts| DeployIfNotExists, Disabled.|[ASC_SecurityContacts_Deploy.json](../esPoliciesDefinitionsCustom/ASC_SecurityContacts_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FASC_SecurityContacts_Deploy.json)|
+
+
+
+<br>
+<br>
+
 
 
 # Feb 2021
 
 
-# Custom Policies for Encryption in transit.
+## Custom Policies for Encryption in transit.
 
 Custom policies that are used in the EncryptionTransitInitiative_Deploy.JSO initiative. Have policies either deny or appand and deploy if not exist.
 

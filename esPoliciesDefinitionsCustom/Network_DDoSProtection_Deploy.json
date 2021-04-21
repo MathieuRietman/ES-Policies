@@ -8,14 +8,14 @@
         "type": "string",
         "metadata": {
           "displayName": "ddosName",
-          "description": "Name of the Virtual WAN"
+          "description": "DDoSVnet"
         }
       },
       "ddosRegion": {
         "type": "string",
         "metadata": {
           "displayName": "ddosRegion",
-          "description": "Select Azure region for Virtual WAN",
+          "description": "DDoSVnet location",
           "strongType": "location"
         }
       },
