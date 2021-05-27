@@ -4,7 +4,7 @@
     "displayName": "Public network access should be disabled for PAAS services",
     "parameters": {
       "CosmosPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -17,7 +17,7 @@
         }
       },
       "MariaDBPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -30,7 +30,7 @@
         }
       },
       "MySQLPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -43,7 +43,7 @@
         }
       },
       "PostgreSQLPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -56,7 +56,7 @@
         }
       },
       "KeyVaultPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -69,7 +69,7 @@
         }
       },
       "SqlServerPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -82,7 +82,7 @@
         }
       },
       "StoragePublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -95,7 +95,7 @@
         }
       },
       "AKSPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -108,7 +108,7 @@
         }
       },
       "RedisPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -121,7 +121,7 @@
         }
       },
       "SynapsePublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
@@ -133,7 +133,7 @@
         }
       },
       "FhirPublicIpDenyEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",

@@ -5,7 +5,7 @@
             "mode": "All",
             "parameters": {
               "pricingTier": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Azure Defender pricing tier",
                   "description": "Azure Defender pricing tier"
@@ -17,7 +17,7 @@
                 "defaultValue": "Standard"
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -67,7 +67,7 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "parameters": {
                         "pricingTier": {
                           "value": "[parameters('pricingTier')]"
@@ -78,7 +78,7 @@
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "pricingTier": {
-                            "type": "string",
+                            "type": "String",
                             "metadata": {
                               "description": "Azure Defender pricing tier"
                             }

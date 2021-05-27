@@ -12,7 +12,7 @@
         "defaultValue": 5
       },
       "storageAccountResourceId": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "Storage Account Resource Id",
           "strongType": "Microsoft.Storage/storageAccounts"
@@ -33,7 +33,7 @@
         "defaultValue": false
       },
       "logAnalytics": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "strongType": "omsWorkspace",
           "displayName": "Resource ID of Log Analytics workspace",
@@ -42,7 +42,7 @@
         "defaultValue": ""
       },
       "effect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "DeployIfNotExists",
         "allowedValues": [
           "DeployIfNotExists",
@@ -82,7 +82,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "networkSecurityGroupName": {
                   "value": "[field('name')]"
@@ -114,16 +114,16 @@
                 "contentVersion": "1.0.0.0",
                 "parameters": {
                   "networkSecurityGroupName": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "resourceGroupName": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "location": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "storageAccountResourceId": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "retention": {
                     "type": "int"
@@ -135,7 +135,7 @@
                     "type": "int"
                   },
                   "logAnalytics": {
-                    "type": "string"
+                    "type": "String"
                   }
                 },
                 "variables": {},

@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "topLevelManagementGroupPrefix": {
-      "type": "string",
+      "type": "String",
       "maxLength": 5
     }
   },
@@ -18,7 +18,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -26,7 +26,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -38,7 +38,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -46,7 +46,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -90,25 +90,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -170,7 +170,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -178,7 +178,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -190,7 +190,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -198,7 +198,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -210,7 +210,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -258,28 +258,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -353,7 +353,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Primary Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -361,7 +361,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -373,7 +373,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -419,16 +419,16 @@
                   "deployment": {
                     "location": "northeurope",
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -506,7 +506,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -514,7 +514,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -526,7 +526,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -534,7 +534,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -546,7 +546,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -594,28 +594,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -709,7 +709,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -717,7 +717,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -729,7 +729,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -737,7 +737,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -749,7 +749,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -797,28 +797,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -892,7 +892,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -900,7 +900,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -912,7 +912,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -920,7 +920,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -932,7 +932,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -980,28 +980,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -1071,7 +1071,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1079,7 +1079,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -1091,7 +1091,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -1099,7 +1099,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1111,7 +1111,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1159,28 +1159,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -1277,7 +1277,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1285,7 +1285,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -1297,7 +1297,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -1305,7 +1305,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1317,7 +1317,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1365,28 +1365,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -1464,7 +1464,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1472,7 +1472,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -1484,7 +1484,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -1492,7 +1492,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1536,25 +1536,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -1616,7 +1616,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1624,7 +1624,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -1636,7 +1636,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -1644,7 +1644,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1656,7 +1656,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1712,28 +1712,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -1835,7 +1835,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -1843,7 +1843,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -1855,7 +1855,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -1863,7 +1863,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1875,7 +1875,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -1923,28 +1923,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -2022,7 +2022,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2030,7 +2030,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -2042,7 +2042,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -2050,7 +2050,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2062,7 +2062,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2110,28 +2110,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -2201,7 +2201,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2209,7 +2209,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -2221,7 +2221,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -2229,7 +2229,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2273,25 +2273,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -2348,7 +2348,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2356,7 +2356,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -2368,7 +2368,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -2376,7 +2376,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2388,7 +2388,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2436,28 +2436,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -2535,7 +2535,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2543,7 +2543,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -2555,7 +2555,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -2563,7 +2563,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2575,7 +2575,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2623,28 +2623,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -2742,7 +2742,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2750,7 +2750,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -2762,7 +2762,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -2770,7 +2770,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2814,25 +2814,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -2924,7 +2924,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -2932,7 +2932,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -2944,7 +2944,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -2952,7 +2952,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -2964,7 +2964,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3012,28 +3012,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -3127,7 +3127,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3135,7 +3135,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -3147,7 +3147,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -3155,7 +3155,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3167,7 +3167,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3215,28 +3215,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -3338,7 +3338,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3346,7 +3346,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -3358,7 +3358,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -3366,7 +3366,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3378,7 +3378,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3426,28 +3426,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -3521,7 +3521,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3529,7 +3529,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -3541,7 +3541,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -3549,7 +3549,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3561,7 +3561,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3609,28 +3609,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -3704,7 +3704,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3712,7 +3712,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -3724,7 +3724,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -3732,7 +3732,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3776,25 +3776,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -3856,7 +3856,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -3864,7 +3864,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -3876,7 +3876,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -3884,7 +3884,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3896,7 +3896,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -3944,28 +3944,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -4039,7 +4039,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4047,7 +4047,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -4059,7 +4059,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -4067,7 +4067,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4079,7 +4079,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4127,28 +4127,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -4242,7 +4242,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4250,7 +4250,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -4262,7 +4262,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -4270,7 +4270,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4282,7 +4282,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4330,28 +4330,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -4421,7 +4421,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4429,7 +4429,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -4441,7 +4441,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -4449,7 +4449,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4461,7 +4461,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4509,28 +4509,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -4600,7 +4600,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4608,7 +4608,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -4620,7 +4620,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -4628,7 +4628,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4640,7 +4640,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4688,28 +4688,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -4787,7 +4787,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4795,7 +4795,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -4807,7 +4807,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -4815,7 +4815,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4827,7 +4827,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -4875,28 +4875,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -4970,7 +4970,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -4978,7 +4978,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -4990,7 +4990,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -4998,7 +4998,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5010,7 +5010,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5066,28 +5066,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -5157,7 +5157,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5165,7 +5165,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -5177,7 +5177,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -5185,7 +5185,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5229,25 +5229,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -5309,7 +5309,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5317,7 +5317,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -5329,7 +5329,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -5337,7 +5337,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5349,7 +5349,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5397,28 +5397,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -5540,7 +5540,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5548,7 +5548,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -5560,7 +5560,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -5568,7 +5568,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5580,7 +5580,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5628,28 +5628,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -5719,7 +5719,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5727,7 +5727,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -5739,7 +5739,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -5747,7 +5747,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5759,7 +5759,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5807,28 +5807,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -5902,7 +5902,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -5910,7 +5910,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -5922,7 +5922,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -5930,7 +5930,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -5974,25 +5974,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -6049,7 +6049,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6057,7 +6057,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -6069,7 +6069,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -6077,7 +6077,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6089,7 +6089,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6137,28 +6137,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -6228,7 +6228,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6236,7 +6236,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -6248,7 +6248,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -6256,7 +6256,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6268,7 +6268,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6316,28 +6316,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -6411,7 +6411,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6419,7 +6419,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -6431,7 +6431,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -6439,7 +6439,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6451,7 +6451,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6499,28 +6499,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -6590,7 +6590,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6598,7 +6598,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -6610,7 +6610,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -6618,7 +6618,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6630,7 +6630,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6678,28 +6678,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -6811,7 +6811,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -6819,7 +6819,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -6831,7 +6831,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -6839,7 +6839,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6851,7 +6851,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -6899,28 +6899,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -6994,7 +6994,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7002,7 +7002,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -7014,7 +7014,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -7022,7 +7022,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7066,25 +7066,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -7145,7 +7145,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7153,7 +7153,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -7165,7 +7165,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -7173,7 +7173,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7185,7 +7185,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7233,28 +7233,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -7332,7 +7332,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7340,7 +7340,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -7352,7 +7352,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -7360,7 +7360,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7404,25 +7404,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -7483,7 +7483,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7491,7 +7491,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -7503,7 +7503,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -7511,7 +7511,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7523,7 +7523,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7571,28 +7571,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -7670,7 +7670,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7678,7 +7678,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -7690,7 +7690,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -7698,7 +7698,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7710,7 +7710,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7758,28 +7758,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -7849,7 +7849,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -7857,7 +7857,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -7869,7 +7869,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -7877,7 +7877,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -7947,25 +7947,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -8046,7 +8046,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8054,7 +8054,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -8066,7 +8066,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -8074,7 +8074,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8118,25 +8118,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -8198,7 +8198,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8206,7 +8206,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -8218,7 +8218,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -8226,7 +8226,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8238,7 +8238,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8286,28 +8286,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -8377,7 +8377,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8385,7 +8385,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -8397,7 +8397,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -8405,7 +8405,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8417,7 +8417,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8465,28 +8465,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -8556,7 +8556,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8564,7 +8564,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -8576,7 +8576,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -8584,7 +8584,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8596,7 +8596,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8644,28 +8644,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -8735,7 +8735,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8743,7 +8743,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -8755,7 +8755,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -8763,7 +8763,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8775,7 +8775,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8819,28 +8819,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -8910,7 +8910,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -8918,7 +8918,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -8930,7 +8930,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -8938,7 +8938,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8950,7 +8950,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -8998,28 +8998,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -9129,7 +9129,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9137,7 +9137,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -9149,7 +9149,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -9157,7 +9157,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9201,25 +9201,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -9281,7 +9281,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9289,7 +9289,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -9301,7 +9301,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -9309,7 +9309,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9353,25 +9353,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -9435,7 +9435,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9443,7 +9443,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -9455,7 +9455,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -9463,7 +9463,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9475,7 +9475,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9523,28 +9523,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -9618,7 +9618,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9626,7 +9626,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -9638,7 +9638,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -9646,7 +9646,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9658,7 +9658,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9706,28 +9706,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -9801,7 +9801,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9809,7 +9809,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -9821,7 +9821,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -9829,7 +9829,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9841,7 +9841,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -9889,28 +9889,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -9980,7 +9980,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -9988,7 +9988,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10000,7 +10000,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -10008,7 +10008,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -10052,25 +10052,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -10131,7 +10131,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -10139,7 +10139,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10151,7 +10151,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -10159,7 +10159,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -10171,7 +10171,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -10219,28 +10219,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -10309,7 +10309,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -10317,7 +10317,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10329,7 +10329,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -10337,7 +10337,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -10381,25 +10381,25 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -10460,7 +10460,7 @@
             "mode": "Indexed",
             "parameters": {
               "logAnalytics": {
-                "type": "string",
+                "type": "String",
                 "metadata": {
                   "displayName": "Log Analytics workspace",
                   "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
@@ -10468,7 +10468,7 @@
                 }
               },
               "effect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10480,7 +10480,7 @@
                 }
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -10488,7 +10488,7 @@
                 }
               },
               "metricsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -10500,7 +10500,7 @@
                 }
               },
               "logsEnabled": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "True",
                 "allowedValues": [
                   "True",
@@ -10548,28 +10548,28 @@
                   ],
                   "deployment": {
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
                         "parameters": {
                           "resourceName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logAnalytics": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "location": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "profileName": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "metricsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           },
                           "logsEnabled": {
-                            "type": "string"
+                            "type": "String"
                           }
                         },
                         "variables": {},
@@ -10667,10 +10667,10 @@
                   "displayName": "Log Analytics workspace",
                   "strongType": "omsWorkspace"
                 },
-                "type": "string"
+                "type": "String"
               },
               "profileName": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "setbypolicy",
                 "metadata": {
                   "displayName": "Profile name",
@@ -10678,7 +10678,7 @@
                 }
               },
               "ACILogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10690,7 +10690,7 @@
                 }
               },
               "ACRLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10702,7 +10702,7 @@
                 }
               },
               "AKSLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10714,7 +10714,7 @@
                 }
               },
               "AnalysisServiceLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10726,7 +10726,7 @@
                 }
               },
               "APIforFHIRLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10738,7 +10738,7 @@
                 }
               },
               "APIMgmtLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10750,7 +10750,7 @@
                 }
               },
               "ApplicationGatewayLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10762,7 +10762,7 @@
                 }
               },
               "AutomationLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10774,7 +10774,7 @@
                 }
               },
               "BatchLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10786,7 +10786,7 @@
                 }
               },
               "CDNEndpointsLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10798,7 +10798,7 @@
                 }
               },
               "CognitiveServicesLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10810,7 +10810,7 @@
                 }
               },
               "CosmosLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10822,7 +10822,7 @@
                 }
               },
               "DatabricksLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10834,7 +10834,7 @@
                 }
               },
               "DataExplorerClusterLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10846,7 +10846,7 @@
                 }
               },
               "DataFactoryLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10858,7 +10858,7 @@
                 }
               },
               "DataLakeStoreLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10870,7 +10870,7 @@
                 }
               },
               "DataLakeAnalyticsLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10882,7 +10882,7 @@
                 }
               },
               "EventGridSubLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10894,7 +10894,7 @@
                 }
               },
               "EventGridTopicLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10906,7 +10906,7 @@
                 }
               },
               "EventHubLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10918,7 +10918,7 @@
                 }
               },
               "EventSystemTopicLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10930,7 +10930,7 @@
                 }
               },
               "ExpressRouteLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10942,7 +10942,7 @@
                 }
               },
               "FirewallLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10954,7 +10954,7 @@
                 }
               },
               "FrontDoorLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10966,7 +10966,7 @@
                 }
               },
               "FunctionAppLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10978,7 +10978,7 @@
                 }
               },
               "HDInsightLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -10990,7 +10990,7 @@
                 }
               },
               "IotHubLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11002,7 +11002,7 @@
                 }
               },
               "KeyVaultLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11014,7 +11014,7 @@
                 }
               },
               "LoadBalancerLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11026,7 +11026,7 @@
                 }
               },
               "LogicAppsISELogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11038,7 +11038,7 @@
                 }
               },
               "LogicAppsWFLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11050,7 +11050,7 @@
                 }
               },
               "MariaDBLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11062,7 +11062,7 @@
                 }
               },
               "MediaServiceLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11074,7 +11074,7 @@
                 }
               },
               "MlWorkspaceLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11086,7 +11086,7 @@
                 }
               },
               "MySQLLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11098,7 +11098,7 @@
                 }
               },
               "NetworkSecurityGroupsLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11110,7 +11110,7 @@
                 }
               },
               "NetworkNICLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11122,7 +11122,7 @@
                 }
               },
               "PostgreSQLLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11134,7 +11134,7 @@
                 }
               },
               "PowerBIEmbeddedLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11146,7 +11146,7 @@
                 }
               },
               "NetworkPublicIPNicLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11158,7 +11158,7 @@
                 }
               },
               "RecoveryVaultLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11170,7 +11170,7 @@
                 }
               },
               "RedisCacheLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11182,7 +11182,7 @@
                 }
               },
               "RelayLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11194,7 +11194,7 @@
                 }
               },
               "SearchServicesLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11206,7 +11206,7 @@
                 }
               },
               "ServiceBusLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11218,7 +11218,7 @@
                 }
               },
               "SignalRLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11230,7 +11230,7 @@
                 }
               },
               "SQLDBsLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11242,7 +11242,7 @@
                 }
               },
               "SQLElasticPoolsLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11254,7 +11254,7 @@
                 }
               },
               "SQLMLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11266,7 +11266,7 @@
                 }
               },
               "StreamAnalyticsLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11278,7 +11278,7 @@
                 }
               },
               "TimeSeriesInsightsLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11290,7 +11290,7 @@
                 }
               },
               "TrafficManagerLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11302,7 +11302,7 @@
                 }
               },
               "VirtualNetworkLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11314,7 +11314,7 @@
                 }
               },
               "VirtualMachinesLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11326,7 +11326,7 @@
                 }
               },
               "VMSSLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11338,7 +11338,7 @@
                 }
               },
               "VNetGWLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11350,7 +11350,7 @@
                 }
               },
               "AppServiceLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",
@@ -11362,7 +11362,7 @@
                 }
               },
               "AppServiceWebappLogAnalyticsEffect": {
-                "type": "string",
+                "type": "String",
                 "defaultValue": "DeployIfNotExists",
                 "allowedValues": [
                   "DeployIfNotExists",

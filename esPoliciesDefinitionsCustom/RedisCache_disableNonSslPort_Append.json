@@ -9,7 +9,7 @@
     },
     "parameters": {
       "effect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Append",
         "allowedValues": [
           "Append",

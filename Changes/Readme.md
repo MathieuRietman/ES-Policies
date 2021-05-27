@@ -1,3 +1,17 @@
+# May 2021
+
+Deleted Deploy-HUB, "Deploy-vNet, Deploy-vWAN, Deploy-vHUB
+
+Added 
+
+Deploy-Default-Udr
+
+
+|Type|Description|Effect|Template file|Deploy|
+|------------|-------------------|----------------|-----------------|-----------------|
+|custom|Deploy a user-defined route to a VNET with specific routes. | DeployIfNotExists, Disabled.|[ASC_DefenderAKS_Deploy.json](../esPoliciesDefinitionsCustom/Network_UDR_Deploy.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2Fmain%2FesPoliciesDefinitionsCustom%2FNetwork_UDR_Deploy.json)|
+
+Updated Type casing to Pascal. "string" "String"
 
 # April 2021
 

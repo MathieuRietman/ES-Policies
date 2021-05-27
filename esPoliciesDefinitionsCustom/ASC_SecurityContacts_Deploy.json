@@ -5,14 +5,14 @@
       "mode": "All",
       "parameters": {
         "emailSecurityContact": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Security contacts email address",
             "description": "Provide email address for Azure Security Center contact details"
           }
         },
         "effect": {
-          "type": "string",
+          "type": "String",
           "defaultValue": "DeployIfNotExists",
           "allowedValues": [
             "DeployIfNotExists",
@@ -69,7 +69,7 @@
             "deployment": {
               "location": "northeurope",
               "properties": {
-                "mode": "incremental",
+                "mode": "Incremental",
                 "parameters": {
                   "emailSecurityContact": {
                     "value": "[parameters('emailSecurityContact')]"
@@ -80,7 +80,7 @@
                   "contentVersion": "1.0.0.0",
                   "parameters": {
                     "emailSecurityContact": {
-                      "type": "string",
+                      "type": "String",
                       "metadata": {
                         "description": "Security contacts email address"
                       }

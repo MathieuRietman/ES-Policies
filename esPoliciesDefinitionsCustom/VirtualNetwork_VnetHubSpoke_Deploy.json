@@ -5,39 +5,47 @@
     "mode": "All",
     "parameters": {
       "vNetName": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "vNetName",
           "description": "Name of the landing zone vNet"
         }
       },
       "vNetRgName": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "vNetRgName",
           "description": "Name of the landing zone vNet RG"
         }
       },
       "vNetLocation": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "vNetLocation",
           "description": "Location for the vNet"
         }
       },
       "vNetCidrRange": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "vNetCidrRange",
           "description": "CIDR Range for the vNet"
         }
       },
       "hubResourceId": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "hubResourceId",
           "description": "Resource ID for the HUB vNet"
         }
+      },
+      "dnsServers": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "DNSServers",
+          "description": "Default domain servers for the vNET."
+        },
+        "defaultValue": []
       }
     },
     "metadata": {
@@ -79,7 +87,7 @@
           "deployment": {
             "location": "northeurope",
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "vNetRgName": {
                   "value": "[parameters('vNetRgName')]"
@@ -95,6 +103,9 @@
                 },
                 "hubResourceId": {
                   "value": "[parameters('hubResourceId')]"
+                },
+                "dnsServers": {
+                  "value": "[parameters('dnsServers')]"
                 }
               },
               "template": {
@@ -102,23 +113,27 @@
                 "contentVersion": "1.0.0.0",
                 "parameters": {
                   "vNetRgName": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "vNetName": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "vNetLocation": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "vNetCidrRange": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "vNetPeerUseRemoteGateway": {
                     "type": "bool",
                     "defaultValue": false
                   },
                   "hubResourceId": {
-                    "type": "string"
+                    "type": "String"
+                  },
+                  "dnsServers": {
+                    "type": "Array",
+                    "defaultValue": []
                   }
                 },
                 "variables": {},
@@ -130,7 +145,7 @@
                     "location": "[parameters('vNetLocation')]",
                     "dependsOn": [],
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -164,7 +179,7 @@
                       "[concat('es-lz-vnet-',substring(uniqueString(subscription().id),0,6),'-rg')]"
                     ],
                     "properties": {
-                      "mode": "incremental",
+                      "mode": "Incremental",
                       "template": {
                         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                         "contentVersion": "1.0.0.0",
@@ -182,6 +197,9 @@
                                 "addressPrefixes": [
                                   "[parameters('vNetCidrRange')]"
                                 ]
+                              },
+                              "dhcpOptions": {
+                                "dnsServers": "[parameters('dnsServers')]"
                               }
                             }
                           },
@@ -212,7 +230,7 @@
                               "[parameters('vNetName')]"
                             ],
                             "properties": {
-                              "mode": "incremental",
+                              "mode": "Incremental",
                               "expressionEvaluationOptions": {
                                 "scope": "inner"
                               },
@@ -221,11 +239,11 @@
                                 "contentVersion": "1.0.0.0",
                                 "parameters": {
                                   "remoteVirtualNetwork": {
-                                    "type": "string",
+                                    "type": "String",
                                     "defaultValue": false
                                   },
                                   "hubName": {
-                                    "type": "string",
+                                    "type": "String",
                                     "defaultValue": false
                                   }
                                 },

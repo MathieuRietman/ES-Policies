@@ -5,7 +5,7 @@
     "mode": "Indexed",
     "parameters": {
       "effect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "DeployIfNotExists",
         "allowedValues": [
           "DeployIfNotExists",
@@ -362,25 +362,25 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "template": {
                 "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
                 "contentVersion": "1.0.0.0",
                 "parameters": {
                   "vmName": {
-                    "type": "string",
+                    "type": "String",
                     "metadata": {
                       "description": "Name of Azure Virtual Machines"
                     }
                   },
                   "vmRgName": {
-                    "type": "string",
+                    "type": "String",
                     "metadata": {
                       "description": "Resource group containing the virtual machines."
                     }
                   },
                   "location": {
-                    "type": "string",
+                    "type": "String",
                     "metadata": {
                       "description": "Location for VM and Backup vault"
                     }
@@ -422,7 +422,7 @@
                 ],
                 "outputs": {
                   "status": {
-                    "type": "string",
+                    "type": "String",
                     "value": "[concat('Backup enabled successfully for VM:', ' ', parameters('vmName'))]"
                   }
                 }

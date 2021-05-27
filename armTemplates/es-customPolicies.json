@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "managementGroup": {
-            "type": "string",
+            "type": "String",
             "metadata": {
                 "description": "Provide the managementgroup where the policies apply to"
             }
@@ -35,7 +35,7 @@
             "location": "[deployment().location]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('managementGroup'))]",
             "properties": {
-                "mode": "incremental",
+                "mode": "Incremental",
                 "templateLink": {
                     "contentVersion": "1.0.0.0",
                     "uri": "[variables('deploymentUris').policyDefinitions]"
@@ -50,7 +50,7 @@
     ],
     "outputs": {
         "deployment": {
-            "type": "string",
+            "type": "String",
             "value": "[concat(deployment().name, ' has successfully deployed. Welcome to Enterprise-Scale!')]"
         }
     }
