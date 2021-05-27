@@ -74,7 +74,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -442,7 +442,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -625,7 +625,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -1293,7 +1293,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -1476,7 +1476,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -1699,7 +1699,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -1874,7 +1874,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -2046,7 +2046,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -3493,7 +3493,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -3794,7 +3794,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -3961,7 +3961,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -4120,7 +4120,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -4307,7 +4307,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -4546,7 +4546,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -4740,7 +4740,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -4951,7 +4951,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -5134,7 +5134,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -5971,7 +5971,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -6135,7 +6135,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -6318,7 +6318,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -6521,7 +6521,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -6700,7 +6700,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -6879,7 +6879,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -7223,7 +7223,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -7414,7 +7414,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -7581,7 +7581,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -7745,7 +7745,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -7992,7 +7992,7 @@
                       }
                     ]
                   },
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "roleDefinitionIds": [
                     "/providers/microsoft.authorization/roleDefinitions/749f88d5-cbae-40b8-bcfc-e573ddc772fa",
                     "/providers/microsoft.authorization/roleDefinitions/92aaf0da-9dab-42b6-94a3-d43ce8d16293"
@@ -8239,7 +8239,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -9038,7 +9038,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -9197,7 +9197,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -9376,7 +9376,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -9603,7 +9603,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -9824,7 +9824,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -10287,7 +10287,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -10794,7 +10794,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -10957,7 +10957,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -11188,7 +11188,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -11355,7 +11355,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -11552,7 +11552,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -11716,7 +11716,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -11895,7 +11895,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -12074,7 +12074,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -12253,7 +12253,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -12868,7 +12868,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -13075,7 +13075,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -13227,7 +13227,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -13481,7 +13481,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -13664,7 +13664,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -13847,7 +13847,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -14014,7 +14014,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -14177,7 +14177,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -14343,7 +14343,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -14506,7 +14506,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -14693,7 +14693,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -14859,7 +14859,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -15017,7 +15017,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -15434,7 +15434,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -15868,7 +15868,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
@@ -16071,7 +16071,7 @@
                 "effect": "[[parameters('effect')]",
                 "details": {
                   "type": "Microsoft.Insights/diagnosticSettings",
-                  "name": "setByPolicy",
+                  "name": "[parameters('profileName')]",
                   "existenceCondition": {
                     "allOf": [
                       {
