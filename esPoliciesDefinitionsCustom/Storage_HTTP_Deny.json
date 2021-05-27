@@ -9,7 +9,7 @@
     },
     "parameters": {
       "effect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
           "Audit",
@@ -22,7 +22,7 @@
         }
       },
       "minimumTlsVersion": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "TLS1_2",
         "allowedValues": [
           "TLS1_2",

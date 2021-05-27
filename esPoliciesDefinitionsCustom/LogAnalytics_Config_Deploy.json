@@ -5,21 +5,21 @@
     "mode": "Indexed",
     "parameters": {
       "workspaceName": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "workspaceName",
           "description": "Provide name of existing Log Analytics workspace"
         }
       },
       "workspaceRegion": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "workspaceRegion",
           "description": "Select region of existing Log Analytics workspace"
         }
       },
       "effect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "DeployIfNotExists",
         "allowedValues": [
           "DeployIfNotExists",
@@ -64,7 +64,7 @@
           },
           "deployment": {
             "properties": {
-              "mode": "incremental",
+              "mode": "Incremental",
               "parameters": {
                 "workspaceName": {
                   "value": "[parameters('workspaceName')]"
@@ -78,10 +78,10 @@
                 "contentVersion": "1.0.0.0",
                 "parameters": {
                   "workspaceName": {
-                    "type": "string"
+                    "type": "String"
                   },
                   "workspaceRegion": {
-                    "type": "string"
+                    "type": "String"
                   }
                 },
                 "variables": {

@@ -5,7 +5,7 @@
     "mode": "Indexed",
     "parameters": {
       "effect": {
-        "type": "string",
+        "type": "String",
         "allowedValues": [
           "Audit",
           "Deny",

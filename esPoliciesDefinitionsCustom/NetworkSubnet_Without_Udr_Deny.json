@@ -10,7 +10,7 @@
     },
     "parameters": {
       "effect": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "Effect",
           "description": "Enable or disable the execution of the policy"
@@ -41,7 +41,7 @@
       }
     }
   },
-  "id": "/providers/policySetDefinitions/Deny-Subnet-Without-Udr",
+  "id": "/providers/policySetDefinitions/Deny-Subnet-Without-UDR",
   "type": "Microsoft.Authorization/policySetDefinitions",
-  "name": "Deny-Subnet-Without-Udr"
+  "name": "Deny-Subnet-Without-UDR"
 }

@@ -9,7 +9,7 @@
     },
     "parameters": {
       "effect": {
-        "type": "string",
+        "type": "String",
         "metadata": {
           "displayName": "Effect",
           "description": "Enable or disable the execution of the policy"
@@ -22,7 +22,7 @@
         "defaultValue": "Audit"
       },
       "minimalTlsVersion": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "1.2",
         "allowedValues": [
           "1.2",

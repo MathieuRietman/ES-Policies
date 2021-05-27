@@ -8,7 +8,7 @@
           "displayName": "Container registries should be encrypted with a customer-managed key (CMK)",
           "description": "Use customer-managed keys to manage the encryption at rest of the contents of your registries. By default, the data is encrypted at rest with service-managed keys, but customer-managed keys (CMK) are commonly required to meet regulatory compliance standards. CMKs enable the data to be encrypted with an Azure Key Vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management. Learn more about CMK encryption at https://aka.ms/acr/CMK."
         },
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
@@ -21,7 +21,7 @@
           "displayName": "Azure Kubernetes Service clusters both operating systems and data disks should be encrypted by customer-managed keys",
           "description": "Encrypting OS and data disks using customer-managed keys provides more control and greater flexibility in key management. This is a common requirement in many regulatory and industry compliance standards."
         },
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
@@ -30,7 +30,7 @@
         ]
       },
       "WorkspaceCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
@@ -43,7 +43,7 @@
         }
       },
       "CognitiveServicesCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
@@ -56,7 +56,7 @@
         }
       },
       "CosmosCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "audit",
         "allowedValues": [
           "audit",
@@ -69,7 +69,7 @@
         }
       },
       "DataBoxCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
@@ -82,7 +82,7 @@
         }
       },
       "StreamAnalyticsCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "audit",
         "allowedValues": [
           "audit",
@@ -95,7 +95,7 @@
         }
       },
       "SynapseWorkspaceCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue":  "Audit",
         "allowedValues": [
           "Audit",
@@ -108,7 +108,7 @@
         }
       },
       "StorageCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "Audit",
         "allowedValues": [
           "Audit",
@@ -120,7 +120,7 @@
         }
       },
       "MySQLCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "AuditIfNotExists",
         "allowedValues": [
           "AuditIfNotExists",
@@ -132,7 +132,7 @@
         }
       },
       "PostgreSQLCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "AuditIfNotExists",
         "allowedValues": [
           "AuditIfNotExists",
@@ -144,7 +144,7 @@
         }
       },
       "SqlServerTDECMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "AuditIfNotExists",
         "allowedValues": [
           "AuditIfNotExists",
@@ -156,7 +156,7 @@
         }
       },
       "HealthcareAPIsCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue": "audit",
         "allowedValues": [
           "audit",
@@ -168,7 +168,7 @@
         }
       },
       "AzureBatchCMKEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue":  "Audit",
         "allowedValues": [
           "Audit",
@@ -181,7 +181,7 @@
         }
       },
       "EncryptedVMDisksEffect": {
-        "type": "string",
+        "type": "String",
         "defaultValue":  "AuditIfNotExists",
         "allowedValues": [
           "AuditIfNotExists",

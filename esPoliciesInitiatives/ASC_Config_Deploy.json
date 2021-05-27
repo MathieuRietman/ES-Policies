@@ -4,22 +4,38 @@
       "displayName": "Deploy Azure Security Center configuration",
       "parameters": {
         "emailSecurityContact": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Security contacts email address",
             "description": "Provide email address for Azure Security Center contact details"
           }
         },
         "logAnalytics": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Primary Log Analytics workspace",
             "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
             "strongType": "omsWorkspace"
           }
         },
+        "ascExportResourceGroupName": {
+          "type": "String",
+          "defaultValue": "",
+          "metadata": {
+            "displayName": "Resource Group name for the export to Log Analytics workspace configuration",
+            "description": "The resource group name where the export to Log Analytics workspace configuration is created. If you enter a name for a resource group that doesn't exist, it'll be created in the subscription. Note that each resource group can only have one export to Log Analytics workspace configured."
+          }
+        },
+        "ascExportResourceGroupLocation": {
+          "type": "String",
+          "defaultValue": "",
+          "metadata": {
+            "displayName": "Resource Group location for the export to Log Analytics workspace configuration",
+            "description": "The location where the resource group and the export to Log Analytics workspace configuration are created."
+          }
+        },
         "pricingTierVMs": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for Virtual Machines",
             "description": "Azure Defender pricing tier for Virtual Machines"
@@ -31,7 +47,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierSqlServers": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for SQL Servers",
             "description": "Azure Defender pricing tier for SQL Servers"
@@ -43,7 +59,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierAppServices": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for App Services",
             "description": "Azure Defender pricing tier for App Services"
@@ -55,7 +71,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierStorageAccounts": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for Storage Accounts",
             "description": "Azure Defender pricing tier for Storage Accounts"
@@ -67,7 +83,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierSqlServerVirtualMachines": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for SQL Server Virtual Machines",
             "description": "Azure Defender pricing tier for SQL Server Virtual Machines"
@@ -79,7 +95,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierKubernetesService": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for AKS",
             "description": "Azure Defender pricing tier for AKS"
@@ -91,7 +107,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierContainerRegistry": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for ACR",
             "description": "Azure Defender pricing tier for ACR"
@@ -103,7 +119,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierKeyVaults": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for AKV",
             "description": "Azure Defender pricing tier for AKV"
@@ -115,7 +131,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierDns": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for DNS",
             "description": "Azure Defender pricing tier for DNS"
@@ -127,7 +143,7 @@
           "defaultValue": "Standard"
         },
         "pricingTierArm": {
-          "type": "string",
+          "type": "String",
           "metadata": {
             "displayName": "Azure Defender pricing tier for Azure Resource Manager",
             "description": "Azure Defender pricing tier for Azure Resource Manager"
@@ -248,14 +264,13 @@
           "policyDefinitionReferenceId": "ascExport",
           "parameters": {
             "resourceGroupName": {
-              "value": "[concat(parameters('topLevelManagementGroupPrefix'), '-asc-export')]"
+              "value": "[parameters('ascExportResourceGroupName')]"
             },
             "resourceGroupLocation": {
-              "value": "[deployment().location]"
+              "value": "[[parameters('ascExportResourceGroupLocation')]"
             },
             "workspaceResourceId": {
               "value": "[[parameters('logAnalytics')]"
-
             }
           }
         }
