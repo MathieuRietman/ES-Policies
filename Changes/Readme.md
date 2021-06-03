@@ -5,7 +5,7 @@ Added
 
 |Type|Description|Effect|Template file|Deploy|
 |------------|-------------------|----------------|-----------------|-----------------|
-|custom|Compliant KeyVault. | Deny, DeployIfNotExists, Disabled.|[KeyVaultCompliantBaseline.json](../esPoliciesInitiatives/KeyVaultCompliantBaseline.json) | [![Deploy to Azure](https://docs.microsoft.com/en-us/azure/governance/policy/media/deploy/deploybutton.png)](https://portal.azure.com/?#blade/Microsoft_Azure_Policy/CreatePolicyInitiativeBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2Fes-Policies%2FcompliantWorkload%2FesPoliciesInitiatives%2esPoliciesInitiatives)|
+|custom|Compliant KeyVault. | Deny, DeployIfNotExists, Disabled.|[KeyVaultCompliantBaseline.json](../esPoliciesInitiatives/KeyVaultCompliantBaseline.json) |
 
 # May 2021
 

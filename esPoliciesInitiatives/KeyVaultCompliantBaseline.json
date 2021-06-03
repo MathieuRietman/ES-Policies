@@ -140,12 +140,11 @@
       },
       "profileName": {
         "type": "String",
-        "default": "setbypolicy",
         "metadata": {
           "displayName": "Name of the diagnostic settings name used for diagnostic logging",
           "description": "Name of the diagnostic settings."
         },
-        "defaultValue": "AzureKeyVaultDiagnosticsLogsToWorkspace"
+        "defaultValue": "setbypolicy"
       },
       "logAnalytics": {
         "type": "String",
@@ -182,11 +181,11 @@
       },
       "complianceRequirementsCertificateEffect": {
         "type": "String",
-        "defaultValue": "Deny",
+        "defaultValue": "deny",
         "allowedValues": [
-          "Audit",
-          "Deny",
-          "Disabled"
+          "audit",
+          "deny",
+          "disabled"
         ],
         "metadata": {
           "displayName": "Enforce below certificates organizational compliance requirements.",
@@ -194,7 +193,7 @@
         }
       },
       "certMinimumRSAKeySize": {
-        "type": "String",
+        "type": "Integer",
         "metadata": {
           "displayName": "Certificates using RSA cryptography should have the specified minimum key size",
           "description": "Manage your organizational compliance requirements by specifying a minimum key size for RSA certificates stored in your key vault."
@@ -250,7 +249,7 @@
         },
         "defaultValue": 12
       },
-      "complianceRequirementsKeyEffect": {
+      "complianceRequirementsKeysEffect": {
         "type": "String",
         "defaultValue": "Deny",
         "allowedValues": [
@@ -264,7 +263,7 @@
         }
       },
       "keysMinimumRSAKeySize": {
-        "type": "String",
+        "type": "Integer",
         "metadata": {
           "displayName": "Keys using RSA cryptography should have a specified minimum key size",
           "description": "Set the minimum allowed key size for use with your key vaults. Use of RSA keys with small key sizes is not a secure practice and doesn't meet many industry certification requirements."
@@ -562,7 +561,7 @@
         }
       },
       {
-        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/49a22571-d204-4c91-a7b6-09b1a586fbc",
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/49a22571-d204-4c91-a7b6-09b1a586fbc9",
         "policyDefinitionReferenceId": "keysMaximumValidityInDays",
         "parameters": {
           "effect": {
