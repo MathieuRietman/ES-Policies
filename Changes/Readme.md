@@ -6,7 +6,7 @@ Added
 |Type|Description|Effect|Template file|Deploy|
 |------------|-------------------|----------------|-----------------|-----------------|
 |custom|Compliant KeyVault. | Deny, DeployIfNotExists, Disabled.|[KeyVaultCompliantBaseline.json](../esPoliciesInitiatives/KeyVaultCompliantBaseline.json) |[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2FES-Policies%2FCompliantWorkload%2FChanges%2FDeploymenPolicySets%2FKeyVaultCompliantBaseline.json) | 
-[StorageCompliantBaseline.json](../esPoliciesInitiatives/StorageCompliantBaseline.json) |[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2FES-Policies%2FCompliantWorkload%2FChanges%2FDeploymenPolicySets%2FStorageCompliantBaseline.json) | 
+|custom|Compliant Storage. | Deny, DeployIfNotExists, Disabled.|[StorageCompliantBaseline.json](../esPoliciesInitiatives/StorageCompliantBaseline.json) |[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMathieuRietman%2FES-Policies%2FCompliantWorkload%2FChanges%2FDeploymenPolicySets%2FStorageCompliantBaseline.json) | 
 
 
 # May 2021
