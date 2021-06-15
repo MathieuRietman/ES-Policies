@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "Azure Storage baseline policy initiative ",
+    "displayName": "Azure Storage baseline policy initiative",
     "description": "Enforce security and compliance setting via baseline policy for Azure Storage",
     "parameters": {
       "allowedSkuEffect": {

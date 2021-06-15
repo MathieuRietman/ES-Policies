@@ -18,7 +18,7 @@
       "apiVersion": "2019-09-01",
       "name": "Compliant-StorageAcc",
       "properties": {
-        "displayName": "Azure Storage baseline policy initiative ",
+        "displayName": "Azure Storage baseline policy initiative",
         "description": "Enforce security and compliance setting via baseline policy for Azure Storage",
         "parameters": {
           "allowedSkuEffect": {
@@ -243,7 +243,7 @@
               "displayName": "Setting name",
               "description": "Name of the diagnostic settings."
             },
-            "defaultValue": "storageAccountsDiagnosticsLogsToWorkspace"
+            "defaultValue": "setbypolicy"
           },
           "storageDelete": {
             "type": "String",

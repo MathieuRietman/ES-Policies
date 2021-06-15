@@ -1,0 +1,935 @@
+{
+  "properties": {
+    "displayName": "Azure SQL Server baseline policy initiative",
+    "description": "Enforce security and compliance setting via baseline policy for Azure SQL",
+    "parameters": {
+      "publicAccessEffect": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Public network access on Azure SQL Database should be disabled",
+          "description": "Disabling the public network access property improves security by ensuring your Azure SQL Database can only be accessed from a private endpoint. This configuration denies all logins that match IP or virtual network based firewall rules."
+        }
+      },
+      "publicAccessModifyEffect": {
+        "type": "String",
+        "defaultValue": "Modify",
+        "allowedValues": [
+          "Modify",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Configure Azure SQL Server to disable public network access. Modify policy combine with audit setting of the above policy.",
+          "description": "Disabling the public network access property shuts down public connectivity such that Azure SQL Server can only be accessed from a private endpoint. This configuration disables the public network access for all databases under the Azure SQL Server."
+        }
+      },
+      "privateEndpointEffect": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Private endpoint connections on Azure SQL Database should be enabled",
+          "description": "Private endpoint connections enforce secure communication by enabling private connectivity to Azure SQL Database."
+        }
+      },
+      "privateEndpointDeployEffect": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Configure Azure SQL Server to enable private endpoint connections. Deploy if not exist used in combination with subnetID, assignment on subscription level. Private endpoint should then be on audit effect.",
+          "description": "A private endpoint connection enables private connectivity to your Azure SQL Database via a private IP address inside a virtual network. This configuration improves your security posture and supports Azure networking tools and scenarios."
+        }
+      },
+      "privateEndpointSubnetId": {
+        "type": "String",
+        "defaultValue": "",
+        "metadata": {
+          "displayName": "Private endpoint subnet id. Used in combination with private endpoint deploy if not exist setting is used.",
+          "description": "The name of the subnet within the virtual network that you would like to use for your Private Endpoint Connection deployment",
+          "strongType": "Microsoft.Network/virtualNetworks/subnets"
+        }
+      },
+      "SQLManagedInstanceTLSDeployEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Azure Managed Instance. Deploy a specific min TLS version requirement and enforce SSL on SQL servers",
+          "description": "Deploy a specific min TLS version requirement and enforce SSL on SQL servers. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
+        }
+      },
+      "SQLManagedInstanceMinTlsVersion": {
+        "type": "String",
+        "defaultValue": "1.2",
+        "allowedValues": [
+          "1.2",
+          "1.0",
+          "1.1"
+        ],
+        "metadata": {
+          "displayName": "Azure Managed Instance.Select version minimum TLS for Azure Managed Instance",
+          "description": "Select version  minimum TLS version for Azure Managed Instanceto to  enforce"
+        }
+      },
+      "SQLManagedInstanceTLSEffect": {
+        "metadata": {
+          "displayName": "SQL Managed Instance should have the minimal TLS version of 1.2",
+          "description": "Setting minimal TLS version to 1.2 improves security by ensuring your SQL Managed Instance can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled",
+          "Deny"
+        ]
+      },
+      "SQLServerTLSDeployEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Azure SQL Database. Deploy a specific min TLS version requirement and enforce SSL on SQL servers",
+          "description": "Deploy a specific min TLS version requirement and enforce SSL on SQL servers. Enables secure server to client by enforce  minimal Tls Version to secure the connection between your database server and your client applications helps protect against 'man in the middle' attacks by encrypting the data stream between the server and your application. This configuration enforces that SSL is always enabled for accessing your database server."
+        }
+      },
+      "SQLServerminTlsVersion": {
+        "type": "String",
+        "defaultValue": "1.2",
+        "allowedValues": [
+          "1.2",
+          "1.0",
+          "1.1"
+        ],
+        "metadata": {
+          "displayName": "Azure SQL Database.Select version minimum TLS for Azure SQL Database",
+          "description": "Select version  minimum TLS version for Azure SQL Database to enforce"
+        }
+      },
+      "SQLServerTLSEffect": {
+        "metadata": {
+          "displayName": "Azure SQL Database should have the minimal TLS version of 1.2",
+          "description": "Setting minimal TLS version to 1.2 improves security by ensuring your Azure SQL Database can only be accessed from clients using TLS 1.2. Using versions of TLS less than 1.2 is not recommended since they have well documented security vulnerabilities."
+        },
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+          "Audit",
+          "Disabled",
+          "Deny"
+        ]
+      },
+      "SqlServerTDEEffect": {
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Transparent Data Encryption on SQL databases should be enabled",
+          "description": "Transparent data encryption should be enabled to protect data-at-rest and meet compliance requirements."
+        }
+      },
+      "SqlServerTDECMKEffect": {
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "SQL servers should use customer-managed keys to encrypt data at rest",
+          "description": "Implementing Transparent Data Encryption (TDE) with your own key provides increased transparency and control over the TDE Protector, increased security with an HSM-backed external service, and promotion of separation of duties. This recommendation applies to organizations with a related compliance requirement."
+        }
+      },
+      "SqlServerMiTDECMKEffect": {
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "SQL managed instances should use customer-managed keys to encrypt data at rest",
+          "description": "Implementing Transparent Data Encryption (TDE) with your own key provides you with increased transparency and control over the TDE Protector, increased security with an HSM-backed external service, and promotion of separation of duties. This recommendation applies to organizations with a related compliance requirement."
+        }
+      },
+      "SqlDbSecurityAlertPoliciesDeploySqlSecurityEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy SQL Database security Alert Policies configuration with email admin accounts",
+          "description": "Deploy the security Alert Policies configuration with email admin accounts when it not exist in current configuration"
+        }
+      },
+      "SqlDbAuditingSettingsDeploySqlSecurityEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy SQL database auditing settings",
+          "description": "Deploy auditing settings to SQL Database when it not exist in the deployment"
+        }
+      },
+      "SqlDbAuditingActionGroupEffect": {
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "SQL Auditing settings should have Action-Groups configured to capture critical activities",
+          "description": "The AuditActionsAndGroups property should contain at least SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP, FAILED_DATABASE_AUTHENTICATION_GROUP, BATCH_COMPLETED_GROUP to ensure a thorough audit logging"
+        }
+      },
+      "SqlDbTdeDeploySqlSecurityEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy SQL Database Transparent Data Encryption ",
+          "description": "Deploy the Transparent Data Encryption when it is not enabled in the deployment"
+        }
+      },
+      "auditToStorageAccountEffect": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Configure SQL servers to have auditing enabled to storage account ",
+          "description": "To ensure the operations performed against your SQL assets are captured, SQL servers should have auditing enabled. This is sometimes required for compliance with regulatory standards."
+        }
+      },
+      "retentionDays": {
+        "type": "string",
+        "defaultValue": "180",
+        "metadata": {
+          "description": "The value in days of the retention period (0 indicates unlimited retention)",
+          "displayName": "Retention days (optional, 180 days if unspecified)"
+        }
+      },
+      "storageAccountsResourceGroup": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Resource group name for audit storage accounts",
+          "description": "Auditing writes database events to an audit log in your Azure Storage account (a storage account will be created in each region where a SQL Server is created that will be shared by all servers in that region). Important - for proper operation of Auditing do not delete or rename the resource group or the storage accounts.",
+          "strongType": "existingResourceGroups"
+        }
+      },
+      "auditSQLEffect": {
+        "type": "String",
+        "defaultValue":"AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Auditing on SQL server should be enabled",
+          "description": "Auditing on your SQL Server should be enabled to track database activities across all databases on the server and save them in an audit log."
+        }
+      },
+      "auditDaysEffect": {
+        "type": "String",
+        "defaultValue":"AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "SQL servers with auditing to storage account destination should be configured with 90 days retention or higher",
+          "description": "For incident investigation purposes, we recommend setting the data retention for your SQL Server' auditing to storage account destination to at least 90 days. Confirm that you are meeting the necessary retention rules for the regions in which you are operating. This is sometimes required for compliance with regulatory standards."
+        }
+      },
+      "SqlDbVulnerabilityAssessmentsDeploySqlSecurityEffect": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy SQL Database vulnerability Assessments",
+          "description": "Deploy SQL Database vulnerability Assessments when it not exist in the deployment. To the specific  storage account in the parameters"
+        }
+      },
+      "vulnerabilityAssessmentsEmail": {
+        "metadata": {
+          "description": "The email address to send alerts",
+          "displayName": "The email address to send alerts"
+        },
+        "type": "String",
+        "defaultValue": ""
+      },
+      "vulnerabilityAssessmentsStorageID": {
+        "metadata": {
+          "description": "The storage account ID to store assessments",
+          "displayName": "The storage account ID to store assessments"
+        },
+        "type": "String",
+        "defaultValue": ""
+      },
+      "advancedDataSecurityEffect": {
+        "type": "String",
+        "defaultValue":"AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Advanced data security should be enabled on your SQL servers",
+          "description": "Audit SQL servers without Advanced Data Security"
+        }
+      },
+      "advancedDataSecurityMiEffect": {
+        "type": "String",
+        "defaultValue":"AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Advanced data security should be enabled on SQL Managed Instance",
+          "description": "Audit each SQL Managed Instance without advanced data security."
+        }
+      },
+      "SQLDBsLogAnalyticsEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy Diagnostic Settings for SQL Databases  to Log Analytics workspace",
+          "description": "Deploys the diagnostic settings for SQL Databases to stream to a Log Analytics workspace when any SQL Databases  which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+        }
+      },
+      "logAnalytics": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Log Analytics workspace",
+          "description": "Specify the Log Analytics workspace the storage account should be connected to.",
+          "strongType": "omsWorkspace",
+          "assignPermissions": true
+        }
+      },
+      "profileName": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Setting name",
+          "description": "Name of the diagnostic settings."
+        },
+        "defaultValue": "setbypolicy"
+      },
+      "QueryStoreRuntimeStatisticsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "QueryStoreRuntimeStatistics - Enabled",
+          "description": "Whether to stream QueryStoreRuntimeStatistics logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "QueryStoreWaitStatisticsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "QueryStoreWaitStatistics - Enabled",
+          "description": "Whether to stream QueryStoreWaitStatistics logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "ErrorsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Errors - Enabled",
+          "description": "Whether to stream Errors logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "DatabaseWaitStatisticsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "DatabaseWaitStatistics - Enabled",
+          "description": "Whether to stream DatabaseWaitStatistics logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "BlocksEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Blocks - Enabled",
+          "description": "Whether to stream Blocks logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "SQLInsightsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "SQLInsights - Enabled",
+          "description": "Whether to stream SQLInsights logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "SQLSecurityAuditEventsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "SQLSecurityAuditEvents - Enabled",
+          "description": "Whether to stream SQLSecurityAuditEvents logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "TimeoutsEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Timeouts - Enabled",
+          "description": "Whether to stream Timeouts logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "AutomaticTuningEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "AutomaticTuning - Enabled",
+          "description": "Whether to stream AutomaticTuning logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "DeadlocksEnabled": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Deadlocks - Enabled",
+          "description": "Whether to stream Deadlocks logs to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "Basic": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Basic (metric) - Enabled",
+          "description": "Whether to stream Basic metrics to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "InstanceAndAppAdvanced": {
+        "type": "String",
+        "metadata": {
+          "displayName": "InstanceAndAppAdvanced (metric) - Enabled",
+          "description": "Whether to stream InstanceAndAppAdvanced metrics to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "WorkloadManagement": {
+        "type": "String",
+        "metadata": {
+          "displayName": "WorkloadManagement (metric) - Enabled",
+          "description": "Whether to stream WorkloadManagement metrics to the Log Analytics workspace - True or False"
+        },
+        "allowedValues": [
+          "True",
+          "False"
+        ],
+        "defaultValue": "True"
+      },
+      "SQLElasticPoolsLogAnalyticsEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy Diagnostic Settings for SQL Elastic Pools to Log Analytics workspace",
+          "description": "Deploys the diagnostic settings for SQL Elastic Pools to stream to a Log Analytics workspace when any SQL Elastic Pools which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+        }
+      },
+      "SQLMLogAnalyticsEffect": {
+        "type": "String",
+        "defaultValue": "DeployIfNotExists",
+        "allowedValues": [
+          "DeployIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Deploy Diagnostic Settings for SQL Managed Instances to Log Analytics workspace",
+          "description": "Deploys the diagnostic settings for SQL Managed Instances to stream to a Log Analytics workspace when any SQL Managed Instances which is missing this diagnostic settings is created or updated. The policy wil  set the diagnostic with all metrics and category enabled"
+        }
+      },
+      "backupLongTermGeoRedundantEffect": {
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "Long-term geo-redundant backup should be enabled for Azure SQL Databases",
+          "description": "This policy audits any Azure SQL Database with long-term geo-redundant backup not enabled."
+        }
+      },
+      "backupNoGeoRedundantEffect": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "SQL Database should avoid using GRS backup redundancy",
+          "description": "Databases should avoid using the default geo-redundant storage for backups, if data residency rules require data to stay within a specific region. Note: Azure Policy is not enforced when creating a database using T-SQL. If not explicitly specified, database with geo-redundant backup storage is created via T-SQL."
+        }
+      },
+      "backupMiNoGeoRedundantEffect": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+          "Deny",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "SQL Managed Instances should avoid using GRS backup redundancy",
+          "description": "Managed Instances should avoid using the default geo-redundant storage for backups, if data residency rules require data to stay within a specific region. Note: Azure Policy is not enforced when creating a database using T-SQL. If not explicitly specified, database with geo-redundant backup storage is created via T-SQL."
+        }
+      },
+      "azureAdAdministratorEffect": {
+        "type": "String",
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ],
+        "metadata": {
+          "displayName": "An Azure Active Directory administrator should be provisioned for SQL servers",
+          "description": "Audit provisioning of an Azure Active Directory administrator for your SQL server to enable Azure AD authentication. Azure AD authentication enables simplified permission management and centralized identity management of database users and other Microsoft services."
+        }
+      }
+    },
+    "policyDefinitionGroups": null,
+    "policyDefinitions": [
+      
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1b8ca024-1d5c-4dec-8995-b1a932b41780",
+        "policyDefinitionReferenceId": "publicAccessEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('publicAccessEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/28b0b1e5-17ba-4963-a7a4-5a1ab4400a0b",
+        "policyDefinitionReferenceId": "publicAccessModifyEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('publicAccessModifyEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/7698e800-9299-47a6-b3b6-5a0fee576eed",
+        "policyDefinitionReferenceId": "privateEndpointEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('privateEndpointEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/8e8ca470-d980-4831-99e6-dc70d9f6af87",
+        "policyDefinitionReferenceId": "privateEndpointDeployEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('privateEndpointDeployEffect')]"
+          },
+          "privateEndpointSubnetId": {
+            "value": "[parameters('privateEndpointSubnetId')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/17k78e20-9358-41c9-923c-fb736d382a12",
+        "policyDefinitionReferenceId": "SqlServerTDEEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SqlServerTDEEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0d134df8-db83-46fb-ad72-fe0c9428c8dd",
+        "policyDefinitionReferenceId": "SqlServerTDECMKEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SqlServerTDECMKEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/048248b0-55cd-46da-b1ff-39efd52db260",
+        "policyDefinitionReferenceId": "SqlServerMiTDECMKEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SqlServerMiTDECMKEffect')]"
+          }
+        }
+      },
+      
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-Tde')]",
+        "policyDefinitionReferenceId": "SqlDbTdeDeploySqlSecurity",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SqlDbTdeDeploySqlSecurityEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-AuditingSettings')]",
+        "policyDefinitionReferenceId": "SqlDbAuditingSettingsDeploySqlSecurity",
+        "parameters": {
+          "effect": {
+            "value": "[[parameters('SqlDbAuditingSettingsDeploySqlSecurityEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-SecurityAlertPolicies')]",
+        "policyDefinitionReferenceId": "SqlDbSecurityAlertPoliciesDeploySqlSecurity",
+        "parameters": {
+          "effect": {
+            "value": "[[parameters('SqlDbSecurityAlertPoliciesDeploySqlSecurityEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/7ff426e2-515f-405a-91c8-4f2333442eb5",
+        "policyDefinitionReferenceId": "SqlDbAuditingActionGroupEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SqlDbAuditingActionGroupEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/f4c68484-132f-41f9-9b6d-3e4b1cb55036",
+        "policyDefinitionReferenceId": "auditToStorageAccountEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('auditToStorageAccountEffect')]"
+          },
+          "retentionDays": {
+            "value": "[parameters('retentionDays')]"
+          },
+          "storageAccountsResourceGroup": {
+            "value": "[parameters('storageAccountsResourceGroup')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a6fb4358-5bf4-4ad7-ba82-2cd2f41ce5e9",
+        "policyDefinitionReferenceId": "auditSQLEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('auditSQLEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/89099bee-89e0-4b26-a5f4-165451757743",
+        "policyDefinitionReferenceId": "auditDaysEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('auditDaysEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Sql-vulnerabilityAssessments')]",
+        "policyDefinitionReferenceId": "SqlDbVulnerabilityAssessmentsDeploySqlSecurity",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SqlDbVulnerabilityAssessmentsDeploySqlSecurityEffect')]"
+          },
+          "vulnerabilityAssessmentsEmail": {
+            "value": "[parameters('vulnerabilityAssessmentsEmail')]"
+          },
+          "vulnerabilityAssessmentsStorageID": {
+            "value": "[parameters('vulnerabilityAssessmentsStorageID')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/abfb4388-5bf4-4ad7-ba82-2cd2f41ceae9",
+        "policyDefinitionReferenceId": "advancedDataSecurityEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('advancedDataSecurityEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/abfb7388-5bf4-4ad7-ba99-2cd2f41cebb9",
+        "policyDefinitionReferenceId": "advancedDataSecurityMiEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('advancedDataSecurityMiEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b79fa14e-238a-4c2d-b376-442ce508fc84",
+        "policyDefinitionReferenceId": "SQLDBsDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SQLDBsLogAnalyticsEffect')]"
+          },
+          "logAnalytics": {
+            "value": "[parameters('logAnalytics')]"
+          },
+          "diagnosticsSettingNameToUse": {
+            "value": "[parameters('profileName')]"
+          },
+          "QueryStoreRuntimeStatisticsEnabled": {
+            "value": "[parameters('QueryStoreRuntimeStatisticsEnabled')]"
+          },
+          "QueryStoreWaitStatisticsEnabled": {
+            "value": "[parameters('QueryStoreWaitStatisticsEnabled')]"
+          },
+          "ErrorsEnabled": {
+            "value": "[parameters('ErrorsEnabled')]"
+          },
+          "DatabaseWaitStatisticsEnabled": {
+            "value": "[parameters('DatabaseWaitStatisticsEnabled')]"
+          },
+          "BlocksEnabled": {
+            "value": "[parameters('BlocksEnabled')]"
+          },
+          "SQLInsightsEnabled": {
+            "value": "[parameters('SQLInsightsEnabled')]"
+          },
+          "SQLSecurityAuditEventsEnabled": {
+            "value": "[parameters('SQLSecurityAuditEventsEnabled')]"
+          },
+          "TimeoutsEnabled": {
+            "value": "[parameters('TimeoutsEnabled')]"
+          },
+          "AutomaticTuningEnabled": {
+            "value": "[parameters('AutomaticTuningEnabled')]"
+          },
+          "DeadlocksEnabled": {
+            "value": "[parameters('DeadlocksEnabled')]"
+          },
+          "Basic": {
+            "value": "[parameters('Basic')]"
+          },
+          "InstanceAndAppAdvanced": {
+            "value": "[parameters('InstanceAndAppAdvanced')]"
+          },
+          "WorkloadManagement": {
+            "value": "[parameters('WorkloadManagement')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-SQLElasticPools')]",
+        "policyDefinitionReferenceId": "SQLElasticPoolsDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "logAnalytics": {
+            "value": "[parameters('logAnalytics')]"
+          },
+          "effect": {
+            "value": "[parameters('SQLElasticPoolsLogAnalyticsEffect')]"
+          },
+          "profileName": {
+            "value": "[parameters('profileName')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Diagnostics-SQLMI')]",
+        "policyDefinitionReferenceId": "SQLMDeployDiagnosticLogDeployLogAnalytics",
+        "parameters": {
+          "logAnalytics": {
+            "value": "[parameters('logAnalytics')]"
+          },
+          "effect": {
+            "value": "[parameters('SQLMLogAnalyticsEffect')]"
+          },
+          "profileName": {
+            "value": "[parameters('profileName')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/d38fc420-0735-4ef3-ac11-c806f651a570",
+        "policyDefinitionReferenceId": "backupLongTermGeoRedundantEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('backupLongTermGeoRedundantEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b219b9cf-f672-4f96-9ab0-f5a3ac5e1c13",
+        "policyDefinitionReferenceId": "backupNoGeoRedundantEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('backupNoGeoRedundantEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a9934fd7-29f2-4e6d-ab3d-607ea38e9079",
+        "policyDefinitionReferenceId": "backupMiNoGeoRedundantEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('backupMiNoGeoRedundantEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1f314764-cb73-4fc9-b863-8eca98ac36e9",
+        "policyDefinitionReferenceId": "azureAdAdministratorEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('azureAdAdministratorEffect')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-SqlMi-minTLS')]",
+        "policyDefinitionReferenceId": "SQLManagedInstanceTLSDeployEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SQLManagedInstanceTLSDeployEffect')]"
+          },
+          "minimalTlsVersion": {
+            "value": "[parameters('SQLManagedInstanceMinTlsVersion')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-SqlMi-minTLS')]",
+        "policyDefinitionReferenceId": "SQLManagedInstanceTLSEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SQLManagedInstanceTLSEffect')]"
+          },
+          "minimalTlsVersion": {
+            "value": "[parameters('SQLManagedInstanceMinTlsVersion')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-SQL-minTLS')]",
+        "policyDefinitionReferenceId": "SQLServerTLSDeployEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SQLServerTLSDeployEffect')]"
+          },
+          "minimalTlsVersion": {
+            "value": "[parameters('SQLServerminTlsVersion')]"
+          }
+        }
+      },
+      {
+        "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Sql-minTLS')]",
+        "policyDefinitionReferenceId": "SQLServerTLSEffect",
+        "parameters": {
+          "effect": {
+            "value": "[parameters('SQLServerTLSEffect')]"
+          },
+          "minimalTlsVersion": {
+            "value": "[parameters('SQLServerminTlsVersion')]"
+          }
+        }
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "category": "Storage"
+    }
+  },
+  "id": "/providers/Microsoft.Authorization/policySetDefinitions/Compliant-AzureSQL",
+  "type": null,
+  "name": "Compliant-AzureSQL"
+}

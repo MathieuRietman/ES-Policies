@@ -1,6 +1,6 @@
 {
   "properties": {
-    "displayName": "Azure Key Vault baseline policy initiative ",
+    "displayName": "Azure Key Vault baseline policy initiative",
     "description": "Enforce security and compliance setting via baseline policy for Azure KeyVault",
     "parameters": {
       "softDeleteEffect": {
@@ -110,7 +110,7 @@
         "defaultValue": "",
         "metadata": {
           "displayName": "Private endpoint subnet id. Used in combination with private endpoint deploy if not exist setting is used.",
-          "description": "A subnet with private endpoint network policies disabled.",
+          "description": "The name of the subnet within the virtual network that you would like to use for your Private Endpoint Connection deployment",
           "strongType": "Microsoft.Network/virtualNetworks/subnets"
         }
       },
