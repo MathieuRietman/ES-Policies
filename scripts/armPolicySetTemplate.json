@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "topLevelManagementGroupPrefix": {
+            "type": "String",
+            "metadata": {
+                "description": "Provide the top level managementgroup where all custom policies definition are created. Initiative could use custom policy definition"
+            }
+        }
+    },
+  "variables": {
+     "scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policySetDefinitions",
+      "apiVersion": "2019-09-01",
+      "name": "keyVault-Compliant",
+      "properties": {
+        "description": "Azure Key Vault baseline policy initiative ",
+        "displayName": "Enforce security and compliance setting via baseline policy for Azure KeyVault",
+        "parameters": {
+   
+
+        },
+        "policyDefinitionGroups": null,
+        "policyDefinitions": [
+        
+
+        ],
+        "metadata": {
+          "version": "1.0.0",
+          "category": "Key Vault"
+        }
+      }
+
+    }
+  ]
+}

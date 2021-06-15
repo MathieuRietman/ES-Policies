@@ -1,0 +1,454 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "topLevelManagementGroupPrefix": {
+      "type": "String",
+      "metadata": {
+        "description": "Provide the top level managementgroup where all custom policies definition are created. Initiative could use custom policy definition"
+      }
+    }
+  },
+  "variables": {
+    "scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policySetDefinitions",
+      "apiVersion": "2019-09-01",
+      "name": "Compliant-StorageAcc",
+      "properties": {
+        "displayName": "Azure Storage baseline policy initiative ",
+        "description": "Enforce security and compliance setting via baseline policy for Azure Storage",
+        "parameters": {
+          "allowedSkuEffect": {
+            "type": "String",
+            "defaultValue": "Disabled",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage accounts should be limited by allowed SKUs",
+              "description": "Restrict the set of storage account SKUs that your organization can deploy."
+            }
+          },
+          "listOfAllowedSKUs": {
+            "type": "Array",
+            "defaultValue": [],
+            "metadata": {
+              "description": "The list of SKUs that can be specified for storage accounts.",
+              "displayName": "Allowed SKUs",
+              "strongType": "StorageSKUs"
+            }
+          },
+          "publicAccessEffect": {
+            "type": "String",
+            "defaultValue": "deny",
+            "allowedValues": [
+              "audit",
+              "deny",
+              "disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage account public access should be disallowed",
+              "description": "Anonymous public read access to containers and blobs in Azure Storage is a convenient way to share data but might present security risks. To prevent data breaches caused by undesired anonymous access, Microsoft recommends preventing public access to a storage account unless your scenario requires it."
+            }
+          },
+          "onlyVnetRulesEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage accounts should restrict network access using virtual network rule",
+              "description": "Protect your storage accounts from potential threats using virtual network rules as a preferred method instead of IP-based filtering. Disabling IP-based filtering prevents public IPs from accessing your storage accounts."
+            }
+          },
+          "privateLinkEffect": {
+            "type": "String",
+            "defaultValue": "AuditIfNotExists",
+            "allowedValues": [
+              "AuditIfNotExists",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage accounts should use private link",
+              "description": "Azure Private Link lets you connect your virtual network to Azure services without a public IP address at the source or destination. The Private Link platform handles the connectivity between the consumer and services over the Azure backbone network. By mapping private endpoints to your storage account, data leakage risks are reduced. Learn more about private links at - https://aka.ms/azureprivatelinkoverview"
+            }
+          },
+          "privateLinkFIleSyncEffect": {
+            "type": "String",
+            "defaultValue": "AuditIfNotExists",
+            "allowedValues": [
+              "AuditIfNotExists",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Azure File Sync should use private link",
+              "description": "Creating a private endpoint for the indicated Storage Sync Service resource allows you to address your Storage Sync Service resource from within the private IP address space of your organization's network, rather than through the internet-accessible public endpoint. Creating a private endpoint by itself does not disable the public endpoint."
+            }
+          },
+          "restrictNetworkACLEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage accounts should restrict network access",
+              "description": "Network access to storage accounts should be restricted. Configure network rules so only applications from allowed networks can access the storage account. To allow connections from specific internet or on-premises clients, access can be granted to traffic from specific Azure virtual networks or to public internet IP address ranges."
+            }
+          },
+          "storageSyncIncomingTrafficEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Public network access should be disabled for Azure File Sync",
+              "description": "Disabling the public endpoint allows you to restrict access to your Storage Sync Service resource to requests destined to approved private endpoints on your organization's network. There is nothing inherently insecure about allowing requests to the public endpoint, however, you may wish to disable it to meet regulatory, legal, or organizational policy requirements. You can disable the public endpoint for a Storage Sync Service by setting the incomingTrafficPolicy of the resource to AllowVirtualNetworksOnly."
+            }
+          },
+          "storageDeployHttpsEnabledEffect": {
+            "metadata": {
+              "displayName": "Azure Storage Account. Deploy Secure transfer to storage accounts should be enabled",
+              "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
+            },
+            "type": "String",
+            "defaultValue": "DeployIfNotExists",
+            "allowedValues": [
+              "DeployIfNotExists",
+              "Disabled"
+            ]
+          },
+          "storageminimumTlsVersion": {
+            "type": "String",
+            "defaultValue": "TLS1_2",
+            "allowedValues": [
+              "TLS1_2",
+              "TLS1_1",
+              "TLS1_0"
+            ],
+            "metadata": {
+              "displayName": "Storage Account select minimum TLS version",
+              "description": "Select version  minimum TLS version on Azure Storage Account to enforce"
+            }
+          },
+          "storageHttpsEnabledEffect": {
+            "metadata": {
+              "displayName": "Azure Storage Account. Secure transfer to storage accounts should be enabled",
+              "description": "Audit requirement of Secure transfer in your storage account. Secure transfer is an option that forces your storage account to accept requests only from secure connections (HTTPS). Use of HTTPS ensures authentication between the server and the service and protects data in transit from network layer attacks such as man-in-the-middle, eavesdropping, and session-hijacking"
+            },
+            "type": "String",
+            "defaultValue": "Audit",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ]
+          },
+          "storageCMKEffect": {
+            "type": "String",
+            "defaultValue": "Disabled",
+            "allowedValues": [
+              "Audit",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage accounts should use customer-managed key (CMK) for encryption. Remark there is no deny this would result in not able to create storage account because the first need of MSI for encryption",
+              "description": "Secure your storage account with greater flexibility using customer-managed keys (CMKs). When you specify a CMK, that key is used to protect and control access to the key that encrypts your data. Using CMKs provides additional capabilities to control rotation of the key encryption key or cryptographically erase data."
+            }
+          },
+          "storageScopeCMKEffect": {
+            "type": "String",
+            "defaultValue": "Disabled",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage account encryption scopes should use customer-managed keys to encrypt data at rest",
+              "description": "Use customer-managed keys to manage the encryption at rest of your storage account encryption scopes. Customer-managed keys enable the data to be encrypted with an Azure key-vault key created and owned by you. You have full control and responsibility for the key lifecycle, including rotation and management. Learn more about storage account encryption scopes at https://aka.ms/encryption-scopes-overview."
+            }
+          },
+          "storageInfrastructureEncryptionEffect": {
+            "type": "String",
+            "defaultValue": "Disabled",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Storage accounts should have infrastructure encryption",
+              "description": "Enable infrastructure encryption for higher level of assurance that the data is secure. When infrastructure encryption is enabled, data in a storage account is encrypted twice."
+            }
+          },
+          "diagnosticSettingsDeployEffect": {
+            "type": "string",
+            "defaultValue": "DeployIfNotExists",
+            "allowedValues": [
+              "DeployIfNotExists",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Effect",
+              "description": "Enable or disable the execution of the policy"
+            }
+          },
+          "logAnalytics": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Log Analytics workspace",
+              "description": "Specify the Log Analytics workspace the storage account should be connected to.",
+              "strongType": "omsWorkspace",
+              "assignPermissions": true
+            }
+          },
+          "servicesToDeploy": {
+            "type": "Array",
+            "metadata": {
+              "displayName": "Storage services to deploy",
+              "description": "List of Storage services to deploy"
+            },
+            "allowedValues": [
+              "storageAccounts",
+              "blobServices",
+              "fileServices",
+              "tableServices",
+              "queueServices"
+            ],
+            "defaultValue": [
+              "storageAccounts",
+              "blobServices",
+              "fileServices",
+              "tableServices",
+              "queueServices"
+            ]
+          },
+          "diagnosticsSettingNameToUse": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Setting name",
+              "description": "Name of the diagnostic settings."
+            },
+            "defaultValue": "storageAccountsDiagnosticsLogsToWorkspace"
+          },
+          "storageDelete": {
+            "type": "String",
+            "metadata": {
+              "displayName": "StorageDelete - Enabled",
+              "description": "Whether to stream StorageDelete logs to the Log Analytics workspace - True or False"
+            },
+            "allowedValues": [
+              "True",
+              "False"
+            ],
+            "defaultValue": "True"
+          },
+          "storageWrite": {
+            "type": "String",
+            "metadata": {
+              "displayName": "StorageWrite - Enabled",
+              "description": "Whether to stream StorageWrite logs to the Log Analytics workspace - True or False"
+            },
+            "allowedValues": [
+              "True",
+              "False"
+            ],
+            "defaultValue": "True"
+          },
+          "storageRead": {
+            "type": "String",
+            "metadata": {
+              "displayName": "StorageRead - Enabled",
+              "description": "Whether to stream StorageRead logs to the Log Analytics workspace - True or False"
+            },
+            "allowedValues": [
+              "True",
+              "False"
+            ],
+            "defaultValue": "True"
+          },
+          "transaction": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Transaction - Enabled",
+              "description": "Whether to stream Transaction logs to the Log Analytics workspace - True or False"
+            },
+            "allowedValues": [
+              "True",
+              "False"
+            ],
+            "defaultValue": "True"
+          }
+        },
+        "policyDefinitionGroups": null,
+        "policyDefinitions": [
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/7433c107-6db4-4ad1-b57a-a76dce0154a1",
+            "policyDefinitionReferenceId": "allowedSkuEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('allowedSkuEffect')]"
+              },
+              "listOfAllowedSKUs": {
+                "value": "[[parameters('listOfAllowedSKUs')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4fa4b6c0-31ca-4c0d-b10d-24b96f62a751",
+            "policyDefinitionReferenceId": "publicAccessEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('publicAccessEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2a1a9cdf-e04d-429a-8416-3bfb72a1b26f",
+            "policyDefinitionReferenceId": "onlyVnetRulesEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('onlyVnetRulesEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6edd7eda-6dd8-40f7-810d-67160c639cd9",
+            "policyDefinitionReferenceId": "privateLinkEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('privateLinkEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1d320205-c6a1-4ac6-873d-46224024e8e2",
+            "policyDefinitionReferenceId": "privateLinkFIleSyncEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('privateLinkFIleSyncEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/34c877ad-507e-4c82-993e-3452a6e0ad3c",
+            "policyDefinitionReferenceId": "restrictNetworkACLEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('restrictNetworkACLEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/21a8cd35-125e-4d13-b82d-2e19b7208bb7",
+            "policyDefinitionReferenceId": "storageSyncIncomingTrafficEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('storageSyncIncomingTrafficEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deny-Storage-minTLS')]",
+            "policyDefinitionReferenceId": "storageHttpsEnabledEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('storageHttpsEnabledEffect')]"
+              },
+              "minimumTlsVersion": {
+                "value": "[[parameters('storageMinimumTlsVersion')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "[concat(variables('scope'), '/providers/Microsoft.Authorization/policyDefinitions/Deploy-Storage-sslEnforcement')]",
+            "policyDefinitionReferenceId": "storageDeployHttpsEnabledEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('storageDeployHttpsEnabledEffect')]"
+              },
+              "minimumTlsVersion": {
+                "value": "[[parameters('storageMinimumTlsVersion')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6fac406b-40ca-413b-bf8e-0bf964659c25",
+            "policyDefinitionReferenceId": "storageCMKEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('storageCMKEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b5ec538c-daa0-4006-8596-35468b9148e8",
+            "policyDefinitionReferenceId": "storageScopeCMKEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('storageScopeCMKEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/4733ea7b-a883-42fe-8cac-97454c2a9e4a",
+            "policyDefinitionReferenceId": "storageInfrastructureEncryptionEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('storageInfrastructureEncryptionEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/6f8f98a4-f108-47cb-8e98-91a0d85cd474",
+            "policyDefinitionReferenceId": "diagnosticSettingsDeployEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('diagnosticSettingsDeployEffect')]"
+              },
+              "diagnosticsSettingNameToUse": {
+                "value": "[[parameters('diagnosticsSettingNameToUse')]"
+              },
+              "logAnalytics": {
+                "value": "[[parameters('logAnalytics')]"
+              },
+              "Transaction": {
+                "value": "[[parameters('transaction')]"
+              },
+              "StorageDelete": {
+                "value": "[[parameters('storageDelete')]"
+              },
+              "StorageWrite": {
+                "value": "[[parameters('storageWrite')]"
+              },
+              "StorageRead": {
+                "value": "[[parameters('storageRead')]"
+              },
+              "servicesToDeploy": {
+                "value": "[[parameters('servicesToDeploy')]"
+              }
+            }
+          }
+        ],
+        "metadata": {
+          "version": "1.0.0",
+          "category": "Storage"
+        }
+      }
+    }
+  ]
+}

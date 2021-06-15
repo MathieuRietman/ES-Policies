@@ -1,0 +1,621 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "topLevelManagementGroupPrefix": {
+      "type": "String",
+      "metadata": {
+        "description": "Provide the top level managementgroup where all custom policies definition are created. Initiative could use custom policy definition"
+      }
+    }
+  },
+  "variables": {
+    "scope": "[concat('/providers/Microsoft.Management/managementGroups/', parameters('topLevelManagementGroupPrefix'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policySetDefinitions",
+      "apiVersion": "2019-09-01",
+      "name": "Compliant-KeyVault",
+      "properties": {
+        "displayName": "Azure Key Vault baseline policy initiative ",
+        "description": "Enforce security and compliance setting via baseline policy for Azure KeyVault",
+        "parameters": {
+          "softDeleteEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Key vaults should have soft delete enabled",
+              "description": "Deleting a key vault without soft delete enabled permanently deletes all secrets, keys, and certificates stored in the key vault. Accidental deletion of a key vault can lead to permanent data loss. Soft delete allows you to recover an accidentally deleted key vault for a configurable retention period."
+            }
+          },
+          "purgeProtectEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Key vaults should have purge protection enabled",
+              "description": "Malicious deletion of a key vault can lead to permanent data loss. A malicious insider in your organization can potentially delete and purge key vaults. Purge protection protects you from insider attacks by enforcing a mandatory retention period for soft deleted key vaults. No one inside your organization or Microsoft will be able to purge your key vaults during the soft delete retention period."
+            }
+          },
+          "purgeProtectHSMEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Azure Key Vault Managed HSM should have purge protection enabled",
+              "description": "Malicious deletion of an Azure Key Vault Managed HSM can lead to permanent data loss. A malicious insider in your organization can potentially delete and purge Azure Key Vault Managed HSM. Purge protection protects you from insider attacks by enforcing a mandatory retention period for soft deleted Azure Key Vault Managed HSM. No one inside your organization or Microsoft will be able to purge your Azure Key Vault Managed HSM during the soft delete retention period."
+            }
+          },
+          "keysUseHSMEffect": {
+            "type": "String",
+            "defaultValue": "Disabled",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Keys should be backed by a hardware security module (HSM)",
+              "description": "An HSM is a hardware security module that stores keys. An HSM provides a physical layer of protection for cryptographic keys. The cryptographic key cannot leave a physical HSM which provides a greater level of security than a software key."
+            }
+          },
+          "publicNetworkAccessEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Azure Key Vault should disable public network access ",
+              "description": "Disable public network access for your key vault so that it's not accessible over the public internet. This can reduce data leakage risks. Learn more at: https://aka.ms/akvprivatelink."
+            }
+          },
+          "publicNetworkAccessModify": {
+            "type": "String",
+            "defaultValue": "Disabled",
+            "allowedValues": [
+              "Modify",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Modify policy in combination with setting policy disable public network access to 'audit'. Configure key vaults to disable public network access",
+              "description": "Disable public network access for your key vault so that it's not accessible over the public internet. This can reduce data leakage risks. Learn more at: https://aka.ms/akvprivatelink."
+            }
+          },
+          "privateEndpointEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Azure Key Vaults should use private link ",
+              "description": "Azure Private Link lets you connect your virtual networks to Azure services without a public IP address at the source or destination. The Private Link platform handles the connectivity between the consumer and services over the Azure backbone network. By mapping private endpoints to key vault, you can reduce data leakage risks. Learn more about private links at: https://aka.ms/akvprivatelink."
+            }
+          },
+          "privateEndpointDeployEffect": {
+            "type": "String",
+            "defaultValue": "Disabled",
+            "allowedValues": [
+              "DeployIfNotExists",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Configure Azure Key Vaults with private endpoints. Deploy if not exist used in combination with subnetID, assignment on subscription level. Private endpoint should then be on audit effect.",
+              "description": "Private endpoints connect your virtual networks to Azure services without a public IP address at the source or destination. By mapping private endpoints to key vault, you can reduce data leakage risks. Learn more about private links at: https://aka.ms/akvprivate."
+            }
+          },
+          "privateEndpointSubnetId": {
+            "type": "String",
+            "defaultValue": "",
+            "metadata": {
+              "displayName": "Private endpoint subnet id. Used in combination with private endpoint deploy if not exist setting is used.",
+              "description": "A subnet with private endpoint network policies disabled.",
+              "strongType": "Microsoft.Network/virtualNetworks/subnets"
+            }
+          },
+          "diagnosticSettingDeployEffect": {
+            "type": "String",
+            "defaultValue": "DeployIfNotExists",
+            "allowedValues": [
+              "DeployIfNotExists",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Deploy - Configure diagnostic settings for Azure Key Vault to Log Analytics workspace",
+              "description": "Deploys the diagnostic settings for Azure Key Vault to stream resource logs to a Log Analytics workspace when any Key Vault which is missing this diagnostic settings is created or updated."
+            }
+          },
+          "diagnosticSettingHSMDeployEffect": {
+            "type": "String",
+            "defaultValue": "DeployIfNotExists",
+            "allowedValues": [
+              "DeployIfNotExists",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Deploy - Azure Key Vault Managed HSM. Configure diagnostic settings for Azure Key Vault Managed HSM to Log Analytics workspace",
+              "description": "Deploys the diagnostic settings for Azure Key Vault Managed HSM to stream to a regional Log Analytics workspace when any Azure Key Vault Managed HSM which is missing this diagnostic settings is created or updated."
+            }
+          },
+          "profileName": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Name of the diagnostic settings name used for diagnostic logging",
+              "description": "Name of the diagnostic settings."
+            },
+            "defaultValue": "setbypolicy"
+          },
+          "logAnalytics": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Log Analytics workspace used for diagnostic logging",
+              "description": "Specify the Log Analytics workspace the Key Vault should be connected to.",
+              "strongType": "omsWorkspace",
+              "assignPermissions": true
+            }
+          },
+          "metricsEnabled": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Enable metrics",
+              "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+            },
+            "allowedValues": [
+              "True",
+              "False"
+            ],
+            "defaultValue": "True"
+          },
+          "logsEnabled": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Enable logs",
+              "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+            },
+            "allowedValues": [
+              "True",
+              "False"
+            ],
+            "defaultValue": "True"
+          },
+          "complianceRequirementsCertificateEffect": {
+            "type": "String",
+            "defaultValue": "deny",
+            "allowedValues": [
+              "audit",
+              "deny",
+              "disabled"
+            ],
+            "metadata": {
+              "displayName": "Enforce below certificates organizational compliance requirements.",
+              "description": "Manage your organizational compliance requirements for certificates"
+            }
+          },
+          "certMinimumRSAKeySize": {
+            "type": "Integer",
+            "metadata": {
+              "displayName": "Certificates using RSA cryptography should have the specified minimum key size",
+              "description": "Manage your organizational compliance requirements by specifying a minimum key size for RSA certificates stored in your key vault."
+            },
+            "allowedValues": [
+              2048,
+              3072,
+              4096
+            ],
+            "defaultValue": 2048
+          },
+          "certAllowedKeyTypes": {
+            "type": "Array",
+            "metadata": {
+              "displayName": "Certificates should use allowed key types",
+              "description": "Manage your organizational compliance requirements by restricting the key types allowed for certificates."
+            },
+            "allowedValues": [
+              "RSA",
+              "RSA-HSM",
+              "EC",
+              "EC-HSM"
+            ],
+            "defaultValue": [
+              "RSA",
+              "RSA-HSM"
+            ]
+          },
+          "certAllowedECNames": {
+            "type": "Array",
+            "metadata": {
+              "displayName": "Certificates using elliptic curve cryptography should have allowed curve names",
+              "description": "Manage the allowed elliptic curve names for ECC Certificates stored in key vault. More information can be found at https://aka.ms/akvpolicy."
+            },
+            "allowedValues": [
+              "P-256",
+              "P-256K",
+              "P-384",
+              "P-521"
+            ],
+            "defaultValue": [
+              "P-256",
+              "P-256K",
+              "P-384",
+              "P-521"
+            ]
+          },
+          "certMaximumValidityInMonths": {
+            "type": "Integer",
+            "metadata": {
+              "displayName": "Certificates should have the specified maximum validity period. In Months",
+              "description": "Manage your organizational compliance requirements by specifying the maximum amount of time that a certificate can be valid within your key vault."
+            },
+            "defaultValue": 12
+          },
+          "complianceRequirementsKeysEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Enforce below keys organizational compliance requirements.",
+              "description": "Manage your organizational compliance requirements for keys"
+            }
+          },
+          "keysMinimumRSAKeySize": {
+            "type": "Integer",
+            "metadata": {
+              "displayName": "Keys using RSA cryptography should have a specified minimum key size",
+              "description": "Set the minimum allowed key size for use with your key vaults. Use of RSA keys with small key sizes is not a secure practice and doesn't meet many industry certification requirements."
+            },
+            "allowedValues": [
+              2048,
+              3072,
+              4096
+            ],
+            "defaultValue": 2048
+          },
+          "keysAllowedKeyTypes": {
+            "type": "Array",
+            "metadata": {
+              "displayName": "Keys should be the specified cryptographic type RSA or EC",
+              "description": "Some applications require the use of keys backed by a specific cryptographic type. Enforce a particular cryptographic key type, RSA or EC, in your environment."
+            },
+            "allowedValues": [
+              "RSA",
+              "RSA-HSM",
+              "EC",
+              "EC-HSM"
+            ],
+            "defaultValue": [
+              "RSA",
+              "RSA-HSM",
+              "EC",
+              "EC-HSM"
+            ]
+          },
+          "keysAllowedECNames": {
+            "type": "Array",
+            "metadata": {
+              "displayName": "Keys using elliptic curve cryptography should have the specified curve names",
+              "description": "Keys backed by elliptic curve cryptography can have different curve names. Some applications are only compatible with specific elliptic curve keys. Enforce the types of elliptic curve keys that are allowed to be created in your environment"
+            },
+            "allowedValues": [
+              "P-256",
+              "P-256K",
+              "P-384",
+              "P-521"
+            ],
+            "defaultValue": [
+              "P-256",
+              "P-256K",
+              "P-384",
+              "P-521"
+            ]
+          },
+          "keysMaximumValidityInDays": {
+            "type": "Integer",
+            "metadata": {
+              "displayName": "Keys should have the specified maximum validity period of days",
+              "description": "Specify the number of days that a key should be active. Keys that are used for an extended period of time increase the probability that an attacker could compromise the key. As a good security practice, make sure that your keys have not been active longer than two years."
+            },
+            "defaultValue": 365
+          },
+          "secretContentTypeSetEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Secrets should have content type set.",
+              "description": "A content type tag helps identify whether a secret is a password, connection string, etc. Different secrets have different rotation requirements. Content type tag should be set on secrets."
+            }
+          },
+          "complianceRequirementsSecretsEffect": {
+            "type": "String",
+            "defaultValue": "Deny",
+            "allowedValues": [
+              "Audit",
+              "Deny",
+              "Disabled"
+            ],
+            "metadata": {
+              "displayName": "Enforce below secret organizational compliance requirements.",
+              "description": "Manage your organizational compliance requirements for secrets"
+            }
+          },
+          "secretsMaximumValidityInDays": {
+            "type": "Integer",
+            "metadata": {
+              "displayName": "Secrets should have the specified maximum validity period",
+              "description": "Specify the maximum number of days a secret can be valid for. Secrets should be ephemeral. Using a secret with a long validity period is not recommended"
+            },
+            "defaultValue": 365
+          }
+        },
+        "policyDefinitionGroups": null,
+        "policyDefinitions": [
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d",
+            "policyDefinitionReferenceId": "softDeleteEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('softDeleteEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0b60c0b2-2dc2-4e1c-b5c9-abbed971de53",
+            "policyDefinitionReferenceId": "purgeProtectEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('purgeProtectEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/c39ba22d-4428-4149-b981-70acb31fc383",
+            "policyDefinitionReferenceId": "purgeProtectHSMEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('purgeProtectHSMEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/587c79fe-dd04-4a5e-9d0b-f89598c7261b",
+            "policyDefinitionReferenceId": "keysUseHSMEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('keysUseHSMEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/55615ac9-af46-4a59-874e-391cc3dfb490",
+            "policyDefinitionReferenceId": "publicNetworkAccessEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('publicNetworkAccessEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ac673a9a-f77d-4846-b2d8-a57f8e1c01dc",
+            "policyDefinitionReferenceId": "publicNetworkAccessModify",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('publicNetworkAccessModify')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/a6abeaec-4d90-4a02-805f-6b26c4d3fbe9",
+            "policyDefinitionReferenceId": "privateEndPointEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('privateEndPointEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/9d4fad1f-5189-4a42-b29e-cf7929c6b6df",
+            "policyDefinitionReferenceId": "privateEndpointDeployEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('privateEndpointDeployEffect')]"
+              },
+              "privateEndpointSubnetId": {
+                "value": "[[parameters('privateEndpointSubnetId')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/951af2fa-529b-416e-ab6e-066fd85ac459",
+            "policyDefinitionReferenceId": "diagnosticSettingDeployEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('diagnosticSettingDeployEffect')]"
+              },
+              "diagnosticsSettingNameToUse": {
+                "value": "[[parameters('profileName')]"
+              },
+              "logAnalytics": {
+                "value": "[[parameters('logAnalytics')]"
+              },
+              "AuditEventEnabled": {
+                "value": "[[parameters('logsEnabled')]"
+              },
+              "AllMetricsEnabled": {
+                "value": "[[parameters('metricsEnabled')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/b3884c81-31aa-473d-a9bb-9466fe0ec2a0",
+            "policyDefinitionReferenceId": "diagnosticSettingHSMDeployEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('diagnosticSettingHSMDeployEffect')]"
+              },
+              "profileName": {
+                "value": "[[parameters('profileName')]"
+              },
+              "logAnalytics": {
+                "value": "[[parameters('logAnalytics')]"
+              },
+              "metricsEnabled": {
+                "value": "[[parameters('metricsEnabled')]"
+              },
+              "logsEnabled": {
+                "value": "[[parameters('logsEnabled')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/cee51871-e572-4576-855c-047c820360f0",
+            "policyDefinitionReferenceId": "certMinimumRSAKeySize",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsCertificateEffect')]"
+              },
+              "minimumRSAKeySize": {
+                "value": "[[parameters('certMinimumRSAKeySize')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1151cede-290b-4ba0-8b38-0ad145ac888f",
+            "policyDefinitionReferenceId": "certAllowedKeyTypes",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsCertificateEffect')]"
+              },
+              "allowedKeyTypes": {
+                "value": "[[parameters('certAllowedKeyTypes')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/bd78111f-4953-4367-9fd5-7e08808b54bf",
+            "policyDefinitionReferenceId": "certAllowedECNames",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsCertificateEffect')]"
+              },
+              "allowedECNames": {
+                "value": "[[parameters('certAllowedECNames')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0a075868-4c26-42ef-914c-5bc007359560",
+            "policyDefinitionReferenceId": "certMaximumValidityInMonths",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsCertificateEffect')]"
+              },
+              "maximumValidityInMonths": {
+                "value": "[[parameters('certMaximumValidityInMonths')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/82067dbb-e53b-4e06-b631-546d197452d9",
+            "policyDefinitionReferenceId": "keysMinimumRSAKeySize",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsKeysEffect')]"
+              },
+              "minimumRSAKeySize": {
+                "value": "[[parameters('KeysMinimumRSAKeySize')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/75c4f823-d65c-4f29-a733-01d0077fdbcb",
+            "policyDefinitionReferenceId": "keysAllowedKeyTypes",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsKeysEffect')]"
+              },
+              "allowedKeyTypes": {
+                "value": "[[parameters('keysAllowedKeyTypes')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ff25f3c8-b739-4538-9d07-3d6d25cfb255",
+            "policyDefinitionReferenceId": "keysAllowedECNames",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsKeysEffect')]"
+              },
+              "allowedECNames": {
+                "value": "[[parameters('keysAllowedECNames')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/49a22571-d204-4c91-a7b6-09b1a586fbc9",
+            "policyDefinitionReferenceId": "keysMaximumValidityInDays",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsKeysEffect')]"
+              },
+              "maximumValidityInDays": {
+                "value": "[[parameters('keysMaximumValidityInDays')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/75262d3e-ba4a-4f43-85f8-9f72c090e5e3",
+            "policyDefinitionReferenceId": "secretContentTypeSetEffect",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('secretContentTypeSetEffect')]"
+              }
+            }
+          },
+          {
+            "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/342e8053-e12e-4c44-be01-c3c2f318400f",
+            "policyDefinitionReferenceId": "secretsMaximumValidityInDays",
+            "parameters": {
+              "effect": {
+                "value": "[[parameters('complianceRequirementsSecretsEffect')]"
+              },
+              "maximumValidityInDays": {
+                "value": "[[parameters('secretsMaximumValidityInDays')]"
+              }
+            }
+          }
+        ],
+        "metadata": {
+          "version": "1.0.0",
+          "category": "Key Vault"
+        }
+      }
+    }
+  ]
+}
